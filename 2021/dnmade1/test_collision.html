@@ -1,0 +1,53 @@
+<!-- https://github.com/n5ro/aframe-physics-system -->
+<!-- https://stackoverflow.com/questions/60518510/collision-with-a-frame-objects-using-javascript-physics-library -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script>
+         AFRAME.registerComponent('foo', {
+            init: function () {
+                this.el.addEventListener('collide', function (e) {
+                    let objet = e.detail.body.el;
+                    if(objet.id) {
+                        console.log('Player collided with ', objet.id);
+                        let couleur = objet.getAttribute('color');
+                        objet.setAttribute('color', "#FF0000");
+                        setTimeout(function(){ objet.setAttribute('color', couleur); }, 3000);
+                        e.detail.target.el; // Original entity (playerEl).
+                        e.detail.body.el; // Other entity, which playerEl touched.
+                        e.detail.contact; // Stats about the collision (CANNON.ContactEquation).
+                        e.detail.contact.ni; // Normal (direction) of the collision (CANNON.Vec3).
+                    }
+
+                });
+            }
+        })
+     </script>
+</head>
+
+<body>
+
+    <a-scene background="color: skyblue"  physics="debug: true">
+
+        <a-entity id="camera" position="0 1.6 0">
+            <!-- Camera Entity -->
+            <a-entity id="camera" camera look-controls wasd-controls kinematic-body foo></a-entity>
+        </a-entity>
+
+        <a-box id="mur" static-body position="0 0 -3" color="#00FFFF" width="8" height="5" depth="0.5"></a-box>
+        <a-box id="boite" static-body position="0 1 -2" color="#0000FF" width="1" height="1" depth="1" 
+        ></a-box>
+
+        <a-plane static-body rotation="-90 0 0" position="0 0 -4" width="10" height="10" color="#7BC8A4">
+        </a-plane>
+
+    </a-scene>
+
+</body>
+
+</html>

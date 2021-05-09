@@ -1,0 +1,131 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/chenzlabs/aframe-ar@master/dist/aframe-ar.min.js"></script     -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <!-- doc : https://www.npmjs.com/package/aframe-randomizer-components -->
+    <!-- <script src="aframe-randomizer-components.js"></script> -->
+    <script src="https://unpkg.com/aframe-randomizer-components@3.0.2/dist/aframe-randomizer-components.min.js"></script>
+</head>
+
+<body>
+
+    <a-scene ar>
+        <a-assets>
+            <a-asset-item id="TvHead" src="assets/TV_Cathodique_0.glb"></a-asset-item>
+            <a-asset-item id="ZombieBody" src="assets/ZombieData_anim_v2.glb"></a-asset-item>
+            <img id="mire" src="assets/mire.png">
+        </a-assets>
+
+        <a-entity   id ="perso"
+            rotation="0 0 0"
+            scale="0.5 0.5 0.5"
+            position="0 0 -70"
+            animation-mixer ="repetitions : 100; duration: 1.5;"
+            animation="property: position; dur: 9000; easing: linear; to: 0 0 -3 ; loop: true;">
+            <a-entity
+                rotation="30 0 0"
+                animation-mixer
+                animation="property: rotation; dur: 750; dir : alternate; easing: easeInOutSine; to: 0 0 0 ; loop: true;"
+                >
+                <a-entity
+                    rotation="0 0 0"
+                    animation-mixer
+                    animation="property: rotation; dur: 750; dir : alternate; easing: easeInSine; to: 0 20 0 ; loop: true;"
+                    >
+                    <a-entity
+                        rotation="0 0 0"
+                        animation-mixer
+                        animation="property: rotation; dur: 750; dir : alternate; easing: easeInSine; to: 0 0 -7 ; loop: true;"
+                        >
+                        <a-entity
+                            position="-.2 4.6 -.5"
+                            animation-mixer
+                            animation="property: position; dir : alternate; dur: 9000; easing: easeInOutCirc; to: -.2 4.6 .2; loop: true;">
+                            <a-entity   id ="TvHead"
+                                scale="1 1 1"
+                                position="0 5 0"
+                                rotation="0 270 0"
+                                gltf-model="#TvHead">
+                            </a-entity>
+                            <a-image src="#mire"
+                                rotation="0 0 0"
+                                scale="2 1.7 0.5"
+                                position="0 4.8 .5">
+                            </a-image>
+                        </a-entity>
+                    </a-entity>
+                </a-entity>
+            </a-entity>
+            <a-entity   id ="ZombieBody"
+                  scale="1 1 1"
+                  position="0 0 -.2"
+                  rotation="90 0 90"
+                  gltf-model="#ZombieBody">
+            </a-entity>
+
+        </a-entity>
+        <!-- =====================Corps du joueur=================== -->
+        <a-entity position="0 0 0">
+            <a-entity geometry="primitive: box; width: 0.2; height: 1; depth: 0.2"
+                      material="color : grey"
+                      position="-.2 0 0"
+            ></a-entity>
+            <a-entity geometry="primitive: box; width: 0.2; height: 1; depth: 0.2"
+                      material="color : grey"
+                      position=".2 0 0"
+            ></a-entity>
+            <a-entity geometry="primitive: box; width: 0.2; height: .2; depth: 0.5"
+                      material="color : grey"
+                      position="-.2 -.5 -.2"
+            ></a-entity>
+            <a-entity geometry="primitive: box; width: 0.2; height: .2; depth: 0.5"
+                      material="color : grey"
+                      position=".2 -.5 -.2"
+            ></a-entity>
+        </a-entity>
+
+        <a-entity camera look-controls position="0 1.6 0"></a-entity>
+
+
+    </a-scene>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function() {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function(msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			console.log('Live reload enabled.');
+		})();
+	}
+	// ]]>
+</script>
+</body>
+
+</html>

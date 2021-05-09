@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: skyblue">
+        <!-- position joueur -->
+        <a-box position="0 0 0" scale="0.2 0.2 0.2" color="#FF0000"></a-box>
+
+        <!-- cotés extérieurs -->
+        <a-box position="0 1 -1.5" rotation="" scale="3 2 0.01" color="#FF9900"></a-box>
+        <a-box position="-1.5 1 0" rotation="0 90 0" scale="3 2 0.01" color="#99FF00"></a-box>
+        <a-box position="1.5 1 0" rotation="0 90 0" scale="3 2 0.01" color="#99FF00"></a-box>
+        <a-box position="-1 1 1.5" rotation="" scale="1 2 0.01" color="#FF9900"></a-box>
+        <a-box position="0.75 1 1.5" rotation="" scale="1.5 2 0.01" color="#FF9900"></a-box>
+
+        <!-- intérieur verticaux -->
+        <a-box position="-0.5 1 -1.25" rotation="0 90 0" scale="0.5 2 0.01" color="#00FF99"></a-box>
+        <a-box position="1 1 -0.75" rotation="0 90 0" scale="0.5 2 0.01" color="#00FF99"></a-box>
+        <a-box position="-1 1 -0.5" rotation="0 90 0" scale="1 2 0.01" color="#00FF99"></a-box>
+        <a-box position="-1 1 0.75" rotation="0 90 0" scale="0.5 2 0.01" color="#00FF99"></a-box>
+        <a-box position="-0.5 1 0" rotation="0 90 0" scale="1 2 0.01" color="#00FF99"></a-box>
+        <a-box position="-0.5 1 1.25" rotation="0 90 0" scale="0.5 2 0.01" color="#00FF99"></a-box>
+        <a-box position="0.5 1 1" rotation="0 90 0" scale="1 2 0.01" color="#00FF99"></a-box>
+        <a-box position="0.5 1 -0.25" rotation="0 90 0" scale="0.5 2 0.01" color="#00FF99"></a-box>
+        <a-box position="1 1 0.5" rotation="0 90 0" scale="1 2 0.01" color="#00FF99"></a-box>
+
+        <!-- intérieur horizontaux -->
+        <a-box position="1 1 -1" rotation="" scale="1 2 0.01" color="#0099FF"></a-box>
+        <a-box position="-0.5 1 -1" rotation="" scale="1 2 0.01" color="#0099FF"></a-box>
+        <a-box position="-0.25 1 -0.5" rotation="" scale="0.5 2 0.01" color="#0099FF"></a-box>
+        <a-box position="-0.25 1 0.5" rotation="" scale="1.5 2 0.01" color="#0099FF"></a-box>
+        <a-box position="-0.25 1 1" rotation="" scale="0.5 2 0.01" color="#0099FF"></a-box>
+        <a-box position="1.25 1 1" rotation="" scale="0.5 2 0.01" color="#0099FF"></a-box>
+        <a-box position="0.75 1 0" rotation="" scale="0.5 2 0.01" color="#0099FF"></a-box>
+
+        <!-- sol  -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="3" height="3" color="#7BC8A4">
+        </a-plane>
+
+    </a-scene>
+</body>
+
+</html>

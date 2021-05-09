@@ -1,0 +1,130 @@
+body{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 300;
+    font-size: 2em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+.center
+{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    /* margin-top: 40%; */
+    height: 80vh;
+    /* padding-top: 0.5vh; */
+}
+
+.parent
+{
+    position: relative;
+    margin-top: -30%;
+    left: 2%;
+}
+#menu{
+    z-index: 0;
+    position: relative;
+}
+#boutonJouer
+{
+    background-color: #0000ff;
+    font-weight: bold;
+    padding: 3% 5%;
+    font-size: 2.1em;
+    /* padding-left: 3%; padding-right: 3%;
+    height: -30%; */
+}
+
+#boutonJouer p{
+    margin: 0%;
+}
+.PopUp
+{
+    background-color: black;
+    border: 2px #0000ff solid;
+    font-size: 0.5em;
+    display:flex;
+    flex-direction: column;
+    
+}
+#PopUp_1
+{
+    z-index: 1;
+    position: absolute;
+    left: 0px;
+    top: -50px;
+    display: none;
+}
+#PopUp_2
+{
+    z-index: 2;
+    position: absolute;
+    left: 20px;
+    top: -30px;
+    display: none;
+}   
+#PopUp_3
+{
+    z-index: 3;
+    position: absolute;
+    left: 40px;
+    top: -10px;
+    display: none;
+}
+#PopUp_4
+{
+    z-index: 3;
+    position: absolute;
+    left: 60px;
+    top: 10px;
+    display: none;
+}
+#PopUp_5
+{
+    z-index: 3;
+    position: absolute;
+    left: 80px;
+    top: 30px;
+    display: none;
+}
+#PopUp_6
+{
+    z-index: 3;
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    display: none;
+}
+
+.PopUp .question
+{
+    font-weight: 300;
+    font-style: italic;
+    /* width: 70%; */
+    text-align: center;
+    margin: 10% 5%;
+    justify-content: center;
+
+}
+.PopUp img
+{
+    width: 20%;
+    margin-top: 5%; margin-bottom: 10%;
+}
+
+.PopUp #bouton_2, .PopUp #bouton_3, .PopUp #bouton_4, .PopUp #bouton_5, .PopUp #bouton_6, .PopUp #bouton_pageSuivante
+{
+    background-color: #0000ff;
+    font-weight: 600;
+    font-size: 85%;
+    
+    padding: 10px;
+}
+
+

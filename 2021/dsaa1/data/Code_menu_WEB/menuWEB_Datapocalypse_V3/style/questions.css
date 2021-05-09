@@ -1,0 +1,176 @@
+body{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+.center
+{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    /* margin-top: 40%; */
+    height: 80vh;
+    /* padding-top: 0.5vh; */
+}
+
+/* ___________________ QUESTION_1 __________________ */
+
+.precisions{
+    font-size: 0.8em;
+    margin: 50px 80px;
+    font-weight: 100;
+}
+
+#couleurs { 
+    display: flex;
+    flex-direction: row;
+    /* background-color: grey; */
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#red, #yellow, #green, #cyan, #blue, #magenta {
+  width: 80px;
+  height: 80px;
+  margin: 15px;
+}
+
+#red{
+    background-color: #E30000;
+}
+#yellow{
+    background-color: #EAF400;
+}
+#green{
+    background-color: #00DF12;
+}
+#cyan{
+    background-color: #00DEF5;
+}
+#blue{
+    background-color: #0D00E9;
+}
+#magenta{
+    background-color: #F400EA;
+}
+
+/* ___________________ QUESTION_2 __________________ */
+
+
+.remplissage {
+  font-family: 'Prompt', sans-serif;
+  font-weight: 200;
+  color: blue;
+  font-size: 1.2rem;
+	margin: 0 auto;
+  /* padding: 0.8rem 1.2rem; */
+  border-radius: 0.2rem;
+  background-color: rgb(0, 0, 0);
+  border: none;
+  width: auto;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+}
+.form__input{
+  font-size: 1em;
+}
+.form__input :active{
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 5px #0D00E9;
+}
+
+#valider{
+    background-color: #0D00E9;
+    width: 20px;
+    height: 20px;
+    margin: 15px;
+}
+
+.button{
+    font-family: 'Prompt', sans-serif;
+    position: relative;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 170px;
+    height: 40px;
+    line-height: 1;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 3px solid #0D00E9;
+    background: #fff;
+    color: #0D00E9 ;
+    
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .35s;
+  }
+  
+  .button span{
+    opacity: 1;
+    visibility: visible;
+    transition: all .35s;
+  }
+  
+  .valider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 10%;
+    z-index: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .35s;
+  }
+  
+  .valider svg{
+    width: 20px;
+    height: 20px;
+    fill: #F400EA;
+    transform-origin: 50% 50%;
+    transform: translateY(-50%) rotate(0deg) scale(0);
+    transition: all .35s;
+  }
+  
+  .button.is_active{
+    width: 40px;
+    height: 40px;
+  }
+  
+  .button.is_active .valider{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .button.is_active .valider svg{
+    margin-top: 50%;
+    transform: translateY(-50%) rotate(720deg) scale(1);
+  }
+  
+  .button.is_active span{
+    opacity: 0;
+    visibility: hidden;
+  }
+
+/* ___________________ QUESTION_3 __________________ */
+
+img
+{
+    width: 50%;
+    margin-top: 5%; margin-bottom: 10%;
+}

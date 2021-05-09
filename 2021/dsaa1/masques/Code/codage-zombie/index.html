@@ -1,0 +1,97 @@
+<!-- https://github.com/jgbarah/aframe-playground/tree/master/moving-01 -->
+<!-- Fox : https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/Fox -->
+<!-- animations : dans le gltf "name":  Walk / Survey / Run-->
+<!-- https://github.com/n5ro/aframe-extras/tree/master/src/loaders#animation
+     Event 	               Details 	            Description
+     - animation-loop 	   action, loopDelta 	Emitted when a single loop has finished.
+     - animation-finished  action, direction 	Emitted when all loops  have finished
+ -->
+ <!-- https://aframe.io/docs/1.0.0/core/component.html -->
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="UTF-8">
+     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script> 
+     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+ 
+     <script>
+       var dataA1 = "clip: Attestation.001; crossFadeDuration: .3; repetitions : 1; timeScale: 1";
+       var dataA2 = "clip: Attestation.002; crossFadeDuration: .3; repetitions : 1; timeScale: 1";
+       var dataA3 = "clip: Attestation.003; crossFadeDuration: .3; repetitions : 1; timeScale: 1";
+       var dataA3 = "clip: Attestation.004; crossFadeDuration: .3; repetitions : 1; timeScale: 1";
+       var dataA3 = "clip: Attestation.005; crossFadeDuration: .3; repetitions : 1; timeScale: 1";
+       var current = "Attestation.001";
+       var maj = "Attestation.001";
+ 
+       AFRAME.registerComponent('loaded', {
+         init: function () {
+             var el = this.el;
+             el.addEventListener('model-loaded', () => {
+                 console.log(">>> animation chargée : "+el.id);
+ 
+                 });
+             el.addEventListener('model-error', () => {
+                 console.log(">>> erreur chargement : "+el.id);
+             });
+         }
+       });
+ 
+       AFRAME.registerComponent('finished', {
+           update: function () {
+               var el = this.el;
+               el.addEventListener('animation-finished', () => {
+                   console.log(">>> animation terminée : "+el.id);
+                   el.removeAttribute("animation-mixer");
+                   switch(current){
+                       case "Attestation.001" :
+                             maj = dataA2; current = "Attestation.002";
+                             console.log(">>> action = Attestation.002");
+                             break;
+                       case "Attestation.002" :
+                             maj = dataA3; current = "Attestation.003";
+                             console.log(">>> action = Attestation.003");
+                             break;
+                       case "Attestation.003" :
+                             maj = dataA4; current = "Attestation.004";
+                             console.log(">>> action = Attestation.004");
+                             break;
+                        case "Attestation.004" :
+                             maj = dataA5; current = "Attestation.005";
+                             console.log(">>> action = Attestation.005");
+                             break;
+                        case "Attestation.005" :
+                             maj = dataA1; current = "Attestation.001";
+                             console.log(">>> action = Attestation.001");
+                             break;
+                   }
+                   el.setAttribute("animation-mixer", maj );
+               });
+           }
+       });
+     </script>
+   </head>
+ 
+   <body>
+       <a-scene>
+         <a-assets>
+           <a-asset-item id="Attest" src="./models/attestation_anim_V3.glb"></a-asset-item>
+         </a-assets>
+ 
+         <a-entity id="AAAh"
+                   position="-4 -2 -9"
+                   rotation="90 180 0"
+                   scale="1 1 1"
+                   gltf-model="#Attest"
+                   animation-mixer="clip: Attestation.001; repetitions : 1; timeScale: 3; "
+                   loaded
+                   finished>
+         </a-entity>
+ 
+         <a-sky color="grey"></a-sky>
+         <a-light type="ambient" color="white"></a-light>
+         <a-light type="point" intensity="1" position="-2 2 2"></a-light>
+       </a-scene>
+ 
+   </body>
+ </html>
+ 
