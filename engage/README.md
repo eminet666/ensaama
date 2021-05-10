@@ -7,7 +7,8 @@
 
 ## sirtaki
 [dessin](https://maionaiiise.github.io/maionaiiise_VR/14_sirtaki-final-test/index.html) |
-[mix](https://honuh.github.io/houdot_VR/SIRTAKI/index.html) |
+[dessin](https://tempuraleo.github.io/sirtaki_leo1-master/index.html)
+[hugo](https://honuh.github.io/houdot_VR/SIRTAKI/index.html) |
 
 ## test
 [test1](https://honuh.github.io/houdot_VR/projet_pro_experimentations/fog/fog_black_to_img_metro.html) |
