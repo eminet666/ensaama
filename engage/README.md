@@ -31,5 +31,5 @@
 [white2blue_metro](https://honuh.github.io/houdot_VR/projet_pro_experimentations/fog/fog_black_to_blue_metro.html) |
 
 ## vidéo 3D
-[ébénisterie small](https://eminet666.github.io/ensaama/engage/demo_3D_ebenisterie_extrait_small.mp4) |
-[ébénisterie](https://eminet666.github.io/ensaama/engage/demo_3D_ebenisterie_extrait_small.mp4)
+[ébénisterie small](https://eminet666.github.io/ensaama/engage/1_video360_small.html) |
+[ébénisterie](https://eminet666.github.io/ensaama/engage/0_video360.html)
