@@ -35,4 +35,4 @@
 [ébénisterie](https://eminet666.github.io/ensaama/engage/0_video360.html) | 
 [ébénisterie small](https://eminet666.github.io/ensaama/engage/1_video360_small.html) |
 [ébénisterie videosphere](https://eminet666.github.io/ensaama/engage/3_video360_sol2.html) |
-[ébénisterie glitch](https://eminet666.github.io/ensaama/engage/3_video360_sol3.html) |
+[ébénisterie glitch](https://eminet666.github.io/ensaama/engage/3_video360_sol3.html)
