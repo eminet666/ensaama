@@ -1,13 +1,15 @@
 # presentation engage 21 mai
 
 ## présentation
-[presentation](https://eminet666.github.io/ensaama/engage/presentation.pdf)
+[presentation](https://slides.com/eminet/deck) |
+[video](https://eminet666.github.io/ensaama/engage/ensaama_vr_small.mp4)
+[ensaama](https://eminet666.github.io/share/sirtaki/view360/ensaama.html)
 
 ## modelage
 [modelage phoenix animé](https://eminet666.github.io/ensaama/2021/dnmade2/garance_animation.html) |
 [modelage cerbère](https://eminet666.github.io/ensaama/2021/dnmade2/loubna.html) |
 [modelage loup](https://eminet666.github.io/share/modelage/retouches_etienne_oculus.html) |
-[venus pop](https://eminet666.github.io/share/modelage/venus_test.html) |
+[venus pop](https://eminet666.github.io/share/modelage/venus_test.html)
 
 ## labyrinthe
 [demo](https://eminet666.github.io/ensaama/2021/dnmade1/2_demo_labyrinthe_3D.html) |
