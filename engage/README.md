@@ -1,10 +1,11 @@
 # presentation engage 21 mai
 
-## présentation
+## ressources
 [presentation](https://slides.com/eminet/deck) |
-[video](https://eminet666.github.io/ensaama/engage/ensaama_vr_small.mp4)
+[video](https://eminet666.github.io/ensaama/engage/ensaama_vr_small.mp4) |
 [ensaama](https://eminet666.github.io/share/sirtaki/view360/ensaama.html)
 
+<!-- 
 ## modelage
 [modelage phoenix animé](https://eminet666.github.io/ensaama/2021/dnmade2/garance_animation.html) |
 [modelage cerbère](https://eminet666.github.io/ensaama/2021/dnmade2/loubna.html) |
@@ -42,3 +43,5 @@
 [ébénisterie small](https://eminet666.github.io/ensaama/engage/1_video360_small.html) |
 [ébénisterie videosphere](https://eminet666.github.io/ensaama/engage/3_video360_sol2.html) |
 [ébénisterie glitch](https://eminet666.github.io/ensaama/engage/3_video360_sol3.html)
+
+-->
