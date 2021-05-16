@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>VR</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: skyblue">
+        <a-asset>
+            <a-asset-item id="rock" src="montagne3.glb"></a-asset-item>
+            <a-asset-item id="or" src="liquide2.glb"></a-asset-item>
+        </a-asset>
+
+
+        <a-camera> </a-camera>
+
+        <a-entity gltf-model="#rock" position "50 0 50" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity gltf-model="#or" position "100 0 100" scale="0.3 0.3 0.3"></a-entity>
+
+        <!-- sol  -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="3" height="3" color="#FFFFFF">
+        </a-plane>
+    </a-scene>
+</body>
+
+</html>

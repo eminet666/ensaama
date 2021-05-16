@@ -14,9 +14,9 @@
           <a-asset-item id="model" src="./gazaba.glb"></a-asset-item>
         </a-assets>
 
-        <a-entity position="-2 0 -3"
+        <a-entity position="0 0 0.75"
                   rotation="0 -15 0"
-                  scale="0.75 0.75 0.75"
+                  scale="0.5 0.5 0.5"
                   gltf-model="#model"
                   animation-mixer>
         </a-entity>
@@ -24,6 +24,10 @@
         <a-sky color="grey"></a-sky>
         <a-light type="ambient" color="white"></a-light>
         <a-light type="point" intensity="1" position="-2 2 2"></a-light>
+        
+        <!-- sol  -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="3" height="3" color="#7BC8A4">
+        </a-plane>
       </a-scene>
 
   </body>
