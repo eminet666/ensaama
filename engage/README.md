@@ -4,8 +4,8 @@
 [presentation](https://eminet666.github.io/ensaama/engage/presentation.pdf)
 
 ## modelage
-[modelage phoenix animé](https://eminet666.github.io/share/2021/dnmade2/garance_animation.html) |
-[modelage cerbère](https://eminet666.github.io/share/2021/dnmade2/loubna.html) |
+[modelage phoenix animé](https://eminet666.github.io/ensaama/2021/dnmade2/garance_animation.html) |
+[modelage cerbère](https://eminet666.github.io/ensaama/2021/dnmade2/loubna.html) |
 [modelage loup](https://eminet666.github.io/share/modelage/retouches_etienne_oculus.html) |
 [venus pop](https://eminet666.github.io/share/modelage/venus_test.html) |
 
