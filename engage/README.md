@@ -1,9 +1,9 @@
 # presentation engage 21 mai
 
 ## ressources
-[presentation](https://slides.com/eminet/deck) |
-[video](https://eminet666.github.io/ensaama/engage/ensaama_vr_small.mp4) |
-[ensaama](https://eminet666.github.io/share/sirtaki/view360/ensaama.html)
+* [presentation](https://slides.com/eminet/deck)
+* [video](https://eminet666.github.io/ensaama/engage/ensaama_vr_small.mp4) 
+* [ensaama](https://eminet666.github.io/share/sirtaki/view360/ensaama.html)
 
 <!-- 
 ## modelage
