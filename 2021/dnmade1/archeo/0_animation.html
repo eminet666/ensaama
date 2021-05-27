@@ -1,0 +1,17 @@
+<!-- https://aframe.io/docs/1.2.0/components/animation.html -->
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box position="-1 0.5 -3"
+             rotation="0 45 0"
+             color="#4CC3D9"
+             animation__position="property: position; to: 1 2 -5; easing: easeInOutQuad; dur: 2000;loop: 1;"
+             animation__rotation="property: rotation; to: 0 360 0; delay:2000; dur: 1000; loop: true;"
+             >
+      </a-box>
+    </a-scene>
+  </body>
+</html>
