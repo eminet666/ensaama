@@ -27,5 +27,7 @@
 * [20210524](https://tempuraleo.github.io/galaxie_leo-master/experience4/index.html)
 
 ### Jasmine
-* [examples super hands](https://wmurphyrd.github.io/aframe-super-hands-component/examples/)
+#### super hands
+* [exp1](https://wmurphyrd.github.io/aframe-super-hands-component/examples/)
 * [local](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/0_exp_superhands_physics.html)
+* [minimum](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/0_exp_superhands_base.html)
