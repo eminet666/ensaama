@@ -14,4 +14,5 @@
   [toon](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/0_hands_toons.html) 
 * [glb models](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/1_hands_3Dmodels.html)
 * [vibrations](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/2_hands_vibrations.html) |
-  [vibrations](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/2_hands_vibrations.html)
+  [hptics](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/2_hands_vibrations.html) |
+  [lien](https://supermedium.com/superframe/components/haptics/examples/basic/)
