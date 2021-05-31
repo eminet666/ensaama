@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <section></section>
+
+    <script>
+        const section = document.querySelector('section');
+        const key='5d59ac54fc3b53aa6605d6eab7fb3cb8';
+        // voir modele.json
+        let requestURL =
+        'http://api.openweathermap.org/data/2.5/weather?q=Paris&lang=fr&units=metric&appid='+key;
+        let request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'text';
+        request.send();
+
+        request.onload = function () {
+            const weatherDataText = request.response;
+            const weatherData = JSON.parse(weatherDataText);
+            console.log(weatherDataText);
+            console.log(weatherData);
+            getValues(weatherData);
+        }
+
+        function getValues(jsonObj) {
+            const myH1 = document.createElement('h1');
+            myH1.textContent = jsonObj['name'];
+            section.appendChild(myH1);
+
+            const temp = document.createElement('p');
+            temp.textContent = 'Temperature : ' + jsonObj['main']['temp'] + ' | Temperature ressentie: ' +
+            jsonObj['main']['feels_like'];
+            section.appendChild(temp);
+
+            const wind = document.createElement('p');
+            wind.textContent = 'Vent : vitesse' + jsonObj['wind']['speed'] + ' | direction: ' +
+            jsonObj['wind']['deg'];;
+            section.appendChild(wind);
+
+            const sky = document.createElement('p');
+            sky.textContent = 'Ciel: ' + jsonObj['weather'][0]['description'];
+            section.appendChild(sky);
+
+        }
+
+    </script>
+</body>
+
+</html>
