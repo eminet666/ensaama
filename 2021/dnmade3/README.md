@@ -26,10 +26,5 @@
 * [20210408](https://tempuraleo.github.io/galaxie_leo-master/experience2/index.html)
 * [20210524](https://tempuraleo.github.io/galaxie_leo-master/experience4/index.html)
 
-### Jasmine
-#### super hands
-* [exp1](https://wmurphyrd.github.io/aframe-super-hands-component/examples/)
-* [local](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/0_exp_superhands_physics.html)
-* [minimum](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/0_exp_superhands_base.html)
-* [ammo](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/1_ammo.html)
-* [demo cannon](https://eminet666.github.io/eminet_VR/x_test/physics/2_demo_tuto2.html)
+## Etudiants
+* [jasmine](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine)
