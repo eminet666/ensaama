@@ -13,3 +13,4 @@
   [highpoly](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/0_hands_highpoly.html) | 
   [toon](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/0_hands_toons.html) 
 * [glb models](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/1_hands_model.html)
+* [vibrations](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/2_hands_vibrations.html)
