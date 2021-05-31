@@ -11,4 +11,4 @@
 ## hands
 * [lowpoly](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/0_hands_lowpoly.html) | 
   [highpoly](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/0_hands_highpoly.html) | 
-  [toon](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/0_hands_toon.html) 
+  [toon](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/0_hands_toons.html) 
