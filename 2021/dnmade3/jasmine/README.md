@@ -26,3 +26,6 @@
 ## physic
 [github](https://github.com/n5ro/aframe-physics-system)
 [extra](https://wmurphyrd.github.io/aframe-physics-extras/)
+
+## tests jasmine
+[210603](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/test/210603.html)
