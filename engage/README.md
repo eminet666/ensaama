@@ -1,4 +1,4 @@
-## presentation engage 21 mai
+## presentation engage
 
 * [presentation](https://slides.com/eminet/deck/fullscreen)
 * [video](https://eminet666.github.io/ensaama/engage/ensaama_vr_small.mp4) 
