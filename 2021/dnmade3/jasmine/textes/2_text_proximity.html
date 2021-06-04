@@ -1,0 +1,63 @@
+<!-- https://github.com/jorgecardoso/aframe-proxemic-component -->
+<!-- le cube change de couleur quand on l'approche ou quand on s'éloigne -->
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-proxemic-component@0.0.17/dist/aframe-proxemic-component.min.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+
+        <script src="./extended-wasd-controls.js"></script>
+        <style>
+            #info {
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                font-size: 0.8em;
+                background-color: white;
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                border: dotted 1px blue;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- disable press "F" to enter fullscreen mode. -->
+        <a-scene keyboard-shortcuts="enterVR: false;" 
+                 renderer="antialias: true" 
+                 vr-mode-ui="enabled: false"
+                 background="color: #5280A7">
+
+            <a-entity id="camera" camera
+        		position="0 1.7 0"
+        		extended-wasd-controls="flyEnabled: true; turnEnabled: true; lookEnabled: true; maxLookAngle: 60;">
+        	</a-entity>
+
+        	<a-plane width="10" height="10" color="silver"
+        		position="0 0 0" rotation="-90 0 0">
+        	</a-plane>
+
+            <a-text value="World!" position="0 1.5 -3"
+                    proximity-sensor="distance: 1.5" color="green"
+                    event-set__proximityenter="text.color: yellow"
+                    event-set__proximityexit="text.color: red"
+                    side="front">
+            </a-text>
+
+            <a-text value="Hello, ..." position="-1 1.5 -2.5" 
+                    proximity-sensor="distance: 1.5" color="green" opacity="0"
+                    event-set__proximityenter="text.opacity: 1" 
+                    event-set__proximityexit="text.opacity: 0"
+                    side="front">
+            </a-text>
+
+        </a-scene>
+
+        <div id="info">WASD=Avant|Gauche|Arrière|Droite QE=Gauche|Droite RF=Haut|Bas TG=dessus|dessous</div>
+
+    </body>
+</html>
