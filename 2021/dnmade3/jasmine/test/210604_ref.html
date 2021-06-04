@@ -1,0 +1,25 @@
+<!doctype html>
+ <html>
+ <head>
+   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+   <script src="https://unpkg.com/aframe-event-set-component@4.0.0/dist/aframe-event-set-component.min.js"></script>
+   <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+   <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+ </head>
+
+ <body>
+   <a-scene physics="gravity:-9.8; restitution: 0.7">
+
+     <a-entity progressive-controls position="0 0 5"></a-entity>
+
+     <a-entity id="leftHand" hand-tracking-controls="hand: left;"></a-entity>
+     <a-entity id="rightHand" hand-tracking-controls="hand: right;"></a-entity>
+
+     <a-plane static-body scale="50 50 1" repeat="5 5 1" rotation="-90 0 0"></a-plane>
+     <a-box dynamic-body="linearDamping: 0.1" grabbable stretchable draggable dropppable position="1 2.8 3" color="blue"></a-box>
+     <a-box dynamic-body="linearDamping: 0.1" grabbable stretchable draggable dropppable position="-0.726 2.8 3" color="red"></a-box>
+     <a-box dynamic-body="linearDamping: 0.1" grabbable stretchable draggable dropppable position="-2.561 2.8 3" color="green"></a-box>
+
+   </a-scene>
+   </body>
+ </html>
