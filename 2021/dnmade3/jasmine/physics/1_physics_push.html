@@ -50,8 +50,17 @@
         <!-- Floor -->
         <a-plane position="0 0 -2" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" static-body></a-plane>
 
-        <!-- Camera -->
-        <a-camera></a-camera>
+       <!-- Player -->
+       <a-entity camera look-controls wasd-controls position="0 1.6 0">
+           <a-entity cursor position="0 0 -0.5" geometry="primitive: circle; radius: 0.01; segments: 4;"
+               material="color: #FF4444; shader: flat"></a-entity>
+       </a-entity>
+
+       <a-entity static-body="shape: sphere; sphereRadius: 0.02;" hand-controls="hand: left"
+           sphere-collider="objects: [dynamic-body];" grab></a-entity>
+       <a-entity static-body="shape: sphere; sphereRadius: 0.02;" hand-controls="hand: right"
+           sphere-collider="objects: [dynamic-body];" grab></a-entity>
+
 
     </a-scene>
 </body>
