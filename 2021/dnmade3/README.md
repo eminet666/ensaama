@@ -28,4 +28,4 @@
 
 ## Etudiants
 * [jasmine](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine)
-* [examples physics](https://n5ro.github.io/aframe-physics-system/examples/)
+
