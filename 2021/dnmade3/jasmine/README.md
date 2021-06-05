@@ -24,9 +24,11 @@
 [github 2ans](https://github.com/extraymond/aframe-mouse-dragndrop)
 
 ## physic
-[github](https://github.com/n5ro/aframe-physics-system)
-[extra](https://wmurphyrd.github.io/aframe-physics-extras/)
+[github](https://github.com/n5ro/aframe-physics-system) | 
+[extra](https://wmurphyrd.github.io/aframe-physics-extras/) |
+[examples](https://n5ro.github.io/aframe-physics-system/examples/)
 
 ## tests jasmine
 [ref jasmine](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/test/210603_ref.html) | 
 [210603](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/test/210603.html)
+[push](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/physics/1_physics_push.html)
