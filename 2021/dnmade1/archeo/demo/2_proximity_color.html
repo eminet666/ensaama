@@ -22,12 +22,6 @@
               position="0 0.5 -2"
               rotation="0 45 0"
               color="#4CC3D9"
-              animation__position="property: position; 
-                                   to: 0 0.1 -1; 
-                                   easing: easeOutQuad; 
-                                   dur: 2000;
-                                   loop: 1;
-                                   delay:2000"
               event-set__proximityenter="material.color:blue"
               event-set__proximityexit="material.color: red"
               >
@@ -35,10 +29,7 @@
 
       <a-plane color="silver" height="3" width="3" rotation=" -90 0 0"></a-plane>
 
-      <a-entity id="camera" camera position="0 1.6 0"
-          extended-wasd-controls="flyEnabled: true; turnEnabled: true; lookEnabled: true; maxLookAngle: 60;">
-      </a-entity>
+      <a-entity id="camera" look-controls camera position="0 1.6 0"></a-entity>
     </a-scene>
-    <div id="info">WASD=Avant|Gauche|Arrière|Droite QE=Gauche|Droite RF=Haut|Bas TG=dessus|dessous</div>
   </body>
 </html>
