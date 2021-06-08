@@ -45,7 +45,7 @@ Iris
 
 ### démo
 [0_camera](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/0_camera.html) |
-[1_animation](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/1_anomation.html) |
+[1_animation](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/1_animation.html) |
 [2_proximity_color](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/2_proximity_color.html) |
 [3_proximity_animation](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/3_proximity_animation.html)
 
