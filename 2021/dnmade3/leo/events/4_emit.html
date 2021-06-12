@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic Text _ Front Side</title>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script>
+        AFRAME.registerComponent('scheduled', {
+            schema: {
+                delai: {
+                    type: 'number',
+                    default: 1000
+                }
+            },
+            init: function () {
+                var el = this.el;
+                var data = this.data;
+
+                setTimeout(function () {
+                        el.emit('evenement');
+                        console.log('événement envoyé');
+                    },
+                    data.delai);
+            }
+        });
+        AFRAME.registerComponent('detected', {
+            init: function () {
+                var el = this.el;
+                var data = this.data;
+                el.addEventListener('evenement', function (event) {
+                    console.log('événément capté');
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <a-scene background="color: #5280A7">
+
+        <!-- Dynamic box -->
+        <a-box  scheduled="delai: 15000" detected 
+                id="a-box" foo position="-1 3 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+
+        <!-- Floor -->
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" static-body></a-plane>
+
+    </a-scene>
+
+</body>
+
+</html>

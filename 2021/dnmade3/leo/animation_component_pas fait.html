@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My A-Frame Scene</title>
+  <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-animation-component@^4.1.1/dist/aframe-animation-timeline-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-animation-timeline-component@2.0.0/dist/aframe-animation-timeline-component.min.js"></script>
+</head>
+
+<body>
+  <a-scene animation-timeline__1="timeline: #myTimeline">
+    <a-assets>
+      <a-timeline id="myTimeline">
+        <a-timeline-animation select="#welcomeText" name="fadein"></a-timeline-animation>
+        <a-timeline-animation select="#welcomeText" name="fadeout" offset="500"></a-timeline-animation>
+
+        <a-timeline-group>
+          <a-timeline-animation select=".box" name="scale"></a-timeline-animation>
+          <a-timeline-animation select=".sphere" name="rotate"></a-timeline-animation>
+        </a-timeline-group>
+      </a-timeline>
+
+      <a-mixin id="boxScale" animation__scale="property: scale; to: 1.2 1.2 1.2; loop: true; direction: alternate; startEvents: null"></a-mixin>
+      <a-mixin id="sphereRotate" animation__scale="property: rotation; to: 360 360 360; loop: true; startEvents: null"></a-mixin>
+    </a-assets>
+
+    <a-entity id="welcomeText"
+              animation__fadein="property: text.opacity; from: 0; to: 1; startEvents: null"
+              animation__fadeout="property: text.opacity; from: 1; to 0; startEvents: null"
+              text="opacity: 0; value: Welcome to the dankest timeline."
+              position="0 0 -3"></a-entity>
+
+    <a-box class="box" mixin="boxScale" color="red" position="-2 0 0"></a-box>
+    <a-box class="box" mixin="boxScale" color="red"></a-box>
+    <a-box class="box" miixn="boxScale" color="red" position="2 0 0"></a-box>
+
+    <a-sphere class="sphere" mixin="sphereScale" color="blue" opacity="0.5" position="-2 0 0"></a-sphere>
+    <a-sphere class="sphere" mixin="sphereScale" color="blue" opacity="0.5"></a-sphere>
+    <a-sphere class="sphere" miixn="sphereScale" color="blue" opacity="0.5" position="2 0 0"></a-sphere>
+  </a-scene>
+</body>
+</html>

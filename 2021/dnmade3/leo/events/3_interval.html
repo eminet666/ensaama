@@ -1,0 +1,43 @@
+<!-- https://gist.github.com/Strae/8b62ee637699b4218b53b3f158351864 -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic Text _ Front Side</title>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script>
+        AFRAME.registerComponent('scheduled', {
+            schema: {
+                delai: {type: 'number', default: 1000}
+            },
+            init: function () {
+                var data = this.data;
+                var delai = data.delai;
+                    
+                setInterval(function(){ 
+                    console.log('delai = '+delai); 
+                    if(delai > 100) delai -= 100;
+                }, 
+                data.delai);
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <a-scene background="color: #5280A7">
+
+        <!-- Dynamic box -->
+        <a-box scheduled="delai: 3000" id="a-box" foo position="-1 3 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+
+        <!-- Floor -->
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" static-body></a-plane>
+
+    </a-scene>
+
+</body>
+
+</html>
