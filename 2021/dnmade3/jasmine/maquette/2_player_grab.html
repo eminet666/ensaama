@@ -53,18 +53,18 @@
 </head>
 
 <body>
-    <a-scene background="color: #5280A7" physics="debug: true" environment="shadow: true">
+    <a-scene background="color: #5280A7" physics="debug: true">
         <!-- player -->
         <a-entity id="cameraRig">
             <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: toon; color: #ccccff"
                 teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; startEvents: teleportstart; endEvents:
-                teleportend" input-listen super-hands>
+                teleportend" input-listen sphere-collider="objects: a-sphere" super-hands>
                 <a-text value="X: Teleport" position="0 0.08 0" rotation="-90 0 0" scale="0.1 0.1 0.1" 
                 align="center" color="#FFFFFF"></a-text>
             </a-entity>
 
             <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: toon; color: #ccccff"
-                super-hands>
+                sphere-collider="objects: a-sphere" super-hands>
             </a-entity>
             
             <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls rotation-reader>
@@ -87,7 +87,7 @@
                 event-set__dragend="_event: drag-end; material.color: red;
                 material.wireframe: false;
                 geometry.width: 1; geometry.height: 1; geometry.depth: 1; "
-                shadow>         
+                >         
         </a-entity>
 
         <!-- sol -->
