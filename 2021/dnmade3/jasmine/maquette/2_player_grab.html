@@ -75,7 +75,7 @@
             <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: toon; color: #ccccff"
                 mixin="touch">
             </a-entity>
-
+            
             <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls rotation-reader>
                 <a-text id="a-pos" value="position" position="0 0 -1"
                         rotation="0 0 0" scale="0.5 0.5 0.5" align="center"
@@ -85,8 +85,8 @@
         </a-entity>
 
         <!-- objet -->
-        <a-sphere dynamic-body 
-                position="0 3 -3" radius="0.25" color="red"
+        <a-entity dynamic-body geometry="primitive: sphere; radius: 0.25" 
+                material="color: red" position="0 3 -3"               
                 hoverable grabbable draggable
                 event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true;"
                 event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false;"
@@ -97,7 +97,7 @@
                 material.wireframe: false;
                 geometry.width: 1; geometry.height: 1; geometry.depth: 1; "
                 shadow>         
-        </a-sphere>
+        </a-entity>
 
         <!-- sol -->
         <a-plane static-body width="10" height="10" color="silver" position="0 0 0" rotation="-90 0 0"></a-plane>
