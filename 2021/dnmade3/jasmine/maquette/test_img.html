@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Affichage des messages</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script>
+    AFRAME.registerComponent("foo", {
+    init: function() {
+      let box = document.querySelector("a-box")
+      let image = document.querySelector("a-image")
+      box.addEventListener("click", e => {
+        var position = box.getAttribute('position');
+        console.log(position.y)
+        if(position.y < 1 ){
+        image.setAttribute("visible", !image.getAttribute("visible"))
+        }
+
+        /*
+        if (sphere.getAttribute("visible")) {
+        	sphere.setAttribute("visible", "false")
+        } else {
+        	sphere.setAttribute("visible", "true")
+        }*/
+      })
+    }
+  })
+      </script>
+</head>
+
+<body>
+
+  <a-scene cursor="rayOrigin: mouse" background="color: silver">
+
+    <a-assets>
+      <img id="message_1" src="assets/message_1.png">
+    </a-assets>
+
+    <!-- Using the asset management system. -->
+    <a-image src="#message_1" position="-0 3 0" scale="3 1 1" visible="false" foo></a-image>
+
+<a-entity id="camera" position="0 1.57 3" camera look-controls></a-entity>
+
+<a-plane scale="40 40 1" repeat="2 2" rotation="-90 0 0"></a-plane>
+
+<a-box id="a-box" color="#4CC3D9" position="0 0.5 0"
+  animation="property: position; to: 0 2 0; dur: 2000; easing: linear; loop: true"
+  >
+<a-box>
+
+</body>
+
+</html>
