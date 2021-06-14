@@ -8,11 +8,10 @@
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@^4.1.1/dist/aframe-event-set-component.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.js"></script>
 </head>
 
 <body>
-    <a-scene background="color: #5280A7" physics="debug: true">
+    <a-scene background="color: #5280A7">
         <a-assets></a-assets>
         <a-entity>
             <a-camera></a-camera>
@@ -20,8 +19,7 @@
             <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>
         </a-entity>
         <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
-        <a-box  dynamic-body color="red" position="0 4 -1"
-                hoverable grabbable draggable dropppable 
+        <a-box hoverable grabbable draggable dropppable color="red" position="0 0 -1"
                 event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true;"
                 event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false;"
                 event-set__dragstart="_event: drag-start; material.color: green;
@@ -33,8 +31,9 @@
         >
         </a-box>
 
+
         <!-- sol -->
-        <a-plane static-body width="10" height="10" color="silver" position="0 0 0" rotation="-90 0 0"></a-plane>
+        <a-plane width="10" height="10" color="silver" position="0 0 0" rotation="-90 0 0"></a-plane>
 
     </a-scene>
 </body>
