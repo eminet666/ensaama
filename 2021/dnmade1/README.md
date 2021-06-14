@@ -16,7 +16,7 @@ Lila	|
 [Carla](https://carlagazeaux.github.io/realitevirtuelle/labyrinthe.html) |
 [Nicolas](https://lebasnico.github.io/labyrinthe/10.05.21%20labyrinthe.html) |
 Matéo |
-[Diwa](https://diwamnl.github.io/demo2/labyrinth.html)
+[Diwa](https://diwamnl.github.io/demo2/labyrinth.html) |
 [Agathe](https://agathemrgl.github.io/vr/Labyrinth/labyrinth) |
 Emie | 
 [Carla](https://carla-rgch.github.io/demo/labyrinthe.html) |
@@ -31,11 +31,11 @@ Inès	|
 [Pauline](https://pauline-dlq.github.io/mess/mess.html)
 [Etienne](https://etiennedufour13.github.io/main-01/VR/environement1/environement1.html)
 Lila  |		
-[Carla](https://carlagazeaux.github.io/rv/whatamess2.html)
-[Nicolas](https://lebasnico.github.io/test-texture/lowpoly_mess.html)
+[Carla](https://carlagazeaux.github.io/rv/whatamess2.html) |
+[Nicolas](https://lebasnico.github.io/test-texture/lowpoly_mess.html) |
 Matéo  |		
-[Diwa](https://diwamnl.github.io/demo2/what_a_mess_2)
-[Aqathe](https://agathemrgl.github.io/vr/expo/3D_OBJ)
+[Diwa](https://diwamnl.github.io/demo2/what_a_mess_2) |
+[Aqathe](https://agathemrgl.github.io/vr/expo/3D_OBJ) |
 Emie  |		
 Carla	  |	
 Mara  |		
@@ -60,7 +60,7 @@ Lila |
 [Nicolas](https://lebasnico.github.io/test-texture/newtest.html) |
 Matéo	| 
 [Diwa](https://diwamnl.github.io/demo2/animation_proximity) |
-[Aqathe](https://agathemrgl.github.io/vr/archeo/test) | 
+[Agathe](https://agathemrgl.github.io/vr/archeo/test) | 
 Emie	| 
 [Carla](https://carla-rgch.github.io/demo/archeologie.html) | 
 Mara | 
@@ -79,7 +79,7 @@ Etienne |
 [Carla](https://carlagazeaux.github.io/rv/popup.html) |
 Nicolas |
 Matéo |
-[Diwa](https://diwamnl.github.io/demo2/vr2/pop_up)
+[Diwa](https://diwamnl.github.io/demo2/vr2/pop_up) |
 [Agathe](https://agathemrgl.github.io/vr/popup/scantest) |
 Emie | 
 [Carla](http://127.0.0.1:3000/a-frame/pop-up.html) |

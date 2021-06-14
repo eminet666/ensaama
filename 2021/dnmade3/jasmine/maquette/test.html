@@ -18,7 +18,17 @@
             <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>
         </a-entity>
         <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
-        <a-box hoverable grabbable stretchable draggable dropppable color="blue" position="0 0 -1"></a-box>
+        <a-sphere  position="0 0 -1" color="blue"
+                hoverable grabbable draggable dropppable 
+                event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true;"
+                event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false;"
+                event-set__dragstart="_event: drag-start; material.color: green;
+                material.wireframe: true;
+                geometry.width: 0.25; geometry.height: 0.25; geometry.depth: 0.25; "
+                event-set__dragend="_event: drag-end; material.color: red;
+                material.wireframe: false;
+                geometry.width: 1; geometry.height: 1; geometry.depth: 1; ">
+        </a-sphere>
 
         <!-- sol -->
         <a-plane static-body width="10" height="10" color="silver" position="0 0 0" rotation="-90 0 0"></a-plane>
