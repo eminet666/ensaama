@@ -32,19 +32,19 @@
 <body>
     <a-scene background="color: #5280A7" physics="debug: true" environment="shadow: true">
         <a-assets>
-            <a-mixin id="cube" geometry="primitive: box; width: 0.33; height: 0.33; depth: 0.33" hoverable grabbable
-                stretchable draggable event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
-                event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false" dynamic-body shadow>
+            <a-mixin id="sphere" geometry="primitive: sphere; radius: 0.25" 
+                     hoverable grabbable draggable 
+                     event-set__hoveron="_event: hover-start; material.opacity: 0.5; transparent: true"
+                     event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false" 
+                     dynamic-body shadow>
             </a-mixin>
-            <a-mixin id="transformer" color-randomizer droppable static-body collision-filter="collisionForces: false"
-                event-set__dragon="_event: dragover-start; material.wireframe: true"
-                event-set__dragoff="_event: dragover-end; material.wireframe: false"
-                geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5"></a-mixin>
-            <a-mixin id="touch" physics-collider phase-shift collision-filter="collisionForces: false"
-                static-body="shape: sphere; sphereRadius: 0.02" super-hands="colliderEvent: collisions;
-                              colliderEventProperty: els;
-                              colliderEndEvent: collisions;
-                              colliderEndEventProperty: clearedEls;">
+            <a-mixin id="touch" 
+                physics-collider phase-shift collision-filter="collisionForces: false"
+                static-body="shape: sphere; sphereRadius: 0.01" 
+                super-hands="colliderEvent: collisions;
+                             colliderEventProperty: els;
+                             colliderEndEvent: collisions;
+                             colliderEndEventProperty: clearedEls;">
             </a-mixin>
         </a-assets>
 
@@ -58,11 +58,7 @@
         </a-entity>
 
         <!-- objets -->
-        <a-entity class="cube" mixin="cube" position="0 0.265 -1" material="color: red"></a-entity>
-
-        <!-- cible -->
-        <a-entity class="transformer" mixin="transformer" position="0 1.6 -1" material="src:#colortransform" shadow>
-        </a-entity>
+        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: yellow"></a-entity>
 
         <!-- ground collider keeps objets from falling -->
         <a-box static-body width="100" height="0.01" depth="100" visible="true" color="#CCC"></a-box>
