@@ -1,7 +1,7 @@
 # 2021 DNMADE3 Jasmine
 
 ## maquette
-[grab](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/2_player_grab.html)
+[grab](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/2_player_grab.html) |
 [test](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/test.html)
 
 ## super hands
