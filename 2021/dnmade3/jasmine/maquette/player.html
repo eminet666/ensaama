@@ -55,11 +55,11 @@
         </a-assets>
 
         <!-- joueur -->
-        <a-entity>
+        <a-entity id="cameraRig">
             <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls rotation-reader></a-entity>
-            <a-entity id="rhand" mixin="touch" hand-controls="hand: right">
+            <a-entity id="rhand" mixin="touch" hand-controls="hand: right; handModelStyle: toon; color: #ccccff">
             </a-entity>
-            <a-entity id="lhand" mixin="touch" hand-controls="hand: left">
+            <a-entity id="lhand" mixin="touch" hand-controls="hand: left; handModelStyle: toon; color: #ccccff">
             </a-entity>
         </a-entity>
 
