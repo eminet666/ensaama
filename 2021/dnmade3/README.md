@@ -25,6 +25,8 @@
 ### Léo 
 * [20210408](https://tempuraleo.github.io/galaxie_leo-master/experience2/index.html)
 * [20210524](https://tempuraleo.github.io/galaxie_leo-master/experience4/index.html)
+* [20210614_1](https://tempuraleo.github.io/univers1/2_detenus/2.6/index3_handcontrols.html)
+* [20210614_2](https://tempuraleo.github.io/univers1/2_detenus/2.6/index4_movement_aframeextras.html)
 
 ## Etudiants
 * [jasmine](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine)
