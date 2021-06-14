@@ -17,7 +17,7 @@
 * [Génia](https://geniakim.github.io/Genia_VR/index.html)
 * [Jasmine](https://njasmine98.github.io/sirtaki_projet/)
 
-## tests
+## Etudiants
 ### Hugo
 * [Hugo gerbotron](https://honuh.github.io/houdot_VR/projet_pro_experimentations/)
 * [20210408](https://honuh.github.io/houdot_VR/projet_pro_experimentations/fog/fog_black_to_img_metro.html)
@@ -27,7 +27,8 @@
 * [20210524](https://tempuraleo.github.io/galaxie_leo-master/experience4/index.html)
 * [20210614_1](https://tempuraleo.github.io/univers1/2_detenus/2.6/index3_handcontrols.html)
 * [20210614_2](https://tempuraleo.github.io/univers1/2_detenus/2.6/index4_movement_aframeextras.html)
+* [player_feets](https://eminet666.github.io/ensaama/2021/dnmade3/leo/0_player_body.html)
 
-## Etudiants
+### jasmine
 * [jasmine](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine)
 
