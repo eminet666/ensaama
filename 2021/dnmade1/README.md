@@ -70,21 +70,18 @@ Iris
 
 
 ## Volume2Archi
-[Eve](https://evebv.github.io/vr/labyrinthe.html) |
-[Clara](https://coloyu.github.io/vr/A-frame/Labirynthe/labirynthe2.html) |
-[Ines](https://brenlwen.github.io/demo/Labyrinthe%202/labyrinthe.html) |
-[Pauline](https://pauline-dlq.github.io/labyrinthe2/labyrinthe2.html) |
-[Etienne](https://etiennedufour13.github.io/main-01/VR/labyrinthe/labyrinthe.html) |
-Lila	|
-[Carla](https://carlagazeaux.github.io/rv/labyrinthe.html) |
-[Nicolas](https://lebasnico.github.io/labyrinthe/10.05.21%20labyrinthe.html) |
+[Eve](https://evebv.github.io/vr/popup.html) |
+[Clara](https://coloyu.github.io/vr/A-frame/popup/popup_clara_obj.html) |
+Ines |
+[Pauline](https://pauline-dlq.github.io/popup/popup.html) |
+Etienne |
+[Lila](http://127.0.0.1:3000/html/archeo/3d/pop-up_lila.html)	|
+[Carla](https://carlagazeaux.github.io/rv/popup.html) |
+Nicolas |
 Matéo |
-[Diwa](https://diwamnl.github.io/demo2/labyrinth.html)
-[Agathe](https://agathemrgl.github.io/vr/Labyrinth/labyrinth) |
+[Diwa](https://diwamnl.github.io/demo2/vr2/pop_up)
+[Agathe](https://agathemrgl.github.io/vr/popup/scantest) |
 Emie | 
-[Carla](https://carla-rgch.github.io/demo/labyrinthe.html) |
-[Mara](https://mara-servain.github.io/a-frame/labyrinthe.html) |
-[Iris](https://irisvkc.github.io/labyyy/testfile2.html)
-		
-
-
+[Carla](http://127.0.0.1:3000/a-frame/pop-up.html) |
+Mara |
+Iris
