@@ -3,7 +3,7 @@
 ## maquette
 [grab](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/2_player_grab.html) |
 [test](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/test.html) |
-[test2](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/0_exp_physics_handscontrol.html)
+[test2](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/player.html)
 
 ## super hands
 [exp1](https://wmurphyrd.github.io/aframe-super-hands-component/examples/) | 
