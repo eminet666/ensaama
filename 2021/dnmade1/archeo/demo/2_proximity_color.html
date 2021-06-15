@@ -9,7 +9,7 @@
 
   <body>
     <a-scene background="color: #5280A7">
-      <a-box  proximity-sensor="target: #camera; distance: 1"
+      <a-box  proximity-sensor="distance: 1"
               width="0.5" height="2" depth="0.5" id="one" side="both"
               position="0 0.5 -1.5"
               rotation="0 45 0"
@@ -21,7 +21,7 @@
 
       <a-plane color="silver" height="3" width="3" rotation=" -90 0 0"></a-plane>
 
-      <a-entity id="camera" camera look-controls wasd-controls position="0 1.6 0"></a-entity>
+      <!-- <a-entity id="camera" camera look-controls wasd-controls position="0 1.6 0"></a-entity> -->
     </a-scene>
   </body>
 </html>
