@@ -46,8 +46,9 @@ Iris
 ### démo
 [0_camera](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/0_camera.html) |
 [1_animation](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/1_animation.html) |
+[2_proximity_color_keyboard](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/2_proximity_color_keyboard.html) |
 [2_proximity_color](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/2_proximity_color.html) |
-[3_proximity_animation_wasd](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/3_proximity_animation_keyboard.html)
+[3_proximity_animation_wasd](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/3_proximity_animation_keyboard.html) |
 [3_proximity_animation_hands](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/3_proximity_animation_hands.html)
 
 ### étudiants
