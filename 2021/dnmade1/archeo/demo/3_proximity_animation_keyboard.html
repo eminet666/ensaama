@@ -5,25 +5,23 @@
 
 <html>
   <head>
+    <meta charset="UTF-8">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-proxemic-component@0.0.17/dist/aframe-proxemic-component.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
     <script src="./extended-wasd-controls.js"></script>
     <script>
-      AFRAME.registerComponent('rotation-reader', {
-        tick: function () {
-          var live = {
-            x: this.el.object3D.position.x.toFixed(2),
-            z: this.el.object3D.position.z.toFixed(2)
-          }
-          var livepos = "x: " + live.x + ", z: " + live.z;
-          console.log(livepos);
-          var sceneEl = document.querySelector('a-scene');
-          var pos = sceneEl.querySelector('#a-pos');
-          pos.setAttribute('value', livepos);
-          console.log(pos.getAttribute('value'));
-        },
-      });
+        AFRAME.registerComponent('check_event', {
+        init: function () {
+            function test(event) {
+              console.log('détécté');
+              var events = document.querySelector('#events');
+              events.setAttribute('value', 'detect');
+            }
+            var boite = document.querySelector('#boite');
+            boite.addEventListener('proximityenter', test);
+          },
+        });
     </script>
     <style>
       #info {
@@ -36,17 +34,7 @@
 
   <body>
     <a-scene background="color: #5280A7" keyboard-shortcuts="enterVR: false;">
-        <a-entity id="rig">
-          <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: toon; color: #ccccff"></a-entity>
-          <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: toon; color: #ccccff"></a-entity>
-          <a-entity id="camera" camera position="0 1.6 0" look-controls wasd-controls rotation-reader>
-            <a-text id="a-pos" value="position" position="0 0 -1" rotation="0 0 0" scale="0.5 0.5 0.5" align="center"
-              color="#FF0000">
-            </a-text>
-          </a-entity>
-        </a-entity>
-      
-      <a-box  proximity-sensor="distance: 0.5; drawline: true"
+      <a-box  id="boite" proximity-sensor="distance: 0.5; drawline: true" check_event
               scale="0.2 0.2 0.2"   
               position="0 -0.2 -1"
               rotation="0 45 0"
@@ -60,6 +48,10 @@
                           resumeEvents: proximityenter;"
               >
       </a-box>
+
+      <a-text id="events" value="events" position="0 0.25 -1" rotation="0 0 0" 
+              scale="0.5 0.5 0.5" align="center" color="FF6600">
+      </a-text>
 
       <a-plane color="silver" height="3" width="3"" rotation=" -90 0 0"></a-plane>
 

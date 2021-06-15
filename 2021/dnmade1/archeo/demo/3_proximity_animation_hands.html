@@ -8,6 +8,18 @@
     <script src="https://unpkg.com/aframe-proxemic-component@0.0.17/dist/aframe-proxemic-component.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
     <script>
+        AFRAME.registerComponent('check_event', {
+            init: function () {
+                function test(event) {
+                    //console.log('détécté');
+                    var events = document.querySelector('#events');
+                    events.setAttribute('value', 'detect');
+                }
+                var boite = document.querySelector('#boite');
+                boite.addEventListener('proximityenter', test);
+            },
+        });
+
         AFRAME.registerComponent('rotation-reader', {
             tick: function () {
                 var live = {
@@ -31,7 +43,7 @@
         <a-entity id="rig">
             <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: toon; color: #ccccff"></a-entity>
             <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: toon; color: #ccccff"></a-entity>
-            <a-entity id="camera" camera position="0 1.6 0" look-controls wasd-controls rotation-reader>
+            <a-entity id="player" camera position="0 1.6 0" look-controls wasd-controls rotation-reader>
                 <a-text id="a-pos" value="position" position="0 0 -1"
                         rotation="0 0 0" scale="0.5 0.5 0.5" align="center"
                         color="#FF0000">
@@ -39,16 +51,22 @@
             </a-entity>
         </a-entity>
 
-      <a-box scale="0.5 0.5 0.5" position="0 -0.2 -2" rotation="0 45 0"color="#4CC3D9"
-             proximity-sensor="target:#camera; distance: 0.5; drawline: true"
-             animation="property: position; 
+       <a-box scale="0.5 0.5 0.5" position="0 -0.2 -2" rotation="0 45 0" color="#4CC3D9" id="boite"
+              proximity-sensor="target: #player; distance: 0.5; drawline: true" check_event
+              animation="property: position; 
                           to: 0 0.25 -2;
                           easing: easeOutQuad;
                           dur: 2000;
                           loop: 1;
                           startEvents: proximityenter; 
                           resumeEvents: proximityenter;">
-      </a-box>
+       </a-box>
+
+        <a-text id="events" value="events" position="0 0.25 -1" rotation="0 0 0" 
+            scale="0.5 0.5 0.5" align="center" color="FF6600">
+        </a-text>
+
+        </a-text>
         <a-plane width="10" height="10" color="silver" position="0 0 0" rotation="-90 0 0"></a-plane>
 
     </a-scene>
