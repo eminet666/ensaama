@@ -10,11 +10,11 @@
     <script>
         AFRAME.registerComponent('body-contraint', {
             tick: function () {
-                var pos = {
+                var live = {
                     x: this.el.object3D.position.x.toFixed(2),
                     z: this.el.object3D.position.z.toFixed(2)
                 }
-                var livepos = "x: " + pos.x + ", z: " + pos.z;
+                var livepos = "x: " + live.x + ", z: " + live.z;
                 //console.log(livepos);
                 var sceneEl = document.querySelector('a-scene');
                 var pos = sceneEl.querySelector('#a-pos');
@@ -23,8 +23,8 @@
 
                 // player body
                 var player = sceneEl.querySelector('#player');
-                player.object3D.position.set(pos.x, 0, pos.z);
-                //console.log(player);
+                player.object3D.position.set(live.x, 0, live.z);
+                console.log(live.x+"_"+live.z);
 
             },
         });
@@ -79,7 +79,7 @@
 
         <a-entity id="player" gltf-model="#model" position="0 0 0" rotation="0 180 0"></a-entity>
 
-        <a-sphere position="0 0.5 -3" radius="0.25" color="red"></a-sphere>
+        <a-sphere position="0 0.5 -3" radius="0.25" color="blue"></a-sphere>
         <a-plane width="10" height="10" color="gray" position="0 0 0" rotation="-90 0 0"></a-plane>
 
     </a-scene>
