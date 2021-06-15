@@ -8,7 +8,7 @@
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js">
     </script>
     <script>
-        AFRAME.registerComponent('rotation-reader', {
+        AFRAME.registerComponent('body-contraint', {
             tick: function () {
                 var pos = {
                     x: this.el.object3D.position.x.toFixed(2),
@@ -20,6 +20,12 @@
                 var pos = sceneEl.querySelector('#a-pos');
                 pos.setAttribute('value', livepos);
                 //console.log(pos.getAttribute('value'));
+
+                // player body
+                var player = sceneEl.querySelector('#player');
+                player.object3D.position.set(pos.x, 0, pos.z);
+                //console.log(player);
+
             },
         });
 
@@ -63,23 +69,15 @@
                 align="center" color="#FFFFFF"></a-text>
             </a-entity>
             <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: toon; color: #ccccff"></a-entity>
-            <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls rotation-reader>
+            <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls body-contraint>
                 <a-text id="a-pos" value="position" position="0 0 -1"
                         rotation="0 0 0" scale="0.5 0.5 0.5" align="center"
                         color="#FF0000">
                 </a-text>
-                        <a-entity if="leftFoot" geometry="primitive: box; depth: 0.4; height: 0.1; width: 0.1"
-                            material=" color: green" position="-0.2 -1 -1">
-                        </a-entity>
-                        <a-entity if="rightFoot" geometry="primitive: box; depth: 0.4; height: 0.1; width: 0.1"
-                            material=" color: red" position="0.2 -1 -1">
-                        </a-entity>
             </a-entity>
         </a-entity>
 
-
-
-        <a-entity gltf-model="#model" position="0 0 0"></a-entity>
+        <a-entity id="player" gltf-model="#model" position="0 0 0" rotation="0 180 0"></a-entity>
 
         <a-sphere position="0 0.5 -3" radius="0.25" color="red"></a-sphere>
         <a-plane width="10" height="10" color="silver" position="0 0 0" rotation="-90 0 0"></a-plane>

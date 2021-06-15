@@ -28,7 +28,8 @@
 * [20210614_1](https://tempuraleo.github.io/univers1/2_detenus/2.6/index3_handcontrols.html)
 * [20210614_2](https://tempuraleo.github.io/univers1/2_detenus/2.6/index4_movement_aframeextras.html)
 * [player_feets](https://eminet666.github.io/ensaama/2021/dnmade3/leo/0_player_kickers.html) |
-  [player_homme](https://eminet666.github.io/ensaama/2021/dnmade3/leo/1_player_homme.html)
+  [player_static](https://eminet666.github.io/ensaama/2021/dnmade3/leo/1_player_homme_static.html) |
+  [player_static](https://eminet666.github.io/ensaama/2021/dnmade3/leo/2_player_homme_dynamic.html)
 
 ### jasmine
 * [jasmine](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine)
