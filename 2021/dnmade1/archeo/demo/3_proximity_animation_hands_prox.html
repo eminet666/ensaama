@@ -1,0 +1,71 @@
+<!-- https://aframe.io/docs/1.2.0/components/hand-controls.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script>
+        var live = { x: 0, z: 0};
+        AFRAME.registerComponent('ousuisje', {
+            tick: function () {
+                live = {
+                    x: this.el.object3D.position.x.toFixed(2),
+                    z: this.el.object3D.position.z.toFixed(2)
+                }
+                var livepos = "x: " + live.x + ", z: " + live.z;
+                //console.log(livepos);
+                var sceneEl = document.querySelector('a-scene');
+                var pos = sceneEl.querySelector('#a-pos');
+                pos.setAttribute('value', livepos);
+            },
+        });
+        AFRAME.registerComponent('proximity', {
+            init: function () {
+                function test(event) {
+                    console.log('détécté');
+                }
+                this.el.addEventListener('toto', test);
+            },
+            tick: function () {
+                var pos = this.el.getAttribute('position');
+                
+                this.el.emit('toto');
+            },
+        });
+    </script>
+</head>
+
+<body>
+    <a-scene background="color: #5280A7">
+
+        <a-entity id="rig">
+            <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: toon; color: #ccccff"></a-entity>
+            <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: toon; color: #ccccff"></a-entity>
+            <a-entity id="player" camera position="0 1.6 0" look-controls wasd-controls ousuisje>
+                <a-text id="a-pos" value="position" position="0 0 -1"
+                        rotation="0 0 0" scale="0.5 0.5 0.5" align="center"
+                        color="#FF0000">
+                </a-text>
+            </a-entity>
+        </a-entity>
+
+       <a-box id="cible1" scale="0.5 0.5 0.5" position="0 -0.2 -2" rotation="0 45 0" color="#4CC3D9" id="boite"
+              proximity
+              animation="property: position; 
+                          to: 0 1 -2;
+                          easing: easeOutQuad;
+                          dur: 2000;
+                          loop: 1;>
+                          startEvents: toto; 
+                          resumeEvents: toto;">
+        </a-box>
+
+        </a-text>
+        <a-plane width="10" height="10" color="silver" position="0 0 0" rotation="-90 0 0"></a-plane>
+
+    </a-scene>
+</body>
+
+</html>
