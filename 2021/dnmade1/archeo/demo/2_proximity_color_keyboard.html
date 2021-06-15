@@ -17,11 +17,11 @@
 
   <body>
     <a-scene background="color: #5280A7" keyboard-shortcuts="enterVR: false;">
-      <a-box  proximity-sensor="distance:0.4"
+      <a-box  proximity-sensor="distance:0.5"
               depth="0.2" height="2" width="0.2"
               position="0 -2 -1"
               rotation="0 45 0"
-              color="#4CC3D9"
+              color="red"
               animation__position="property: position; 
                                    to: 0 0.1 -1; 
                                    easing: easeOutQuad; 
@@ -35,7 +35,7 @@
 
       <a-plane color="silver" height="3" width="3" rotation=" -90 0 0"></a-plane>
 
-      <a-entity id="camera" camera position="0 0.1 0"
+      <a-entity id="camera" camera position="0 1.6 0"
           extended-wasd-controls="flyEnabled: true; turnEnabled: true; lookEnabled: true; maxLookAngle: 60;">
       </a-entity>
     </a-scene>
