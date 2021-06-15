@@ -9,11 +9,16 @@
     <script>
         AFRAME.registerComponent('body-contraint', {
             tick: function () {
-                var live = {
+                var live_pos = {
                     x: this.el.object3D.position.x.toFixed(2),
                     z: this.el.object3D.position.z.toFixed(2)
                 }
-                var livepos = "x: " + live.x + ", z: " + live.z;
+
+                // `rotation` is a three.js Euler using radians. `quaternion` also available.
+                var liverot = this.el.object3D.rotation.y;
+                console.log("rotation : "+liverot);
+
+                var livepos = "x: " + live_pos.x + ", z: " + live_pos.z;
                 //console.log(livepos);
                 var sceneEl = document.querySelector('a-scene');
                 var pos = sceneEl.querySelector('#a-pos');
@@ -22,9 +27,9 @@
 
                 // player body
                 var player = sceneEl.querySelector('#player');
-                player.object3D.position.set(live.x, -0.25 , live.z);
+                player.object3D.position.set(live_pos.x, -0.25 , live_pos.z);
+                player.object3D.rotation.set(0, liverot+180 , 0);
                 //console.log(live.x+"_"+live.z);
-
             },
         });
 
