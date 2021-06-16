@@ -1,9 +1,12 @@
 # 2021 DNMADE1
 
+## AR
+[base](https://eminet666.github.io/ensaama/2021/dnmade1/AR/0_base.html)
+
 ## Labyrinthe
 ### démo
-[demo planes](https://eminet666.github.io/ensaama/2021/dnmade1/labyrinthe/0_demo_labyrinthe.html) | 
-[demo box](https://eminet666.github.io/ensaama/2021/dnmade1/labyrinthe/1_demo_labyrinthe_box.html) | 
+[demo planes](https://eminet666.github.io/ensaama/2021/dnmade1/labyrinthe/0_demo_labyrinthe.html) |
+[demo box](https://eminet666.github.io/ensaama/2021/dnmade1/labyrinthe/1_demo_labyrinthe_box.html) |
 [demo 3D model](https://eminet666.github.io/ensaama/2021/dnmade1/labyrinthe/2_demo_labyrinthe_3D.html)
 
 ### étudiants
@@ -18,16 +21,16 @@ Lila	|
 Matéo |
 [Diwa](https://diwamnl.github.io/demo2/labyrinth.html) |
 [Agathe](https://agathemrgl.github.io/vr/Labyrinth/labyrinth) |
-Emie | 
+Emie |
 [Carla](https://carla-rgch.github.io/demo/labyrinthe.html) |
 [Mara](https://mara-servain.github.io/a-frame/labyrinthe.html) |
 [Iris](https://irisvkc.github.io/labyyy/testfile2.html)
 
 
 ## What a mess !
-Eve	|	
+Eve	|
 [Clara](https://coloyu.github.io/vr/A-frame/desordre/desordre.html)
-Inès	|	
+Inès	|
 [Pauline](https://pauline-dlq.github.io/mess/mess.html)
 [Etienne](https://etiennedufour13.github.io/main-01/VR/environement1/environement1.html)
 Lila  |		
@@ -37,7 +40,7 @@ Matéo  |
 [Diwa](https://diwamnl.github.io/demo2/what_a_mess_2) |
 [Aqathe](https://agathemrgl.github.io/vr/expo/3D_OBJ) |
 Emie  |		
-Carla	  |	
+Carla	  |
 Mara  |		
 Iris		
 
@@ -52,20 +55,20 @@ Iris
 [3_proximity_animation_hands](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/3_proximity_animation_hands.html)
 
 ### étudiants
-Eve | 
+Eve |
 [Clara](https://coloyu.github.io/vr/A-frame/animations/4_archeo_detection.html) |
-Inès | 
-[Pauline](https://pauline-dlq.github.io/archeo/2_proximity_color.html) | 
-Etienne | 
-Lila | 
+Inès |
+[Pauline](https://pauline-dlq.github.io/archeo/2_proximity_color.html) |
+Etienne |
+Lila |
 [Carla](https://carlagazeaux.github.io/rv/archeo.html) |
 [Nicolas](https://lebasnico.github.io/test-texture/newtest.html) |
-Matéo	| 
+Matéo	|
 [Diwa](https://diwamnl.github.io/demo2/animation_proximity) |
-[Agathe](https://agathemrgl.github.io/vr/archeo/test) | 
-Emie	| 
-[Carla](https://carla-rgch.github.io/demo/archeologie.html) | 
-Mara | 
+[Agathe](https://agathemrgl.github.io/vr/archeo/test) |
+Emie	|
+[Carla](https://carla-rgch.github.io/demo/archeologie.html) |
+Mara |
 Iris		
 
 
@@ -83,7 +86,7 @@ Nicolas |
 Matéo |
 [Diwa](https://diwamnl.github.io/demo2/vr2/pop_up) |
 [Agathe](https://agathemrgl.github.io/vr/popup/scantest) |
-Emie | 
+Emie |
 [Carla](http://127.0.0.1:3000/a-frame/pop-up.html) |
 Mara |
 Iris
