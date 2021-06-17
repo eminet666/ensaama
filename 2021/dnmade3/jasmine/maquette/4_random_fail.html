@@ -49,35 +49,56 @@
 
         });
 
+        AFRAME.registerComponent('randomfail', {
+            schema: {
+                delai: {type: 'number', default: 1000},
+                seuil: {type: 'number', default: 0.9},
+            },
+            init: function () {
+                var data = this.data;
+                var delai = data.delai;
+                var seuil = data.seuil;
+                var el = this.el;
+
+                setInterval(function(){
+                    console.log('delai = '+delai);
+                    if(Math.random() > seuil ) el.emit('teleportend');
+                    if(delai > 100) delai -= 100;
+                },
+                data.delai);
+            }
+        });
+
+        AFRAME.registerComponent('check_event', {
+            init: function () {
+                function test(event) {
+                    //console.log('détécté');
+                    var events = document.querySelector('#events');
+                    events.setAttribute('value', 'detect');
+                }
+                this.el.addEventListener('teleportend', test);
+            },
+        });
+
     </script>
 </head>
 
 <body>
     <a-scene background="color: #5280A7" physics="debug: true">
-        <!-- assets -->
-        <a-assets>
-            <a-mixin id="touch" phase-shift super-hands="colliderEvent: collisions;
-                              colliderEventProperty: els;
-                              colliderEndEvent: collisions;
-                              colliderEndEventProperty: clearedEls;">
-            </a-mixin>
-        </a-assets>
-
         <!-- player -->
         <a-entity id="cameraRig">
             <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: toon; color: #ccccff"
                 teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; startEvents: teleportstart; endEvents:
-                teleportend" input-listen
-                mixin="touch">
+                teleportend" input-listen sphere-collider="objects: a-sphere" super-hands>
                 <a-text value="X: Teleport" position="0 0.08 0" rotation="-90 0 0" scale="0.1 0.1 0.1" 
                 align="center" color="#FFFFFF"></a-text>
             </a-entity>
 
             <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: toon; color: #ccccff"
-                mixin="touch">
+                sphere-collider="objects: a-sphere" super-hands>
             </a-entity>
             
-            <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls rotation-reader>
+            <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls rotation-reader check_event>
                 <a-text id="a-pos" value="position" position="0 0 -1"
                         rotation="0 0 0" scale="0.5 0.5 0.5" align="center"
                         color="#FF0000">
@@ -87,7 +108,7 @@
 
         <!-- objet -->
         <a-entity dynamic-body geometry="primitive: sphere; radius: 0.25" 
-                material="color: red" position="0 3 -3"               
+                material="color: blue" position="0 3 -1"               
                 hoverable grabbable draggable
                 event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true;"
                 event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false;"
@@ -97,8 +118,14 @@
                 event-set__dragend="_event: drag-end; material.color: red;
                 material.wireframe: false;
                 geometry.width: 1; geometry.height: 1; geometry.depth: 1; "
-                shadow>         
+                randomfail="delai: 2000; seuil: 0.95"
+                >         
         </a-entity>
+
+        <!-- texte debug event -->
+        <a-text id="events" value="event" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
+            color="FF6600">
+        </a-text>
 
         <!-- sol -->
         <a-plane static-body width="10" height="10" color="silver" position="0 0 0" rotation="-90 0 0"></a-plane>

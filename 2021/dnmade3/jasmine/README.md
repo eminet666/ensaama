@@ -5,6 +5,16 @@
 [test](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/test.html) |
 [test2](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/player.html)
 
+[hands_size](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands_size.html)
+
+[player_fail](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/3_player_fail.html) |
+[random-fail](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/4_random_fail.html) | 
+[show_messages](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/5_show_messages.html) | 
+
+
+
+
+
 ## super hands
 [exp1](https://wmurphyrd.github.io/aframe-super-hands-component/examples/) | 
 [minimum](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/0_exp_superhands_base.html) | 
@@ -20,12 +30,6 @@
 [glb models](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/1_hands_3Dmodels.html)
 
 [vibrations](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/hands/2_hands_vibrations.html)
-
-## drag
-[github](https://github.com/jesstelford/aframe-click-drag-component) |
-[exemples](https://jesstelford.github.io/aframe-click-drag-component/)
-
-[github 2ans](https://github.com/extraymond/aframe-mouse-dragndrop)
 
 ## physic
 [github](https://github.com/n5ro/aframe-physics-system) | 

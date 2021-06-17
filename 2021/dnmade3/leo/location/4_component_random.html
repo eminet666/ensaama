@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script>
+        AFRAME.registerComponent('scheduled', {
+            schema: {
+                delai: {
+                    type: 'number',
+                    default: 1000
+                }
+            },
+            init: function () {
+                var data = this.data;
+                var delai = data.delai;
+                var moi = this.el;
+
+                setInterval(function () {
+                    var pos = {
+                        x: moi.object3D.position.x,
+                        y: moi.object3D.position.y,
+                        z: moi.object3D.position.z
+                    }
+                    //console.log(typeof pos.y);
+                    var alea = Math.floor(Math.random() * 3);
+                    var loc = getAlea(alea);
+                    console.log(loc);
+                    moi.object3D.position.set(loc.x, loc.y, loc.z);
+
+                    //console.log('delai = ' + delai);
+                    if (delai > 100) delai -= 100;
+                },
+                data.delai);
+            }
+        });
+        function getAlea(cas){
+            var loc;
+            switch(cas) {
+                case 0 : loc = { x: 0, y: 1, z: -3}; break;
+                case 1 : loc = { x: 1, y: 0.25, z: -1}; break;
+                case 2 : loc = { x: -1, y: 2, z: -1}; break;
+                default : loc = { x: 0, y: 0, z: -1};
+            }
+            return loc;
+        }
+    </script>
+</head>
+
+<body>
+    <a-scene>
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" scheduled="delai: 2000"></a-box>
+        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+        <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+</body>
+
+</html>

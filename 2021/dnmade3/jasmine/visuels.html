@@ -1,0 +1,70 @@
+<!doctype html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+   <script src="https://unpkg.com/aframe-proxemic-component@0.0.17/dist/aframe-proxemic-component.min.js"></script>
+   <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+   <script src="./extended-wasd-controls.js"></script>
+   <style>
+       #info {
+           font-family: Arial, Helvetica, sans-serif;
+           font-weight: bold;
+           font-size: 0.8em;
+           background-color: white;
+           position: absolute;
+           bottom: 20px;
+           left: 20px;
+           border: dotted 1px blue;
+       }
+   </style>
+ </head>
+
+<body>
+
+<a-scene keyboard-shortcuts="enterVR: false;"
+         renderer="antialias: true"
+         vr-mode-ui="enabled: false"
+         background="color: #000000">
+
+<a-entity id="camera" camera
+         position="0 1.7 0"
+         extended-wasd-controls="flyEnabled: true; turnEnabled: true; lookEnabled: true; maxLookAngle: 60;">
+         </a-entity>
+
+<a-assets>
+    <a-asset-item id="glb1" src="./models/escaliers_1.glb"></a-asset-item>
+    <a-asset-item id="glb2" src="./models/escaliers_2.glb"></a-asset-item>
+    <a-asset-item id="glb3" src="./models/socle.glb"></a-asset-item>
+</a-assets>
+
+<a-plane scale="3 3 1" color="black"
+  position="0 0 0" rotation="-90 0 0">
+</a-plane>
+
+<a-entity id="escaliers_1" position="-0.6 1.2 1.125" gltf-model="#glb1"></a-entity>
+<a-entity id="escaliers_2" position="-0.6 1.2 -44" gltf-model="#glb2"></a-entity>
+<a-entity id="socle" position="-0.8 1.6 -83" gltf-model="#glb3"></a-entity>
+<a-text value="Avance..." position="0 1.5 -3"
+        proximity-sensor="distance: 1.5" color="green"
+        event-set__proximityenter="text.opacity: 0"
+        event-set__proximityexit="text.opacity: 1"
+        side="front">
+</a-text>
+
+<a-assets>
+  <a-video id="glitch_1" src="./models/glitch_1.mp4"><a-video>
+</a-assets>
+
+<a-video src="#glitch_1" position="-0.6 1.5 -3"
+         proximity-sensor="distance: 1.5"
+         opacity="0"
+         event-set__proximityenter="material.opacity: 1"
+         event-set__proximityexit="material.opacity: 0"
+         scale="1 0.5 1"></a-video>
+</a-scene>
+
+  <div id="info">WASD=Avant|Gauche|Arrière|Droite QE=Gauche|Droite RF=Haut|Bas TG=dessus|dessous</div>
+
+</body>
+</html>
