@@ -10,5 +10,5 @@ soustraire les pixels à partir image noire ou inverse pour probabilité de pré
 - example_16_14_MotionSensor : quantité de mouvement => moyen de mesurer le vent = polinisation
 
 ## sculpture3D
-[base](https://eminet666.github.io/ensaama/2021/dnmade3/come/0_base.html) |
-[teleport](https://eminet666.github.io/ensaama/2021/dnmade3/come/1_teleport.html)
+[base](https://eminet666.github.io/ensaama/2021/dnmade3/come/sculpture3D/0_base.html) |
+[teleport](https://eminet666.github.io/ensaama/2021/dnmade3/come/sculpture3D/1_teleport.html)
