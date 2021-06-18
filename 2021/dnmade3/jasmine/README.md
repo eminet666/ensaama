@@ -9,8 +9,10 @@
 
 [player_fail](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/3_player_fail.html) |
 [random-fail](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/4_random_fail.html) | 
-[show_messages](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/5_show_messages.html) | 
-[sky change](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/6_skygragient_update.html) 
+[show_messages](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/5_show_messages.html)
+
+[sky change rotation](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/6_sky_update_rotation.html) |
+[sky change translation](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/6_sky_update_tranlation.html)
 
 ## super hands
 [exp1](https://wmurphyrd.github.io/aframe-super-hands-component/examples/) | 
