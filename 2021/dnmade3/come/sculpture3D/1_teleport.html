@@ -1,0 +1,87 @@
+ <html>
+
+ <head>
+   <title>Chronophotographie 3D</title>
+
+   <!-- SCRIPTS -->
+   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+   <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js">
+   </script>
+   <script>
+     // chargement modele
+     AFRAME.registerComponent('model_loaded', {
+       init: function () {
+         var el = this.el;
+         el.addEventListener('model-loaded', () => {
+           console.log(">>>> modele chargé " + el.id);
+         });
+         el.addEventListener('model-error', () => {
+           console.log(">>>> modele erreur " + el.id);
+         });
+       }
+     });
+     AFRAME.registerComponent('input-listen', {
+       init: function () {
+         //grip button is pressed or not _ "this.el" reffers ctlR or L in this function
+         this.el.grip = false;
+
+         //X-buttorn Pressed
+         this.el.addEventListener('xbuttondown', function (e) {
+           //Start pointing position to teleport
+           this.emit('teleportstart');
+         });
+
+         //X-buttorn Released
+         this.el.addEventListener('xbuttonup', function (e) {
+           //Jump to pointed position
+           this.emit('teleportend');
+         });
+
+         //console.log(this);
+       },
+
+     });
+   </script>
+ </head>
+
+ <body>
+   <a-scene>
+
+
+     <a-assets>
+       <a-assets-item id="glbDecors" src="./assets/chrono1.glb"></a-assets-item>
+     </a-assets>
+
+        <a-entity id="cameraRig">
+          <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: toon; color: #ccccff" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; startEvents: teleportstart; endEvents:
+                teleportend" input-listen>
+            <a-text value="X: Teleport" position="0 0.08 0" rotation="-90 0 0" scale="0.1 0.1 0.1" align="center"
+              color="#FFFFFF"></a-text>
+          </a-entity>
+          <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: toon; color: #ccccff"></a-entity>
+          <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls>
+          </a-entity>
+        </a-entity>
+
+     <!-- OBJETS DE LA SCENE oui oui-->
+
+     <a-entity camera look-controls wasd-controls position="0 1.7 0"></a-entity>
+     <a-sky color="#e2e2e2"></a-sky>
+     <a-light type="ambient" color="#222" intensity="6"></a-light>
+     <a-light type="point" color="white" position="5 5 -3" intensity="0.3"></a-light>
+     <a-light type="point" color="white" position="-5 5 -3" intensity="0.3"></a-light>
+
+
+
+     <!--<a-box color="lightblue" position="0 0 -10" rotation="0 0 0" scale="2 2 2"></a-box>
+            -->
+     <a-plane color="#CCC" position="0 -1 -10" height="50" width="50" rotation="270 0 0"> </a-plane>
+
+     <a-entity id="decors" gltf-model="#glbDecors" position="0 2 8" rotation="0 0 0" model_loaded
+       shadow="cast:true; receive:true">
+     </a-entity>
+
+   </a-scene>
+ </body>
+
+ </html>
