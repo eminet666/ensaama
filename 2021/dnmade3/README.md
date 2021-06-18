@@ -1,7 +1,7 @@
 # 2021 DNMADE3 UE3
 
 ## UE23 Projet
-[UE23](https://eminet666.github.io/ensaama/2021/dnmade3/ue23/)
+[UE23](https://eminet666.github.io/ensaama/2021/dnmade3/ue23_projet/)
 
 
 ## sirtaki
