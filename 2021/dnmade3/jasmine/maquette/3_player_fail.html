@@ -42,6 +42,17 @@
                 })
             }
         })
+
+        AFRAME.registerComponent('check_event', {
+            init: function () {
+                function test(event) {
+                    //console.log('détécté');
+                    var events = document.querySelector('#events');
+                    events.setAttribute('value', 'detect');
+                }
+                this.el.addEventListener('teleportend', test);
+            },
+        });
     </script>
 </head>
 
@@ -67,7 +78,7 @@
 
         <!-- joueur -->
         <a-entity id="cameraRig">
-            <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls position-reader>
+            <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls position-reader check_event>
                 <a-text id="a-pos" value="position" position="0 0 -1" rotation="0 0 0" scale="0.5 0.5 0.5"
                     align="center" color="#FF0000">
                 </a-text>
@@ -80,6 +91,10 @@
 
         <!-- objets -->
         <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: yellow"></a-entity>
+
+        <!-- texte debug event -->
+        <a-text id="events" value="event" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center" color="FF6600">
+        </a-text>
 
         <!-- ground collider keeps objets from falling -->
         <a-plane static-body width="10" height="10" color="silver" position="0 0 0" rotation="-90 0 0"></a-plane>
