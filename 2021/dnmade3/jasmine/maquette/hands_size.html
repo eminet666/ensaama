@@ -36,16 +36,16 @@
             <a-asset-item id="main_g" src="./assets/toon_lefthand.glb"></a-asset-item>
         </a-assets>
 
-        <a-entity id="leftHand" sizehands="maxsize: 3"
+        <a-entity id="leftHand" 
                     oculus-touch-controls="hand: left; model: false">
-                    <a-entity gltf-model="#main_g"></a-entity>
+                    <a-entity sizehands="maxsize: 3" gltf-model="#main_g"></a-entity>
         </a-entity>
-        <a-entity id="rightHand" sizehands="maxsize: 3"
+        <a-entity id="rightHand" 
                     oculus-touch-controls="hand: right; model: false">
-                    <a-entity scale="2 2 2" gltf-model="#main_d"></a-entity>
+                    <a-entity sizehands="maxsize: 3" gltf-model="#main_d"></a-entity>
         </a-entity>
 
-        <a-box  scale="0.5 0.5 0.5" position="0 1.6 -3" rotation="0 45 0" color="blue"
+        <a-box  scale="0.5 0.5 0.5" position="0 1.6 -3" rotation="0 45 0" color="red"
                 sizehands="maxsize: 2">
         </a-box>
 
