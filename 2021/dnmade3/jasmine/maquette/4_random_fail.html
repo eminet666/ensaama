@@ -1,18 +1,17 @@
-<!-- base : x_camera/3_hand-controls_liveposition.html -->
+<!-- view-source:https://wmurphyrd.github.io/aframe-super-hands-component/examples/physics/ -->
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
     <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@^4.1.1/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
-     
+
     <script>
-        AFRAME.registerComponent('rotation-reader', {
+        AFRAME.registerComponent('position-reader', {
             tick: function () {
                 var pos = {
                     x: this.el.object3D.position.x.toFixed(2),
@@ -27,32 +26,27 @@
             },
         });
 
-        AFRAME.registerComponent('input-listen', {
+        // turn controller's physics presence on only while button held down
+        AFRAME.registerComponent('phase-shift', {
             init: function () {
-                //grip button is pressed or not _ "this.el" reffers ctlR or L in this function
-                this.el.grip = false;
-
-                //X-buttorn Pressed 
-                this.el.addEventListener('xbuttondown', function (e) {
-                    //Start pointing position to teleport  
-                    this.emit('teleportstart');
-                });
-
-                //X-buttorn Released 
-                this.el.addEventListener('xbuttonup', function (e) {
-                    //Jump to pointed position
-                    this.emit('teleportend');
-                });
-
-                //console.log(this);
-            },
-
-        });
+                var el = this.el
+                el.addEventListener('gripdown', function () {
+                    el.setAttribute('collision-filter', {
+                        collisionForces: true
+                    })
+                })
+                el.addEventListener('gripup', function () {
+                    el.setAttribute('collision-filter', {
+                        collisionForces: false
+                    })
+                })
+            }
+        })
 
         AFRAME.registerComponent('randomfail', {
             schema: {
-                delai: {type: 'number', default: 1000},
-                seuil: {type: 'number', default: 0.9},
+                delai: { type: 'number', default: 1000  },
+                seuil: { type: 'number', default: 0.9 },
             },
             init: function () {
                 var data = this.data;
@@ -60,74 +54,69 @@
                 var seuil = data.seuil;
                 var el = this.el;
 
-                setInterval(function(){
-                    console.log('delai = '+delai);
-                    if(Math.random() > seuil ) el.emit('teleportend');
-                    if(delai > 100) delai -= 100;
-                },
-                data.delai);
+                setInterval(function () {
+                        console.log('delai = ' + delai);
+                        if (Math.random() > seuil) {
+                            showevent('looser !');
+                            el.emit('drag-end');
+                        }
+
+                        if (delai > 100) delai -= 100;
+                    },
+                    data.delai);
             }
         });
 
-        AFRAME.registerComponent('check_event', {
-            init: function () {
-                function test(event) {
-                    //console.log('détécté');
-                    var events = document.querySelector('#events');
-                    events.setAttribute('value', 'detect');
-                }
-                this.el.addEventListener('teleportend', test);
-            },
-        });
+        function showevent(eventname) {
+            let events = document.querySelector('#events');
+            events.setAttribute("value", eventname);
+        }
 
     </script>
 </head>
 
 <body>
-    <a-scene background="color: #5280A7" physics="debug: true">
-        <!-- player -->
-        <a-entity id="cameraRig">
-            <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: toon; color: #ccccff"
-                teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; startEvents: teleportstart; endEvents:
-                teleportend" input-listen sphere-collider="objects: a-sphere" super-hands>
-                <a-text value="X: Teleport" position="0 0.08 0" rotation="-90 0 0" scale="0.1 0.1 0.1" 
-                align="center" color="#FFFFFF"></a-text>
-            </a-entity>
+    <a-scene background="color: #5280A7" physics="debug: true" environment="shadow: true" randomfail>
+        <a-assets>
+            <a-mixin id="sphere" geometry="primitive: sphere; radius: 0.25" hoverable grabbable draggable
+                event-set__hoveron="_event: hover-start; material.opacity: 0.5; transparent: true"
+                event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false" event-set__dragstart="_event: drag-start; material.color: green;
+                                     material.wireframe: true;
+                                     geometry.width: 0.25; geometry.height: 0.25; geometry.depth: 0.25; "
+                event-set__dragend="_event: drag-end; material.color: red;
+                                     material.wireframe: false;
+                                     geometry.width: 1; geometry.height: 1; geometry.depth: 1; " dynamic-body shadow>
+            </a-mixin>
+            <a-mixin id="touch" physics-collider phase-shift collision-filter="collisionForces: false"
+                static-body="shape: sphere; sphereRadius: 0.01" super-hands="colliderEvent: collisions;
+                             colliderEventProperty: els;
+                             colliderEndEvent: collisions;
+                             colliderEndEventProperty: clearedEls;">
+            </a-mixin>
+        </a-assets>
 
-            <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: toon; color: #ccccff"
-                sphere-collider="objects: a-sphere" super-hands>
-            </a-entity>
-            
-            <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls rotation-reader check_event>
-                <a-text id="a-pos" value="position" position="0 0 -1"
-                        rotation="0 0 0" scale="0.5 0.5 0.5" align="center"
-                        color="#FF0000">
+        <!-- joueur -->
+        <a-entity id="cameraRig">
+            <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls position-reader>
+                <a-text id="a-pos" value="position" position="0 0 -1" rotation="0 0 0" scale="0.5 0.5 0.5"
+                    align="center" color="#FF0000">
                 </a-text>
             </a-entity>
+            <a-entity id="rhand" mixin="touch" hand-controls="hand: right; handModelStyle: toon; color: #ccccff">
+            </a-entity>
+            <a-entity id="lhand" mixin="touch" hand-controls="hand: left; handModelStyle: toon; color: #ccccff">
+            </a-entity>
         </a-entity>
 
-        <!-- objet -->
-        <a-entity dynamic-body geometry="primitive: sphere; radius: 0.25" 
-                material="color: blue" position="0 3 -1"               
-                hoverable grabbable draggable
-                event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true;"
-                event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false;"
-                event-set__dragstart="_event: drag-start; material.color: green;
-                material.wireframe: true;
-                geometry.width: 0.25; geometry.height: 0.25; geometry.depth: 0.25; "
-                event-set__dragend="_event: drag-end; material.color: red;
-                material.wireframe: false;
-                geometry.width: 1; geometry.height: 1; geometry.depth: 1; "
+        <!-- objets -->
+        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: yellow"></a-entity>
 
-                >         
-        </a-entity>
-                <!-- randomfail="delai: 2000; seuil: 0.95" -->
         <!-- texte debug event -->
-        <a-text id="events" value="event" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
+        <a-text id="events" value="noevent" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
             color="FF6600">
         </a-text>
 
-        <!-- sol -->
+        <!-- ground collider keeps objets from falling -->
         <a-plane static-body width="10" height="10" color="silver" position="0 0 0" rotation="-90 0 0"></a-plane>
 
     </a-scene>

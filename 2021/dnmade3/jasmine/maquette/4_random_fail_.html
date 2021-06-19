@@ -32,15 +32,41 @@
                 //grip button is pressed or not _ "this.el" reffers ctlR or L in this function
                 this.el.grip = false;
 
-                // teleport 
-                this.el.addEventListener('xbuttondown', function (e) { this.emit('teleportstart'); });
-                this.el.addEventListener('xbuttonup',   function (e) { this.emit('teleportend'); });
+                //X-buttorn Pressed 
+                this.el.addEventListener('xbuttondown', function (e) {
+                    //Start pointing position to teleport  
+                    this.emit('teleportstart');
+                });
 
-                // fall
-                this.el.addEventListener('triggertouchstart', function (e) { this.emit('teleportend'); });
-                this.el.addEventListener('thumbsticktouchstart', function (e) { this.emit('teleportend'); });
-                this.el.addEventListener('griptouchend', function (e) { this.emit('teleportend'); });
+                //X-buttorn Released 
+                this.el.addEventListener('xbuttonup', function (e) {
+                    //Jump to pointed position
+                    this.emit('teleportend');
+                });
+
+                //console.log(this);
             },
+
+        });
+
+        AFRAME.registerComponent('randomfail', {
+            schema: {
+                delai: {type: 'number', default: 1000},
+                seuil: {type: 'number', default: 0.9},
+            },
+            init: function () {
+                var data = this.data;
+                var delai = data.delai;
+                var seuil = data.seuil;
+                var el = this.el;
+
+                setInterval(function(){
+                    console.log('delai = '+delai);
+                    if(Math.random() > seuil ) el.emit('teleportend');
+                    if(delai > 100) delai -= 100;
+                },
+                data.delai);
+            }
         });
 
         AFRAME.registerComponent('check_event', {
@@ -92,12 +118,13 @@
                 event-set__dragend="_event: drag-end; material.color: red;
                 material.wireframe: false;
                 geometry.width: 1; geometry.height: 1; geometry.depth: 1; "
+
                 >         
         </a-entity>
-
+                <!-- randomfail="delai: 2000; seuil: 0.95" -->
         <!-- texte debug event -->
-        <a-text id="events" value="event" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" 
-                align="center" color="FF6600">
+        <a-text id="events" value="event" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
+            color="FF6600">
         </a-text>
 
         <!-- sol -->
