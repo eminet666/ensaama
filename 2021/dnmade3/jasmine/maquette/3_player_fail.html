@@ -101,7 +101,7 @@
         </a-entity>
 
         <!-- objets -->
-        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: grey"></a-entity>
+        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: green"></a-entity>
 
         <!-- texte debug event -->
         <a-text id="events" value="event" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
@@ -119,6 +119,7 @@
 
         lhand.addEventListener('ybuttondown', function (event) {
             events.setAttribute("value", "Left Y-button down");
+            lhand.emit('drag-end');
         });
      </script>   
     
