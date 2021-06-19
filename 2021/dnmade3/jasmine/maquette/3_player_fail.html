@@ -43,17 +43,6 @@
             }
         })
 
-        AFRAME.registerComponent('check_event', {
-            init: function () {
-                function test(event) {
-                    //console.log('détécté');
-                    var events = document.querySelector('#events');
-                    events.setAttribute('value', 'detect');
-                }
-                this.el.addEventListener('ybuttondown', test);
-            },
-        });
-
         AFRAME.registerComponent('input-listen', {
             init: function () {
                 //grip button is pressed or not _ "this.el" reffers ctlR or L in this function
@@ -62,10 +51,18 @@
                 // fail
                 this.el.addEventListener('ybuttondown', function (e) {
                     this.emit('drag-end');
+                    showevent();
                 });
 
             },
         });
+
+        init: function () {
+        function showevent() {
+            //console.log('détécté');
+            var events = document.querySelector('#events');
+            events.setAttribute('value', 'vu');
+        }
     </script>
 </head>
 
