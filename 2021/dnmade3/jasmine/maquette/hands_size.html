@@ -32,20 +32,20 @@
 <body>
     <a-scene background="color: #5280A7">
         <a-assets>
-            <a-asset-item id="main_d" src="./assets/main_d.glb"></a-asset-item>
-            <a-asset-item id="main_g" src="./assets/main_g.glb"></a-asset-item>
+            <a-asset-item id="main_d" src="./assets/toon_righthand.glb"></a-asset-item>
+            <a-asset-item id="main_g" src="./assets/toon_lefthand.glb"></a-asset-item>
         </a-assets>
 
-        <a-entity   id="leftHand"  
+        <a-entity id="leftHand" sizehands="maxsize: 3"
                     oculus-touch-controls="hand: left; model: false">
                     <a-entity gltf-model="#main_g"></a-entity>
         </a-entity>
-        <a-entity   id="rightHand" 
+        <a-entity id="rightHand" sizehands="maxsize: 3"
                     oculus-touch-controls="hand: right; model: false">
                     <a-entity scale="2 2 2" gltf-model="#main_d"></a-entity>
         </a-entity>
 
-        <a-box  scale="0.5 0.5 0.5" position="0 1.6 -3" rotation="0 45 0" color="green"
+        <a-box  scale="0.5 0.5 0.5" position="0 1.6 -3" rotation="0 45 0" color="blue"
                 sizehands="maxsize: 2">
         </a-box>
 
