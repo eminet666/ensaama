@@ -46,7 +46,7 @@
         AFRAME.registerComponent('input-listen', {
             init: function () {
                 this.el.addEventListener('ybuttontouchstart', function (event) {
-                    showevent('ybuttontouchstart')
+                    showevent('ybuttontouchstart');
                     this.el.emit('drag-end');
                 });
             },
