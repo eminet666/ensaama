@@ -43,7 +43,7 @@
             }
         })
 
-        var interval = 100;
+        var interval = 1000;
         AFRAME.registerComponent('randomfail', {
             schema: {
                 delai: { type: 'number', default: 1000  },
@@ -57,9 +57,9 @@
                 var delai = data.delai;
                 var seuil = data.seuil;
                 var el = this.el;
-                console.log(el);
                 //var rhand = document.querySelector('#rhand');
-                var alea = Math.random;
+                var alea = Math.random();
+                //console.log(alea);
                 if (alea > seuil) {
                     el.emit('drag-end');
                     showevent(alea.toFixed(2)+' = looser !');
@@ -111,7 +111,7 @@
         </a-entity>
 
         <!-- objets -->
-        <a-entity id="sphere" mixin="sphere" position="0 4 -1" material="color: yellow"></a-entity>
+        <a-entity id="sphere" mixin="sphere" position="0 4 -1" material="color: purple"></a-entity>
 
         <!-- texte debug event -->
         <a-text id="events" value="noevent" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
