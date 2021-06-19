@@ -43,16 +43,6 @@
             }
         })
 
-
-        AFRAME.registerComponent('testevent', {
-            init: function () {
-                this.el.addEventListener('mouseenter', function () {
-                    el.setAttribute('color', 'blue');
-                    showevent('mouseenter');
-                });
-            },
-        });
-
         AFRAME.registerComponent('input-listen', {
             init: function () {
 
@@ -60,9 +50,13 @@
                     this.el.emit('drag-end');
                     showevent('xbuttontouchstart');
                 });
-                this.el.addEventListener('mouseenter', function () {
+                this.el.addEventListener('xbuttontouchstart', function () {
                     this.el.emit('drag-end');
                     showevent('xbuttontouchstart');
+                });
+                this.el.addEventListener('thumbsticktouchstart', function () {
+                    this.el.emit('drag-end');
+                    showevent('thumbsticktouchstart');
                 });
 
             },
@@ -98,13 +92,13 @@
         <!-- joueur -->
         <a-entity id="cameraRig">
             <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls position-reader>
-                <a-cursor></a-cursor>
+                <!-- <a-cursor></a-cursor> -->
         
                 <a-text id="a-pos" value="position" position="0 0 -1" rotation="0 0 0" scale="0.5 0.5 0.5"
                     align="center" color="#FF0000">
                 </a-text>
             </a-entity>
-            <a-entity   id="rhand" mixin="touch"
+            <a-entity   id="rhand" mixin="touch" input_listen
                         hand-controls="hand: right; handModelStyle: toon; color: #ccccff">
             </a-entity>
             <a-entity   id="lhand" mixin="touch" input_listen
@@ -113,7 +107,7 @@
         </a-entity>
 
         <!-- objets -->
-        <a-entity testevent class="sphere" mixin="sphere" position="0 4 -1" material="color: magenta"></a-entity>
+        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: purple"></a-entity>
 
         <!-- texte debug event -->
         <a-text id="events" value="noevent" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
