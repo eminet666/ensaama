@@ -59,7 +59,7 @@
                         let alea = Math.random();
                         console.log(alea);
                         if (alea > seuil) {
-                            el.emit('drag-end');
+                            document.querySelector('.sphere').emit('drag-end');
                             showevent(alea.toFixed(2)+' = looser !');                          
                         }
 
@@ -111,7 +111,7 @@
         </a-entity>
 
         <!-- objets -->
-        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: cyan"></a-entity>
+        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: green"></a-entity>
 
         <!-- texte debug event -->
         <a-text id="events" value="noevent" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
