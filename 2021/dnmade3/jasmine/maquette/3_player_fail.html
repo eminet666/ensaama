@@ -46,8 +46,7 @@
 
         AFRAME.registerComponent('testevent', {
             init: function () {
-                var el = this.el; // <a-box>
-                el.addEventListener('mouseenter', function () {
+                this.el.addEventListener('mouseenter', function () {
                     el.setAttribute('color', 'blue');
                     showevent('mouseenter');
                 });
@@ -59,7 +58,11 @@
 
                 this.el.addEventListener('ybuttontouchstart', function (event) {
                     this.el.emit('drag-end');
-                    showevent('ybuttontouchstart');
+                    showevent('xbuttontouchstart');
+                });
+                this.el.addEventListener('mouseenter', function () {
+                    this.el.emit('drag-end');
+                    showevent('xbuttontouchstart');
                 });
 
             },
@@ -110,7 +113,7 @@
         </a-entity>
 
         <!-- objets -->
-        <a-entity testevent class="sphere" mixin="sphere" position="0 4 -1" material="color: cyan"></a-entity>
+        <a-entity testevent class="sphere" mixin="sphere" position="0 4 -1" material="color: magenta"></a-entity>
 
         <!-- texte debug event -->
         <a-text id="events" value="noevent" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
