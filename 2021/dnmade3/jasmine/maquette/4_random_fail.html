@@ -52,13 +52,13 @@
                 var data = this.data;
                 var delai = data.delai;
                 var seuil = data.seuil;
-                var el = this.el;
 
                 setInterval(function () {
-                        console.log('delai = ' + delai);
-                        if (Math.random() > seuil) {
-                            showevent('looser !');
-                            el.emit('drag-end');
+                        //console.log('delai = ' + delai);
+                        let alea = Math.random();
+                        if (alea > seuil) {
+                            this.el.emit('drag-end');
+                            showevent(alea+' looser !');                          
                         }
 
                         if (delai > 100) delai -= 100;
@@ -109,7 +109,7 @@
         </a-entity>
 
         <!-- objets -->
-        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: yellow"></a-entity>
+        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: purple"></a-entity>
 
         <!-- texte debug event -->
         <a-text id="events" value="noevent" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
