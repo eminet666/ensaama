@@ -43,25 +43,25 @@
             }
         })
 
-        AFRAME.registerComponent('input-listen', {
-            init: function () {
-                //grip button is pressed or not _ "this.el" reffers ctlR or L in this function
-                this.el.grip = false;
+        // AFRAME.registerComponent('input-listen', {
+        //     init: function () {
+        //         //grip button is pressed or not _ "this.el" reffers ctlR or L in this function
+        //         this.el.grip = false;
 
-                // fail
-                this.el.addEventListener('ybuttondown', function (e) {
-                    this.emit('drag-end');
-                    showevent();
-                });
+        //         // fail
+        //         this.el.addEventListener('ybuttondown', function (e) {
+        //             this.emit('drag-end');
+        //             showevent();
+        //         });
 
-            },
-        });
+        //     },
+        // });
 
-        function showevent() {
-            //console.log('détécté');
-            var events = document.querySelector('#events');
-            events.setAttribute('value', 'vu');
-        }
+        // function showevent() {
+        //     //console.log('détécté');
+        //     var events = document.querySelector('#events');
+        //     events.setAttribute('value', 'vu');
+        // }
     </script>
 </head>
 
@@ -112,6 +112,15 @@
         <a-plane static-body width="10" height="10" color="silver" position="0 0 0" rotation="-90 0 0"></a-plane>
 
     </a-scene>
+
+    <script>
+        const lhand = document.getElementById("lhand");
+        const events = document.querySelector('#events');
+
+        lhand.addEventListener('ybuttondown', function (event) {
+            events.setAttribute("value", "Left Y-button down");
+        });
+     </script>   
     
 </body>
 
