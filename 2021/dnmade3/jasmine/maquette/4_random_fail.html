@@ -52,14 +52,15 @@
                 var data = this.data;
                 var delai = data.delai;
                 var seuil = data.seuil;
-                var rhand = document.querySelector('#rhand');
+                var el = this.el;
+                //var rhand = document.querySelector('#rhand');
                 
                 setInterval(function () {
                         //console.log('delai = ' + delai);
                         let alea = Math.random();
                         //console.log(alea);
                         if (alea > seuil) {
-                            rhand.emit('drag-end');
+                            el.emit('drag-end');
                             showevent(alea.toFixed(2)+' = looser !');                          
                         }
 
@@ -99,19 +100,20 @@
 
         <!-- joueur -->
         <a-entity id="cameraRig">
-            <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls position-reader randomfail>
+            <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls position-reader>
                 <a-text id="a-pos" value="position" position="0 0 -1" rotation="0 0 0" scale="0.5 0.5 0.5"
                     align="center" color="#FF0000">
                 </a-text>
             </a-entity>
-            <a-entity id="rhand" mixin="touch" hand-controls="hand: right; handModelStyle: toon; color: #ccccff">
+            <a-entity id="rhand" randomfail mixin="touch"
+                hand-controls="hand: right; handModelStyle: toon; color: #ccccff">
             </a-entity>
             <a-entity id="lhand" mixin="touch" hand-controls="hand: left; handModelStyle: toon; color: #ccccff">
             </a-entity>
         </a-entity>
 
         <!-- objets -->
-        <a-entity id="sphere" mixin="sphere" position="0 4 -1" material="color: purple"></a-entity>
+        <a-entity id="sphere" mixin="sphere" position="0 4 -1" material="color: green"></a-entity>
 
         <!-- texte debug event -->
         <a-text id="events" value="noevent" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
