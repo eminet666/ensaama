@@ -43,19 +43,17 @@
             }
         })
 
-        // AFRAME.registerComponent('input-listen', {
-        //     init: function () {
-        //         //grip button is pressed or not _ "this.el" reffers ctlR or L in this function
-        //         this.el.grip = false;
+        AFRAME.registerComponent('input-listen', {
+            init: function () {
+                const events = document.querySelector('#events');
 
-        //         // fail
-        //         this.el.addEventListener('ybuttondown', function (e) {
-        //             this.emit('drag-end');
-        //             showevent();
-        //         });
+                this.el.addEventListener('ybuttontouchstart', function (event) {
+                    events.setAttribute("value", "Left Y-button down");
+                    this.el.emit('drag-end');
+                });
 
-        //     },
-        // });
+            },
+        });
 
         // function showevent() {
         //     //console.log('détécté');
@@ -101,7 +99,7 @@
         </a-entity>
 
         <!-- objets -->
-        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: yellow"></a-entity>
+        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: purple"></a-entity>
 
         <!-- texte debug event -->
         <a-text id="events" value="event" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
