@@ -1,4 +1,4 @@
-<!-- view-source:https://wmurphyrd.github.io/aframe-super-hands-component/examples/physics/ -->
+<!-- quand le joueur touche les boutons a, b, x, y ou les thumb, la boule tombe -->
 <!DOCTYPE html>
 <html>
 
@@ -54,6 +54,14 @@
                     this.el.emit('drag-end');
                     showevent('xbuttontouchstart');
                 });
+                this.el.addEventListener('abuttontouchstart', function (event) {
+                    this.el.emit('drag-end');
+                    showevent('abuttontouchstart');
+                });
+                this.el.addEventListener('bbuttontouchstart', function () {
+                    this.el.emit('drag-end');
+                    showevent('bbuttontouchstart');
+                });
                 this.el.addEventListener('thumbsticktouchstart', function () {
                     this.el.emit('drag-end');
                     showevent('thumbsticktouchstart');
@@ -107,7 +115,7 @@
         </a-entity>
 
         <!-- objets -->
-        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: purple"></a-entity>
+        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: yellow"></a-entity>
 
         <!-- texte debug event -->
         <a-text id="events" value="noevent" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
