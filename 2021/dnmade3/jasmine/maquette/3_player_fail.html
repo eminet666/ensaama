@@ -51,11 +51,6 @@
                 });
             },
         });
-
-        function showevent(eventname) {
-            let events = document.querySelector('#events');
-            events.setAttribute("value", eventname);
-        }
     </script>
 </head>
 
@@ -106,6 +101,15 @@
         <a-plane static-body width="10" height="10" color="silver" position="0 0 0" rotation="-90 0 0"></a-plane>
 
     </a-scene>
+
+    <script>
+        function showevent(eventname) {
+            let events = document.querySelector('#events');
+            events.setAttribute("value", eventname);
+        }
+    </script>
+
+
     
 </body>
 
