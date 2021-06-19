@@ -36,12 +36,12 @@
             <a-asset-item id="main_g" src="./assets/main_g.glb"></a-asset-item>
         </a-assets>
 
-        <a-entity   id="leftHand" scale="0.5 0.5 0.5"  
-                    hand-controls="hand: left; model: false">
+        <a-entity   id="leftHand"  
+                    oculus-touch-controls="hand: left; model: false">
                     <a-entity gltf-model="#main_g"></a-entity>
         </a-entity>
-        <a-entity   id="rightHand" scale="0.5 0.5 0.5" 
-                    hand-controls="hand: right; model: false">
+        <a-entity   id="rightHand" 
+                    oculus-touch-controls="hand: right; model: false">
                     <a-entity scale="2 2 2" gltf-model="#main_d"></a-entity>
         </a-entity>
 
