@@ -46,19 +46,16 @@
         AFRAME.registerComponent('input-listen', {
             init: function () {
                 this.el.addEventListener('ybuttontouchstart', function (event) {
-                    let events = document.querySelector('#events');
-                    events.setAttribute("value", "Left Y-button down");
+                    showevent('ybuttontouchstart')
                     this.el.emit('drag-end');
                 });
-
             },
         });
 
-        // function showevent() {
-        //     //console.log('détécté');
-        //     var events = document.querySelector('#events');
-        //     events.setAttribute('value', 'vu');
-        // }
+        function showevent(eventname) {
+            let events = document.querySelector('#events');
+            events.setAttribute("value", eventname);
+        }
     </script>
 </head>
 
@@ -98,7 +95,7 @@
         </a-entity>
 
         <!-- objets -->
-        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: green"></a-entity>
+        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: yellow"></a-entity>
 
         <!-- texte debug event -->
         <a-text id="events" value="event" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
