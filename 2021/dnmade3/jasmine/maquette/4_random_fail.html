@@ -61,8 +61,7 @@
                 var alea = Math.random();
                 //console.log(alea);
                 if (alea > seuil) {
-                    //el.emit('drag-end');
-                    el.setAttribute('material', 'color', 'black');
+                    el.emit('drag-end');
                     showevent(alea.toFixed(2)+' = looser !');
                 }
                 
@@ -104,7 +103,7 @@
                     align="center" color="#FF0000">
                 </a-text>
             </a-entity>
-            <a-entity id="rhand" mixin="touch"
+            <a-entity id="rhand" mixin="touch" randomfail
                 hand-controls="hand: right; handModelStyle: toon; color: #ccccff">
             </a-entity>
             <a-entity id="lhand" mixin="touch" hand-controls="hand: left; handModelStyle: toon; color: #ccccff">
@@ -112,7 +111,7 @@
         </a-entity>
 
         <!-- objets -->
-        <a-entity randomfail id="sphere" mixin="sphere" position="0 4 -1" material="color: yellow"></a-entity>
+        <a-entity id="sphere" mixin="sphere" position="0 4 -1" material="color: yellow"></a-entity>
 
         <!-- texte debug event -->
         <a-text id="events" value="noevent" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
