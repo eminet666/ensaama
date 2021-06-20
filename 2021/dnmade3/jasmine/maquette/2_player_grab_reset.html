@@ -58,7 +58,6 @@
                     sphere.object3D.position.set(1, 1, -1);
                     sphere.setAttribute('position', {x: 1, y: 1, z: -1});
                     sphere.components["dynamic-body"].syncToPhysics();
-                    sphere.setAttribute('material', 'color', 'black');
                 });
             }
         })
@@ -91,7 +90,6 @@
             <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls position-reader>
                 <a-text id="a-pos" value="position" position="0 0 -1" rotation="0 0 0" scale="0.5 0.5 0.5"
                     align="center" color="#FF0000"></a-text>
-                <a-cursor></a-cursor>
             </a-entity>
             <a-entity id="rhand" mixin="touch" hand-controls="hand: right; handModelStyle: toon; color: #ccccff">
             </a-entity>
