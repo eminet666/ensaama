@@ -41,13 +41,15 @@
                     })
                 })
 
-                this.el.addEventListener('abuttontouchstart', function (event) {
+                this.el.addEventListener('abuttondown', function (event) {
                     var sphere = document.querySelector('#boule'); 
                     sphere.setAttribute('position', {x: 0, y: 4, z: -1});
+                     sphere.object3D.position.set(1, 2, -1);
+                     sphere.setAttribute('material', 'color', 'black');
                 });
-
             }
         })
+
     </script>
 </head>
 
@@ -75,8 +77,7 @@
         <a-entity id="cameraRig">
             <a-entity id="head" camera position="0 1.6 0" look-controls wasd-controls position-reader>
                 <a-text id="a-pos" value="position" position="0 0 -1" rotation="0 0 0" scale="0.5 0.5 0.5"
-                    align="center" color="#FF0000">
-                </a-text>
+                    align="center" color="#FF0000"></a-text>
             </a-entity>
             <a-entity id="rhand" mixin="touch" hand-controls="hand: right; handModelStyle: toon; color: #ccccff">
             </a-entity>
@@ -85,7 +86,7 @@
         </a-entity>
 
         <!-- objets -->
-        <a-entity id="boule" class="sphere" mixin="sphere" position="0 4 -1" material="color: purple"></a-entity>
+        <a-entity id="boule" class="sphere" mixin="sphere" position="0 4 -1" material="color: yellow"></a-entity>
 
         <!-- ground collider keeps objets from falling -->
         <a-plane static-body width="10" height="10" color="silver" position="0 0 0" rotation="-90 0 0"></a-plane>
