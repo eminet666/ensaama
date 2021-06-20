@@ -7,6 +7,7 @@
 [hands_size](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/hands_size.html)
 
 [player_grab](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/2_player_grab.html) |
+[player_grab_reset](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/2_player_grab_reset.html) |
 [player_fail](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/3_player_fail.html) |
 [random-fail](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/4_random_fail.html) | 
 [show_messages](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/5_show_messages.html)
