@@ -5,7 +5,7 @@
 [ALLIOTTI Alizée 2](https://alizeealiotti.wixsite.com/my-site-2)
 * [BROCAS Côme](https://come31.github.io/judo-vr/)
 * [DUCLOS Léo](https://tempuraleo.github.io/univers1/)
-* [NOURINE Jasmine](https://njasmine98.github.io/pro_project/statique.html)
+* [NOURINE Jasmine](https://njasmine98.github.io/pro_project/)
 
 <!-- 
 * [Marion](https://maionaiiise.github.io/maionaiiise_VR/14_sirtaki-final-test/index.html)
