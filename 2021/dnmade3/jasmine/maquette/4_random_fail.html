@@ -61,10 +61,7 @@
                 var alea = Math.random();
                 //console.log(alea);
                 if (alea > seuil) {
-                    //el.emit('grab-end');
-                    el.setAttribute('collision-filter', {
-                        collisionForces: false
-                    })
+                    el.emit('gripup');
                     showevent(alea.toFixed(2)+' = looser !');
                 }
                 
