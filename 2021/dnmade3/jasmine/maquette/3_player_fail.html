@@ -47,6 +47,7 @@
 
         AFRAME.registerComponent('input-listen', {
             init: function () {
+                let events = document.querySelector('#events');
 
                 this.el.addEventListener('ybuttontouchstart', function (event) {
                     this.el.emit('gripup');
@@ -66,19 +67,14 @@
                 });
                 this.el.addEventListener('thumbsticktouchstart', function () {
                     this.el.emit('gripup');
-                        let events = document.querySelector('#events');
-                        events.setAttribute("value", 'toto');
+                    events.setAttribute("value", 'toto');
                     //showevent('thumbsticktouchstart');
                 });
 
             },
         });
 
-        function showevent(eventname) {
-                            var sceneEl = document.querySelector('a-scene');
-                        var pos = sceneEl.querySelector('#a-pos');
-                        pos.setAttribute('value', 'toto');
-                        
+        function showevent(eventname) {                
         //    let events = document.querySelector('#events');
         //    events.setAttribute("value", 'toto');
         }
@@ -123,7 +119,7 @@
         </a-entity>
 
         <!-- objets -->
-        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: yellow"></a-entity>
+        <a-entity class="sphere" mixin="sphere" position="0 4 -1" material="color: purple"></a-entity>
 
         <!-- texte debug event -->
         <a-text id="events" value="noevent" position="0 0.25 -2" rotation="0 0 0" scale="1 1 1" align="center"
