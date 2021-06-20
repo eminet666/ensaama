@@ -1,9 +1,8 @@
 # 2021 DNMADE3 Jasmine
 
 ## jasmine
-[statique](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/jasmine/statique.html)
-
-[temp](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/textes/0_text_video.html)
+[statique](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/jasmine/statique.html) |
+[proximity](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/textes/0_text_video.html)
 
 ## maquette
 [test](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/test.html) |
