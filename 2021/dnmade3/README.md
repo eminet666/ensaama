@@ -22,5 +22,5 @@
 * [Jasmine](https://njasmine98.github.io/sirtaki_projet/)
 
 ## etudiants
-[come](https://eminet666.github.io/ensaama/2021/dnmade3/come/)
+[come](https://eminet666.github.io/ensaama/2021/dnmade3/come/) |
 [jasmine](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/)

@@ -1,6 +1,10 @@
 # 2021 DNMADE3 Jasmine
 
 ## maquette
+[statique](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/jasmine/statique.html)
+
+
+## maquette
 [test](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/test.html) |
 [test2](https://eminet666.github.io/ensaama/2021/dnmade3/jasmine/maquette/player.html)
 
