@@ -53,8 +53,8 @@ Iris
 [2_proximity_color_keyboard](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/2_proximity_color_keyboard.html) |
 [2_proximity_color](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/2_proximity_color.html) |
 [3_proximity_animation_wasd](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/3_proximity_animation_keyboard.html) |
-[3_proximity_animation_hands](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/3_proximity_animation_hands.html)
-[4_proximity_ar](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/4_4_proximity_new_ar.html)
+[3_proximity_animation_hands](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/3_proximity_animation_hands.html) |
+[4_proximity_vr](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/4_4_proximity_new_vr.html)
 
 ### étudiants
 Eve |
