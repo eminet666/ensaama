@@ -13,7 +13,7 @@
         var logging = true;
 
         var interval = 1000;
-        var limit = 1;
+        var limit = 0.5;
         var livepos = { x: 0, z: 0, };
         var cubefound = false;
         
@@ -71,11 +71,11 @@
 
         <a-cylinder isfound
                 position="1 -0.25 -3" radius="0.2" height="0.5" color="#FFC65D" 
-                animation__position="startEvents: found; property: position; to: 1 0.25 -3; easing: easeOutQuad; dur: 1000; loop: 1;"
+                animation__position="startEvents: found; property: position; to: 1 0.3 -3; easing: easeOutQuad; dur: 1000; loop: 1;"
                 shadow>
         </a-cylinder>
 
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="silver" shadow></a-plane>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="6" height="6" color="silver" shadow></a-plane>
 
         <a-entity livecam camera look-controls wasd-controls position="0 1.6 0">
             <a-text value="distance" position="0 -1 0"></a-text>
