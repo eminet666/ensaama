@@ -1,0 +1,51 @@
+<!-- 9 mars 2020 : https://github.com/aframevr/aframe/issues/4412 -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello, WebVR! • A-Frame</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame">
+    <script src="https://aframe.io/releases/1.0.4/aframe.js"></script>
+    <script>
+        AFRAME.registerComponent('track-camera', {
+            tick: (function () {
+                const position = new THREE.Vector3();
+                const direction = new THREE.Vector3();
+                const rotation = new THREE.Quaternion();
+                const euler = new THREE.Euler();
+                const matrix = new THREE.Matrix4();
+
+                return function () {
+                    this.el.object3D.updateMatrixWorld();
+                    position.setFromMatrixPosition(this.el.object3D.matrixWorld); // Vector3
+                    rotation.setFromRotationMatrix(matrix.extractRotation(this.el.object3D
+                        .matrixWorld));
+                    var e = this.el.object3D.matrixWorld.elements;
+                    direction.set(e[8], e[9], e[10]).normalize();
+
+                    console.log("Position: " + position.x + " " + position.y + " " + position.z);
+                    console.log("Rotation: " + rotation.x + " " + rotation.y + " " + rotation.z);
+                    console.log("Direction: " + direction.x + " " + direction.y + " " + direction
+                    .z);
+
+                }
+            })()
+        });
+    </script>
+
+</head>
+
+<body>
+    <a-scene background="color: #FAFAFA">
+        <a-entity position="0 0 20">
+            <a-camera track-camera></a-camera>
+        </a-entity>
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
+        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
+        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+    </a-scene>
+</body>
+
+</html>
