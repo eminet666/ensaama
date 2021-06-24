@@ -23,7 +23,8 @@
                 console.log("Position: " + position.x + " " + position.y + " " + position.z);
                 console.log("Rotation: " + rotation.x + " " + rotation.y + " " + rotation.z);
                 var trace = document.querySelector('#trace');
-                trace.setAttribute('value', position.x + " " + position.y + " " + position.z);
+                trace.setAttribute('value', position.x.toFixed(2) + " " + position.y.toFixed(2)+ " " +
+                position.z.toFixed(2));
             }
             })()
         });
