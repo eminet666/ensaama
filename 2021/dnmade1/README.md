@@ -56,8 +56,8 @@ Iris
 [3_proximity_animation_hands](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/3_proximity_animation_hands.html) |
 [4_proximity_vr](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/4_4_proximity_new_vr.html) |
 [test AR](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/AR/AR_0_base.html) | 
-[test AR](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/AR/track_camera.html) | 
-[test AR](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/AR/track_camera2.html) 
+[track](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/AR/track_camera.html) | 
+[track2](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/AR/track_camera2.html) 
 
 ### étudiants
 Eve |
