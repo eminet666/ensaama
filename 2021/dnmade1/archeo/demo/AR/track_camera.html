@@ -7,6 +7,8 @@
     <title>Hello, WebVR! • A-Frame</title>
     <meta name="description" content="Hello, WebVR! • A-Frame">
     <script src="https://aframe.io/releases/1.0.4/aframe.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
     <script>
         AFRAME.registerComponent('track-camera', {
             tick: (function () {
@@ -20,6 +22,8 @@
                 rotation.setFromRotationMatrix(matrix.extractRotation(this.el.object3D.matrixWorld));
                 console.log("Position: " + position.x + " " + position.y + " " + position.z);
                 console.log("Rotation: " + rotation.x + " " + rotation.y + " " + rotation.z);
+                var trace = document.querySelector('#trace');
+                trace.setAttribute('value', position.x + " " + position.y + " " + position.z);
             }
             })()
         });
@@ -28,9 +32,13 @@
 </head>
 
 <body>
-    <a-scene background="color: #FAFAFA">
+    <a-scene background="color: #FAFAFA" ar>
         <a-entity position="0 0 20">
-            <a-camera track-camera></a-camera>
+            <a-camera track-camera>
+                <a-text id="trace" value="position" position="0 0 -1" scale="0.5 0.5 0.5" align="center"
+                    color="silver">
+                </a-text>
+            </a-camera>
         </a-entity>
         <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
         <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
