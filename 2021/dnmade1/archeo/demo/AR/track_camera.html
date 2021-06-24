@@ -23,7 +23,7 @@
                 console.log("Position: " + position.x + " " + position.y + " " + position.z);
                 console.log("Rotation: " + rotation.x + " " + rotation.y + " " + rotation.z);
                 var trace = document.querySelector('#trace');
-                trace.setAttribute('value', rotation.x + " " + rotation.y + " " + rotation.z);
+                trace.setAttribute('value', position.x + " " + position.y + " " + position.z);
             }
             })()
         });
@@ -33,7 +33,7 @@
 
 <body>
     <a-scene ar>
-            <a-camera track-camera>
+            <a-camera gps-camera track-camera>
                 <a-text id="trace" value="position" position="0 0 -1" scale="0.5 0.5 0.5" align="center"
                     color="silver">
                 </a-text>
