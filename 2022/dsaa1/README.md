@@ -2,13 +2,22 @@
 
 * [ADELINE Jeanne](https://ovgee.github.io/jeanne_adeline/)
 * [AMOUZEGAR Julie](https://zuomarage.github.io/zuomarage_paysages/)
-* [CAPITAINE Jessica]()
+* [CAPITAINE Jessica_X]()
 * [DABLAIN Léa](https://leadablain.github.io/lea_paysage/)
-* [DENOUAL Simon]()
-* [DESLANDES Martin]()
+* [DENOUAL Simon](https://simondenoual.github.io/simon_paysage/)
+* [DESLANDES Martin](https://marlandesdestin.github.io/MarlandesDestin_shader/)
 * [FLORENT Armelle](https://Armellou.github.io/Labyrinthe/)
-* [HERPE Emilie]()
+* [HERPE Emilie_X]()
 * [KREMPP Thomas](https://lumitomate.github.io/t_krempp/)
-* [POISSARD Loic]()
-* [RAMON Amélie]()
-* [WOJAKOWSKI Clémence]()		
+* [POISSARD Loic](https://loacp.github.io/loac_paysage/)
+* [RAMON Amélie](https://monarvis.github.io/monaryr/)
+* [WOJAKOWSKI Clémence_X]()		
+
+	
+			
+			
+				
+						
+			
+			
+			
