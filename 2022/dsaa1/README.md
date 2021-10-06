@@ -2,7 +2,7 @@
 
 * [ADELINE Jeanne](https://ovgee.github.io/jeanne_adeline/)
 * [AMOUZEGAR Julie](https://zuomarage.github.io/zuomarage_paysages/)
-* [CAPITAINE Jessica_X]()
+* [CAPITAINE Jessica](https://jessicacptne.github.io/labyrinthe/)
 * [DABLAIN Léa](https://leadablain.github.io/lea_paysage/)
 * [DENOUAL Simon](https://simondenoual.github.io/simon_paysage/)
 * [DESLANDES Martin](https://marlandesdestin.github.io/MarlandesDestin_shader/)
