@@ -9,4 +9,10 @@
 * position du joueur
 
 ### DNMADE1
+- modeles temporels
+- lifetime
+- variétésde verts / bitmap
+
+### autres
+
 
