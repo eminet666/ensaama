@@ -8,4 +8,5 @@
 # 2021-2022
 * [DSAA2](https://eminet666.github.io/ensaama/2022/dsaa2/)
 * [DSAA1](https://eminet666.github.io/ensaama/2022/dsaa1/)
+* [DNMADE2](https://eminet666.github.io/ensaama/2022/dnmade2/)
 * [DNMADE1](https://eminet666.github.io/ensaama/2022/dnmade1/)

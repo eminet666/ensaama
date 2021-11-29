@@ -1,0 +1,21 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene background="color: #5280A7">
+        <a-assets>
+            <a-asset-item id="model" src="./carla.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity gltf-model="#model" position="0 1.5 -3" rotation="0 180 0">
+        </a-entity>
+
+        <a-entity light="type: hemisphere; color: #FFF; intensity: 2"></a-entity>
+
+    </a-scene>
+</body>
+</html>
