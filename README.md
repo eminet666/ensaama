@@ -10,4 +10,3 @@
 * [DSAA1](https://eminet666.github.io/ensaama/2022/dsaa1/)
 * [DNMADE2](https://eminet666.github.io/ensaama/2022/dnmade2/)
 * [DNMADE1](https://eminet666.github.io/ensaama/2022/dnmade1/)
-* [ienh](./ienh/)
