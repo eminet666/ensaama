@@ -9,6 +9,7 @@
 * [05_l'argent](https://quizlet.com/_atvxc0?x=1qqt&i=461fpl)
 * [06_l'espace](https://quizlet.com/_atvxyb?x=1qqt&i=461fpl)
 * [07_la date et l'heure](https://quizlet.com/_atwmin?x=1qqt&i=461fpl)
+* [08_décrire](https://quizlet.com/_atx323?x=1qqt&i=461fpl)
 * [09_la famille](https://quizlet.com/_atvz9x?x=1qqt&i=461fpl)
 * [10_la ville](https://quizlet.com/_atvzm9?x=1qqt&i=461fpl)
 * [11_le corps](https://quizlet.com/_atvzzl?x=1qqt&i=461fpl)
@@ -21,6 +22,12 @@
 * [18_les nombres](https://quizlet.com/_atwq64?x=1qqt&i=461fpl)
 * [19_les pays](https://quizlet.com/_atwqhr?x=1qqt&i=461fpl)
 * [20_les sens et les couleurs](https://quizlet.com/_atwqvp?x=1qqt&i=461fpl)
+* [21_les transports](https://quizlet.com/_atwxmy?x=1qqt&i=461fpl)
+* [22_le repas](https://quizlet.com/_atwyyg?x=1qqt&i=461fpl)
+* [23_s'exprimer](https://quizlet.com/_atx026?x=1qqt&i=461fpl)
+* [24_les émotions](https://quizlet.com/_atx0pr?x=1qqt&i=461fpl)
+* [25_les loisirs et les vacances](https://quizlet.com/_atx1gl?x=1qqt&i=461fpl)
+* [26_la vie quotidiene](https://quizlet.com/_atx2az?x=1qqt&i=461fpl)
 
 
 
