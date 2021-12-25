@@ -8,10 +8,19 @@
 * [04_les vêtements](https://quizlet.com/_atvwu9?x=1qqt&i=461fpl)
 * [05_l'argent](https://quizlet.com/_atvxc0?x=1qqt&i=461fpl)
 * [06_l'espace](https://quizlet.com/_atvxyb?x=1qqt&i=461fpl)
-* [07_le temps](https://quizlet.com/_atvydn?x=1qqt&i=461fpl)
+* [07_la date et l'heure](https://quizlet.com/_atwmin?x=1qqt&i=461fpl)
 * [09_la famille](https://quizlet.com/_atvz9x?x=1qqt&i=461fpl)
 * [10_la ville](https://quizlet.com/_atvzm9?x=1qqt&i=461fpl)
 * [11_le corps](https://quizlet.com/_atvzzl?x=1qqt&i=461fpl)
+* [12_le temps](https://quizlet.com/_atwme4?x=1qqt&i=461fpl)
+* [13_le travail](https://quizlet.com/_atwnfz?x=1qqt&i=461fpl)
+* [14_les études](https://quizlet.com/_atwnpg?x=1qqt&i=461fpl)
+* [15_les arts et la culture](https://quizlet.com/_atwo7v?x=1qqt&i=461fpl)
+* [16_les actions](https://quizlet.com/_atwowa?x=1qqt&i=461fpl)
+* [17_les liaisons et les quantités](https://quizlet.com/_atwpx2?x=1qqt&i=461fpl)
+* [18_les nombres](https://quizlet.com/_atwq64?x=1qqt&i=461fpl)
+* [19_les pays](https://quizlet.com/_atwqhr?x=1qqt&i=461fpl)
+* [20_les sens et les couleurs](https://quizlet.com/_atwqvp?x=1qqt&i=461fpl)
 
 
 
