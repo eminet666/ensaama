@@ -1,8 +1,8 @@
-# documentation
+## documentation
 * [online doc](https://ar-js-org.github.io/AR.js-Docs/)
 * [ar.js tuto](https://aframe.io/blog/arjs3/)
 
-# library
+## library
 * [new lib](https://github.com/webarkit/ARnft)
 
 ## image tracking
