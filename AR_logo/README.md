@@ -16,8 +16,8 @@
 * [example trex](./example/trex_sample.html)
 * [example pinball](./ok/pinball.html)
 
-## examples
+<!-- ## examples
 * [tuto](https://kalwalt.github.io/kalwalt-interactivity-AR/)
 * [examples](https://kalwalt.github.io/kalwalt-interactivity-AR/)
 * [nft pk example](https://kalwalt.github.io/kalwalt-interactivity-AR/arjs/basic-nft-aframe.html)
-* [github examples](https://github.com/kalwalt/kalwalt-interactivity-AR)
+* [github examples](https://github.com/kalwalt/kalwalt-interactivity-AR) -->
