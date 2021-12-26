@@ -14,9 +14,9 @@
 * [tuto](https://www.kalwaltart.com/blog/2020/02/25/tutorial-create-marker-nft/)
 
 ## tests
-* [example trex](./example/trex_sample.html)
-* [example pinball ref ok](./ok/pinball_ref_ok.html)
-* [example pinball](./ok/pinball.html)
+* [example trex](./trex/trex.html)
+* [example pinball ref ok](./pinball/pinball_ref_ok.html)
+* [example pinball](./pinball/pinball.html)
 
 <!-- ## examples
 * [tuto](https://kalwalt.github.io/kalwalt-interactivity-AR/)
