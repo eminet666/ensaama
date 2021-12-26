@@ -12,4 +12,4 @@
 * [DNMADE1](https://eminet666.github.io/ensaama/2022/dnmade1/)
 
 # tests
-* [nfr](https://eminet666.github.io/ensaama/AR_logo/)
+* [nft](https://eminet666.github.io/ensaama/AR_logo/)
