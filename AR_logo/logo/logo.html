@@ -14,11 +14,15 @@
 
                     this.el.sceneEl.addEventListener('markerFound', () => {
                         if(!affiche){
-                            document.querySelector('#boite').setAttribute('visible', false);
+                            document.querySelector('#boite').setAttribute('visible', true);
                             affiche = true;
+
+                            setTimeout(function(){ 
+                                document.querySelector('#boite').setAttribute('visible', true);
+                                affiche = false;
+                            }, 5000);
                             alert("trouvé");
                         }
-
                     });
                 }
         })
@@ -60,7 +64,7 @@
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'
             emitevents markerhandler>
         </a-nft>
-        <a-box id="boite" rotation="45 45 45" position='0 0 -5' material='opacity: 0.8;' visible="true">
+        <a-box id="boite" rotation="45 45 45" position='0 0 -5' material='opacity: 0.8;' visible="false">
         </a-box>
         <a-entity camera></a-entity>
     </a-scene>
