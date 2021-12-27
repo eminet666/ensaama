@@ -6,11 +6,13 @@
     <h2 id="demo">Attente</h2>
 
     <script>
-        const myTimeout = setTimeout(myGreeting, 5000);
+        // const myTimeout = setTimeout(myGreeting, 5000);
 
-        function myGreeting() {
-            document.getElementById("demo").innerHTML = "Happy Birthday!"
-        }
+        // function myGreeting() {
+        //     document.getElementById("demo").innerHTML = "Happy Birthday!"
+        // }
+        
+        setTimeout(function(){ document.getElementById("demo").innerHTML = "Happy Birthday!" }, 5000);
     </script>
 
 </body>
