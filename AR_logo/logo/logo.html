@@ -25,7 +25,7 @@
                                 document.querySelector('#content'+index).setAttribute('visible', false);
                                 affiche = false;
                             }, 5000);
-                            alert("trouvé "+nb);
+                            alert("trouvé "+index);
                         }
                     });
                 }
@@ -81,13 +81,13 @@
         </a-box>
 
 		<a-entity id="content1" scale="1 1 1" position="0 0 -5" rotation="0 90 0" animation-mixer
-		    gltf-model="#model1" visible="true">
+		    gltf-model="#model1" visible="false">
 		</a-entity>
 		<a-entity id="content2" scale="1 1 1" position="0 0 -5" rotation="0 90 0" animation-mixer
-            gltf-model="#model2" visible="true">
+            gltf-model="#model2" visible="false">
 		</a-entity>
 		<a-entity id="content3" scale="1 1 1" position="0 0 -5" rotation="0 90 0" animation-mixer
-            gltf-model="#model3" visible="true">
+            gltf-model="#model3" visible="false">
 		</a-entity>
 
         <a-entity camera></a-entity>
