@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+    <script>
+        AFRAME.registerComponent('markerhandler', {
+                init: function () {
+                    this.el.sceneEl.addEventListener('markerFound', () => {
+                        // redirect to custom URL
+                        alert("touvé");
+                        //window.location = 'https://github.com/AR-js-org/AR.js';
+                    });
+                });
+        },
+    </script>
+
+
 </head>
 
 <style>
@@ -39,7 +53,8 @@
 
         <!-- if you are hosting on localhost url='../resources/dataNFT/pinball' on gh-pages url='https://kalwalt.github.io/kalwalt-interactivity-AR/resources/dataNFT/pinball' -->
         <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/logo'
-            smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+            smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'
+            emitevents markerhandler>
             <a-box position='0 0 0' scale='90 90 90' material='opacity: 0.5;'></a-box>
         </a-nft>
         <a-entity camera></a-entity>

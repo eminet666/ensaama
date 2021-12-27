@@ -19,6 +19,15 @@
 * [example pinball](./pinball/pinball.html)
 * [example logo](./logo/logo.html)
 
+
+## AR projet examples
+* [examples (rose)](https://kalwalt.github.io/kalwalt-interactivity-AR/)
+* [repository kalwalt](https://awesomeopensource.com/project/kalwalt/kalwalt-interactivity-AR?category...=)
+
+## events
+* [image found](https://ar-js-org.github.io/AR.js-Docs/ui-events/#trigger-actions-when-image-has-been-found)
+
+
 <!-- ## examples
 * [tuto](https://kalwalt.github.io/kalwalt-interactivity-AR/)
 * [examples](https://kalwalt.github.io/kalwalt-interactivity-AR/)
