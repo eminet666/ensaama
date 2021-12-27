@@ -12,8 +12,9 @@
                 init: function () {
 
                     this.el.sceneEl.addEventListener('markerFound', () => {
-                        //alert("trouvé");
+                        
                         document.querySelector('#boite').setAttribute('visible', true);
+                        alert("trouvé");
                     });
                 }
         })
