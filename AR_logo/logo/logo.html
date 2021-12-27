@@ -21,11 +21,11 @@
                             index = Math.floor(Math.random() * nb);
                             document.querySelector('#content'+index).setAttribute('visible', true);
                             
-                            setTimeout(function(){ 
+                            let appel = setTimeout(function(){ 
                                 document.querySelector('#content'+index).setAttribute('visible', false);
                                 affiche = false;
                             }, 5000);
-                            //alert("trouvé "+index);
+                            alert("trouvé "+index);
                         }
                     });
                 }
