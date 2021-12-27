@@ -14,11 +14,11 @@
 
                     this.el.sceneEl.addEventListener('markerFound', () => {
                         if(!affiche){
-                            document.querySelector('#content1').setAttribute('visible', true);
+                            document.querySelector('#content0').setAttribute('visible', true);
                             affiche = true;
 
                             setTimeout(function(){ 
-                                document.querySelector('#content1').setAttribute('visible', false);
+                                document.querySelector('#content0').setAttribute('visible', false);
                                 affiche = false;
                             }, 5000);
                             alert("trouvé");
@@ -59,9 +59,11 @@
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded
         arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
-	    <!-- <a-assets>
-			<a-asset-item id="glbModel" src="./Flamingo.glb"></a-asset-item>
-	    </a-assets> -->
+	    <a-assets>
+			<a-asset-item id="model1" src="./models/Flamingo.glb"></a-asset-item>
+            <a-asset-item id="model2" src="./models/Parrot.glb"></a-asset-item>
+            <a-asset-item id="model3" src="./models/Stork.glb"></a-asset-item>
+	    </a-assets>
 
         <!-- if you are hosting on localhost url='../resources/dataNFT/pinball' on gh-pages url='https://kalwalt.github.io/kalwalt-interactivity-AR/resources/dataNFT/pinball' -->
         <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/logo'
@@ -70,12 +72,19 @@
         </a-nft>
 
         <!-- contenus -->
-        <a-box id="content1" rotation="45 45 45" position='0 0 -5' material='opacity: 0.8;' visible="false">
+        <a-box id="content0" rotation="45 45 45" position='0 0 -5' material='opacity: 0.8;' 
+            visible="false">
         </a-box>
 
-		<!-- <a-entity id="content2" scale="1 1 1" position="-5 1 -6" rotation="0 90 0" loaded animation-mixer
-		    gltf-model="#glbModel" visible="false">
-		</a-entity> -->
+		<a-entity id="content1" scale="1 1 1" position="0 0 -5" rotation="0 90 0" animation-mixer
+		    gltf-model="#model1" visible="true">
+		</a-entity>
+		<a-entity id="content2" scale="1 1 1" position="0 0 -5" rotation="0 90 0" animation-mixer
+            gltf-model="#model2" visible="true">
+		</a-entity>
+		<a-entity id="content3" scale="1 1 1" position="0 0 -5" rotation="0 90 0" animation-mixer
+            gltf-model="#model3" visible="true">
+		</a-entity>
 
         <a-entity camera></a-entity>
 
