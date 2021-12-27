@@ -18,7 +18,7 @@
                             affiche = true;
 
                             setTimeout(function(){ 
-                                document.querySelector('#boite').setAttribute('visible', true);
+                                document.querySelector('#content1').setAttribute('visible', false);
                                 affiche = false;
                             }, 5000);
                             alert("trouvé");
@@ -59,14 +59,26 @@
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded
         arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
+	    <a-assets>
+			<a-asset-item id="glbModel" src="./Flamingo.glb"></a-asset-item>
+	    </a-assets>
+
         <!-- if you are hosting on localhost url='../resources/dataNFT/pinball' on gh-pages url='https://kalwalt.github.io/kalwalt-interactivity-AR/resources/dataNFT/pinball' -->
         <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/logo'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'
             emitevents markerhandler>
         </a-nft>
-        <a-box id="boite" rotation="45 45 45" position='0 0 -5' material='opacity: 0.8;' visible="false">
+
+        <!-- contenus -->
+        <a-box id="content1" rotation="45 45 45" position='0 0 -5' material='opacity: 0.8;' visible="false">
         </a-box>
+
+		<a-entity id="content2" scale="1 1 1" position="-5 1 -6" rotation="0 90 0" loaded animation-mixer
+		    gltf-model="#glbModel">
+		</a-entity>
+
         <a-entity camera></a-entity>
+
     </a-scene>
 </body
 </html>
