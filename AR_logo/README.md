@@ -1,4 +1,4 @@
-## documentation
+## online documentation
 * [online doc](https://ar-js-org.github.io/AR.js-Docs/)
 * [ar.js tuto](https://aframe.io/blog/arjs3/)
 * [blog_erreur404_ok](https://stackoverflow.com/questions/61262063/image-tracking-and-location-based-ar-with-a-frame-and-ar-js-3-having-a-problem-w/61349001#61349001)
