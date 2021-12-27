@@ -14,7 +14,7 @@
                     this.el.sceneEl.addEventListener('markerFound', () => {
                         
                         document.querySelector('#boite').setAttribute('visible', true);
-                        alert("trouvé");
+                        //alert("trouvé");
                     });
                 }
         })
@@ -55,10 +55,9 @@
         <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/logo'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'
             emitevents markerhandler>
-            <a-box id="boite" position='0 0 0' scale='90 90 90' material='opacity: 0.8;' 
-                visible="true">
-            </a-box>
         </a-nft>
+        <a-box id="boite" position='0 0 -5' material='opacity: 0.8;' visible="true">
+        </a-box>
         <a-entity camera></a-entity>
     </a-scene>
 </body
