@@ -30,4 +30,4 @@
 * [26_la vie quotidiene](https://quizlet.com/_atx2az?x=1qqt&i=461fpl)
 
 
-
+https://quizlet.com/_atzzu4?x=1qqt&i=461fpl
