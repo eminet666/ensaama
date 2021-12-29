@@ -10,7 +10,7 @@
 
     <script>
         let affiche = false;
-        let nb = 3;
+        let nb = 4;
         let index = 0;
         AFRAME.registerComponent('markerhandler', {
                 init: function () {
@@ -71,6 +71,7 @@
 			<a-asset-item id="model1" src="./models/Flamingo.glb"></a-asset-item>
             <a-asset-item id="model2" src="./models/Parrot.glb"></a-asset-item>
             <a-asset-item id="model3" src="./models/Stork.glb"></a-asset-item>
+			<a-asset-item id="buste" src="./models/buste.glb"></a-asset-item>
 	    </a-assets>
 
         <!-- IMAGE TO TRACK -->
@@ -102,6 +103,11 @@
 		</a-entity>
 		<a-entity id="content3" scale="0.5 0.5 0.5" position="0 0 -5" rotation="0 0 0" animation-mixer
             gltf-model="#model3" visible="false">
+		</a-entity>
+
+		<a-entity id="content4" scale="10 10 10"
+			    animation="property: rotation; from: -30 0 0; to: -30 360 0; dur: 3000; loop: true; easing: linear"
+			    position="0 0 -3" gltf-model="#buste">
 		</a-entity>
 
         <a-entity camera></a-entity>
