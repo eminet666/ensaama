@@ -8,7 +8,7 @@
 * [new lib](https://github.com/webarkit/ARnft)
 
 ## image tracking
-* [NFT creator](https://carnaux.github.io/NFT-Marker-Creator/#/)
+* [NFT creator (avec chrome)](https://carnaux.github.io/NFT-Marker-Creator/#/)
 * [font generator](https://msdf-bmfont.donmccurdy.com/)
 * [online doc](https://ar-js-org.github.io/AR.js-Docs/image-tracking/)
 * [examples](https://github.com/AR-js-org/AR.js/tree/master/aframe/examples/image-tracking/)
@@ -20,7 +20,7 @@
 * [example trex](./trex/trex.html)
 * [example pinball ref ok](./pinball/pinball_ref_ok.html)
 * [example pinball](./pinball/pinball.html)
-* [example logo g](./logo/logo.html)
+* [example logo h](./logo/logo.html)
 
 
 ## AR projet examples
