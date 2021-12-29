@@ -83,17 +83,13 @@
             smoothTolerance='0.01' smoothThreshold='5' emitevents markerhandler>
         </a-nft>
 
-        <!-- CONTENT -->
-        <!-- <a-text position='0 0 -4' material='opacity: 0.8;' visible="false"
-            value="Mention Numérique"
+        <!-- TEXT -->
+        <a-text id="mention" position="0 0 -4" material='opacity: 0.8;' visible="false"
+            value="Mention Numérique" align="center" anchor="center" color="yellow";
             font="./font/olivier-bold-msdf.json" font-image="./font/olivier-bold-msdf.png" negate="false">
-        </a-text> -->
-        <a-entity id="mention" position="0 0 -4" visible="false" align="center" anchor="center" width="5"
-            geometry="primitive: plane; width: 2" material="color: #0000FF"
-            font="./font/olivier-bold-msdf.json" font-image="./font/olivier-bold-msdf.png" negate="false"
-            text="color: white; align: center; font: dejavu; value: Mention Numérique">
-        </a-entity>
+        </a-text>
 
+        <!-- CONTENT -->
         <a-box id="content0" rotation="45 45 45" position='0 0 -5' material='opacity: 0.8;' 
             visible="false">
         </a-box>
