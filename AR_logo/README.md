@@ -1,3 +1,5 @@
+# NFT
+
 ## online documentation
 * [online doc](https://ar-js-org.github.io/AR.js-Docs/)
 * [ar.js tuto](https://aframe.io/blog/arjs3/)
@@ -20,7 +22,7 @@
 * [example trex](./trex/trex.html)
 * [example pinball ref ok](./pinball/pinball_ref_ok.html)
 * [example pinball](./pinball/pinball.html)
-* [example logo n](./logo/logo.html)
+* [example logo o](./logo/logo.html)
 
 
 ## AR projet examples
