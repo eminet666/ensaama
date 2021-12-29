@@ -22,7 +22,7 @@
 * [example trex](./trex/trex.html)
 * [example pinball ref ok](./pinball/pinball_ref_ok.html)
 * [example pinball](./pinball/pinball.html)
-* [example logo q](./logo/logo.html)
+* [example logo r](./logo/logo.html)
 
 
 ## AR projet examples
