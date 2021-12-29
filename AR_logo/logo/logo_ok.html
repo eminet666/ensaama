@@ -20,12 +20,11 @@
                             affiche = true;
                             index = Math.floor(Math.random() * nb);
                             document.querySelector('#content'+index).setAttribute('visible', true);
-                            document.querySelector('#mention').setAttribute('visible', true);
+                            
                             setTimeout(function(){ 
                                 document.querySelector('#content'+index).setAttribute('visible', false);
-                                document.querySelector('#mention').setAttribute('visible', false);
                                 affiche = false;
-                            }, 3000);
+                            }, 5000);
                             //alert("trouvé "+index);
                         }
                     });
@@ -61,32 +60,22 @@
     <div class="arjs-loader">
         <div>Loading, please wait...</div>
     </div>
-
-    <!-- SCENE -->
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded
         arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
-        <!-- ASSETS -->
 	    <a-assets>
 			<a-asset-item id="model1" src="./models/Flamingo.glb"></a-asset-item>
             <a-asset-item id="model2" src="./models/Parrot.glb"></a-asset-item>
             <a-asset-item id="model3" src="./models/Stork.glb"></a-asset-item>
 	    </a-assets>
 
-        <!-- IMAGE TO TRACK -->
         <!-- if you are hosting on localhost url='../resources/dataNFT/pinball' on gh-pages url='https://kalwalt.github.io/kalwalt-interactivity-AR/resources/dataNFT/pinball' -->
         <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/logo'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'
             emitevents markerhandler>
         </a-nft>
-        <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/vert' smooth='true' smoothCount='10'
-            smoothTolerance='0.01' smoothThreshold='5' emitevents markerhandler>
-        </a-nft>
 
-        <!-- CONTENT -->
-        <a-text id="mention" position='0 0 -4' material='opacity: 0.8;' value="Mention Numérique" 
-            visible="false">
-        </a-text>
+        <!-- contenus -->
         <a-box id="content0" rotation="45 45 45" position='0 0 -5' material='opacity: 0.8;' 
             visible="false">
         </a-box>

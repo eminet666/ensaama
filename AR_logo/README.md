@@ -2,11 +2,14 @@
 * [online doc](https://ar-js-org.github.io/AR.js-Docs/)
 * [ar.js tuto](https://aframe.io/blog/arjs3/)
 * [blog_erreur404_ok](https://stackoverflow.com/questions/61262063/image-tracking-and-location-based-ar-with-a-frame-and-ar-js-3-having-a-problem-w/61349001#61349001)
+* [UI et events](https://ar-js-org.github.io/AR.js-Docs/ui-events/#trigger-actions-when-image-has-been-found)
 
 ## library
 * [new lib](https://github.com/webarkit/ARnft)
 
 ## image tracking
+* [NFT creator](https://carnaux.github.io/NFT-Marker-Creator/#/)
+* [font generator](https://msdf-bmfont.donmccurdy.com/)
 * [online doc](https://ar-js-org.github.io/AR.js-Docs/image-tracking/)
 * [examples](https://github.com/AR-js-org/AR.js/tree/master/aframe/examples/image-tracking/)
 
