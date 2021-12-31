@@ -29,7 +29,7 @@
     </script>
     <script>
         let affiche = false;
-        let nb = 7;
+        let nb = 8;
         let index = 0;
         AFRAME.registerComponent('markerhandler', {
                 init: function () {
@@ -79,8 +79,10 @@
     <!-- minimal loader shown until image descriptors are loaded -->
     <div class="arjs-loader">
         <div>
-        Chargement en cours... <br><br>
-        <b>Une belle année 2022 !</b>
+        attendez la fin du chargement<br>
+        et visez un logo de l'ensaama<br><br>
+        <b>Une belle année 2022 !</b><br>
+        Portes Ouvertes 28 & 29 janvier 2022
         </div>
     </div>
 
@@ -147,6 +149,11 @@
         <a-video id="content6" src="#vid2" position="0 0.1 -5" visible="false"
             geometry="primitive: plane; width: 3; height: 1.75">
             <a-text position="0 0 5.5" value="design génératif" color="#E52645"></a-text>
+        </a-video>
+
+        <a-video id="content7" src="#vid2" position="0 0.1 -5" visible="false"
+                geometry="primitive: plane; width: 3; height: 1.75">
+                <a-text position="0 0 5.5" value="interface vidéo" color="#E52645"></a-text>
         </a-video>
 
         <a-entity camera></a-entity>
