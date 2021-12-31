@@ -95,15 +95,13 @@
 	    </a-assets>
 
         <!-- IMAGE TO TRACK -->
-        <a-video src="#vid2" position="0 0 -5" rotation="" 
-            geometry="primitive: plane; width: 3; height: 1.75"
-            visible="true">
+        <a-video id="content6" src="#vid2" position="0 0.1 -5" visible="true"
+            geometry="primitive: plane; width: 3; height: 1.75">
+            <a-text position="0 0 5.5" material='opacity: 0.8;' value="design génératif" align="center" anchor="center"
+                color="#E52645" ; wrap-count="50" font="./font/olivier-bold-msdf.json"
+                font-image="./font/olivier-bold-msdf.png" negate="false">
+            </a-text>
         </a-video>
-        <!-- <a-entity id="content0" position='0 0 -5' visible="true">
-            <a-video  src="#vid1" 
-                rotation='0 0 0' width='4.8' height='2.66'>
-            </a-video>
-        </a-entity> -->
 
         <a-entity camera></a-entity>
 
