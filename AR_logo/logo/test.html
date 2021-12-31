@@ -106,11 +106,11 @@
 
     <!-- INTERFACE -->
     <div class="bouton">
-            <button onclick="rediriger(0)">DNMADE Numérique</button>
-            <button onclick="rediriger(1)">DSAA Numérique</button>
-            <button onclick="rediriger(2)">Recrutement Numérique</button>
-            <button onclick="rediriger(3)">Questions/Réponses</button>
-            <button onclick="rediriger(3)">En vidéo</button>
+            <button onclick="rediriger(0)">DNMADE</button>
+            <button onclick="rediriger(1)">DSAA</button>
+            <button onclick="rediriger(2)">Recrutement</button>
+            <button onclick="rediriger(3)">Q/R</button>
+            <button onclick="rediriger(3)">Vidéos</button>
     </div>
 
     <script>
@@ -118,19 +118,19 @@
             console.log("ici");
             switch(lien){
                 case 0 : 
-                    location.replace("https://ensaama.net/site/home/formations/dnmade/numerique-expriences-narratives-et-interactives");
+                    location.assign("https://ensaama.net/site/home/formations/dnmade/numerique-expriences-narratives-et-interactives");
                     break;
                 case 1 :
-                    location.replace("https://ensaama.net/site/home/formations/dsaa/design-numerique");
+                    location.assign("https://ensaama.net/site/home/formations/dsaa/design-numerique");
                     break;
                 case 2 :
-                    location.replace("https://ensaama.net/site/home/formations/candidature");
+                    location.assign("https://ensaama.net/site/home/formations/candidature");
                     break;
                 case 3 :
-                    location.replace("https://www.youtube.com/watch?v=7oJEC-RMNos&list=PLcf77AemjzjpERh3W_uPope9fkBRatZjE");
+                    location.assign("https://www.youtube.com/watch?v=7oJEC-RMNos&list=PLcf77AemjzjpERh3W_uPope9fkBRatZjE");
                     break;
                 case 4 :
-                    location.replace("https://www.youtube.com/watch?v=_6tJJ5O6Ewk&t=389s");
+                    location.assign("https://www.youtube.com/watch?v=_6tJJ5O6Ewk&t=389s");
                     break;
             }
         }
