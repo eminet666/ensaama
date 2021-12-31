@@ -24,6 +24,7 @@
 * [example pinball](./pinball/pinball.html)
 * [example logo m](./logo/logo.html)
 * [example video](./logo/index_video.html)
+* [test](./logo/test.html)
 
 
 ## AR projet examples
