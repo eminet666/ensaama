@@ -29,7 +29,7 @@
     </script>
     <script>
         let affiche = false;
-        let nb = 1;
+        let nb = 7;
         let index = 0;
         AFRAME.registerComponent('markerhandler', {
                 init: function () {
@@ -94,6 +94,9 @@
             <a-asset-item id="model2" src="./models/Parrot.glb"></a-asset-item>
             <a-asset-item id="model3" src="./models/Stork.glb"></a-asset-item>
 			<a-asset-item id="buste" src="./models/buste.glb"></a-asset-item>
+            <video id="vid1" src="./video/videomapping.mp4" preload="auto" response-type="arraybuffer" loop crossorigin
+                webkit-playsinline autoplay muted playsinline>
+            </video>
             <video id="vid2" src="./video/jungle.mp4" preload="auto" response-type="arraybuffer" 
                 loop crossorigin webkit-playsinline autoplay muted playsinline>
             </video>
@@ -104,9 +107,6 @@
         <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/logo'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'
             emitevents markerhandler>
-                    <a-video src="#vid2" position='50 150 -100' rotation='90 0 180' width='300'
-                        height='175'>
-                    </a-video>
         </a-nft>
         <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/vert' smooth='true' smoothCount='10'
             smoothTolerance='0.01' smoothThreshold='5' emitevents markerhandler>
@@ -119,7 +119,7 @@
         </a-text>
 
         <!-- CONTENT -->
-        <a-box id="content5" rotation="45 45 45" position='0 0 -5' material='opacity: 0.8;' 
+        <a-box id="content0" rotation="45 45 45" position='0 0 -5' material='opacity: 0.8;' 
             visible="false">
         </a-box>
 
@@ -130,7 +130,7 @@
             gltf-model="#model2" visible="false">
 		</a-entity>
 		<a-entity id="content3" scale="0.5 0.5 0.5" position="0 0 -5" rotation="0 0 0" animation-mixer
-            gltf-model="#model3" visible="false">
+            gltf-model="#buste" visible="false">
 		</a-entity>
 
 		<a-entity id="content4" scale="6 6 6" visible="false"
@@ -138,8 +138,12 @@
 			    position="0 -1 -3" gltf-model="#buste">
 		</a-entity>
 
-        <a-video id="content0" src="#vid2" position="0 0 -5" 
-            geometry="primitive: plane; width: 3; height: 1.75" visible="true">
+        <a-video id="content5" src="#vid1" position="0 0 -5" visible="false"
+            geometry="primitive: plane; width: 3; height: 1.75">
+        </a-video>
+
+        <a-video id="content6" src="#vid2" position="0 0 -5" visible="false"
+            geometry="primitive: plane; width: 3; height: 1.75">
         </a-video>
 
         <a-entity camera></a-entity>
