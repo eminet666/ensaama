@@ -138,12 +138,16 @@
 			    position="0 0 -3" gltf-model="#buste">
 		</a-entity>
 
-        <a-video id="content5" src="#vid1" position="0 0.2 -5" visible="false"
+        <a-video id="content5" src="#vid1" position="0 0.1 -5" visible="false"
             geometry="primitive: plane; width: 3; height: 1.75">
         </a-video>
 
-        <a-video id="content6" src="#vid2" position="0 0.2 -5" visible="false"
+        <a-video id="content6" src="#vid2" position="0 0.1 -5" visible="false"
             geometry="primitive: plane; width: 3; height: 1.75">
+            <a-text id="mention" position="0 -0.1 0" material='opacity: 0.8;' visible="false"
+                value="design génératif" align="center" anchor="center" color="#E52645" ; wrap-count="50"
+                font="./font/olivier-bold-msdf.json" font-image="./font/olivier-bold-msdf.png" negate="false">
+            </a-text>
         </a-video>
 
         <a-entity camera></a-entity>
