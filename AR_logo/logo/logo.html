@@ -90,16 +90,20 @@
 
         <!-- ASSETS -->
 	    <a-assets>
+            <a-mixin id="typo" align="center" anchor="center" color="white" ; wrap-count="50" negate="false"
+                font="./font/olivier-bold-msdf.json" font-image="./font/olivier-bold-msdf.png"
+                position="0 -0.75 -4" material='opacity: 0.8;'>
+            </a-mixin>
+            <a-mixin id="video" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay
+                muted playsinline>
+            </a-mixin>
 			<a-asset-item id="model1" src="./models/Flamingo.glb"></a-asset-item>
             <a-asset-item id="model2" src="./models/Parrot.glb"></a-asset-item>
             <a-asset-item id="model3" src="./models/Stork.glb"></a-asset-item>
 			<a-asset-item id="buste" src="./models/buste.glb"></a-asset-item>
-            <video id="vid1" src="./video/videomapping.mp4" preload="auto" response-type="arraybuffer" loop crossorigin
-                webkit-playsinline autoplay muted playsinline>
-            </video>
-            <video id="vid2" src="./video/jungle.mp4" preload="auto" response-type="arraybuffer" 
-                loop crossorigin webkit-playsinline autoplay muted playsinline>
-            </video>
+
+            <video id="vid1" src="./video/videomapping.mp4" mixin="video"></video>
+            <video id="vid2" src="./video/jungle.mp4" mixin="video"></video>
 	    </a-assets>
 
         <!-- IMAGE TO TRACK -->
@@ -113,9 +117,7 @@
         </a-nft>
 
         <!-- TEXT -->
-        <a-text id="mention" position="0 -0.75 -4" material='opacity: 0.8;' visible="false"
-            value="Mention Numérique" align="center" anchor="center" color="white"; wrap-count="50"
-            font="./font/olivier-bold-msdf.json" font-image="./font/olivier-bold-msdf.png" negate="false">
+        <a-text id="mention" value="Mention Numérique" visible="false" mixin="typo"  >
         </a-text>
 
         <!-- CONTENT -->
@@ -142,12 +144,9 @@
             geometry="primitive: plane; width: 3; height: 1.75">
         </a-video>
 
-        <a-video id="content6" src="#vid2" position="0 0.1 -5" visible="true"
+        <a-video id="content6" src="#vid2" position="0 0.1 -5" visible="false"
             geometry="primitive: plane; width: 3; height: 1.75">
-            <a-text position="0 0 0" material='opacity: 0.8;'
-                value="design génératif" align="center" anchor="center" color="#E52645" ; wrap-count="50"
-                font="./font/olivier-bold-msdf.json" font-image="./font/olivier-bold-msdf.png" negate="false">
-            </a-text>
+            <a-text position="0 0 5.5" value="design génératif" color="#E52645"></a-text>
         </a-video>
 
         <a-entity camera></a-entity>
