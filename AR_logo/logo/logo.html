@@ -38,11 +38,15 @@
                         if(!affiche){
                             affiche = true;
                             index = Math.floor(Math.random() * nb);
+                            document.querySelector('#imginfo').setAttribute('visible', false);
+                            document.querySelector('#txtinfo').setAttribute('visible', false);
                             document.querySelector('#content'+index).setAttribute('visible', true);
                             document.querySelector('#mention').setAttribute('visible', true);
                             setTimeout(function(){ 
                                 document.querySelector('#content'+index).setAttribute('visible', false);
                                 document.querySelector('#mention').setAttribute('visible', false);
+                                document.querySelector('#imginfo').setAttribute('visible', true);
+                                document.querySelector('#txtinfo').setAttribute('visible', true);
                                 affiche = false;
                             }, 3000);
                             //alert("trouvé "+index);
@@ -117,6 +121,9 @@
         <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/vert' smooth='true' smoothCount='10'
             smoothTolerance='0.01' smoothThreshold='5' emitevents markerhandler>
         </a-nft>
+
+        <a-image id="imginfo" src="./assets/images/logo_alpha.png" visible="true"></a-image>
+        <a-text id="txtinfo" value="viser un logo de l'ensaama" visible="false" mixin="typo"></a-text>
 
         <!-- TEXT -->
         <a-text id="mention" value="Mention Numérique" visible="false" mixin="typo"  >
