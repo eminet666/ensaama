@@ -83,8 +83,7 @@
     <!-- minimal loader shown until image descriptors are loaded -->
     <div class="arjs-loader">
         <div>
-        attendez la fin du chargement<br>
-        et visez un logo de l'ensaama<br><br>
+        chargement en cours...<br><br>
         <b>Une belle année 2022 !</b><br>
         Portes Ouvertes 28 & 29 janvier 2022
         </div>
@@ -122,8 +121,8 @@
             smoothTolerance='0.01' smoothThreshold='5' emitevents markerhandler>
         </a-nft>
 
-        <a-image id="imginfo" src="./assets/images/logo_alpha.png" visible="true"></a-image>
-        <a-text id="txtinfo" value="viser un logo de l'ensaama" visible="false" mixin="typo"></a-text>
+        <a-image id="imginfo" position="0 0 -4" width="2" height="0.4" src="./logo_alpha.png" visible="true"></a-image>
+        <a-text id="txtinfo" value="viser un logo de l'ensaama" visible="true" mixin="typo"></a-text>
 
         <!-- TEXT -->
         <a-text id="mention" value="Mention Numérique" visible="false" mixin="typo"  >

@@ -83,25 +83,17 @@
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded
         arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
-        <!-- ASSETS -->
 	    <a-assets>
-            <video id="vid1" src="./video/mov_bbb.mp4" preload="auto"
-                response-type="arraybuffer" loop crossorigin
-                webkit-playsinline autoplay muted playsinline>
-            </video>
-            <video id="vid2" src="./video/jungle.mp4" preload="auto" response-type="arraybuffer" loop crossorigin
-                webkit-playsinline autoplay muted playsinline>
-            </video>
+	        <a-mixin id="typo" align="center" anchor="center" color="white" ; wrap-count="50" negate="false"
+	            font="./font/olivier-bold-msdf.json" font-image="./font/olivier-bold-msdf.png" position="0 -0.75 -4"
+	            material='opacity: 0.8;'>
+	        </a-mixin>
 	    </a-assets>
 
-        <!-- IMAGE TO TRACK -->
-        <a-video id="content6" src="#vid2" position="0 0.1 -5" visible="true"
-            geometry="primitive: plane; width: 3; height: 1.75">
-            <a-text position="0 0 5.5" material='opacity: 0.8;' value="design génératif" align="center" anchor="center"
-                color="#E52645" ; wrap-count="50" font="./font/olivier-bold-msdf.json"
-                font-image="./font/olivier-bold-msdf.png" negate="false">
-            </a-text>
-        </a-video>
+
+        <a-image id="imginfo" position="0 0 -4" width="2" height="0.4" src="./logo_alpha.png" visible="true"></a-image>
+        <a-text id="txtinfo" value="viser un logo de l'ensaama" visible="true" mixin="typo" wrap-count="30"></a-text>
+
 
         <a-entity camera></a-entity>
 
