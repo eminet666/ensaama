@@ -25,6 +25,7 @@
 * [example logo o](./logo/logo.html)
 * [example video](./logo/index_video.html)
 * [test](./logo/test.html)
+* [test UI](./logo/test_UI.html)
 
 
 ## AR projet examples
