@@ -38,15 +38,15 @@
                         if(!affiche){
                             affiche = true;
                             index = Math.floor(Math.random() * nb);
-                            document.querySelector('#imginfo').setAttribute('visible', false);
-                            document.querySelector('#txtinfo').setAttribute('visible', false);
+                            // document.querySelector('#imginfo').setAttribute('visible', false);
+                            // document.querySelector('#txtinfo').setAttribute('visible', false);
                             document.querySelector('#content'+index).setAttribute('visible', true);
                             document.querySelector('#mention').setAttribute('visible', true);
                             setTimeout(function(){ 
                                 document.querySelector('#content'+index).setAttribute('visible', false);
                                 document.querySelector('#mention').setAttribute('visible', false);
-                                document.querySelector('#imginfo').setAttribute('visible', true);
-                                document.querySelector('#txtinfo').setAttribute('visible', true);
+                                // document.querySelector('#imginfo').setAttribute('visible', true);
+                                // document.querySelector('#txtinfo').setAttribute('visible', true);
                                 affiche = false;
                             }, 3000);
                             //alert("trouvé "+index);
