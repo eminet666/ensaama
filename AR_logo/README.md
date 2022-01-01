@@ -23,7 +23,7 @@
 * [example pinball ref ok](./pinball/pinball_ref_ok.html)
 * [example pinball](./pinball/pinball.html)
 
-* [example logo a](./logo/logo.html)
+* [example logo b](./logo/logo.html)
 * [example video](./logo/index_video.html)
 
 * [test](./logo/test.html)
