@@ -85,12 +85,23 @@
         font-size: 1.25em;
         color: #0AE;
     }
+    .mention {
+        position: absolute; bottom: 3em; left: 0; z-index: 10;
+        width: 100%; height: 1.5em;
+        display: flex; justify-content: center; align-items: center;
+    }
+    .mention p {
+        font-family: OlivierB, Verdana, sans-serif;
+        text-align: center;
+        font-size: 1.5em;
+        color: #0AE;
+    }
+
     .boutons {
         position: absolute; bottom: 0; left: 0; z-index: 10;
         width: 100%; height: 3em;
         display: flex; justify-content: center; align-items: center;
     }
-
     .btn {
         font-family: Olivier, Verdana, sans-serif;
         padding: 0.25em; margin: 0.25em;
@@ -117,15 +128,18 @@
     </div>
 
     <div id="interface">
+        <div class="focalisation">
+            <img src="./focalisation.png">
+        </div>
+        <div class="mention">
+            <p>ensaama mention numérique</p>
+        </div>
         <div class="boutons">
             <button class="btn" onclick="rediriger(0)">DNMADE</button>
             <button class="btn" onclick="rediriger(1)">DSAA</button>
             <button class="btn" onclick="rediriger(2)">Q/R</button>
             <button class="btn" onclick="rediriger(3)">vidéos</button>
             <button class="btn" onclick="rediriger(4)">recrutement</button>
-        </div>
-        <div class="focalisation">
-            <img src="./focalisation.png">
         </div>
     </div>
 

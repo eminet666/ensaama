@@ -32,6 +32,13 @@
                     });
                 }
         })
+
+        window.addEventListener('arjs-nft-loaded', function(ev){
+            alert("fini "+ev);
+            document.querySelector('#interface').style.visibility = "visible";
+            //document.querySelector('#interface').style.visibility = "hidden";
+        })
+
     </script>
 
     <style>
@@ -61,6 +68,10 @@
         font-family: OlivierB;
         src: url(https://eminet666.github.io/ensaama/AR_logo/olivier-bold.ttf) format("truetype");
         font-weight: bold;
+    }
+
+    #interface {
+        visibility: hidden;
     }
 
     .focalisation {
@@ -105,16 +116,19 @@
         </div>
     </div>
 
-    <div class="boutons">
-        <button class="btn" onclick="rediriger(0)">DNMADE</button>
-        <button class="btn" onclick="rediriger(1)">DSAA</button>
-        <button class="btn" onclick="rediriger(2)">Q/R</button>
-        <button class="btn" onclick="rediriger(3)">vidéos</button>
-        <button class="btn" onclick="rediriger(4)">recrutement</button>
+    <div id="interface">
+        <div class="boutons">
+            <button class="btn" onclick="rediriger(0)">DNMADE</button>
+            <button class="btn" onclick="rediriger(1)">DSAA</button>
+            <button class="btn" onclick="rediriger(2)">Q/R</button>
+            <button class="btn" onclick="rediriger(3)">vidéos</button>
+            <button class="btn" onclick="rediriger(4)">recrutement</button>
+        </div>
+        <div class="focalisation">
+            <img src="./focalisation.png">
+        </div>
     </div>
-    <div class="focalisation">
-        <img src="./focalisation.png">
-    </div>
+
 
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded
         arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
