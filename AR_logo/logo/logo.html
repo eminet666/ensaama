@@ -33,13 +33,8 @@
                 }
         })
 
-        AFRAME.registerComponent('ready', {
-        init: function () {
-                this.el.sceneEl.addEventListener('arjs-nft-loaded', () => {
-                    //document.querySelector('#mention').setAttribute('visible', true);
-                    alert("fini");
-                    });
-            }
+        window.addEventListener('arjs-nft-loaded', function(ev){
+            alert("fini "+ev);
         })
 
     </script>
@@ -122,10 +117,12 @@
         <button class="btn" onclick="rediriger(3)">vidéos</button>
         <button class="btn" onclick="rediriger(4)">recrutement</button>
     </div>
+    <div class="focalisation">
+        <img src="./focalisation.png">
+    </div>
 
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded
-        arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'
-        ready>
+        arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
         <!-- ASSETS -->
 	    <a-assets>
