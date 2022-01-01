@@ -55,9 +55,15 @@
         font-size: 1.25em;
         color: white;
     }
+
+
+    </style>
+
 </style>
 
 <body style='margin : 0px; overflow: hidden;'>
+   
+    <!-- INTERFACE -->
     <!-- minimal loader shown until image descriptors are loaded -->
     <div class="arjs-loader">
         <div>
@@ -65,6 +71,14 @@
             <b>Une belle année 2022 !</b><br>
             Portes Ouvertes 28 & 29 janvier 2022
         </div>
+    </div>
+
+    <div class="boutons">
+        <button class="btn" onclick="rediriger(0)">DNMADE</button>
+        <button class="btn" onclick="rediriger(1)">DSAA</button>
+        <button class="btn" onclick="rediriger(2)">Recrutement</button>
+        <button class="btn" onclick="rediriger(3)">Q/R</button>
+        <button class="btn" onclick="rediriger(3)">Vidéos</button>
     </div>
 
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded
@@ -87,7 +101,9 @@
         </a-nft>
 
         <!-- TEXT -->
-        <a-text id="mention" value="Mention Numérique" position="0 -0.75 -4" visible="false" mixin='typo'>
+        <a-text id="mention" value="Mention Numérique" position="0 -0.75 -4" visible="true" align="center"
+            anchor="center" color="white" ; wrap-count="50" negate="false" font="./font/olivier-bold-msdf.json"
+            font-image="./font/olivier-bold-msdf.png" material='opacity: 0.8;'>
         </a-text>
 
         <!-- CONTENTS -->
@@ -109,5 +125,33 @@
         <a-entity camera></a-entity>
 
     </a-scene>
+
+    <!-- INTERACTIVITE -->
+    <script>
+        function rediriger(lien) {
+            console.log(lien);
+            switch (lien) {
+                case 0:
+                    location.assign(
+                        "https://ensaama.net/site/home/formations/dnmade/numerique-expriences-narratives-et-interactives"
+                        );
+                    break;
+                case 1:
+                    location.assign("https://ensaama.net/site/home/formations/dsaa/design-numerique");
+                    break;
+                case 2:
+                    location.assign("https://ensaama.net/site/home/formations/candidature");
+                    break;
+                case 3:
+                    location.assign(
+                        "https://www.youtube.com/watch?v=7oJEC-RMNos&list=PLcf77AemjzjpERh3W_uPope9fkBRatZjE");
+                    break;
+                case 4:
+                    location.assign("https://www.youtube.com/watch?v=_6tJJ5O6Ewk&t=389s");
+                    break;
+            }
+        }
+    </script>
+
 </body
 </html>
