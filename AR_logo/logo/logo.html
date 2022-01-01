@@ -97,7 +97,7 @@
 	    <a-assets>
             <a-mixin id="typo" align="center" anchor="center" color="white" ; wrap-count="50" negate="false"
                 font="./font/olivier-bold-msdf.json" font-image="./font/olivier-bold-msdf.png"
-                position="0 -0.75 -4" material='opacity: 0.8;'>
+                material='opacity: 0.8;'>
             </a-mixin>
             <a-mixin id="video" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay
                 muted playsinline>
@@ -113,16 +113,15 @@
 
         <!-- IMAGE TO TRACK -->
         <!-- if you are hosting on localhost url='../resources/dataNFT/pinball' on gh-pages url='https://kalwalt.github.io/kalwalt-interactivity-AR/resources/dataNFT/pinball' -->
-        <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/logo'
-            smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'
-            emitevents markerhandler>
+        <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/logo' smooth='true' 
+            smoothCount='10' smoothTolerance='0.01' smoothThreshold='5' emitevents markerhandler>
         </a-nft>
-        <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/vert' smooth='true' smoothCount='10'
-            smoothTolerance='0.01' smoothThreshold='5' emitevents markerhandler>
+        <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/vert' smooth='true' 
+            smoothCount='10' smoothTolerance='0.01' smoothThreshold='5' emitevents markerhandler>
         </a-nft>
 
         <!-- TEXT -->
-        <a-text id="mention" value="Mention Numérique" visible="false" mixin="typo"  >
+        <a-text id="mention" value="Mention Numérique" position="0 -0.75 -4" visible="false" mixin="typo">
         </a-text>
 
         <!-- CONTENT -->
@@ -151,12 +150,12 @@
 
         <a-video id="content6" src="#vid2" position="0 0.1 -5" visible="false"
             geometry="primitive: plane; width: 3; height: 1.75">
-            <a-text position="0 0 5.5" value="design génératif" color="#E52645"></a-text>
+            <!-- <a-text position="0 0 5.5" value="design génératif" position="0 -0.75 -4" color="#E52645"></a-text> -->
         </a-video>
 
         <a-video id="content7" src="#vid2" position="0 0.1 -5" visible="false"
                 geometry="primitive: plane; width: 3; height: 1.75">
-                <a-text position="0 0 5.5" value="interface vidéo" color="#E52645"></a-text>
+                <!-- <a-text position="0 0 5.5" value="interface vidéo" position="0 -0.75 -4" color="#E52645"></a-text> -->
         </a-video>
 
         <a-entity camera></a-entity>
