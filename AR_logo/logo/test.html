@@ -74,13 +74,12 @@
         color: white;
     }
 
-    .bouton { position: absolute; bottom: 20px; left: 20px; }
-
+    .divbtn { position: absolute; bottom: 20px; width: 100%}
+    .btn { text-align: center; }
 </style>
 
 <body style='margin : 0px; overflow: hidden;'>
     <!-- minimal loader shown until image descriptors are loaded -->
-
 
     <!-- SCENE -->
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded
@@ -106,16 +105,15 @@
 
     <!-- INTERFACE -->
     <div class="bouton">
-            <button onclick="rediriger(0)">DNMADE</button>
-            <button onclick="rediriger(1)">DSAA</button>
-            <button onclick="rediriger(2)">Recrutement</button>
-            <button onclick="rediriger(3)">Q/R</button>
-            <button onclick="rediriger(3)">Vidéos</button>
+            <button class="btn" onclick="rediriger(0)">DNMADE</button>
+            <button class="btn" onclick="rediriger(1)">DSAA</button>
+            <button class="btn" onclick="rediriger(2)">Recrutement</button>
+            <button class="btn" onclick="rediriger(3)">Q/R</button>
+            <button class="btn" onclick="rediriger(3)">Vidéos</button>
     </div>
 
     <script>
         function rediriger(lien) {
-            console.log("ici");
             switch(lien){
                 case 0 : 
                     location.assign("https://ensaama.net/site/home/formations/dnmade/numerique-expriences-narratives-et-interactives");
