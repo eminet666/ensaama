@@ -20,11 +20,13 @@
                             affiche = true;
                             index = Math.floor(Math.random() * nb);
                             document.querySelector('#content'+index).setAttribute('visible', true);
+                            document.querySelector('#interface').style.visibility = "hidden";
                             document.querySelector('#mention').setAttribute('visible', true);
 
                             setTimeout(function(){ 
                                 document.querySelector('#content'+index).setAttribute('visible', false);
                                 affiche = false;
+                                document.querySelector('#interface').style.visibility = "visible";
                                 document.querySelector('#mention').setAttribute('visible', false);
                             }, 5000);
                             //alert("trouvé "+index);
@@ -34,9 +36,8 @@
         })
 
         window.addEventListener('arjs-nft-loaded', function(ev){
-            alert("fini "+ev);
+            //alert("fini "+ev);
             document.querySelector('#interface').style.visibility = "visible";
-            //document.querySelector('#interface').style.visibility = "hidden";
         })
 
     </script>
@@ -164,7 +165,8 @@
         </a-nft>
 
         <!-- TEXT -->
-        <a-text id="mention" value="Mention Numérique" position="0 -0.75 -4" visible="true" align="center"
+        <a-text id="mention" value="Mention Numérique" position="0 -0.75 -4" visible="true" mixin="typo"
+            align="center"
             anchor="center" color="white" ; wrap-count="50" negate="false" font="./font/olivier-bold-msdf.json"
             font-image="./font/olivier-bold-msdf.png" material='opacity: 0.8;'>
         </a-text>
