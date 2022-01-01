@@ -34,8 +34,9 @@
         })
 
         window.addEventListener('arjs-nft-loaded', function(ev){
-            //alert("fini "+ev);
-            document.querySelector('#interface').setAttribute('visible', true);
+            alert("fini "+ev);
+            document.querySelector('#interface').style.visibility = "visible";
+            //document.querySelector('#interface').style.visibility = "hidden";
         })
 
     </script>
@@ -67,6 +68,10 @@
         font-family: OlivierB;
         src: url(https://eminet666.github.io/ensaama/AR_logo/olivier-bold.ttf) format("truetype");
         font-weight: bold;
+    }
+
+    #interface {
+        visibility: hidden;
     }
 
     .focalisation {
@@ -111,7 +116,7 @@
         </div>
     </div>
 
-    <div id="interface" visible="false">
+    <div id="interface">
         <div class="boutons">
             <button class="btn" onclick="rediriger(0)">DNMADE</button>
             <button class="btn" onclick="rediriger(1)">DSAA</button>

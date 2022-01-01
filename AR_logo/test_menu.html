@@ -26,6 +26,10 @@
         font-weight: bold;
     }
 
+    #interface {
+        visibility: hidden;
+    }
+
     .focalisation {
         height: 100%; width: 100%;
         position: absolute; top: 0; left: 0; z-index: 66;
@@ -55,16 +59,19 @@
 <body style="margin : 0px; overflow: hidden;">
 
     <!-- INTERFACE -->
-    <div class="boutons">
-        <button class="btn" onclick="rediriger(0)">DNMADE</button>
-        <button class="btn" onclick="rediriger(1)">DSAA</button>
-        <button class="btn" onclick="rediriger(2)">Q/R</button>
-        <button class="btn" onclick="rediriger(3)">vidéos</button>
-        <button class="btn" onclick="rediriger(4)">recrutement</button>
+    <div id="interface">
+        <div class="boutons">
+            <button class="btn" onclick="rediriger(0)">DNMADE</button>
+            <button class="btn" onclick="rediriger(1)">DSAA</button>
+            <button class="btn" onclick="rediriger(2)">Q/R</button>
+            <button class="btn" onclick="rediriger(3)">vidéos</button>
+            <button class="btn" onclick="rediriger(4)">recrutement</button>
+        </div>
+        <div class="focalisation">
+            <img src="./focalisation.png">
+        </div>
     </div>
-    <div class="focalisation">
-        <img src="./focalisation.png">
-    </div>
+
 
     <a-scene embedded arjs vr-mode-ui="enabled: false">
         <a-marker preset="hiro">
@@ -97,3 +104,21 @@
 </body>
 
 </html>
+
+
+<!-- function toggle(anId)
+{
+node = document.getElementById(anId);
+if (node.style.visibility=="hidden")
+{
+// Contenu caché, le montrer
+node.style.visibility = "visible";
+node.style.height = "auto"; // Optionnel rétablir la hauteur
+}
+else
+{
+// Contenu visible, le cacher
+node.style.visibility = "hidden";
+node.style.height = "0"; // Optionnel libérer l'espace
+}
+} -->
