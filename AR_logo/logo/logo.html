@@ -20,10 +20,12 @@
                             affiche = true;
                             index = Math.floor(Math.random() * nb);
                             document.querySelector('#content'+index).setAttribute('visible', true);
-                            
+                            document.querySelector('#mention').setAttribute('visible', true);
+
                             setTimeout(function(){ 
                                 document.querySelector('#content'+index).setAttribute('visible', false);
                                 affiche = false;
+                                document.querySelector('#mention').setAttribute('visible', false);
                             }, 5000);
                             //alert("trouvé "+index);
                         }
@@ -58,24 +60,39 @@
 <body style='margin : 0px; overflow: hidden;'>
     <!-- minimal loader shown until image descriptors are loaded -->
     <div class="arjs-loader">
-        <div>Loading, please wait...</div>
+        <div>
+            chargement en cours...<br><br>
+            <b>Une belle année 2022 !</b><br>
+            Portes Ouvertes 28 & 29 janvier 2022
+        </div>
     </div>
+
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded
         arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
+        <!-- ASSETS -->
 	    <a-assets>
+            <a-mixin id="typo" align="center" anchor="center" color="white" ; wrap-count="50" negate="false"
+                font="./font/olivier-bold-msdf.json" font-image="./font/olivier-bold-msdf.png" material='opacity: 0.8;'>
+            </a-mixin>
 			<a-asset-item id="model1" src="./models/Flamingo.glb"></a-asset-item>
             <a-asset-item id="model2" src="./models/Parrot.glb"></a-asset-item>
             <a-asset-item id="model3" src="./models/Stork.glb"></a-asset-item>
 	    </a-assets>
 
-        <!-- if you are hosting on localhost url='../resources/dataNFT/pinball' on gh-pages url='https://kalwalt.github.io/kalwalt-interactivity-AR/resources/dataNFT/pinball' -->
+        <!-- IMAGE TRACK -->
         <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/logo'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'
             emitevents markerhandler>
         </a-nft>
 
-        <!-- contenus -->
+        <!-- TEXT -->
+        <a-text id="mention" value="Mention Numérique" position="0 -0.75 -4" visible="false"
+        align="center" anchor="center" color="white" ; wrap-count="50" negate="false"
+        font="./font/olivier-bold-msdf.json" font-image="./font/olivier-bold-msdf.png" material='opacity: 0.8;'>
+        </a-text>
+
+        <!-- CONTENTS -->
         <a-box id="content0" rotation="45 45 45" position='0 0 -5' material='opacity: 0.8;' 
             animation="property: rotation; from: -30 0 0; to: -30 360 0; dur: 3000; loop: true; easing: linear"
             visible="false">
