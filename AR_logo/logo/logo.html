@@ -159,21 +159,23 @@
             <video id="vid1" src="./video/videomapping.mp4" mixin="video"></video>
             <video id="vid2" src="./video/jungle.mp4" mixin="video"></video>
             <video id="vid3" src="./video/interface.mp4" mixin="video"></video>
+            <a-mixin id="text" position="0 -0.75 -4" color="#0AE" material='opacity: 0.8;'>
+
 	    </a-assets>
 
         <!-- IMAGE TRACK -->
-        <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/logo'
+        <!-- <a-nft type='nft' url='./ensaama/AR_logo/logo/image_descriptors/logo'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'
             emitevents markerhandler>
-        </a-nft>
+        </a-nft> -->
 
         <!-- TEXT -->
-        <a-text id="mention" value="Mention Numérique" position="0 -0.75 -4" 
+        <!-- <a-text id="mention" value="Mention Numérique" position="0 -0.75 -4" 
                     visible="false" align="center" anchor="center" wrap-count="50"
                     color="white" ; material='opacity: 0.8;' 
                     font="./font/olivier-bold-msdf.json" negate="false"
                     font-image="./font/olivier-bold-msdf.png">
-        </a-text>
+        </a-text> -->
 
         <!-- CONTENTS -->
         <a-box id="content0" rotation="45 45 45" position='0 0 -5' material='opacity: 0.8;' 
@@ -193,16 +195,21 @@
 
         <a-video id="content5" src="#vid1" position="0 0.1 -5" visible="false"
             geometry="primitive: plane; width: 3; height: 1.75">
+            <a-text value="vidéo mapping" mixin="text"
+                    align="center" anchor="center" wrap-count="50"
+                    font="./font/olivier-bold-msdf.json" negate="false"
+                    font-image="./font/olivier-bold-msdf.png">
+            </a-text>
         </a-video>
 
         <a-video id="content6" src="#vid2" position="0 0.1 -5" visible="false"
             geometry="primitive: plane; width: 3; height: 1.75">
-            <!-- <a-text position="0 0 5.5" value="design génératif" position="0 -0.75 -4" color="#E52645"></a-text> -->
+            <a-text position="0 0 5.5" value="design génératif" position="0 -0.75 -4" color="#E52645"></a-text>
         </a-video>
 
         <a-video id="content7" src="#vid3" position="0 0.1 -5" visible="false"
             geometry="primitive: plane; width: 3; height: 1.75">
-            <!-- <a-text position="0 0 5.5" value="interface vidéo" position="0 -0.75 -4" color="#E52645"></a-text> -->
+            <a-text position="0 0 5.5" value="interface vidéo" position="0 -0.75 -4" color="#E52645"></a-text>
         </a-video>
 
         <a-entity camera></a-entity>
