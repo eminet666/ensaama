@@ -10,7 +10,7 @@
 
     <script>
         let affiche = false;
-        let nb = 4;
+        let nb = 8;
         let index = 0;
         AFRAME.registerComponent('markerhandler', {
                 init: function () {
@@ -153,6 +153,12 @@
 			<a-asset-item id="model1" src="./models/Flamingo.glb"></a-asset-item>
             <a-asset-item id="model2" src="./models/Parrot.glb"></a-asset-item>
             <a-asset-item id="model3" src="./models/Stork.glb"></a-asset-item>
+			<a-asset-item id="buste" src="./models/buste.glb"></a-asset-item>
+
+            <a-mixin id="video" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay muted playsinline>
+            <video id="vid1" src="./video/videomapping.mp4" mixin="video"></video>
+            <video id="vid2" src="./video/jungle.mp4" mixin="video"></video>
+            <video id="vid3" src="./video/interface.mp4" mixin="video"></video>
 	    </a-assets>
 
         <!-- IMAGE TRACK -->
@@ -184,6 +190,20 @@
 		<a-entity id="content3" scale="0.5 0.5 0.5" position="0 0 -5" rotation="0 0 0" animation-mixer
             gltf-model="#model3" visible="false">
 		</a-entity>
+
+        <a-video id="content5" src="#vid1" position="0 0.1 -5" visible="false"
+            geometry="primitive: plane; width: 3; height: 1.75">
+        </a-video>
+
+        <a-video id="content6" src="#vid2" position="0 0.1 -5" visible="false"
+            geometry="primitive: plane; width: 3; height: 1.75">
+            <!-- <a-text position="0 0 5.5" value="design génératif" position="0 -0.75 -4" color="#E52645"></a-text> -->
+        </a-video>
+
+        <a-video id="content7" src="#vid3" position="0 0.1 -5" visible="false"
+            geometry="primitive: plane; width: 3; height: 1.75">
+            <!-- <a-text position="0 0 5.5" value="interface vidéo" position="0 -0.75 -4" color="#E52645"></a-text> -->
+        </a-video>
 
         <a-entity camera></a-entity>
 
