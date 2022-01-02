@@ -21,13 +21,13 @@
                             index = Math.floor(Math.random() * nb);
                             document.querySelector('#content'+index).setAttribute('visible', true);
                             document.querySelector('#interface').style.visibility = "hidden";
-                            document.querySelector('#mention').setAttribute('visible', true);
+                            //document.querySelector('#mention').setAttribute('visible', true);
 
                             setTimeout(function(){ 
                                 document.querySelector('#content'+index).setAttribute('visible', false);
                                 affiche = false;
                                 document.querySelector('#interface').style.visibility = "visible";
-                                document.querySelector('#mention').setAttribute('visible', false);
+                                //document.querySelector('#mention').setAttribute('visible', false);
                             }, 5000);
                             //alert("trouvé "+index);
                         }
