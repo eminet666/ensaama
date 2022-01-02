@@ -123,8 +123,11 @@
     <div class="arjs-loader">
         <div>
             chargement en cours...<br><br>
+            <div style="color: #0AE">
             <b>Une belle année 2022 !</b><br>
             Portes Ouvertes 28 & 29 janvier 2022
+            </div>
+
         </div>
     </div>
 
@@ -195,7 +198,9 @@
 		</a-entity>
 
         <a-video id="content5" src="#vid1" position="0 0.1 -5" visible="false"
-            geometry="primitive: plane; width: 3; height: 1.75">
+            geometry="primitive: plane; width: 3; height: 1.75"
+            preload="auto" response-type="arraybuffer"
+            loop crossorigin webkit-playsinline autoplay muted playsinline>
             <a-text value="vidéo mapping" mixin="text"
                     align="center" anchor="center" wrap-count="50"
                     font="./font/olivier-bold-msdf.json" negate="false"
