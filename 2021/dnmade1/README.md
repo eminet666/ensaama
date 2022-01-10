@@ -5,12 +5,12 @@
 [base](https://eminet666.github.io/ensaama/2021/dnmade1/AR/0_base.html)
 
 ## Labyrinthe
-### démo
+<!-- ### démo
 [demo planes](https://eminet666.github.io/ensaama/2021/dnmade1/labyrinthe/0_demo_labyrinthe.html) |
 [demo box](https://eminet666.github.io/ensaama/2021/dnmade1/labyrinthe/1_demo_labyrinthe_box.html) |
-[demo 3D model](https://eminet666.github.io/ensaama/2021/dnmade1/labyrinthe/2_demo_labyrinthe_3D.html)
+[demo 3D model](https://eminet666.github.io/ensaama/2021/dnmade1/labyrinthe/2_demo_labyrinthe_3D.html) -->
 
-### étudiants
+<!-- ### étudiants
 <!-- [Eve](https://evebv.github.io/vr/labyrinthe.html) |
 [Clara](https://coloyu.github.io/vr/A-frame/Labirynthe/labirynthe2.html) |
 [Ines](https://brenlwen.github.io/demo/labyrinthe/labyrinthe.html) |
@@ -32,11 +32,11 @@ Emie |
 [eve](./dnmade1/labyrinthe/mara.html)
 
 ## What a mess !
-Eve	|
-[Clara](https://coloyu.github.io/vr/A-frame/desordre/desordre.html)
+<!-- Eve	|
+[Clara](https://coloyu.github.io/vr/A-frame/desordre/desordre.html) |
 Inès	|
-[Pauline](https://pauline-dlq.github.io/mess/mess.html)
-[Etienne](https://etiennedufour13.github.io/main-01/VR/environement1/environement1.html)
+[Pauline](https://pauline-dlq.github.io/mess/mess.html) |
+[Etienne](https://etiennedufour13.github.io/main-01/VR/environement1/environement1.html) |
 Lila  |		
 [Carla](https://carlagazeaux.github.io/rv/whatamess2.html) |
 [Nicolas](https://lebasnico.github.io/test-texture/lowpoly_mess.html) |
@@ -46,9 +46,12 @@ Matéo  |
 Emie  |		
 Carla	  |
 Mara  |		
-Iris		
+Iris		 -->
+[clara](./dnmade1/whatamess/clara.html) |
+[etienne](./dnmade1/whatamess/etienne.html) |
+[pauline](./dnmade1/whatamess/pauline.html) 
 
-## Archeologie numérique
+<!-- ## Archeologie numérique
 
 ### démo
 [0_camera](https://eminet666.github.io/ensaama/2021/dnmade1/archeo/demo/0_camera.html) |
@@ -79,11 +82,10 @@ Emie	|
 Mara |
 Iris		
 
-
-
+ -->
 
 ## Volume2Archi
-[Eve](https://evebv.github.io/vr/popup.html) |
+<!-- [Eve](https://evebv.github.io/vr/popup.html) |
 [Clara](https://coloyu.github.io/vr/A-frame/popup/popup_clara_obj.html) |
 Ines |
 [Pauline](https://pauline-dlq.github.io/popup/popup.html) |
@@ -97,4 +99,7 @@ Matéo |
 Emie |
 [Carla](http://127.0.0.1:3000/a-frame/pop-up.html) |
 Mara |
-Iris
+Iris -->
+[agathe](./dnmade1/whatamess/agathe.html) |
+[clara](./dnmade1/whatamess/clara_obj.html) |
+[diwa](./dnmade1/whatamess/diwa.html)
