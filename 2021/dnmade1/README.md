@@ -26,10 +26,10 @@ Emie |
 [Carla](https://carla-rgch.github.io/demo/labyrinthe.html) |
 [Mara](https://mara-servain.github.io/a-frame/labyrinthe.html) |
 [Iris](https://irisvkc.github.io/labyyy/testfile2.html) -->
-[agathe](./dnmade1/labyrinthe/mara.html) |
-[carla](./dnmade1/labyrinthe/mara.html) |
-[mara](./dnmade1/labyrinthe/mara.html) |
-[eve](./dnmade1/labyrinthe/mara.html)
+[agathe](./labyrinthe/mara.html) |
+[carla](./labyrinthe/mara.html) |
+[mara](./labyrinthe/mara.html) |
+[eve](./labyrinthe/mara.html)
 
 ## What a mess !
 <!-- Eve	|
@@ -47,9 +47,9 @@ Emie  |
 Carla	  |
 Mara  |		
 Iris		 -->
-[clara](./dnmade1/whatamess/clara.html) |
-[etienne](./dnmade1/whatamess/etienne.html) |
-[pauline](./dnmade1/whatamess/pauline.html) 
+[clara](./whatamess/clara.html) |
+[etienne](./whatamess/etienne.html) |
+[pauline](./whatamess/pauline.html) 
 
 <!-- ## Archeologie numérique
 
@@ -100,6 +100,6 @@ Emie |
 [Carla](http://127.0.0.1:3000/a-frame/pop-up.html) |
 Mara |
 Iris -->
-[agathe](./dnmade1/whatamess/agathe.html) |
-[clara](./dnmade1/whatamess/clara_obj.html) |
-[diwa](./dnmade1/whatamess/diwa.html)
+[agathe](./whatamess/agathe.html) |
+[clara](./whatamess/clara_obj.html) |
+[diwa](./whatamess/diwa.html)
