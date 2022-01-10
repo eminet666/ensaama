@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="texture" src="./assets/glitch1.jpg">
+            <img id="texture1" src="./assets/glitch2.jpg">
+            <img id="texture2" src="./assets/glitch3.jpg">
+        </a-assets>
+
+        <a-box position="0 1 1.5" width="3" height="2" depth="0.05" src="#texture"></a-box>
+        <a-box position="-0.8 1 -1.5" width="1.5" height="2" depth="0.05" src="#texture"></a-box>
+        <a-box position="1.1 1 -1.5" width="0.8" height="2" depth="0.05" src="#texture1"></a-box>
+        <a-box position="1.5 1 0" rotation="0 90 0" width="3" height="2" depth="0.05" src="#texture1"></a-box>
+        <a-box position="-1.5 1 0" rotation="0 90 0" width="3" height="2" depth="0.05" src="#texture"></a-box>
+
+        <a-box position="0.7 1 -0.35" rotation="0 90 0" width="0.5" height="2" depth="0.05" src="#texture2"></a-box>
+        <a-box position="-0.1 1 0.4" rotation="0 90 0" width="0.5" height="2" depth="0.05" src="#texture2"></a-box>
+        <a-box position="0.07 1 -0.60" width="1.3" height="2" depth="0.05" src="#texture2"></a-box>
+        <a-box position="-0.45 1 0.5" width="0.7" height="2" depth="0.05" src="#texture"></a-box>
+        <a-box position="-0.8 1 1" rotation="0 90 0" width="1" height="2" depth="0.05" src="#texture"></a-box>
+        <a-box position="-0.58 1 -1" rotation="0 90 0" width="1" height="2" depth="0.05" src="#texture"></a-box>
+        <a-box position="1.04 1 0.5" rotation="0 0 0" width="0.9" height="2" depth="0.05" src="#texture1"></a-box>
+
+        <a-plane position="0 0 0" rotation="-90 0 0" width="3" height="3" src="#texture2"></a-plane>
+        <a-sky color="#ECECEC"></a-sky>
+        <a-camera position="0 3 0"></a-camera>
+    </a-scene>
+</body>
+
+</html>

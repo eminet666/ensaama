@@ -11,7 +11,7 @@
 [demo 3D model](https://eminet666.github.io/ensaama/2021/dnmade1/labyrinthe/2_demo_labyrinthe_3D.html)
 
 ### étudiants
-[Eve](https://evebv.github.io/vr/labyrinthe.html) |
+<!-- [Eve](https://evebv.github.io/vr/labyrinthe.html) |
 [Clara](https://coloyu.github.io/vr/A-frame/Labirynthe/labirynthe2.html) |
 [Ines](https://brenlwen.github.io/demo/labyrinthe/labyrinthe.html) |
 [Pauline](https://pauline-dlq.github.io/labyrinthe2/labyrinthe2.html) |
@@ -25,8 +25,11 @@ Matéo |
 Emie |
 [Carla](https://carla-rgch.github.io/demo/labyrinthe.html) |
 [Mara](https://mara-servain.github.io/a-frame/labyrinthe.html) |
-[Iris](https://irisvkc.github.io/labyyy/testfile2.html)
-
+[Iris](https://irisvkc.github.io/labyyy/testfile2.html) -->
+[agathe](./dnmade1/labyrinthe/mara.html) |
+[carla](./dnmade1/labyrinthe/mara.html) |
+[mara](./dnmade1/labyrinthe/mara.html) |
+[eve](./dnmade1/labyrinthe/mara.html)
 
 ## What a mess !
 Eve	|
