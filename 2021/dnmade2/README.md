@@ -13,7 +13,7 @@
 * [delphine](./delphine.html) | 
 * [elisa](./elisa.html) | 
 * [garance](./garance.html) | 
-* [loubna](./loubna.html) | 
+* [loubna](./loubna.html) 
 
 ## animations
 * [Garance](./garance_animation.html)
