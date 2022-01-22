@@ -1,4 +1,3 @@
-# ensaama
 
 ## 2020-2021
 * [DNMADE3](https://eminet666.github.io/ensaama/2021/dnmade3/)
