@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: #666" 
+             gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/;">
+
+        <a-assets>
+            <a-asset-item id="modele" src="./assets/papillon_2.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity gltf-model="#modele" position="0 1 -5" rotation="0 0 0" scale="0.75 0.75 0.75"
+            animation="property: rotation; from: 0 0 0; to: 360 0 0; dur: 10000; loop: true; easing: linear">
+        </a-entity>
+
+    </a-scene>
+</body>
+
+</html>
