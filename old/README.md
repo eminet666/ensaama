@@ -5,3 +5,5 @@
 * [papillon_3](./DSAA1/insectes/papillon_3.html) 
 * [libellule](./DSAA1/insectes/libellule.html) 
 * [hornet](./DSAA1/insectes/hornet.html) 
+* [frelon](./DSAA1/insectes/frelon.html) 
+* [ruche](./DSAA1/insectes/ruche.html) 
