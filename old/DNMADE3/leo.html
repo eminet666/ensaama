@@ -1,0 +1,179 @@
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-C ompatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="./js/unlock_audio_ios.js"></script>
+
+    <script>
+        AFRAME.registerComponent('modele', {
+            init: function () {
+                var el = this.el;
+                el.addEventListener('model-loaded', () => {
+                    console.log(">>>ça marche pour " + this.el.id);
+                });
+                this.el.addEventListener('model-error', () => {
+                    console.log(">>>modèle erreur");
+                });
+            }
+        });
+
+        AFRAME.registerComponent('fini', {
+            init: function () {
+                addEventListener('animation-finished', () => {
+                    //console.log(">>>anim terminée");
+
+                });
+            }
+        });
+
+        AFRAME.registerComponent('boucle', {
+            init: function () {
+                var nb = 0;
+                addEventListener('animation-loop', () => {
+                    //console.log(">>>> loop terminée n°" + nb);
+                    nb++;
+
+                });
+            }
+        });
+
+        AFRAME.registerComponent('pas', {
+            init: function () {
+                var el = this.el;
+                var pas = 1;
+                var vitesse = 0.5;
+                var action = ["pas_01", "pas_02", "pas_03", "pas_04", "pas_05"]
+                el.addEventListener('animation-finished', () => {
+
+                    if (pas < 5) {
+                        el.removeAttribute("animation-mixer");
+                        el.setAttribute("animation-mixer", "clip:" + action[pas]);
+                        el.setAttribute("animation-mixer", "repetitions: 3");
+                        pas++;
+
+                    } else {
+                        //console.log("rentré dans le else");
+
+
+                        function getRandomInt(max) {
+                            return Math.floor(Math.random() * Math.floor(max));
+                        }
+                        var temporaire = (getRandomInt(4));
+                        //console.log("premier tirage " + temporaire);
+
+                        while (temporaire == random) {
+                            var temporaire = (getRandomInt(4));
+                            //console.log("nouvelle valeur " + temporaire);
+                        }
+                        var random = temporaire;
+                        //console.log("valeur de random " + random);
+
+                        el.removeAttribute("animation-mixer");
+                        el.setAttribute("animation-mixer", "clip:" + action[random]);
+                        el.setAttribute("animation-mixer", "loop: once");
+
+
+                    }
+                });
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <a-scene background="color: skyblue">
+        <a-assets>
+            <a-asset-item id="Alizee" src="./assets/alizee_leo.glb"></a-asset-item>
+            <a-asset-item id="Zhenya" src="./assets/zhenya_cecile.glb"></a-asset-item>
+            <a-asset-item id="Jasmine" src="./assets/jasmine_louane.glb"></a-asset-item>
+            <a-asset-item id="Leo" src="./assets/leo_alizee.glb"></a-asset-item>
+            <img id="thira" crossorigin="anonymous" src="./assets/leo.png" />
+            <audio id="son" src="./assets/zorba.mp3" preload="auto" autoplay="true" loop="false"></audio>
+        </a-assets>
+
+        <!-- lumières -->
+        <a-entity light="type: ambient; color: #CCC; intensity: 1"></a-entity>
+        <a-entity light="type: directional; castShadow:true; intensity: 0.5" position="-1 2 1"></a-entity>
+
+        <!-- Danseur.se.s + plan pour ombre -->
+        <a-entity id="model3D" scale="1 1 1" position="0.474 0.314 -2" rotation="90 0 -80" gltf-model="#Alizee"
+            animation-mixer="clip: pas_03 ; repetitions : 4 ; timeScale : 2 ; crossFadeDuration : 0 ; clampWhenFinished : true"
+            modele fini boucle pas shadow="cast:true; receive:true">
+        </a-entity>
+
+        <a-plane position="0.781 0.314 -2.488" rotation="-90 0 0" scale="1.321 1.456 1" shadow="receive: true" " ></a-plane>
+
+
+        <a-entity id=" model3D" scale="1 1 1" position="0.474 0.856 -4" rotation="90 0 -180" gltf-model="#Zhenya"
+            animation-mixer="clip: pas_03 ; repetitions : 4 ; timeScale : 2 ; crossFadeDuration : 0 ; clampWhenFinished : true"
+            modele fini boucle pas shadow="cast:true; receive:true">
+            </a-entity>
+
+            <a-plane position="0.781 0.756 -4.938" rotation="-90 0 0" scale="1.321 1.456 1" shadow="receive: true" " ></a-plane>
+
+
+        <a-entity id=" model3D" scale="1 1 1" position="1 -1.1 1.281" rotation="90 0 90" gltf-model="#Jasmine"
+                animation-mixer="clip: pas_03 ; repetitions : 4 ; timeScale : 2 ; crossFadeDuration : 0 ; clampWhenFinished : true"
+                modele fini boucle pas shadow="cast:true; receive:true">
+                </a-entity>
+
+                <a-plane position="1.356 -1.109 1.373" rotation="-90 0 0" scale="1 1 1" shadow="receive: true" " ></a-plane>
+
+
+        <a-entity id=" model3D" scale="1 1 1" position="1.162 -1.767 4.021" rotation="90 0 -100" gltf-model="#Leo"
+                    animation-mixer="clip: pas_03 ; repetitions : 4 ; timeScale : 2 ; crossFadeDuration : 0 ; clampWhenFinished : true"
+                    modele fini boucle pas shadow="cast:true; receive:true">
+                    </a-entity>
+
+                    <a-plane position="1.711 -1.891 4" rotation="-90 0 0" scale="1.321 1.456 1" shadow="receive: true" " ></a-plane>
+
+
+      <!-- Environnement -->
+	      <a-sky src=" #thira">
+                        </a-sky>
+
+    </a-scene>
+
+    <!-- Gestion audio -->
+    <button id="bouton" style="position: absolute; left: 20px; bottom: 20px;">EN AVANT LA MUSIQUE!</button>
+
+    <script>
+        var b = document.querySelector('#bouton');
+        var son_zorba = document.querySelector('#son');
+
+        var AudioContext = window.AudioContext || window.webkitAudioContext;
+        var contexteAudio = new AudioContext;
+
+        unlockAudioIOS(contexteAudio); // ok pour context = AudioContext;
+
+        function resumeAudio() {
+            console.log(contexteAudio.state);
+
+            if (contexteAudio.state == "suspended") {
+                contexteAudio.resume();
+                console.log('Playback resumed successfully');
+                son_zorba.play();
+                b.innerHTML = "STOP";
+                console.log("STOP CONSOLE");
+            } else {
+                contexteAudio.suspend();
+                console.log('Playback paused successfully');
+                son_zorba.pause();
+                b.innerHTML = "PLAY";
+                console.log("PLAY CONSOLE");
+            }
+            //document.removeEventListener("click", resumeAudio);
+        }
+
+        b.onclick = resumeAudio;
+    </script>
+
+</body>
+
+</html>
