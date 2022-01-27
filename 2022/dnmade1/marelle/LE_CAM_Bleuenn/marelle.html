@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/elbobo/aframe-multisrc-component/b6d23310/dist/0.3/aframe-multisrc-component.js"></script>
+  </head>
+  <body>
+    <a-assets>
+      <img id="texture" src="stone.jpg">
+      <img id="texture2" src="sky.png">
+    </a-assets>
+
+    <a-scene fog="type: linear; color: #AAA">
+       <a-sky src="#texture2"></a-sky>
+
+       <a-box position="0 -50 0"  
+               width="1" height="100" depth="1"
+               multisrc="src2:#texture">
+       </a-box>
+       <a-box position="1 -50 -1"  
+               width="0.5" height="100" depth="0.5"
+               multisrc="src2:#texture">
+       </a-box>
+       <a-box position="0 -50 -2"  
+               width="0.5" height="100" depth="0.5"
+               multisrc="src2:#texture">
+       </a-box>
+       <a-box position="-1.5 -50 -1.5"  
+               width="0.5" height="100" depth="0.5"
+               multisrc="src2:#texture">
+       </a-box>
+       <a-box position="-2 -50 -0.5"  
+               width="0.5" height="100" depth="0.5"
+               multisrc="src2:#texture">
+       </a-box>
+       <a-box position="-2 -50 1"  
+               width="0.5" height="100" depth="0.5"
+               multisrc="src2:#texture">
+       </a-box>
+       <a-box position="-0.25 -50 1.5"  
+               width="0.5" height="100" depth="0.5"
+               multisrc="src2:#texture">
+       </a-box>
+       <a-box position="1.5 -50 1.5"  
+               width="0.5" height="100" depth="0.5"
+               multisrc="src2:#texture">
+       </a-box>
+
+       <a-box position="-0.75 -47 -0"  
+               width="0.01" height="100" depth="1.5">
+       </a-box>
+       <a-box position="-0.25 -47 -0.75"  
+               width="1.125" height="100" depth="0.01">
+       </a-box>
+       <a-box position="0 -47 0.75"  
+               width="1.5" height="100" depth="0.01">
+       </a-box>
+    </a-scene>
+  </body>
+</html>

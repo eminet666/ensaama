@@ -1,0 +1,103 @@
+<html>
+
+  <head>
+
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/elbobo/aframe-multisrc-component/b6d23310/dist/0.3/aframe-multisrc-component.js"></script>
+
+  </head>
+  <body>
+
+    <a-scene background="color: black">
+
+        <!-- width > x, height > y, depth > z -->
+        <!-- position > x, y, z -->
+        <!-- nb2 : cmd+K+C = commentaire, cmd+K+U = c'est plus un commentaire, magie! -->
+
+    <a-assets>
+
+      <img id="asteroid" src="asteroid.png"></img>
+      <img id="ciel" src="ciel.png"></img>
+
+    </a-assets>
+
+    <a-dodecahedron
+      src="#asteroid"
+      position="0 0.05 0"
+      radius="0.2"
+      rotation="30 0 0">
+    </a-dodecahedron>
+
+    <a-dodecahedron
+      src="#asteroid"
+      position="0.3 0.05 0.3"
+      radius="0.19"
+      rotation="30 0 0">
+    </a-dodecahedron>
+
+    <a-dodecahedron
+      src="#asteroid"
+      position="0 0.05 0.6"
+      radius="0.18"
+      rotation="30 0 0">
+    </a-dodecahedron>
+
+    <a-dodecahedron
+      src="#asteroid"
+      position="-0.4 0.05 0.5"
+      radius="0.17"
+      rotation="30 0 0">
+    </a-dodecahedron>
+
+    <a-dodecahedron
+      src="#asteroid"
+      position="-0.6 0.05 0.2"
+      radius="0.16"
+      rotation="30 0 0">
+    </a-dodecahedron>
+
+    <a-dodecahedron
+      src="#asteroid"
+      position="-0.6 0.05 -0.15"
+      radius="0.15"
+      rotation="30 0 0">
+    </a-dodecahedron>
+
+    <a-dodecahedron
+      src="#asteroid"
+      position="-0.4 0.05 -0.5"
+      radius="0.14"
+      rotation="30 0 0">
+    </a-dodecahedron>
+
+    <a-dodecahedron
+      src="#asteroid"
+      position="0.1 0.05 -0.8"
+      radius="0.13"
+      rotation="30 0 0">
+    </a-dodecahedron>
+
+    <a-dodecahedron
+      src="#asteroid"
+      position="0.8 0.05 -0.9"
+      radius="0.12"
+      rotation="30 0 0">
+    </a-dodecahedron>
+
+    <a-sky
+      src="#ciel"
+    >
+    </a-sky>
+
+    <!-- <a-plane
+      position="0 -1 0"
+      rotation="-90 0 0"
+      width="4" height="4"
+      color="#7BC8A4">
+    </a-plane> -->
+
+    </a-scene>
+
+  </body>
+
+</html>
