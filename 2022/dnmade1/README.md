@@ -7,7 +7,9 @@
 * [one face](./marelle/vr_2_multisrc.html)
 
 #### étudiants
-* [lou](./cardon_lou/marelle.html)
+* [lou](./marelle/lou/marelle.html)
+* [adrien](./marelle/adrien/parcours.html)
+* [bleuenn](./marelle/bleuenn/marelle.html)
 
 
 
