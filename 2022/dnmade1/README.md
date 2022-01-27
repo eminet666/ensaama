@@ -10,7 +10,12 @@
 * [lou](./marelle/lou/marelle.html)
 * [adrien](./marelle/adrien/parcours.html)
 * [bleuenn](./marelle/bleuenn/marelle.html)
-
+* [tiphaine](./marelle/tiphaine/marelle.html)
+* [tiphaine hard](./marelle/tiphaine/marellehard.html)
+* [jacqueline](./marelle/jacqueline/marelle.html)
+* [marwa](./marelle/marwa/marelle.html)
+* [romain](./marelle/romain/marelle.html)
+* [mandala](./marelle/mandala/marelle.html)
 
 
 

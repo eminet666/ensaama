@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    
+<a-scene>
+
+    <a-assets>
+      <img id="merrrr" src="merrrr.png">
+      <img id="texture" src="riche.jpg">
+      <img id="texture2" src="bleu.jpg">
+      <img id="texture3" src="marron.jpg">
+      <img id="texture4" src="ois.jpg">
+      <img id="texture6" src="violet.JPG">
+      <img id="texture7" src="br.jpg">
+    </a-assets>
+
+    <a-box width = "0.5" 
+           height= "0.5"  
+           depth="0.5"    
+           position="0,75 -0.5 1,2" 
+           rotation="0 45 0" 
+           src="#texture"></a-box>
+
+     <a-box width = "1,5" 
+           height= "1.5"  
+           depth="2"    
+           position="-1,5 -1 -2" 
+           rotation="-1 45 -1" 
+           src="#texture7"></a-box>
+        
+     <a-sphere position="2 -0.5 -1,5" 
+                radius="0.5" 
+                src="#texture2"></a-sphere>
+    
+     <a-sphere position="-1 -0.7 1.5" 
+                radius="0.7" 
+                src="#texture6"></a-sphere>
+
+                  
+
+     <a-sphere position="1.8 -0.2 1.8" 
+                radius="0.3" 
+                src="#texture6"></a-sphere>
+
+     <a-sphere position="1.3 -0.2 1.4" 
+                radius="0.2" 
+                src="#texture3"></a-sphere>
+
+     <a-sphere position="-1.3 -0.2 -0.4" 
+                radius="0.2" 
+                src="#texture"></a-sphere>
+
+    <a-cylinder position="0 -1.5 0" 
+                  radius="0.3" 
+                  height="3" 
+                  color="white"
+                  src="#texture3"></a-cylinder>
+
+
+    <a-sky src="#merrrr"></a-sky>
+  </a-scene>
+  </body>
+</html>
