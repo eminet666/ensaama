@@ -17,6 +17,8 @@
 * [romain](./marelle/romain/marelle.html)
 * [mandala](./marelle/mandala/marelle.html)
 * [laura](./marelle/laura/marelle.html)
+* [aristide](./marelle/aristide/marelle.html)
+* [yifan](./marelle/yifan/marelle.html)
 
 
 

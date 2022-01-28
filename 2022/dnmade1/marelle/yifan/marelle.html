@@ -1,0 +1,75 @@
+<html>
+
+<head>
+
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/elbobo/aframe-multisrc-component/b6d23310/dist/0.3/aframe-multisrc-component.js">
+  </script>
+  <style>
+    .rotate image {
+      transform: rotate(90);
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <a-scene background="#skyTexture">
+
+    <a-assets>
+      <img id="pelouse" src="eyes.jpg">
+      <img id="sky" src="genshin2.jfif">
+      <img id="bug" src="Bug.jpg.opdownload">
+      <img id="smile" src="smile.png">
+      <img id="d1" src="d1.png">
+      <img id="d2" src="d2.png">
+    </a-assets>
+
+    <a-sky src="#sky"></a-sky>
+
+    <a-box width="1" height="1" depth="1" position="-3 -0.5 -3" rotation="0 0 0" color="silver" src="#pelouse">
+    </a-box>
+
+    <a-box width="1" height="1" depth="1" position="-2 -0.5 " rotation="0 0 0" color="silver" src="#pelouse">
+    </a-box>
+
+    <a-box width="1" height="1" depth="1" position="-7 -0.5 1" rotation="0 0 0" color="silver" src="#pelouse">
+    </a-box>
+
+    <a-box width="1" height="1" depth="1" position="-5 -0.5 3" rotation="0 0 0" color="silver" src="#pelouse">
+    </a-box>
+
+    <a-box width="1" height="1" depth="1" position="-4 -0.5 -1" rotation="0 0 0" color="silver" src="#pelouse">
+    </a-box>
+
+    <a-box width="1" height="1" depth="1" position="-5 -0.5 0" rotation="0 0 0" color="silver" src="#pelouse">
+    </a-box>
+
+    <a-box width="1" height="1" depth="1" position="-1 -0.5 -2" rotation="0 0 0" color="silver" src="#pelouse">
+    </a-box>
+
+    <a-box width="1" height="1" depth="1" position="-8 -0.5 3" rotation="0 0 0" color="silver" src="#pelouse">
+    </a-box>
+
+
+    <a-plane position="0.5 0.1 0" rotation="-90 0 0" width="2" height="4" src="#D1" img class="rotate_image"></a-plane>
+
+    <a-plane position="-9 0.1 3" rotation="-90 0 0" width="1" height="4" src="#D2" img class="rotate_image">
+
+
+    </a-plane>
+
+    <a-curvedimage src="#Smile" height="7" radius="5.7" theta-length="72" rotation="0 50 0" position="2 2 0"
+      scale="0.8 0.8 0.8"></a-curvedimage>
+
+    </a-curvedimage>
+
+
+
+  </a-scene>
+
+</body>
+
+
+</html>
