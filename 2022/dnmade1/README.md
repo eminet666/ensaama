@@ -6,6 +6,10 @@
 * [cube](./marelle/vr_1.html)
 * [one face](./marelle/vr_2_multisrc.html)
 
+#### modeles
+* [pieds](./marelle_pieds.html)
+* [mieds-mains](./marelle_pieds-mains.html)
+
 #### étudiants
 * [lou](./marelle/lou/marelle.html)
 * [adrien](./marelle/adrien/parcours.html)
@@ -23,7 +27,8 @@
 * [romain](./marelle/romain/marelle.html)
 * [mael](./marelle/mael/marelle.html)
 * [carla_x]
-* []
+* [xxx]
+
 
 
 
