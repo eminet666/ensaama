@@ -9,6 +9,7 @@
 #### modeles
 * [pieds](./marelle_pieds.html)
 * [mieds-mains](./marelle_pieds-mains.html)
+* [final](./vr_3_target.html)
 
 #### étudiants
 * [lou](./marelle/lou/marelle.html)

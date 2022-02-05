@@ -6,3 +6,8 @@ Thumbs.db
 # ignore files
 **/z_*.*
 /todo.txt
+
+# ignore rep
+**/nodejs
+**/z_*
+
