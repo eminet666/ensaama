@@ -7,9 +7,9 @@
 * [one face](./marelle/vr_2_multisrc.html)
 
 #### modeles
-* [pieds](./marelle_pieds.html)
-* [mieds-mains](./marelle_pieds-mains.html)
-* [final_2](./vr_3_target.html)
+* [pieds](./marelle/marelle_pieds.html)
+* [mieds-mains](./marelle/marelle_pieds-mains.html)
+* [final_2](./marelle/vr_3_target.html)
 
 #### étudiants
 * [lou](./marelle/lou/marelle.html)
