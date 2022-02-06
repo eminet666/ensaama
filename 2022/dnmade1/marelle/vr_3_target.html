@@ -55,14 +55,14 @@
 
         <a-sphere id="winner" color="yellow" radius="0.5" position="-1 0 -2" visible="false"></a-sphere>
 
-        <a-plane position="0 0 -4" 
+        <a-plane position="0 0 -2" 
                  rotation="-90 0 0" 
                  width="4" height="4" 
                  color="gray">
         </a-plane>
 
         <a-entity camera position="0 1.6 0" look-controls wasd-controls 
-                findepartie="cible: -1 0 -2; seuil: 0.5; final: winner;">
+                findepartie="cible: -1 0 -2; seuil: 0.25; final: winner;">
         </a-entity>
 
     </a-scene>
