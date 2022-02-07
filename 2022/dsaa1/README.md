@@ -11,7 +11,10 @@
 * [KREMPP Thomas](https://lumitomate.github.io/t_krempp/)
 * [POISSARD Loic](https://loacp.github.io/loac_paysage/)
 * [RAMON Amélie](https://monarvis.github.io/monaryr/)
-* [WOJAKOWSKI Clémence_X]()		
+* [WOJAKOWSKI Clémence_X]()	
+
+## tests
+* [proximity color](./0_myproximity_color.html)
 
 	
 			
