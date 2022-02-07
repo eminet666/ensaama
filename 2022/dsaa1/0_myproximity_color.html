@@ -28,23 +28,29 @@
             schema: {
                 trace: { type: 'boolean', default : true},
                 seuil: {type: 'number', default: 0.5},
+                action: {type: 'string', default: 'color'},
+                enter: {type: 'string', default: 'white'},
+                exit:  {type: 'string', default: 'black'},
             },
             init: function () {
                 var el = this.el;
 
-                //Ecouter l'événement.
-                el.addEventListener('prox1', function (e) { 
-                    console.log("prox1");
+                // Ecouter l'événement.
+                el.addEventListener('enter', function (e) { 
                     el.setAttribute('material', 'color', 'red');
                  }, false);
+                el.addEventListener('exit', function (e) {
+                    el.setAttribute('material', 'color', 'blue');
+                }, false);
 
             },
             tick: function () {
                 var seuil = this.data.seuil;
                 var pos = this.el.object3D.position;
                 var distance = dist(pos);
-                if(distance < seuil) this.el.emit('prox1');
-                //console.log(distance);
+                
+                if(distance < seuil) this.el.emit('enter');
+                else this.el.emit('exit');
 
                 if(this.data.trace) {
                     var scene = document
@@ -71,7 +77,7 @@
             position="-1 0 -2" 
             rotation="0 45 0"
             color="silver"
-            myproximity='seuil: 0.5;'>
+            myproximity='seuil: 0.5; action: color; enter: red; exit: blue'>
         </a-box>
 
         <a-plane position="0 0 -2" 

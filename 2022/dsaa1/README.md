@@ -14,7 +14,7 @@
 * [WOJAKOWSKI Clémence_X]()	
 
 ## tests
-* [proximity color](./0_myproximity_color.html)
+* [proximity color_1](./0_myproximity_color.html)
 
 	
 			
