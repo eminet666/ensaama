@@ -73,12 +73,12 @@
                             case 'anim':
                                 el.setAttribute("look-at", '#'+ enter[1]);
                                 el.setAttribute("animation-mixer", 'clip: ' + enter[0]);
-                                var parameters="property: position; dur: 5000; easing: linear; to: 1 0 -2; loop: false";
+                                var parameters="property: position; dur: 2000; easing: linear; to: 1 0 -2; loop: false";
                                 el.setAttribute('animation', parameters);
                                 setTimeout(function(){
                                     el.setAttribute('animation-mixer', 'clip: Survey');
                                     el.setAttribute('look-at', '[camera]');
-                                }, 5000);    
+                                }, 2000);    
                                 break;
                         }
                         //flagin = 'enter';
