@@ -4,6 +4,8 @@
 <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    </script>
 
     <script>
         let player = {
@@ -28,7 +30,7 @@
         });
         AFRAME.registerComponent('myproximity', {
             schema: {
-                trace: { type: 'boolean', default : true},
+                trace: { type: 'boolean', default : false},
                 seuil: {type: 'number', default: 0.5},
                 action: {type: 'string', default: 'color'},
                 enter: {type: 'string', default: 'white'},
@@ -37,13 +39,18 @@
             init: function () {
                 var el = this.el;
                 var action = this.data.action;
-                
+                var enter = this.data.enter.split('-');
+                var exit = this.data.exit.split('-');
+                console.log(enter);
+                console.log(exit);
                 // Ecouter l'événement.
                 el.addEventListener('enter', function (e) { 
                     switch(action){
                         case 'color' : el.setAttribute('material', 'color', 'red');
                             break;
-                        case 'anim' : el.setAttribute("animation-mixer", 'clip: Survey' );
+                        case 'anim' : 
+                            el.setAttribute("animation-mixer", 'clip: '+enter[0] );
+                            el.setAttribute("lookat", '#'+enter[1] );
                             break;
                     } 
                  }, false);
@@ -51,7 +58,9 @@
                     switch(action){
                         case 'color' : el.setAttribute('material', 'color', 'blue');
                             break;
-                        case 'anim' : el.setAttribute("animation-mixer", 'clip: Run' );
+                        case 'anim' : 
+                            el.setAttribute('animation-mixer', 'clip: '+exit[0] );
+                            el.setAttribute('lookat', '[camera]' );
                             break;
                     }
                 }, false);
@@ -89,13 +98,16 @@
             <a-asset-item id="fox" src="./fox.glb"></a-asset-item>
         </a-assets>
 
-        <a-box id="cible" width="0.25" height="0.25" depth="0.25" position="1 0 -2" rotation="0 45 0" color="silver"
-            myproximity='seuil: 0.5; action: color; enter: red; exit: blue'>
+        <a-box id="cible" visible="false"
+            width="0.25" height="0.25" depth="0.25" 
+            position="1 0 -2" rotation="0 45 0" color="silver"
+            >
         </a-box>
 
-        <a-entity id="renard" position="-1 0 -2" rotation="0 0 0" scale="0.005 0.005 0.005" 
+        <a-entity id="renard" position="-1 0 -2" scale="0.005 0.005 0.005" 
             gltf-model="#fox"
-            animation-mixer="clip: Survey"myproximity='seuil: 1; action: color; enter: red; exit: blue'>
+            animation-mixer="clip: Survey" look-at="[camera]"
+            myproximity='trace: true; seuil: 1; action: anim; enter: Run-cible; exit: Survey-[camera]'>
         </a-entity>
 
         <a-plane position="0 0 -2" 
@@ -104,7 +116,7 @@
                  color="gray">
         </a-plane>
 
-        <a-entity camera position="0 1.6 0" look-controls wasd-controls
+        <a-entity camera position="0 0.5 0" look-controls wasd-controls="acceleration:10"
             currentposition>
                 <a-text id="txtlog" value="position" 
                     position="0 0 -1" rotation="0 0 0" scale="0.5 0.5 0.5"

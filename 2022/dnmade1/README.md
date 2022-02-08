@@ -11,7 +11,7 @@
 * [mieds-mains](./marelle/marelle_pieds-mains.html)
 * [final_2](./marelle/vr_3_target.html)
 
-#### étudiants
+#### marelle1
 * [lou](./marelle/lou/marelle.html)
 * [adrien](./marelle/adrien/parcours.html)
 * [bleuenn](./marelle/bleuenn/marelle.html)
@@ -29,6 +29,11 @@
 * [mael](./marelle/mael/marelle.html)
 * [carla_x]
 * [xxx]
+
+#### marelle2
+* [aristide_base](./marelle_2/aristide/VR_marelle_classique.html)
+* [aristide_mains](./marelle_2/aristide/vr_marelle_pieds.html)
+* [aristide_pieds-mains](./marelle_2/aristide/vr_marelle_pieds-mains.html)
 
 
 
