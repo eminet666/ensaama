@@ -31,7 +31,7 @@
                 action: {type: 'string', default: 'color'},
                 enter: {type: 'string', default: 'white'},
                 exit:  {type: 'string', default: 'black'},
-                flagin: { type: 'string', default: 'exit'}
+                flagin: { type: 'boolean', default: 'false'}
             },
             init: function () {
                 var el = this.el;
@@ -54,16 +54,18 @@
                 var distance = dist(pos);
                 
                 if(distance < seuil) {
-                    if(!flagin) {
+                    if(!this.data.flagin) {
                         this.el.emit('enter');
-                        flagin = true;
+                        this.data.flagin = true;
                         console.log("in");
                     }
                 }                
                 else {
-                    this.el.emit('exit');
-                    flagin = true;
-                    console.log("out");
+                    if(this.data.flagin){
+                        this.el.emit('exit');
+                        this.data.flagin = false;
+                        console.log("out");
+                    }
                 }
 
                 if(this.data.trace) {
