@@ -38,6 +38,9 @@
                 // Ecouter l'événement.
                 el.addEventListener('enter', function (e) { 
                     el.setAttribute('material', 'color', 'red');
+                    var rot = el.getAttribute('rotation');
+                    rot.y += 15;
+                    el.setAttribute('rotation', rot);
                  }, false);
                 el.addEventListener('exit', function (e) {
                     el.setAttribute('material', 'color', 'blue');
@@ -53,7 +56,6 @@
                 else this.el.emit('exit');
 
                 if(this.data.trace) {
-                    var scene = document
                     var log = document.querySelector('#txtlog');
                     log.setAttribute('value', 'distance : '+distance.toFixed(2));
                 }
@@ -86,7 +88,7 @@
                  color="gray">
         </a-plane>
 
-        <a-entity camera position="0 1.6 0" look-controls wasd-controls
+        <a-entity camera position="0 0.5 0" look-controls wasd-controls="acceleration:10"
             currentposition>
                 <a-text id="txtlog" value="position" 
                     position="0 0 -1" rotation="0 0 0" scale="0.5 0.5 0.5"

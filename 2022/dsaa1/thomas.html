@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: #021323" gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/;">
+
+        <a-assets>
+            <a-asset-item id="ville" src="./ville_2_uncompressed.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity position="-10 0 -20" gltf-model="#ville" shadow="cast: true; receive:true"></a-entity>></a-entity>
+
+        <!-- //---ambient--- -->
+
+        <a-entity light="type: ambient; intensity: 0;"></a-entity>
+
+        <!-- //---lune--- -->
+
+        <a-entity light="type: point;
+              color: #002345;
+              castShadow: true;
+              intensity: 4;
+              shadowCameraVisible: false;" position="10 20 -4"></a-entity>
+
+        <!-- //---SPOT1--- -->
+
+        <!-- <a-entity light="type: spot;
+                color: #FFFF65;
+                castShadow: true;
+                angle: 40;
+                intensity: 2;
+                shadowCameraVisible: false;" position="2 5.5 2.1" rotation="-90 0 0"></a-entity>
+
+        <a-entity light="type: spot;
+                color: #FFFF65;
+                castShadow: true;
+                angle: 10;
+                intensity: 8;
+                shadowCameraVisible: false;" position="2 2 2.1" rotation="90 0 0"></a-entity> -->
+
+        <!-- //---SPOT2--- -->
+
+        <!-- <a-entity light="type: spot;
+                color: #FFFF65;
+                castShadow: true;
+                angle: 40;
+                intensity: 2;
+                shadowCameraVisible: false;" position="2.05 5.5 -4.6" rotation="-90 0 0"></a-entity>
+
+        <a-entity light="type: spot;
+                color: #FFFF65;
+                castShadow: true;
+                angle: 8;
+                intensity: 10;
+                shadowCameraVisible: false;" position="2.05 2 -4.6" rotation="90 0 0"></a-entity> -->
+
+        <!-- //---SPOT3--- -->
+
+        <!-- <a-entity light="type: spot;
+                color: #FFFF65;
+                castShadow: true;
+                angle: 40;
+                intensity: 2;
+                shadowCameraVisible: false;" position="-0.7 5.5 -1.5" rotation="-90 0 0"></a-entity>
+
+        <a-entity light="type: spot;
+                color: #FFFF65;
+                castShadow: true;
+                angle: 8;
+                intensity: 10;
+                shadowCameraVisible: false;" position="-0.7 2 -1.5" rotation="90 0 0"></a-entity> -->
+
+        <!-- //---spot4--- -->
+
+        <!-- <a-entity light="type: spot;
+                color: #FFFF65;
+                castShadow: true;
+                angle: 30;
+                intensity: 2;
+                shadowCameraVisible: false;" position="-0.7 5.5 8" rotation="-90 0 0"></a-entity>
+
+        <a-entity light="type: spot;
+                color: #FFFF65;
+                castShadow: true;
+                angle: 8;
+                intensity: 10;
+                shadowCameraVisible: false;" position="-0.7 2 8" rotation="90 0 0"></a-entity> -->
+
+        <!-- //---spot5--- -->
+
+        <!-- <a-entity light="type: spot;
+                color: #FFFF65;
+                castShadow: true;
+                angle: 30;
+                intensity: 2;
+                shadowCameraVisible: false;" position="1.4 5.5 13" rotation="-90 0 0"></a-entity>
+
+        <a-entity light="type: spot;
+                color: #FFFF65;
+                castShadow: true;
+                angle: 8;
+                intensity: 10;
+                shadowCameraVisible: false;" position="1.4 2 13" rotation="90 0 0"></a-entity> -->
+
+        <!-- //---spot6--- -->
+
+        <!-- <a-entity light="type: spot;
+                color: #FFFF65;
+                castShadow: true;
+                angle: 30;
+                intensity: 2;
+                shadowCameraVisible: false;" position="12.4 5.5 13" rotation="-90 0 0"></a-entity>
+
+        <a-entity light="type: spot;
+                color: #FFFF65;
+                castShadow: true;
+                angle: 8;
+                intensity: 10;
+                shadowCameraVisible: false;" position="12.4 2 13" rotation="90 0 0"></a-entity> -->
+
+
+
+    </a-scene>
+</body>
+
+</html>
