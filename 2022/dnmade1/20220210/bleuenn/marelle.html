@@ -1,0 +1,47 @@
+<html>
+
+<head>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <script src="https://cdn.rawgit.com/elbobo/aframe-multisrc-component/b6d23310/dist/0.3/aframe-multisrc-component.js"></script>
+</head>
+
+<body>
+        <a-assets>
+                <img id="texture" src="texture.png">
+                <img id="texture1" src="texture2.png">
+                <img id="texture3" src="texture3.png">
+                <img id="texture2" src="background.png">
+        </a-assets>
+
+        <a-entity camera="active: true" look-controls wasd-controls position="0 1.6 0" id="updateMe"></a-entity>
+
+        <a-scene>
+                <a-sky src="#texture2"></a-sky>
+
+                <a-box position="0 -50 0" width="1" height="100" depth="1" multisrc="src0:#texture3; src1:#texture3; src2:#texture; src3:#texture3; src4:#texture3; src5:#texture3" repeat="1 50">
+                </a-box>
+                <a-box position="1 -50 -1" width="0.5" height="100" depth="0.5" multisrc="src0:#texture3; src1:#texture3; src2:#texture; src3:#texture3; src4:#texture3; src5:#texture3" repeat="1 50">
+                </a-box>
+                <a-box position="0 -50 -2" width="0.5" height="100" depth="0.5" multisrc="src0:#texture3; src1:#texture3; src2:#texture; src3:#texture3; src4:#texture3; src5:#texture3" repeat="1 50">
+                </a-box>
+                <a-box position="-1.5 -50 -1.5" width="0.5" height="100" depth="0.5" multisrc="src0:#texture3; src1:#texture3; src2:#texture; src3:#texture3; src4:#texture3; src5:#texture3" repeat="1 50">
+                </a-box>
+                <a-box position="-2 -50 -0.5" width="0.5" height="100" depth="0.5" multisrc="src0:#texture3; src1:#texture3; src2:#texture; src3:#texture3; src4:#texture3; src5:#texture3" repeat="1 50">
+                </a-box>
+                <a-box position="-2 -50 1" width="0.5" height="100" depth="0.5" multisrc="src0:#texture3; src1:#texture3; src2:#texture; src3:#texture3; src4:#texture3; src5:#texture3" repeat="1 50">
+                </a-box>
+                <a-box position="-0.25 -50 1.5" width="0.5" height="100" depth="0.5" multisrc="src0:#texture3; src1:#texture3; src2:#texture; src3:#texture3; src4:#texture3; src5:#texture3" repeat="1 50">
+                </a-box>
+                <a-box position="1.5 -50 1.5" width="0.5" height="100" depth="0.5" multisrc="src0:#texture3; src1:#texture3; src2:#texture; src3:#texture3; src4:#texture3; src5:#texture3" repeat="1 50">
+                </a-box>
+
+                <a-box position="-0.75 -47 -0" width="0.01" height="100" depth="1.5" src="#texture1" repeat="1 50">
+                </a-box>
+                <a-box position="-0.25 -47 -0.75" width="1.125" height="100" depth="0.01" src="#texture1" repeat="1 50">
+                </a-box>
+                <a-box position="0 -47 0.75" width="1.5" height="100" depth="0.01" src="#texture1" repeat="1 50">
+                </a-box>
+        </a-scene>
+</body>
+
+</html>

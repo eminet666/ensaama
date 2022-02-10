@@ -1,0 +1,130 @@
+<!-- source : model3D feet : https://free3d.com/3d-model/foot-v1--788401.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: #5280A7">
+
+        <a-assets>
+            <a-asset-item id="leftfoot" src="./assets/piedgauche.glb"></a-asset-item>
+            <a-asset-item id="rightfoot" src="./assets/pieddroite.glb"></a-asset-item>
+
+            <img id="bleu" src="bleu.png"></img>
+            <img id="jaune" src="jaune.png"></img>
+            <img id="rose" src="rose.png"></img>
+            <img id="rouge" src="rouge.png"></img>
+            <img id="vert" src="vert.png"></img>
+            <img id="violet" src="violet.png"></img>
+
+            <img id="ciel" src="ciel.png"></img>
+        </a-assets>
+
+        <!-- INSEREZ VOTRE ENVIRONNEMENT, CI-DESSOUS ... -->
+        
+    <a-cylinder
+      src="#bleu"
+      position="0 -25 0"
+      height="50"
+      radius="0.2"
+      rotation="0 0 0">
+    </a-cylinder>
+
+    <a-cylinder
+      src="#jaune"
+      position="1 -25 0.5"
+      height="50"
+      radius="0.28"
+      rotation="0 0 0">
+    </a-cylinder>
+
+    <a-cylinder
+      src="#rose"
+      position="0.6 -25 1.3"
+      height="50"
+      radius="0.26"
+      rotation="0 0 0">
+    </a-cylinder>
+
+    <a-cylinder
+      src="#rouge"
+      position="-0.5 -25 1.4"
+      height="50"
+      radius="0.24"
+      rotation="0 0 0">
+    </a-cylinder>
+
+    <a-cylinder
+      src="#vert"
+      position="-1.4 -25 0.9"
+      height="50"
+      radius="0.22"
+      rotation="0 0 0">
+    </a-cylinder>
+
+    <a-cylinder
+      src="#vert"
+      position="-1.4 -25 0.2"
+      height="50"
+      radius="0.20"
+      rotation="0 0 0">
+    </a-cylinder>
+
+    <a-cylinder
+      src="#vert"
+      position="-1.4 -25 -0.5"
+      height="50"
+      radius="0.18"
+      rotation="0 0 0">
+    </a-cylinder>
+
+    <a-cylinder
+      src="#violet"
+      position="-1 -25 -1"
+      height="50"
+      radius="0.16"
+      rotation="0 0 0">
+    </a-cylinder>
+
+    <a-cylinder
+      src="#bleu"
+      position="0 -25 -1.5"
+      height="50"
+      radius="0.1"
+      rotation="0 0 0">
+    </a-cylinder>
+
+    <a-sky
+      src="#ciel"
+    >
+    </a-sky>
+
+        <!-- ... JUSQUE CI-DESSUS -->
+
+        <!-- PLAYER -->
+        <a-entity id="cameraRig">
+            
+            <!-- TETE -->
+            <a-entity id="head" camera wasd-controls look-controls position="0 1.6 0"></a-entity>
+            
+            <!-- MAIN GAUCHE : utiliser oculus-touch-controls pour model3D -->
+            <a-entity id="gauche" oculus-touch-controls="hand: left; model:false">
+                <a-entity id="piedgauche" gltf-model="#leftfoot" rotation="-90 0 180"></a-entity>
+            </a-entity>
+            
+            <!-- MAIN DROITE : utiliser oculus-touch-controls pour model3D -->
+            <a-entity id="droite" oculus-touch-controls="hand: right; model:false">
+                <a-entity id="piedgauche" gltf-model="#rightfoot" rotation="-90 0 180">
+            </a-entity>
+
+        </a-entity>
+
+    </a-scene>
+
+</body>
+
+</html>

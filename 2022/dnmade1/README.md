@@ -11,6 +11,11 @@
 * [mieds-mains](./marelle/marelle_pieds-mains.html)
 * [final_2](./marelle/vr_3_target.html)
 
+#### 20220210
+* Lou : [pieds](./20220210/lou/marelle_pieds.html) | [pieds-mains](./20220210/lou/marelle_pieds-mains.html)
+* Laura [pieds](./20220210/laura/marelle_pieds.html) | [pieds-mains](./20220210/laura/marelle_pieds-mains.html)
+* Bleuen [pieds](./20220210/bleuen/marelle_pieds.html) | [pieds-mains](./20220210/bleuen/marelle_pieds-mains.html)
+
 #### marelle1
 * [lou](./marelle/lou/marelle.html)
 * [adrien](./marelle/adrien/parcours.html)
@@ -30,7 +35,7 @@
 * [carla_x]
 * [xxx]
 
-#### marelle2
+#### test
 * [aristide_base](./marelle_2/aristide/VR_marelle_classique.html)
 * [aristide_mains](./marelle_2/aristide/vr_marelle_pieds.html)
 * [aristide_pieds-mains](./marelle_2/aristide/vr_marelle_pieds-mains.html)
