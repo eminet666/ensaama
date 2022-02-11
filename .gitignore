@@ -2,12 +2,12 @@
 .DS_Store
 Thumbs.db
 ~*.*
+._*
 
 # ignore files
 **/z_*.*
 /todo.txt
 
 # ignore rep
-**/nodejs
 **/z_*
 
