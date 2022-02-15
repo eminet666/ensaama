@@ -20,7 +20,7 @@
 * [test_thomas_local_1](./thomas.html)
 
 	
-			
+<!-- [event en js : emit](https://www.tech-wiki.online/fr/javascript-custom-events.html) -->
 			
 				
 						

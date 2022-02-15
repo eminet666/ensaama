@@ -1,0 +1,162 @@
+<!-- https://www.w3docs.com/snippets/javascript/how-to-create-and-trigger-event-in-javascript.html -->
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    </script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+
+    <script>
+        let player = {
+            pos: {
+                x: 0,
+                y: 0,
+                z: 0
+            }
+        }
+
+        AFRAME.registerComponent('frequency', {
+            schema: {
+                delay: { type: 'number', default: 1000}
+            },
+            init: function () {
+                this.tick = AFRAME.utils.throttleTick(this.tick, this.data.delay, this);
+            },
+            tick: function (time, delta) {
+                console.log("TIME " + delta);
+            }
+        });
+
+        AFRAME.registerComponent('currentposition', {
+            tick: function () {
+                var pos = this.el.object3D.position;
+                var wposition = new THREE.Vector3();
+                var wpos = this.el.object3D.getWorldPosition(wposition);
+
+                player.pos.x = pos.x + wpos.x;
+                player.pos.y = pos.y + wpos.y;
+                player.pos.z = pos.z + wpos.z;
+                //console.log(player.pos);
+            }
+        });
+
+        AFRAME.registerComponent('proximity', {
+            schema: {
+                trace: { type: 'boolean', default: false },
+                seuils: { type: 'array' },
+                cibles: { type: 'array' },
+                flagin: { type: 'array'}
+            },
+            init: function() {
+                this.data.cibles = this.data.cibles.map((id) => { 
+                    return document.querySelector('#'+id);
+                });
+                // console.log(this.data.cibles);
+                // console.log(this.data.seuils);
+                // console.log(this.data.flagin);
+            },
+            tick: function () {   
+                var cibles = this.data.cibles;
+                var seuils = this.data.seuils;
+                var flagin = this.data.flagin;
+
+                for(var i = 0; i < cibles.length; i++) {
+                    var pos = cibles[i].object3D.position;
+                    var distance = dist(pos);
+
+                    if (distance < seuils[i]) {
+                        if (!flagin[i]) {
+                            cibles[i].emit('enter');
+                            flagin[i] = true;
+                            console.log("in " + cibles[i].id);
+                        }
+                    } else {
+                        if (flagin[i]) {
+                            cibles[i].emit('exit');
+                            flagin[i] = false;
+                            console.log("out " + cibles[i].id);
+                        }
+                    } 
+                    
+                    if (this.data.trace) {
+                        var log = document.querySelector('#txtlog');
+                        log.setAttribute('value', 'distance : '+ cibles[cibles.length-1].id + '_' + distance.toFixed(2));
+                    } 
+                }; 
+            }
+        });
+
+        AFRAME.registerComponent('test', {
+            init: function () {
+                this.el.addEventListener('enter', () => {
+                    console.log("in");
+                    this.el.setAttribute('animation-mixer', 'clip: Run');
+                })
+                this.el.addEventListener('exit', () => {
+                    console.log("out");
+                    this.el.setAttribute('animation-mixer', 'clip: Survey');
+                })                
+                // var info = document.querySelector('a-sphere').components.position.data;
+                // var info = document.querySelector('#cible0').components.position.data;
+                // var info = document.querySelector('#cible1').components.material.material.fog;
+                //console.log(document.querySelector('#renard').components.scale.data);
+            },
+        });
+
+        function dist(mypos) {
+            return Math.sqrt((player.pos.x - mypos.x) ** 2 + (player.pos.z - mypos.z) ** 2)
+        }
+        
+    </script>
+
+</head>
+
+<body>
+
+    <a-scene background="color: skyblue">
+
+        <a-assets>
+            <a-asset-item id="fox" src="./fox.glb"></a-asset-item>
+        </a-assets>
+
+        <a-sphere id="cible0" visible="true" radius="0.2" position="0 0 -2" color="silver"
+            event-set__enter0="_event: enter; material.color: blue;"
+            event-set__exit0="_event: exit; material.color: silver;"        
+            event-set__enter1="_event: enter; material.color: green; _target: #cible1; _delay: 1000"
+            event-set__exit1="_event: exit; material.color: silver; _target: #cible1; _delay: 1000"
+            >
+        </a-sphere>
+
+        <a-box id="cible1" visible="true" position="1 0 -2" color="silver"
+            width="0.25" height="0.25" depth="0.25"  rotation="0 45 0"
+            animation__enter="property: components.material.material.color; type: color; to: red; startEvents: enter; dur: 1000";
+            animation__exit="property: components.material.material.color; type: color; to: silver; startEvents: exit; dur: 1000";>
+        </a-box>
+
+        <a-entity id="renard" position="-1 0 -2" scale="0.005 0.005 0.005" gltf-model="#fox"
+            animation-mixer="clip: Survey" look-at="[camera]" rotation="0 180 0"
+            event-set__enter="_event: enter; components.rotation.data : 0 180 0;"
+            event-set__exit="_event: exit; components.scale.data : 0.005 0.005 0.005;"
+            test>
+        </a-entity>
+
+        <a-plane position="0 0 -2" rotation="-90 0 0" width="4" height="4" color="gray">
+        </a-plane>
+
+        <a-entity camera position="0 0.5 0" currentposition
+            proximity= "cibles: cible0,cible1,renard; 
+                        seuils: 1,0.5,1; trace: true;
+                        flagin: false, false, false" 
+            look-controls wasd-controls="acceleration:10">
+            <a-text id="txtlog" value="position" align="center" color="#FF0000" position="0 0 -1" rotation="0 0 0"
+                scale="0.25 0.25 0.25">
+            </a-text>
+        </a-entity>
+
+    </a-scene>
+
+</body>
+
+</html>

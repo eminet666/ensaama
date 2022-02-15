@@ -107,6 +107,7 @@
             tick: function () {
                 var seuil = this.data.seuil;
                 var pos = this.el.object3D.position;
+                console.log(this.el);
                 var distance = dist(pos);
 
                 if (distance < seuil) {
