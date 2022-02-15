@@ -14,6 +14,7 @@
 * [WOJAKOWSKI Clémence_X]()	
 
 ## tests
+* [events](./2_events.html)
 * [proximity box](./0_myproximity_box.html)
 * [proximity fox-1](./1_myproximity_fox.html)
 * [test_thomas](https://lumitomate.github.io/t_krempp/CATOWN/ville2_test1.html)
