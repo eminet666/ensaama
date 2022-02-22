@@ -1,0 +1,107 @@
+<!-- https://www.w3docs.com/snippets/javascript/how-to-create-and-trigger-event-in-javascript.html -->
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    </script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+
+    <script>
+        let player = {
+            pos: {
+                x: 0,
+                y: 0,
+                z: 0
+            }
+        }
+
+        AFRAME.registerComponent('frequency', {
+            schema: {
+                delay: { type: 'number', default: 1000}
+            },
+            init: function () {
+                this.tick = AFRAME.utils.throttleTick(this.tick, this.data.delay, this);
+            },
+            tick: function (time, delta) {
+                //console.log("TIME " + delta);
+            }
+        });
+
+        AFRAME.registerComponent('currentposition', {
+            schema: {
+                trace: { type: 'boolean', default: false },
+            },            
+            tick: function () {
+                var pos = this.el.object3D.position;
+                var wposition = new THREE.Vector3();
+                var wpos = this.el.object3D.getWorldPosition(wposition);
+
+                player.pos.x = pos.x + wpos.x;
+                player.pos.y = pos.y + wpos.y;
+                player.pos.z = pos.z + wpos.z;
+                //console.log(player.pos);
+
+                if (this.data.trace) {
+                    var log = document.querySelector('#txtlog');
+                    log.setAttribute('value', 'x = '+player.pos.x.toFixed(2)+", z = "+ player.pos.z.toFixed(2));
+                } 
+            }
+        });
+
+        AFRAME.registerComponent('rotate-env', {   
+            schema: {
+                trace: { type: 'boolean', default: false },                
+                trigger: { type: 'number', default: 2 },
+                max: { type: 'number', default: 45 },
+            },         
+            tick: function () {
+                let rotate = { x: 0, z: 0 };
+                rotate.x = player.pos.z * this.data.max / this.data.trigger;
+                rotate.z = player.pos.x * this.data.max / this.data.trigger;                
+                this.el.setAttribute('rotation', rotate.x+" 0 "+rotate.z);
+                console.log(rotate.x + "\n" + rotate.z);
+
+                if (this.data.trace) {
+                    var log = document.querySelector('#txtlog');
+                    log.setAttribute('value', 'rx = '+rotate.x.toFixed(2)+", rz = "+ rotate.z.toFixed(2));
+                } 
+            }
+        });
+
+        
+    </script>
+
+</head>
+
+<body>
+
+    <a-scene background="color: skyblue" frequency="delay: 500">
+
+        <a-box id="boite" position="0 0 0" color="skyblue" material="side: double" 
+            width="10" height="10" depth="10"  rotation="0 0 0" 
+            rotate-env="trace: true"></a-box>
+        </a-box>
+
+        <!-- <a-entity
+            animation__enter="property: components.material.material.color; type: color; to: red; startEvents: enter; dur: 5000";
+            animation__exit="property: components.material.material.color; type: color; to: silver; startEvents: exit; dur: 1000";>
+        >
+        </a-entity> -->
+
+        <a-plane position="0 0 0" rotation="-90 0 0" width="2" height="2" color="gray">
+        </a-plane>
+
+        <a-entity camera position="0 1.6 0" currentposition
+            look-controls wasd-controls="acceleration:10">
+            <a-text id="txtlog" value="" align="center" color="#FF0000" position="0 0 -1" rotation="0 0 0"
+                scale="0.25 0.25 0.25">
+            </a-text>
+        </a-entity>
+
+    </a-scene>
+
+</body>
+
+</html>
