@@ -22,11 +22,10 @@
 
 #### currentposition.js
 * objet : 
-- repère le position du play
-- 
-
+- repère la position du player
+- créer une variable globale
+    let player = { pos: { x: 0, y: 0, z: 0 } }
 * paramètres : 
-    log: { type: 'boolean', default: false}
-    delay: { type: 'number', default: 1000 }
+    trace: { type: 'boolean', default: false}
 * syntaxe : 
-    <a-scene frequency="delay: 500;">
+    <a-entity currentposition="trace: true;">
