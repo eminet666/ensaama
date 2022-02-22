@@ -25,7 +25,7 @@ delay: { type: 'number', default: 1000 }
 
 * syntaxe : 
 ```js
-<a-scene frequency="delay: 500;">
+<a-scene frequency="delay: 500;"></a-scene>
 ```
     
 
@@ -42,6 +42,23 @@ trace: { type: 'boolean', default: false}
 
 * syntaxe : 
 ```js
-<a-entity currentposition="trace: true;">
+<a-entity currentposition="trace: true;"></a-entity>
+```
+
+#### modify-objcolor.js
+* objet : change la couleur d'un modele 3D
+* paramètres :
+Attention : l'objname correspond au nom d'objet dans la fenêtre Collection de Blender 
+```js
+schema: {
+    log: { type: 'boolean', default: false },
+    objname: { type: 'string', default: "Cube"},
+    newcolor: { type: 'string', default: "none"},
+}
+```
+
+* syntaxe : 
+```js
+<a-entity modify-objcolor="objname: Suzanne; newcolor: red; log: true;"></a-entity>
 ```
     

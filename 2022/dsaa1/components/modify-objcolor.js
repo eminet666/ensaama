@@ -1,21 +1,3 @@
-AFRAME.registerComponent('change-model-color', {
-    schema: {
-        trace: { type: 'boolean', default: false },
-        newcolor: { type: 'string', default: 'white' },
-    },
-    init: function () {
-        //console.log(this.el);
-    },
-    tick: function () {
-
-        // if (this.data.trace) {
-        //     var trace = document.querySelector('#txtlog');
-        //     var newvalue = 'x = ' + player.pos.x.toFixed(2) + ", z = " + player.pos.z.toFixed(2);
-        //     trace.setAttribute('value', newvalue);
-        // }
-    }
-});
-
 AFRAME.registerComponent('modify-objcolor', {
     schema: {
         log: { type: 'boolean', default: false },
