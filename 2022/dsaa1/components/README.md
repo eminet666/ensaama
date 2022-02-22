@@ -3,7 +3,7 @@
 ### outils communs : trace VR (casque) et/ou log (console) pour mise au point des projets
 * paramètres trace et log selon les composants
 ```js
-trace: { type: 'boolean', default: false}
+trace: { type: 'boolean', default: false},
 log: { type: 'boolean', default: false}
 ```
 
@@ -19,7 +19,7 @@ log: { type: 'boolean', default: false}
 * objet : change la fréquence des boucles de rendu
 * paramètres : 
 ```js
-log: { type: 'boolean', default: false}
+log: { type: 'boolean', default: false},
 delay: { type: 'number', default: 1000 }
 ```
 
