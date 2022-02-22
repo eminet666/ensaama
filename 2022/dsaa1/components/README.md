@@ -16,7 +16,7 @@ log: { type: 'boolean', default: false}
 
 ### composants : 
 #### frequency.js
-* objet : change la fréquence des boucles de rendu
+* objet : change la fréquence des boucles de rendu (demande donc moins de ressources)
 * paramètres : 
 ```js
 log: { type: 'boolean', default: false},
@@ -27,6 +27,7 @@ delay: { type: 'number', default: 1000 }
 ```js
 <a-scene frequency="delay: 500;"></a-scene>
 ```
+* [exemple](../frequency.html)
     
 
 #### currentposition.js
@@ -61,4 +62,5 @@ schema: {
 ```js
 <a-entity modify-objcolor="objname: Suzanne; newcolor: red; log: true;"></a-entity>
 ```
+* [exemple](../modifiy-objcolor.html)
     
