@@ -8,7 +8,7 @@ log: { type: 'boolean', default: false}
 ```
 
 * prequis : ajouter un a-text dans l'entity caméra pour afficher la trace
-```js
+```html
 <a-text id="txtlog" value="" align="center" color="#FF0000" 
     position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
 </a-text>
@@ -24,7 +24,7 @@ delay: { type: 'number', default: 1000 }
 ```
 
 * syntaxe : 
-```js
+```html
 <a-scene frequency="delay: 500;"></a-scene>
 ```
 * [exemple](../frequency.html)
@@ -42,7 +42,7 @@ trace: { type: 'boolean', default: false}
 ```
 
 * syntaxe : 
-```js
+```html
 <a-entity currentposition="trace: true;"></a-entity>
 ```
 
@@ -59,7 +59,7 @@ schema: {
 ```
 
 * syntaxe : 
-```js
+```html
 <a-entity modify-objcolor="objname: Suzanne; newcolor: red; log: true;"></a-entity>
 ```
 * [exemple](../modifiy-objcolor.html)
