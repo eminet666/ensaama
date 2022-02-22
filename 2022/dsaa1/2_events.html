@@ -30,6 +30,9 @@
         });
 
         AFRAME.registerComponent('currentposition', {
+            schema: {
+                trace: { type: 'boolean', default: false },
+            },            
             tick: function () {
                 var pos = this.el.object3D.position;
                 var wposition = new THREE.Vector3();
@@ -39,6 +42,11 @@
                 player.pos.y = pos.y + wpos.y;
                 player.pos.z = pos.z + wpos.z;
                 //console.log(player.pos);
+
+                if (this.data.trace) {
+                    var log = document.querySelector('#txtlog');
+                    log.setAttribute('value', 'x = '+player.pos.x.toFixed(2)+", z = "+ player.pos.z.toFixed(2));
+                } 
             }
         });
 
@@ -88,6 +96,10 @@
             }
         });
 
+        function dist(mypos) {
+            return Math.sqrt((player.pos.x - mypos.x) ** 2 + (player.pos.z - mypos.z) ** 2)
+        }
+
         AFRAME.registerComponent('change', {
             schema: {
                 clip: { type: 'string', default: ''}
@@ -107,10 +119,6 @@
                 //console.log(document.querySelector('#renard').components.scale.data);
             },
         });
-
-        function dist(mypos) {
-            return Math.sqrt((player.pos.x - mypos.x) ** 2 + (player.pos.z - mypos.z) ** 2)
-        }
         
     </script>
 

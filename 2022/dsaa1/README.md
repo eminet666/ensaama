@@ -22,7 +22,10 @@
 
 
 ## actions components
+* [commponents documentation](./README.md)
 * [rotate-env](./3_rotate-env.html)
+
+
 
 	
 <!-- [event en js : emit](https://www.tech-wiki.online/fr/javascript-custom-events.html) -->
