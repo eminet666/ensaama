@@ -15,8 +15,7 @@ log: { type: 'boolean', default: false}
 ```
 
 ### composants : 
-#### frequency.js
-* objet : change la fréquence des boucles de rendu (demande donc moins de ressources)
+#### frequency.js : change la fréquence des boucles de rendu (nécessite de ressources)
 * paramètres : 
 ```js
 log: { type: 'boolean', default: false},
@@ -30,8 +29,7 @@ delay: { type: 'number', default: 1000 }
 * [exemple](../frequency.html)
     
 
-#### currentposition.js
-* objet : repère la position du player et crée une variable globale
+#### currentposition.js : repère la position du player et crée une variable globale
 ```js
 let player = { pos: { x: 0, y: 0, z: 0 } }
 ``` 
@@ -46,8 +44,7 @@ trace: { type: 'boolean', default: false}
 <a-entity currentposition="trace: true;"></a-entity>
 ```
 
-#### modify-objcolor.js
-* objet : change la couleur d'un modele 3D
+#### modify-objcolor.js : change la couleur d'un modele 3D
 * paramètres :
 Attention : l'objname correspond au nom d'objet dans la fenêtre Collection de Blender 
 ```js
