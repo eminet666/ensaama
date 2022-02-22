@@ -22,7 +22,7 @@
 
 
 ## actions components
-* [commponents documentation](./README.md)
+* [commponents documentation](./components/README.md)
 * [rotate-env](./3_rotate-env.html)
 
 
