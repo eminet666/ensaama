@@ -12,6 +12,7 @@
 
 ## tests
 * [nft](https://eminet666.github.io/ensaama/AR_logo/)
+* [debug_hands](./components/debug/debug_hands_test.html)
 
 ## old
 * [old](./old/)

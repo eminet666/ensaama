@@ -2,7 +2,7 @@
 * principe : librairie de composants utiles au développement
 * intégration : ajouter dans le head
 ```html
-<script src="./debug.js"></script>
+<script src="https://eminet666.github.io/ensaama/components/debug/debug.js"></script>
 ```
 
 ### composant : debug-cursor
@@ -22,6 +22,7 @@
     - le paramètre detect peut prendre plusieurs paramètres séparés par une ','
     - chacun contient 3 éléments targetid-mouseaction-eventtosend séparés par un '-'
     - le paramètre 'all: true' affiche l'objet dans la console
+* [exemple](./debug_cursor.html)
 
 ### composant : debug-keyboard
 * objet : émettre des événement à partir de touches du clavier
