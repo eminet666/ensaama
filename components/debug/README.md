@@ -74,7 +74,7 @@
 
 ### composant : debug-hands
 * objet : émettre des événement avec les boutons X, Y, A, B des manettes
-* résultat : un event est émis quand le fuse passe sur l'objet
+* résultat : un event est émis vers une target quand un bouton est pressé
 * syntaxe : ajouter pour chaque hand
 ```html   
 <a-entity id="left" raycaster="objects: .collidable; far:100;"
@@ -84,11 +84,10 @@
                 event: Xdown, Xup;
                 target: #boite, #boite;"></a-entity>
 ```
-* commentaires : 
-    - utiliser la classe .collidable pour identifier les objets détectables    
-    - présciser en paramètre event le nom de l'event emis
-    - le composant random-color joue le rôle du composant à tester
-    - par exemple ici, le composant 'random-color' attend l'event 'test'
+* commentaires :  
+    - action, event et target sont à séparer par un virgule
+    - il doit y avoir autant d'éléments pour chaque paramètre
+    - ils se correspondent selon leur ordre 
 * [exemple](./debug_hands.html)
 
 
