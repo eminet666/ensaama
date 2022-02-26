@@ -72,5 +72,23 @@
     - par exemple ici, le composant 'random-color' attend l'event 'test'
 * [exemple](./debug_fuse.html)
 
+### composant : debug-hands
+* objet : émettre des événement avec les boutons X, Y, A, B des manettes
+* résultat : un event est émis quand le fuse passe sur l'objet
+* syntaxe : ajouter pour chaque hand
+```html   
+<a-entity id="left" raycaster="objects: .collidable; far:100;"
+    oculus-touch-controls="hand: left" 
+    debug-hands="trace: true;
+                action: xbuttondown, xbuttonup; 
+                event: Xdown, Xup;
+                target: #boite, #boite;"></a-entity>
+```
+* commentaires : 
+    - utiliser la classe .collidable pour identifier les objets détectables    
+    - présciser en paramètre event le nom de l'event emis
+    - le composant random-color joue le rôle du composant à tester
+    - par exemple ici, le composant 'random-color' attend l'event 'test'
+* [exemple](./debug_hands.html)
 
 

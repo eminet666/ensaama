@@ -1,6 +1,5 @@
 // version 20220226
 
-
 AFRAME.registerComponent("debug-cursor", {
     schema: {
         detect: { type: 'array' },
@@ -62,7 +61,7 @@ AFRAME.registerComponent('debug-keyboard', {
                 if (evt.keyCode === key[i].codePointAt(0)) {
                     let cible = document.querySelector(target[i]);
                     cible.emit(event[i]);
-                    console.log("debug-keyboard : event " + event[i] + " sent to " + target[i]);
+                    console.log("debug-keyboard : event '" + event[i] + "' sent to " + target[i]);
                 }
             }
         });
@@ -86,3 +85,106 @@ AFRAME.registerComponent('debug-fuse', {
         });
     }
 });
+
+// debug-hands
+        AFRAME.registerComponent('debug-hands', {
+            schema: {
+                trace: {
+                    type: 'boolean',
+                    default: false
+                },
+                action: {
+                    type: 'array'
+                },
+                event: {
+                    type: 'array'
+                },
+                target: {
+                    type: 'array'
+                },
+            },
+            init: function () {
+                var self = this;
+                let help = true;
+
+                //grip button is pressed or not 
+                //"this.el" reffers to left oi right id 
+                this.el.grip = false;
+
+                // left hand
+                //Y-button 
+                this.el.addEventListener('ybuttondown', function (e) {
+                    help = togglehelp(help);
+                });
+                this.el.addEventListener('ybuttonup', function (e) {
+                    self.s2t('ybuttondown');
+                });
+
+                //X-buttorn
+                this.el.addEventListener('xbuttondown', function (e) {
+                    self.s2t('xbuttondown');
+                });
+                this.el.addEventListener('xbuttonup', function (e) {
+                    self.s2t('xbuttonup');
+                });
+
+                // right hand
+                //A-button 
+                this.el.addEventListener('abuttondown', function (e) {
+                    self.s2t('abuttondown');
+                });
+                this.el.addEventListener('abuttonup', function (e) {
+                    self.s2t('abuttonup');
+                });
+
+                //B-button 
+                this.el.addEventListener('bbuttondown', function (e) {
+                    self.s2t('bbuttondown');
+                });
+                this.el.addEventListener('bbuttonup', function (e) {
+                    self.s2t('bbuttonup');
+                });
+
+            },
+            // send2target
+            s2t: function (cas) {
+                let trace = this.data.trace;
+                let action = this.data.action;
+                let event = this.data.event;
+                let target = this.data.target;
+
+                for (var i = 0; i < action.length; i++) {
+                    if (cas === action[i]) {
+                        let cible = document.querySelector(target[i]);
+                        cible.emit(event[i]);
+                        let message = "debug-hands (" + this.el.id + ") : event '" + event[i] + "' sent to " + target[i];
+                        console.log(message);
+                        log(message);
+                    }
+                }
+
+            }
+
+        });
+
+        function togglehelp(help) {
+            var txtleft = document.querySelector('#txtleft');
+            var txtright = document.querySelector('#txtright');
+            if (help) {
+                txtleft.setAttribute('visible', false);
+                txtright.setAttribute('visible', false);
+                console.log("'hands help' is off");
+                return false;
+            } else {
+                txtleft.setAttribute('visible', true);
+                txtright.setAttribute('visible', true);
+                console.log("'hands help' is on");
+                return true;
+            }
+        }
+
+        function log(message) {
+            var trace = document.querySelector('#txtlog');
+            trace.setAttribute('value', message);
+        }
+
