@@ -26,7 +26,6 @@ trace: { type: 'boolean', default: false}
 * [exemple]()
 
 
-
 #### frequency
 * objet : change la fréquence des boucles de rendu (nécessite moins de ressources)
 * résultat : en particulier le suivi du joueur se fait à des intervalles plus espacés
@@ -42,24 +41,32 @@ delay: { type: 'number', default: 1000 }
 * [exemple](./frequency.html)
     
 
-#### currentposition.js : repère la position du player et crée une variable globale
+#### currentposition
+* objet : repère la position du player
 ```js
 let player = { pos: { x: 0, y: 0, z: 0 } }
 ``` 
-
+* résultat : affiche la position du joueur avec l'option trace
+    - local (déplacement physique) 
+    - world (déplacement dans l'espace virtuel comme avec le téléport)
 * paramètres : 
 ```js
 trace: { type: 'boolean', default: false}
 ```
-
 * syntaxe : 
 ```html
-<a-entity currentposition="trace: true;"></a-entity>
+<a-entity camera currentposition="trace: true;"></a-entity>
 ```
+* remarque : un variable globale est crée
+```js
+let player = { pos: { x: 0, y: 0, z: 0 } }
+console.log(player.pos.x);
+```
+* [exemple](./currentposition.html)
 
-#### modify-objcolor.js : change la couleur d'un modele 3D
+#### modify-objcolor
+* objet : change la couleur d'un modele 3D exporté en glb avec Blender
 * paramètres :
-Attention : l'objname correspond au nom d'objet dans la fenêtre Collection de Blender 
 ```js
 schema: {
     log: { type: 'boolean', default: false },
@@ -67,10 +74,10 @@ schema: {
     newcolor: { type: 'string', default: "none"},
 }
 ```
-
 * syntaxe : 
 ```html
 <a-entity modify-objcolor="objname: Suzanne; newcolor: red; log: true;"></a-entity>
 ```
+* remarque : attention, l'objname correspond au nom d'objet dans la fenêtre Collection de Blender 
 * [exemple](../modifiy-objcolor.html)
     

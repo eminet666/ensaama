@@ -1,0 +1,43 @@
+<!-- https://stackoverflow.com/questions/38888196/how-to-create-multicolored-cube-in-a-frame -->
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script
+        src="https://cdn.rawgit.com/elbobo/aframe-multisrc-component/b6d23310/dist/0.3/aframe-multisrc-component.js"></script>
+    <script>
+            AFRAME.registerComponent('multicolored-cube', {
+                dependencies: ['geometry'],
+                init: function () {
+                    var mesh = this.el.getObject3D('mesh');
+                    var geom = mesh.geometry;
+                    console.log(geom);
+                    // for (var i = 0; i < geom.faces.length; i++) {
+                    //     var face = geom.faces[i];
+                    //     face.color.setRGB(Math.random(), Math.random(), Math.random());
+                    // }
+                    // geom.colorsNeedUpdate = true;
+                    // mesh.material.vertexColors = THREE.FaceColors;
+                }
+            });
+    </script>
+    </head>
+
+<body>
+
+    <a-scene background="color: skyblue">
+        <a-assets>
+            <img id="pelouse" src="pelouse.jpg">
+        </a-assets>
+
+        <a-entity geometry="primitive: box; buffer: false" multicolored-cube position="0 1 -4" rotation="0 45 0"></a-entity>
+        </a-box>
+
+        <a-plane position="1 0 -4" rotation="-90 0 0" width="2" height="4" color="gray">
+        </a-plane>
+
+    </a-scene>
+
+</body>
+
+</html>

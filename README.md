@@ -11,10 +11,10 @@
 * [DNMADE2](https://eminet666.github.io/ensaama/2022/dnmade2/)
 * [DNMADE1](https://eminet666.github.io/ensaama/2022/dnmade1/)
 
-## tests
+## composants
 <!-- * [nft](https://eminet666.github.io/ensaama/AR_logo/) -->
 * [debug](./components/debug/)
-* [composants](./components/)
+* [utiles](./components/utiles/)
 
 ## old
 * [old](./old/)
