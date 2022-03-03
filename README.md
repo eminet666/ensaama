@@ -1,3 +1,4 @@
+# ensaama
 
 ## 2020-2021
 * [DNMADE3](https://eminet666.github.io/ensaama/2021/dnmade3/)
@@ -11,8 +12,9 @@
 * [DNMADE1](https://eminet666.github.io/ensaama/2022/dnmade1/)
 
 ## tests
-* [nft](https://eminet666.github.io/ensaama/AR_logo/)
-* [debug_hands](./components/debug/debug_hands_test.html)
+<!-- * [nft](https://eminet666.github.io/ensaama/AR_logo/) -->
+* [debug](./components/debug/)
+* [composants](./components/)
 
 ## old
 * [old](./old/)

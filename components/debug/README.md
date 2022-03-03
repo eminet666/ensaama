@@ -1,4 +1,4 @@
-## debug.js
+## debug.js _ 20220228
 * principe : librairie de composants utiles au développement
 * intégration : ajouter dans le head
 ```html
