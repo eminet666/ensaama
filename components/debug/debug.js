@@ -157,7 +157,7 @@ AFRAME.registerComponent('debug-fuse', {
                     if (cas === action[i]) {
                         let cible = document.querySelector(target[i]);
                         cible.emit(event[i]);
-                        let message = "debug-hands (" + this.el.id + ") : event '" + event[i] + "' sent to " + target[i];
+                        let message = "debug-hands (" + this.el.id + ") \n event '" + event[i] + "' sent to " + target[i];
                         console.log(message);
                         log(message);
                     }
