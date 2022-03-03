@@ -32,6 +32,7 @@
 <a-scene debug-keyboard="key: r, t; event: test, hello2; target: #boite, #boule">
 <a-box id="boite" tourne="angle: 30"></a-box>
 ```
+
 ```javascript
         AFRAME.registerComponent('tourne', {
             init: function () {
@@ -55,6 +56,7 @@
 * objet : émettre des événement du fuse (action par le regard)
 * résultat : un event est émis quand le fuse passe sur l'objet
 * syntaxe : ajouter dans le body
+
 ```html   
 <!-- définition du fuse  -->
 <a-entity raycaster="objects: .collidable" cursor="fuse: true; fuseTimeout: 500" position="0 0 -1"
