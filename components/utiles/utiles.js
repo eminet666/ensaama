@@ -73,7 +73,7 @@ AFRAME.registerComponent('modify-objcolor', {
         },
         newcolor: {
             type: 'string',
-            default: "none"
+            default: "random"
         },
     },
     init: function () {
@@ -82,7 +82,7 @@ AFRAME.registerComponent('modify-objcolor', {
             let obj = this.el.getObject3D('mesh');
             let objname = this.data.objname;
             let newcolor = this.data.newcolor;
-            if (newcolor == 'none') {
+            if (newcolor == 'random') {
                 newcolor = randomColor();
             }
             obj.traverse(node => {
