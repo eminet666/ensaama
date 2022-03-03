@@ -1,5 +1,5 @@
 ## debug.js _ 20220228
-* principe : librairie de composants utiles au développement
+* principe : librairie de composants pour les tests et le debug
 * intégration : ajouter dans le head
 ```html
 <script src="https://eminet666.github.io/ensaama/components/debug/debug.js"></script>

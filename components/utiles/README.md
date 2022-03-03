@@ -1,3 +1,10 @@
+## utiles.js _ 20220303
+* principe : librairie de composants utiles au développement
+* intégration : ajouter dans le head
+```html
+<script src="https://eminet666.github.io/ensaama/components/utiles/utiles.js"></script>
+```
+
 ## composants utiles
 
 ### outils communs : trace VR (casque)

@@ -1,3 +1,5 @@
+// version 20220303
+
 // FREQUENCY
 AFRAME.registerComponent('frequency', {
     schema: {
