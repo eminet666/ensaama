@@ -86,5 +86,27 @@ schema: {
 <a-entity modify-objcolor="objname: Suzanne; newcolor: red; log: true;"></a-entity>
 ```
 * remarque : attention, l'objname correspond au nom d'objet dans la fenêtre Collection de Blender 
-* [exemple](../modifiy-objcolor.html)
+* [exemple](./modifiy-objcolor.html)
+
+#### proximity
+* objet : détecte la proximité du player à un objet
+* paramètres :
+```js
+trace: { type: 'boolean', default: false },
+seuils: { type: 'array', default: [1]},
+```
+* syntaxe : 
+```html
+<a-box id="boite" position="1 0 -2" rotation="0 45 0" color="silver"
+    width="0.25" height="0.25" depth="0.25" 
+    proximity="trace: true; seuils: 0.5, 1, 2">
+</a-box>
+```
+* remarques : 
+    - plusieurs seuils sont possibles (séparés par une vigule)
+    - la zone la plus centrale est notée 0, puis 1, 2, en s'éloignant
+    - en se rapprochant de l'objet, un événement 'enter-N' où N correspond à la zone
+    - en s'éloignant de l'objet, un événement 'exit-N' où N correspond à la zone
+* [exemple](./proximity.html)
+
     

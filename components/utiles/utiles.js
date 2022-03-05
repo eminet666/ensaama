@@ -99,3 +99,56 @@ AFRAME.registerComponent('modify-objcolor', {
     }
 
 });
+
+// PROXIMITY
+    AFRAME.registerComponent('proximity', {
+    schema: {
+        trace: {
+            type: 'boolean',
+            default: false
+        },
+        seuils: {
+            type: 'array',
+            default: [1]
+        },
+        state: {
+            type: 'string',
+            default: '0'
+        },
+        mypos: {
+            type: 'vec3'
+        }
+    },
+    init: function () {
+        this.data.mypos = this.el.getAttribute('position');
+    },
+    tick: function () {
+        // var cibles = this.data.cibles;
+        let seuils = this.data.seuils;
+        let state = this.data.state;
+        let mypos = this.data.mypos;
+        let distance = dist(mypos);
+        let newstate = 0;
+        for (let i = 0; i < seuils.length; i++) {
+            if (distance > seuils[i]) newstate = i + 1;
+        }
+        if (state != newstate) {
+            if (state < newstate) {
+                this.el.emit("exit" + newstate);
+                console.log("event : 'exit-" + newstate + "' sent to #" + this.el.id);
+            } else {
+                this.el.emit("enter" + newstate);
+                console.log("event : 'enter-" + newstate + "' sent to #" + this.el.id);
+            }
+            this.data.state = newstate;
+        }
+        if (this.data.trace) {
+            var log = document.querySelector('#txtlog');
+            log.setAttribute('value', "#" + this.el.id + " _ etat=" + newstate + " _ distance=" + distance.toFixed(2));
+        }
+    }
+});
+
+function dist(mypos) {
+    return Math.sqrt((player.pos.x - mypos.x) ** 2 + (player.pos.z - mypos.z) ** 2);
+}
