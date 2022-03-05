@@ -8,31 +8,37 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
     <script src="https://eminet666.github.io/ensaama/components/debug/debug.js"></script>
-    <!-- <script src="https://eminet666.github.io/ensaama/components/actions/actions.js"></script> -->
-    <script src="./actions.js"></script>
+
+    <script>
+    AFRAME.registerComponent('test', {
+        init: function () {
+            //console.log(this.el)
+            console.log(this.el.getAttribute('mixin'));
+        }
+    });
+    </script>
+
+
 </head>
 
 <body>
 
     <a-scene background="color: skyblue" 
-        debug-keyboard="key: e, r; event: enter-0, exit-0; target: #boule, #boule">
+        debug-keyboard="key: e, r; event: enter-0, exit-0; target: #renard, #renard">
 
         <a-assets>
             <a-asset-item id="fox" src="./fox.glb"></a-asset-item>
+            <a-mixin id="survey" animation-mixer="clip: Survey"></a-mixin>
+            <a-mixin id="run" animation-mixer="clip: Run"></a-mixin>
+            <!-- { primitive: "box", width: 0.25, height: 0.25, depth: 0.25, buffer: true, skipCache: false, segmentsHeight: 1,
+            segmentsWidth: 1, segmentsDepth: 1 } -->
         </a-assets>
 
-        <a-sphere id="boule" visible="true" radius="0.2" position="0 0 -2" color="silver"
-            event-set__enter-0 = "_event: enter-0; material.color: blue;" 
-            event-set__exit-0 = "_event: exit-0; material.color: green; _target: #boite; _delay: 3000"> 
-        </a-sphere>
-        
-        <a-box id="boite" position="1 0 -2" rotation="0 45 0" color="silver" 
-            width="0.25" height="0.25" depth="0.25">
-        </a-box>
-
-
-        <a-entity id="renard" position="-1 0 -2" scale="0.005 0.005 0.005" gltf-model="#fox" 
-            animation-mixer="clip: Survey">
+        <a-entity id="renard" position="-1 0 -2" 
+            scale="0.005 0.005 0.005" gltf-model="#fox" 
+            mixin="survey" test
+            event-set__enter-0 = "_event: enter-0; mixin: run;"
+            event-set__exit-0 = "_event: exit-0; mixin: survey;">
         </a-entity>
 
         <a-plane position="0 0 -2" rotation="-90 0 0" width="4" height="4" color="gray">
