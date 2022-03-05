@@ -1,11 +1,9 @@
-## utiles.js _ 20220303
-* principe : librairie de composants utiles au développement
+## detect.js _ 20220305
+* principe : librairie de composants de détection qui envoie un événement
 * intégration : ajouter dans le head
 ```html
-<script src="https://eminet666.github.io/ensaama/components/utiles/utiles.js"></script>
+<script src="https://eminet666.github.io/ensaama/components/detect/detect.js"></script>
 ```
-
-## composants utiles
 
 ### outils communs : trace VR (casque)
 * paramètres trace et log selon les composants
@@ -20,18 +18,6 @@ trace: { type: 'boolean', default: false}
 ```
 * remarque : un parmètre log apparait sur certains composants pour un affichage console
 * [exemple](./trace.html)
-
-### composants : 
-
-### composant : nom
-* objet : 
-* résultat : 
-* syntaxe :  
-```html     
-```
-* remarques : 
-* [exemple]()
-
 
 #### frequency
 * objet : change la fréquence des boucles de rendu (nécessite moins de ressources)
@@ -71,23 +57,6 @@ console.log(player.pos.x);
 ```
 * [exemple](./currentposition.html)
 
-#### modify-objcolor
-* objet : change la couleur d'un modele 3D exporté en glb avec Blender
-* paramètres :
-```js
-schema: {
-    log: { type: 'boolean', default: false },
-    objname: { type: 'string', default: "Cube"},
-    newcolor: { type: 'string', default: "none"},
-}
-```
-* syntaxe : 
-```html
-<a-entity modify-objcolor="objname: Suzanne; newcolor: red; log: true;"></a-entity>
-```
-* remarque : attention, l'objname correspond au nom d'objet dans la fenêtre Collection de Blender 
-* [exemple](./modifiy-objcolor.html)
-
 #### proximity
 * objet : détecte la proximité du player à un objet
 * paramètres :
@@ -108,5 +77,10 @@ seuils: { type: 'array', default: [1]},
     - en se rapprochant de l'objet, un événement 'enter-N' où N correspond à la zone
     - en s'éloignant de l'objet, un événement 'exit-N' où N correspond à la zone
 * [exemple](./proximity.html)
+
+<!-- https://www.w3docs.com/snippets/javascript/how-to-create-and-trigger-event-in-javascript.html -->
+
+
+
 
     
