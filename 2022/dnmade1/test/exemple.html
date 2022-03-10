@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+<script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+
+<script>
+    AFRAME.registerComponent("cylinder-collider", {
+        init: function () {
+            // set up a sphere signaling if there is a collision
+            var sphere = document.createElement("a-sphere")
+            sphere.setAttribute("scale", "0.25 0.25 0.25")
+            sphere.setAttribute("position", "0 1 0")
+            sphere.setAttribute("color", "green")
+            this.el.appendChild(sphere)
+
+            // wait until this entity is ready
+            this.el.addEventListener("loaded", e => {
+                // set up the body
+                this.el.setAttribute("body", {
+                    "type": "static",
+                    "shape": "none"
+                })
+                // set up the shape
+                this.el.setAttribute("shape__cylinder", {
+                    'shape': 'cylinder',
+                    "height": 1.5,
+                    "radiusTop": 0.1,
+                    "radiusBottom": 0.2
+                })
+                // static-body collision handling
+                this.el.setAttribute("physics-collider", "")
+                // listen for collisions
+                this.el.addEventListener('collisions', e => {
+                    var collided = e.detail.els.length
+                    // change the sphere color when collided
+                    sphere.setAttribute("color", collided ? "red" : "green")
+                });
+            })
+        }
+    })
+    </script>
+</head>
+
+<body>
+    <a-scene physics="debug: true">
+        <a-entity cylinder-collider position="0 1 -4"
+            animation="property: position; to: -2 1 -4; dur: 2500; dir: alternate; loop: true"></a-entity>
+        <a-box position="-2 1 -4" static-body></a-box>
+        <a-sky color="#ECECEC"></a-sky>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+    </a-scene>
+</body>
+
+
+</html>
+
+
+
+

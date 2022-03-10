@@ -1,8 +1,8 @@
 ## 2021-2022 DNMADE1
 
-#### liens
+#### liens etudians
 * [aristide](https://arrri.github.io/dnmade1/)
-* [samuel](https://Samuel56100.github.io/dnmade1/)
+* [samuel](https://Samuel56100.github.io/DNMADE1/)
 * [bleuenn](https://LeCamB.github.io/dnmade1/)
 * [manon](https://manon45470.github.io/dnmade1/)
 * [isabelle](https://elfeon-g.github.io/dnmade1/)
@@ -16,7 +16,6 @@
 * [carla](https://karuuchan.github.io/dnmade1/)
 * [adrien](https://adrienclavelier.github.io/dnmade1/)
 * [mael](https://maelsergent.github.io/dnmade1/)
-
 
 
 <!-- ### marelle
