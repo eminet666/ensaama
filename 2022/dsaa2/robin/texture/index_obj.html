@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+		<!-- <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script> -->
+		<script src="https://ensaama-officiel-numerique.github.io/components/debug/debug.js"></script>
+		<script>
+		AFRAME.registerComponent('test', {
+			schema: {
+				log: {
+					type: 'boolean',
+					default: false
+				},
+			},
+			init: function () {
+				let el = this.el;
+
+				el.addEventListener('test', () => {
+					let model = el.getAttribute("obj-model");
+					el.setAttribute('obj-model', 'obj: #obj; mtl: #mtl')
+				}); 
+
+			},
+		});			
+		</script>
+
+  </head>
+
+  <body style='margin : 0px; overflow: hidden;'>
+
+		<a-scene background="color: skyblue"
+			debug-keyboard="key: n; event: test; target: #model">
+			<a-assets>
+				<a-asset-item id="obj" src="./untitled.obj"></a-asset-item>
+				<a-asset-item id="mtl" src="./untitled.mtl"></a-asset-item>
+				<a-asset-item id="mtl2" src="./untitled2.mtl"></a-asset-item>
+			</a-assets>
+
+			<a-entity id="model" obj-model="obj: #obj; mtl: #mtl2"
+					  scale="0.5 0.5 0.5" position="0 0.5 -3" rotation="0 45 0" test>
+			</a-entity>
+		<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="gray"></a-plane>
+
+		</a-scene>
+
+  </body>
+</html>
