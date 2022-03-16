@@ -7,6 +7,7 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://ensaama-officiel-numerique.github.io/components/detect/detect.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://ensaama-officiel-numerique.github.io/components/debug/debug.js"></script>
 
     <!-- <script src="./detect.js"></script>     -->
     <script>
@@ -14,7 +15,7 @@
             init: function () {
                 console.log(this.el.id);
 
-                this.el.addEventListener('enter-2', () => {
+                this.el.addEventListener('enter-0', () => {
                     console.log("recu");
                 });
             }
@@ -22,25 +23,31 @@
     </script>
 
 
-
 </head>
 
 <body>
 
-    <a-scene background="color: skyblue" frequency="delay: 500">
+    <a-scene background="color: skyblue" frequency="delay: 500"
+            debug-keyboard="key: e, r; event: enter-2, exit-0; target: #boite, #boite">
 
         <a-assets>
             <a-mixin id="rouge" material="color: red"></a-mixin>
             <a-mixin id="bleu" material="color: blue"></a-mixin>
             <a-mixin id="vert" material="color: green"></a-mixin>
+            <a-mixin id="cyan" material="color: cyan"></a-mixin>
             <a-mixin id="jaune" material="color: yellow"></a-mixin>
-        </a-assets>
+       </a-assets>
 
-        <a-box id="boite" position="1 0 -2" rotation="0 45 0"
-            width="0.25" height="0.25" depth="0.25" 
-            proximity="trace: true; seuils: 0.5, 1, 2" mixin="vert"
+        <a-entity id="boite" geometry="primitive: box;" mixin="bleu"
+            rotation="0 45 0" scale="0.5 0.5 0.5" position="-1 0 -2"
+            proximity="trace: true; seuils: 0.5, 1, 2"
+            event-set__enter-0="event: _event: enter-0; mixin: rouge;"
+            event-set__exit-1="event: _event: exit-1; mixin: cyan;"            
+            event-set__enter-1="event: _event: enter-1; mixin: jaune;" 
+            event-set__enter-2="event: _event: enter-2; mixin: vert;"
+            event-set__exit-3="event: _event: exit-3; mixin: bleu;"                        
             test>
-        </a-box>
+        </a-entity>
 
         <a-plane position="0 0 -2" rotation="-90 0 0" width="4" height="4" color="gray">
         </a-plane>
