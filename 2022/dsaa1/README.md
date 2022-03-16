@@ -19,7 +19,7 @@
 * [proximity fox-1](./1_myproximity_fox.html)
 * [test_thomas](https://lumitomate.github.io/t_krempp/CATOWN/ville2_test1.html)
 * [test_thomas_local_1](./thomas.html)
-
+* [test_proximity](./test_proximity.html)
 
 ## actions components
 * [commponents documentation](./components/README.md)

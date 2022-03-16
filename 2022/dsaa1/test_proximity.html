@@ -1,0 +1,59 @@
+<!-- https://www.w3docs.com/snippets/javascript/how-to-create-and-trigger-event-in-javascript.html -->
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://ensaama-officiel-numerique.github.io/components/detect/detect.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+
+    <!-- <script src="./detect.js"></script>     -->
+    <script>
+        AFRAME.registerComponent('test', {
+            init: function () {
+                console.log(this.el.id);
+
+                this.el.addEventListener('enter-2', () => {
+                    console.log("recu");
+                });
+            }
+        });
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <a-scene background="color: skyblue" frequency="delay: 500">
+
+        <a-assets>
+            <a-mixin id="rouge" material="color: red"></a-mixin>
+            <a-mixin id="bleu" material="color: blue"></a-mixin>
+            <a-mixin id="vert" material="color: green"></a-mixin>
+            <a-mixin id="jaune" material="color: yellow"></a-mixin>
+        </a-assets>
+
+        <a-box id="boite" position="1 0 -2" rotation="0 45 0"
+            width="0.25" height="0.25" depth="0.25" 
+            proximity="trace: true; seuils: 0.5, 1, 2" mixin="vert"
+            test>
+        </a-box>
+
+        <a-plane position="0 0 -2" rotation="-90 0 0" width="4" height="4" color="gray">
+        </a-plane>
+
+        <a-entity camera position="0 0.5 0" currentposition
+            look-controls wasd-controls="acceleration:10">
+            <a-text id="txtlog" value="position" align="center" color="#FF0000" position="0 0 -1" rotation="0 0 0"
+                scale="0.25 0.25 0.25">
+            </a-text>
+        </a-entity>
+
+    </a-scene>
+
+</body>
+
+</html>
