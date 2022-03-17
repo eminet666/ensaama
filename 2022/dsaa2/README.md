@@ -1,18 +1,12 @@
 ## 2021-2022 DSAA2
 
-### Mattéo
-* [Mattéo_terrasse](./matteo/terrasse.html)
-* [Mattéo_visage](./matteo/visage.html)
-
-### Anna
-* [Anna_espaces](./anna/espaces.html)
-
-### Robin
-* [change mtl](./robin/texture/index_obj.html)
-* [change img](./robin/texture/index_meshchange.html)
+### Etudiants
+* [Mattéo](./matteo/README.md)
+* [Anna](./anna/README.md)
+* [Robin](./robin/README.md)
 
 ### liens
-* [Unity](./liens_unity.md)
+* [Unity](./liens_unity.html)
 * [Etudiants](./liens_etudiants.md)
 
     
