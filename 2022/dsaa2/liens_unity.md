@@ -2,7 +2,7 @@
 
 ### Unity :
 * tutos : 
-    * [tuto chaine](https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022)
+    * [tuto chaine](https://www.youtube.com/watch?v=gGYtahQjmWQ&list=PLrk7hDwk64-a_gf7mBBduQb3PEBYnG4fU&index=2)
     * [tuto oculus integration serie](https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022)
 
 * Oculus Integration SDK : 
