@@ -14,6 +14,8 @@
     * [documentation](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@1.0/manual/index.html)
     * [exemples](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@1.0/manual/samples.html)
 
+* Oculus Link : [unity](https://forum.unity.com/threads/getting-quest-link-to-work-in-unity.780203/)
+
 * VR template : 
 [documentation](https://docs.unity3d.com/Packages/com.unity.template.vr@3.0/manual/index.html) | 
 [forum](https://forum.unity.com/forums/ar-vr-xr-discussion.80/) | 
