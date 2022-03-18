@@ -1,25 +1,21 @@
-<!-- https://www.w3docs.com/snippets/javascript/how-to-create-and-trigger-event-in-javascript.html -->
 <!doctype html>
 <html lang="fr">
 
 <head>
     <meta charset="utf-8">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://ensaama-officiel-numerique.github.io/components/detect/detect.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://ensaama-officiel-numerique.github.io/components/detect/detect.js"></script>
     <script src="https://ensaama-officiel-numerique.github.io/components/debug/debug.js"></script>
 
-    <!-- <script src="./detect.js"></script>     -->
     <script>
-        AFRAME.registerComponent('test', {
-            init: function () {
-                console.log(this.el.id);
-
-                this.el.addEventListener('enter-0', () => {
-                    console.log("recu");
-                });
-            }
-        });
+    AFRAME.registerComponent('test', {
+        init: function () {
+            //console.log(this.el)
+            console.log(this.el.getAttribute('mixin'));
+        }
+    });
     </script>
 
 
@@ -27,8 +23,8 @@
 
 <body>
 
-    <a-scene background="color: skyblue" frequency="delay: 500"
-            debug-keyboard="key: e, r; event: enter-0, exit-1; target: #renard, #renard">
+    <a-scene background="color: skyblue" 
+        debug-keyboard="key: e, r; event: enter-0, exit-1; target: #renard, #renard">
 
         <a-assets>
             <a-asset-item id="fox" src="./fox.glb"></a-asset-item>
@@ -37,33 +33,22 @@
             <a-mixin id="walk" animation-mixer="clip: Walk"></a-mixin>
         </a-assets>
 
-        <!-- <a-entity id="renard" position="-1 0 -2" scale="0.005 0.005 0.005" 
-            gltf-model="#fox" mixin="survey" test
-            proximity="trace: true; seuils: 1, 2"
-            event-set__enter-0="event: _event: enter-0; mixin: run;"
-            event-set__exit-1="event: _event: exit-1; mixin: walk;"            
-            event-set__enter-1="event: _event: enter-1; mixin: walk;" 
-            event-set__exit-2="event: _event: enter-2; mixin: survey;">
-        </a-entity> -->
-
-        <!-- <a-entity id="renard" position="-1 0 -2" scale="0.005 0.005 0.005" 
-        gltf-model="#fox" test
-        proximity="trace: true; seuils: 1, 2">
-        </a-entity> -->
-        
-        <a-entity id="renard" position="-1 0 -2" 
-            scale="0.005 0.005 0.005" gltf-model="#fox" 
-            mixin="survey" test
-            event-set__enter-0 = "_event: enter-0; mixin: run;"
-            event-set__exit-0 = "_event: exit-0; mixin: survey;">
+        <a-entity id="renard" position="-1 0 -2" scale="0.005 0.005 0.005" 
+                gltf-model="#fox" mixin="survey" test
+                proximity="trace: true; seuils: 1, 2"
+                event-set__enter-0="event: _event: enter-0; mixin: run;"
+                event-set__exit-1="event: _event: exit-1; mixin: walk;"            
+                event-set__enter-1="event: _event: enter-1; mixin: walk;" 
+                event-set__exit-2="event: _event: enter-2; mixin: survey;">
         </a-entity>
 
         <a-plane position="0 0 -2" rotation="-90 0 0" width="4" height="4" color="gray">
         </a-plane>
 
-        <a-entity camera position="0 0.5 0" currentposition="trace: on";
+        <a-entity camera position="0 0.5 0" currentposition
             look-controls wasd-controls="acceleration:10">
-            <a-text id="txtlog" value="position" align="center" color="#FF0000" position="0 0 -1" rotation="0 0 0"
+            <a-text id="txtlog" value="appuyez sur les touches 'e' et 'r' \n pour envoyer des event 'enter-0' et 'exit-0'" 
+                align="center" color="#FF0000" position="0 0 -1" rotation="0 0 0"
                 scale="0.25 0.25 0.25">
             </a-text>
         </a-entity>
