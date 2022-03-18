@@ -14,16 +14,18 @@
 * [WOJAKOWSKI Clémence_X]()	
 
 ## tests
-* [events](./2_events.html)
+<!-- * [events](./2_events.html)
 * [proximity box](./0_myproximity_box.html)
 * [proximity fox-1](./1_myproximity_fox.html)
 * [test_thomas](https://lumitomate.github.io/t_krempp/CATOWN/ville2_test1.html)
-* [test_thomas_local_1](./thomas.html)
-* [test_proximity](./test_proximity.html)
+* [test_thomas_local_1](./thomas.html) -->
+* julie : [rotate-env](./rotate-env.html)
+* [test_proximity cube](./test_proximity_cube.html)
+* [test_proximity renard](./test_proximity_obj.html)
 
 ## actions components
 * [commponents documentation](./components/README.md)
-* [rotate-env](./3_rotate-env.html)
+
 
 
 
