@@ -40,7 +40,7 @@
 
         <a-entity id="boite" geometry="primitive: box;" mixin="bleu"
             rotation="0 45 0" scale="0.5 0.5 0.5" position="-1 0 -2"
-            proximity="trace: true; seuils: 0.5, 1, 2"
+            
             event-set__enter-0="event: _event: enter-0; mixin: rouge;"
             event-set__exit-1="event: _event: exit-1; mixin: cyan;"            
             event-set__enter-1="event: _event: enter-1; mixin: jaune;" 
@@ -48,11 +48,12 @@
             event-set__exit-3="event: _event: exit-3; mixin: bleu;"                        
             test>
         </a-entity>
+        <!-- proximity="trace: true; seuils: 0.5, 1, 2" -->
 
         <a-plane position="0 0 -2" rotation="-90 0 0" width="4" height="4" color="gray">
         </a-plane>
 
-        <a-entity camera position="0 0.5 0" currentposition
+        <a-entity camera position="0 0.5 0" currentposition="trace: on";
             look-controls wasd-controls="acceleration:10">
             <a-text id="txtlog" value="position" align="center" color="#FF0000" position="0 0 -1" rotation="0 0 0"
                 scale="0.25 0.25 0.25">
