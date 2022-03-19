@@ -16,6 +16,7 @@
 * [carla](https://karuuchan.github.io/dnmade1/)
 * [adrien](https://adrienclavelier.github.io/dnmade1/)
 * [mael](https://maelsergent.github.io/dnmade1/)
+* [jacqueline](https://github.com/TrinhJacqueline/dnmade1)
 
 
 <!-- ### marelle

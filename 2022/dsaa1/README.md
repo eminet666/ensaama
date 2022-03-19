@@ -19,12 +19,12 @@
 * [proximity fox-1](./1_myproximity_fox.html)
 * [test_thomas](https://lumitomate.github.io/t_krempp/CATOWN/ville2_test1.html)
 * [test_thomas_local_1](./thomas.html) -->
-* julie : [rotate-env](./rotate-env.html)
 * [test_proximity cube](./test_proximity_cube.html)
 * [test_proximity renard](./test_proximity_obj.html)
+* julie : [rotate-env](./rotate-env.html)
 
 ## actions components
-* [commponents documentation](./components/README.md)
+* [components documentation](https://ensaama-officiel-numerique.github.io/components/)
 
 
 
