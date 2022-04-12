@@ -14,7 +14,8 @@
     * [documentation](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@1.0/manual/index.html)
     * [exemples](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@1.0/manual/samples.html)
 
-* Oculus Link : [unity](https://forum.unity.com/threads/getting-quest-link-to-work-in-unity.780203/)
+* Oculus Link : [setup1](https://forum.unity.com/threads/getting-quest-link-to-work-in-unity.780203/) |
+ [setup2](https://www.reddit.com/r/Unity3D/comments/kno23d/unity_202021f1_setting_up_unity_with_the_oculus/)
 
 * VR template : 
 [documentation](https://docs.unity3d.com/Packages/com.unity.template.vr@3.0/manual/index.html) | 
