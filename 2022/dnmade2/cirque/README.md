@@ -8,6 +8,5 @@
 * [import animation glb draco](https://eminet666.github.io/eminet_VR/4.2_model_actions/0_basic_fox_draco.html)
 
 
-
 ### liens
 * 
