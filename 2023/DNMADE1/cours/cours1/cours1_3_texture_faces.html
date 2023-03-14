@@ -1,0 +1,38 @@
+<!-- source : https://github.com/elbobo/aframe-multisrc-component -->
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/elbobo/aframe-multisrc-component/b6d23310/dist/0.3/aframe-multisrc-component.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: silver">
+        <a-assets>
+            <img id="rose" src="./assets/rose.png" />
+            <img id="jaune" src="./assets/jaune.png" />
+            <img id="cyan" src="./assets/cyan.png" />
+            <!-- <img id="blanc" src="./assets/blanc.png" /> -->
+            <img id="noir" src="./assets/noir.png" />
+            <img id="rouge" src="./assets/rouge.png" />
+            <img id="bleu" src="./assets/bleu.png" />
+            <img id="vert" src="./assets/vert.png" />
+        </a-assets>
+
+        <!-- syntaxe 1 : multisrc="srcs:#right,#left,#top,#bottom,#front,#back" -->
+        <a-box position="-1 1 -1" rotation="0 45 0"
+               multisrc="srcs:#rose,#cyan,#jaune,#vert,#bleu,#rouge"></a-box>
+
+        <!-- syntaxe 2 : multisrc="src0:#right;src1:#left" -->
+        <a-box position="1 1 -1" rotation="0 45 0" 
+               multisrc="src1:#rouge;src2:#bleu"
+               side="double" transparent="true"></a-box>
+
+        <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="silver"></a-plane>
+
+        <a-camera wasd-controls="acceleration:10"></a-camera>
+
+    </a-scene>
+</body>
+
+</html>

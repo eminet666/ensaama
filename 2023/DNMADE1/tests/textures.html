@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="briques" src="./assets/briques_carre.jpg">
+        </a-assets>
+
+        <a-plane position="0 0 -2" width="0.5" height="2" 
+        material="src: #briques; repeat: 1 4"></a-plane>
+
+        <a-plane position="-1 0 -2" width="0.5" height="2" 
+        material="src: #briques; repeat: 2 8"></a-plane>
+
+        <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" 
+        color="#7BC8A4"></a-plane>
+
+        <a-entity camera position="0 1.6 0"
+            wasd-controls="acceleration:10" 
+            look-controls >
+        </a-entity>
+        <a-sky color="gray"></a-sky>
+
+    </a-scene>
+</body>
+
+</html>

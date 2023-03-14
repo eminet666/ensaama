@@ -1,6 +1,6 @@
 ## 2021-2022 DNMADE1
 
-#### liens etudians
+#### liens etudiants
 * [aristide](https://arrri.github.io/dnmade1/)
 * [samuel](https://Samuel56100.github.io/DNMADE1/)
 * [bleuenn](https://LeCamB.github.io/dnmade1/)

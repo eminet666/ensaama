@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script> -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!-- <script src="shader-grid-glitch.js"></script> -->
+</head>
+
+<body>
+    <script>
+        /* global AFRAME, THREE */
+
+        // shader-grid-glitch.js
+
+        AFRAME.registerShader('grid-glitch', {
+            schema: {
+                color: { type: 'color', is: 'uniform' },
+                timeMsec: { type: 'time', is: 'uniform' }
+            },
+
+            vertexShader: `
+varying vec2 vUv;
+
+void main() {
+  vUv = uv;
+  gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+}
+`,
+            fragmentShader: `
+varying vec2 vUv;
+uniform vec3 color;
+uniform float timeMsec; // A-Frame time in milliseconds.
+
+void main() {
+  float time = timeMsec / 1000.0; // Convert from A-Frame milliseconds to typical time in seconds.
+  // Use sin(time), which curves between 0 and 1 over time,
+  // to determine the mix of two colors:
+  //    (a) Dynamic color where 'R' and 'B' channels come
+  //        from a modulus of the UV coordinates.
+  //    (b) Base color.
+  // 
+  // The color itself is a vec4 containing RGBA values 0-1.
+  gl_FragColor = mix(
+    vec4(mod(vUv , 0.05) * 20.0, 1.0, 1.0),
+    vec4(color, 1.0),
+    sin(time)
+  );
+}
+`
+        });
+
+    </script>
+
+
+
+    <a-scene>
+        <a-sphere material="shader:grid-glitch; color: blue;" radius="1" position="0 1.5 -2">
+        </a-sphere>
+
+<a-sphere position="2 1 -3" >
+    <a-shader fragment-shader="
+    uniform vec2 uv;
+    uniform vec2 uResolution;
+    uniform vec2 uRepeat;
+    void main() {
+      vec2 p = uv * uResolution;
+      vec2 p_mod = fract(p * uRepeat);
+      if (p_mod.x < 0.5) {
+        if (p_mod.y < 0.5) {
+          gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+        } else {
+          gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+        }
+      } else {
+        if (p_mod.y < 0.5) {
+          gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+        } else {
+          gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+        }
+      }
+    }" uv="0 0" uResolution="1 1" uRepeat="10 10"></a-shader>
+</a-sphere>
+
+        <a-entity position="0 0 0" size="2 2 2"
+            geometry="primitive: plane" material="shader: ocean; color: blue; wave-height: 10"></a-entity>
+
+        <a-sky color="#ECECEC"></a-sky>
+
+    </a-scene>
+
+</body>
+
+
+</html>

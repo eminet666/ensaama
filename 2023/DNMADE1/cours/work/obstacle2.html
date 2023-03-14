@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bloquer la caméra par des cubes</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="aframe-extras.js"></script>
+        <script>
+            AFRAME.registerComponent('collider-check', {
+                dependencies: ['position'],
+
+                init: function () {
+                    this.el.addEventListener('collide', function (e) {
+                        if (e.detail.body.el.id === 'camera') {
+                            e.detail.target.el.setAttribute('material', 'color', 'orange');
+                            console.log("collide");
+                        }
+                    });
+                    this.el.addEventListener('collideend', function (e) {
+                        if (e.detail.body.el.id === 'camera') {
+                            e.detail.target.el.setAttribute('material', 'color', 'red');
+                            console.log("collideend");
+                        }
+                    });
+                }
+            });
+
+            var cameraEl = document.getElementById('#camera');
+            cameraEl.addEventListener('collide', function (e) {
+                if (e.detail.body.el.id === 'box1' || e.detail.body.el.id === 'box2') {
+                    cameraEl.setAttribute('position', e.detail.contact.previous);
+                }
+            });
+        </script>    
+</head>
+
+<body>
+    <a-scene>
+        <a-entity id="camera" camera look-controls wasd-controls position="0 1 0"></a-entity>
+
+        <a-box id="box1" position="-1 1.5 -3" material="color: red" scale="2 2 2" collider-check></a-box>
+
+        <a-box id="box2" position="1 1.5 -5" material="color: red" scale="2 2 2" collider-check></a-box>
+
+        <a-entity id="ground" geometry="primitive: plane; width: 10; height: 10;" material="color: #333"
+            position="0 0 0" rotation="-90 0 0"></a-entity>
+
+    </a-scene>
+</body>
+
+</html>

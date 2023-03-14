@@ -1,0 +1,41 @@
+<!-- source : 
+    - https://aframe.io/docs/1.4.0/components/material.html 
+    - https://aframe.io/docs/1.4.0/core/mixins.html
+-->
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: silver">
+        <a-assets>
+            <img id="rose" src="./assets/rose.png" />
+            <img id="jaune" src="./assets/jaune.png" />
+            <img id="noir" src="./assets/noir.png" />
+            <a-mixin id="small" scale="0.25 0.25 0.25" rotation="0 45 0"></a-mixin>
+            <a-mixin id="max" scale="4 4 4" rotation="0 0 0" position="0 0 0"></a-mixin>
+        </a-assets>
+
+        <!-- 
+            - transparence : transparent="true|false" (default : false)
+            - opacité : affecte la couleur seulement si transparent=false) : opacity="0.5" (default : 1.0)
+         -->
+        <a-box mixin="small" src="#noir" position="-0.5 1 -1"  transparent="true" opacity="0.5"></a-box>
+        <!-- repetition texture : repeat="x y" (default : 1 1) -->
+        <a-box mixin="small" src="#jaune" position="0 1 -1" repeat="2 2"></a-box>
+        <a-box mixin="small" src="#rose" position="0.5 1 -1" repeat="4 4"></a-box>
+
+        <!-- côté affichage texture : side="front|back|double" (default : front) -->
+        <a-box mixin="max" src="#rose" side="double" repeat="4 4">
+        </a-box>
+
+        <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="silver"></a-plane>
+
+        <a-camera wasd-controls="acceleration:10"></a-camera>
+
+    </a-scene>
+</body>
+
+</html>

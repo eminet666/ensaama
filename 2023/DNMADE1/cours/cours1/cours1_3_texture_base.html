@@ -1,0 +1,28 @@
+<!-- source : https://aframe.io/docs/1.4.0/components/material.html -->
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: silver">
+        <a-assets>
+            <img id="rose" src="./assets/rose.png" />
+        </a-assets>
+
+        <a-box  src="./assets/rose.png" position="0 1 -1" rotation="0 45 0" 
+            depth="0.25" height="0.25" width="0.25">
+        </a-box>
+        <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+        
+        <!-- <a-sky color="#ECECEC"></a-sky> -->
+
+        <a-camera wasd-controls="acceleration:10"></a-camera>
+
+        
+
+    </a-scene>
+</body>
+
+</html>

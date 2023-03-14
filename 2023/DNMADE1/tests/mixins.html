@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <a-mixin id="face" geometry="primitive: box"></a-mixin>
+            <a-mixin id="perp" geometry="primitive: box" rotation="0 90 0"></a-mixin>
+            <a-mixin id="normal" geomtry="width: 0.5;height: 2;depth:0.05"></a-mixin>
+            <a-mixin id="large"></a-mixin>
+            <a-mixin id="rouge" material="color: red" ></a-mixin>
+            <a-mixin id="bleu" material="color: blue"></a-mixin>
+        </a-assets>
+
+        <a-entity mixin="face rouge normal" position="-2 1 -2"></a-entity>
+
+        <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+
+        <a-entity camera position="0 1.6 0"
+            wasd-controls="acceleration:10" 
+            look-controls >
+        </a-entity>
+        <a-sky color="gray"></a-sky>
+
+    </a-scene>
+</body>
+
+</html>

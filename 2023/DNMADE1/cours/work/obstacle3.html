@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Blocage de joueur avec un cube en A-Frame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+
+    <script>
+        // Récupère les éléments HTML des joueurs et du cube
+        var player = document.getElementById('player');
+        var cube = document.getElementById('cube');
+
+        // Définit la fonction de gestion de la collision
+        player.addEventListener('collide', function (e) {
+            player.setAttribute('position', e.detail.contactPoint); // Bloque le joueur sur le point de contact
+        });
+
+        // Définit la fonction de mise à jour pour déplacer le cube en fonction de la position du joueur
+        function update() {
+            cube.setAttribute('position', {
+                x: player.object3D.position.x,
+                y: cube.object3D.position.y,
+                z: player.object3D.position.z
+            });
+        }
+
+        // Ajoute la fonction de mise à jour à la boucle de rendu
+        AFRAME.registerComponent('update', {
+            tick: function () {
+                update();
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+    <a-scene>
+        <a-entity id="player" position="0 1.6 0" wasd-controls>
+            <a-camera></a-camera>
+        </a-entity>
+        <a-box id="cube" position="0 0 -5" color="red"></a-box>
+    </a-scene>
+
+</body>
+
+</html>

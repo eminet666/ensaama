@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script>
+    AFRAME.registerShader('custom', {
+        schema: {
+            color: { type: 'color', default: '#FFF' },
+            opacity: { type: 'number', default: 1.0 }
+        },
+
+        vertexShader: `
+    varying vec3 vNormal;
+
+    void main() {
+      vNormal = normal;
+
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }`,
+
+        fragmentShader: `
+    varying vec3 vNormal;
+
+    uniform vec3 color;
+    uniform float opacity;
+
+    void main() {
+      gl_FragColor = vec4(color * dot(vNormal, vec3(0.0, 0.0, 1.0)), opacity);
+    }`
+    });
+    </script>
+</head>
+
+<body>
+    <a-scene>
+        <a-box position="0 1.25 -4" rotation="45 45 45" scale="2 2 2" 
+        material="shader: custom; color: #FF0000;"></a-box>
+
+        <a-sky color="#6EBAA7"></a-sky>
+    </a-scene>
+</body>
+
+</html>
