@@ -1,22 +1,7 @@
-## rendu
+## rendus
 
-### 20230316
-* [cassandre](./rendus/20230216/cassandre/labyrinthe.html)
-* [ingrid](./rendus/20230216/ingrid/ingrid_labyrinte.html)
-* [louise](./rendus/20230216/louise/labyrinthe.html)
-* [martin](./rendus/20230216/martin/daboville_martin_labyrinthe.html)
-* [raphael](./rendus/20230216/raphael/layrinthe.html)
-* [safia](./rendus/20230216/safia/labirynthe.html)
-* [allie](./rendus/20230216/allie/tessier_allie-labyrinth.html)
-* [celia](./rendus/20230216/celia/lunt_celia_labyrinthe.html)
-* [kevin](./rendus/20230216/kevin/labyrinthe.html)
-* [pierre](./rendus/20230216/pierre/faure_pierre_labyrinthe.html)
-* [sofiya](./rendus/20230216/sofiya/krasilnikovaSOFIYA.html)
-* [lou](./rendus/20230216/lou/lou.html)
-* [miranda](./rendus/20230216/miranda/miranda_maillard.html)
-* [eolyna](./rendus/20230216/eolyna/eolyna_labyrinthe.html)
-* [lorine](./rendus/20230216/lorine/demovr2.html)
-* [graig](./rendus/20230216/graig/graig_labyrinth.html)
+* [20230316_labyrinthe_1](./rendus/20230316/README.md)
+* [20230323_labyrinthe_2](./rendus/20230323/README.md)
 
 ## progression
 
