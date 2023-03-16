@@ -14,22 +14,23 @@
 * [sofiya](./rendus/20230216/sofiya/krasilnikovaSOFIYA.html)
 * [lou](./rendus/20230216/lou/lou.html)
 * [miranda](./rendus/20230216/miranda/miranda_maillard.html)
+* [eolyna](./rendus/20230216/eolyna/eolyna_labyrinthe.html)
 
 ## progression
 
 ### cours 1
-* [cours1_0_demo](./cours1/cours1_0_demo.html) 
+* [cours1_0_demo](./cours/cours1/cours1_0_demo.html) 
     * langage : javascript / librairie / aframe.io / exemple / syntaxe / test (liveserver)
     * entity : primitive / paramètres / formes / position / taille / couleur
-* [cours1_1_planes](./cours1/cours1_1_planes.html)     
+* [cours1_1_planes](./cours/cours1/cours1_1_planes.html)     
     * plan : vertical / orientation / unité / inspecteur / side=double /mur (box)
-* [cours1_2_camera](./cours1/cours1_2_camera.html)     
+* [cours1_2_camera](./cours/cours1/cours1_2_camera.html)     
     * camera : entity / vitesse / rotation
-* [cours1_3_texture_base](./cours1/cours1_3_texture_base.html)
+* [cours1_3_texture_base](./cours/cours1/cours1_3_texture_base.html)
     * textures : couleur / image / assets / debug / mixin
-* [cours1_4_texture_options](./cours1/cours1_3_texture_options.html)
+* [cours1_4_texture_options](./cours/cours1/cours1_3_texture_options.html)
     * textures2 : repetition / side 
-* [cours1_5_texture_faces](./cours1/cours1_3_textures_faces.html)    
+* [cours1_5_texture_faces](./cours/cours1/cours1_3_textures_faces.html)    
     * librairie / multiples 6 faces / 2 faces / chatGPT
 debug : https://aframe.io/aframe/examples/primitives/boxes/
 
