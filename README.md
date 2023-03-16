@@ -1,7 +1,9 @@
 # ensaama
 
 ## 2022-2023
+* [DNMADE1x](./2023/DNMADE1/README.md)
 * [DNMADE1](./2023/DNMADE1/README.md)
+* [DNMADE1](./2023/DNMADE1/cours/README.md)
 
 ## 2021-2022
 * [DSAA2](https://eminet666.github.io/ensaama/2022/dsaa2/)
