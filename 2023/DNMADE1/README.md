@@ -1,3 +1,11 @@
+## rendu
+
+### 20230316
+* [cassandre](./rendus/20230216/cassandre/labyrinthe.html)
+* [ingrid](./rendus/20230216/ingrid/ingrid_labyrinte.html)
+* [louise](./rendus/20230216/louise/labyrinthe.html)
+* [martin](./rendus/20230216/martin/daboville_martin_labyrinthe.html)
+* [raphael](./rendus/20230216/raphael/layrinthe.html)
 
 
 ## progression
@@ -28,6 +36,7 @@ debug : https://aframe.io/aframe/examples/primitives/boxes/
 * modele 3D : format / syntaxe / compression
 <!-- https://www.cgtrader.com/items/891263/download-page -->
 <!-- how to pack blender files : https://www.youtube.com/watch?v=SqwEGDIPTY8 -->
+* [example penguin](https://free3d.com/3d-model/emperor-penguin-601811.html)
 * what a mess : traverser / labyrinthe2
 ### cours 3
 scan3D sculpture
