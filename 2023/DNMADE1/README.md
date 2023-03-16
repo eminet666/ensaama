@@ -9,9 +9,11 @@
 * [safia](./rendus/20230216/safia/labirynthe.html)
 * [allie](./rendus/20230216/allie/tessier_allie-labyrinth.html)
 * [celia](./rendus/20230216/celia/lunt_celia_labyrinthe.html)
-* [kevin](./rendus/20230216/kevin/)
+* [kevin](./rendus/20230216/kevin/labyrinthe.html)
 * [pierre](./rendus/20230216/pierre/faure_pierre_labyrinthe.html)
 * [sofiya](./rendus/20230216/sofiya/krasilnikovaSOFIYA.html)
+* [lou](./rendus/20230216/lou/lou.html)
+* [miranda](./rendus/20230216/miranda/miranda_maillard.html)
 
 ## progression
 
