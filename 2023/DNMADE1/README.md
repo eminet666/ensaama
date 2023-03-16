@@ -7,6 +7,11 @@
 * [martin](./rendus/20230216/martin/daboville_martin_labyrinthe.html)
 * [raphael](./rendus/20230216/raphael/layrinthe.html)
 * [safia](./rendus/20230216/safia/labirynthe.html)
+* [allie](./rendus/20230216/allie/tessier_allie-labyrinth.html)
+* [celia](./rendus/20230216/celia/lunt_celia_labyrinthe.html)
+* [kevin](./rendus/20230216/kevin/)
+* [pierre](./rendus/20230216/pierre/faure_pierre_labyrinthe.html)
+* [sofiya](./rendus/20230216/sofiya/krasilnikovaSOFIYA.html)
 
 ## progression
 

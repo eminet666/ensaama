@@ -1,0 +1,62 @@
+<html>
+
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+
+
+  <body>
+
+    <a-assets>
+
+      <img id="mur" src="./mur végétal.jpg">
+      <img id="gazon" src="./gazon.jpg">
+      <img id="jesus" src="./jesus.jpeg">
+      <img id="bravo" src="./texte.png">
+      
+    </a-assets>
+
+    <a-scene>
+
+      <a-plane position="0 1 2" width="4" height="3" material="src: #mur; side:double" repeat="2 4"></a-plane>
+      <a-plane position="2 1 0" width="4" height="3" rotation="0 -90 0"  material="src: #mur; side:double" repeat="2 4"></a-plane>
+      <a-plane position="0 1 -2" width="4" height="3" material="src: #mur; side:double" repeat="2 4"></a-plane>
+      <a-plane position="-2 1 -0.5" width="3" height="3" rotation="0 -90 0"  material="src: #mur; side:double" repeat="2 4"></a-plane>
+
+      <a-plane position="-1.5 1 1" width="1" height="3" material="src: #mur; side:double" repeat="1 4"></a-plane>
+      <a-plane position="-1 1 0.25" width="1.5" height="3" material="src: #mur; side:double" repeat="1 4" rotation="0 -90 0"></a-plane>
+      <a-plane position="0 1 1.25" width="1.5" height="3" material="src: #mur; side:double" repeat="1 4" rotation="0 -90 0"></a-plane>
+      <a-plane position="0.75 1 1.5" width="1.5" height="3" material="src: #mur; side:double" repeat="1 4"></a-plane>
+      <a-plane position="0.5 1 0.5" width="1" height="3" material="src: #mur; side:double" repeat="1 4"></a-plane>
+      <a-plane position="1.5 1 0.75" width="1.5" height="3" material="src: #mur; side:double" repeat="1 4" rotation="0 -90 0"></a-plane>
+      <a-plane position="1 1 0.25" width="1.5" height="3" material="src: #mur; side:double" repeat="1 4" rotation="0 -90 0"></a-plane>
+      <a-plane position="-2 1 1.25" width="0.5" height="3" material="src: #mur; side:double" repeat="1 4" rotation="0 -90 0"></a-plane>
+      <a-plane position="-1 1 1.5" width="1" height="3" material="src: #mur; side:double" repeat="1 4"></a-plane>
+      <a-plane position="-1.5 1 1.75" width="0.5" height="3" rotation="0 -90 0"  material="src: #mur; side:double" repeat="1 4"></a-plane>
+      <a-plane position="-0.5 1 0.25" width="2.5" height="3" material="src: #mur; side:double" repeat="2 4" rotation="0 -90 0"></a-plane>
+      <a-plane position="-1.25 1 0.5" width="0.5" height="3" material="src: #mur; side:double" repeat="1 4"></a-plane>
+      <a-plane position="-1.25 1 -1.5" width="0,5" height="3" material="src: #mur; side:double" repeat="1 4"></a-plane>
+      <a-plane position="-1.5 1 -0.75" width="1.5" height="3" material="src: #mur; side:double" repeat="1 4" rotation="0 -90 0"></a-plane>
+      <a-plane position="1.5 1 -1.5" width="1" height="3" material="src: #mur; side:double" repeat="2 4" rotation="0 -90 0"></a-plane>
+      <a-plane position="0.75 1 -1" width="1.5" height="3" material="src: #mur; side:double" repeat="1 4"></a-plane>
+      <a-plane position="-0.25 1 -1.5" width="2.5" height="3" material="src: #mur; side:double" repeat="2 4"></a-plane>
+      <a-plane position="0 1 -0.75" width="0.5" height="3" material="src: #mur; side:double" repeat="1 4" rotation="0 -90 0"></a-plane>
+      <a-plane position="-2.5 0.75 1.75" width="0.5" height="0.5" material="src: #jesus; side:double" rotation="0 -90 0"></a-plane>
+      <a-plane position="-2.5 0.25 1.75" width="0.5" height="0.5" material="src: #bravo; side:double" rotation="0 90 0"></a-plane>
+
+        
+    
+      <a-sky src="./istockphoto-1321474586-612x612.jpg"></a-sky>
+
+      <a-plane sol position="0 -0.5 0" rotation="-90 0 0" width="4" height="4" material="src: #gazon; side:double" repeat="4 4"></a-plane>
+
+      <a-entity camera position="0.25 0.75 0.25" wasd-controls="acceleration: 5" look-controls></a-entity>
+
+      
+       
+    </a-scene>
+
+  
+  </body>
+
+</html>
