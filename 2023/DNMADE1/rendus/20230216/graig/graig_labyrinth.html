@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- SOL -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="lightblue"></a-plane>
+      <a-plane position="0 0 -1" rotation="-90 0 0" width="4" height="4" color="lightblue"></a-plane>
+      <!--MUR-->
+      <a-plane position="0 -0.5 2" rotation="0 0 -90" width="4" height="4" color="lightblue"></a-plane>
+      <a-plane position="-2 0 0" rotation="0 -90 0" width="4" height="3" color="lightblue"></a-plane>
+      <a-plane position="2 0 0" rotation="0 -90 0" width="4" height="3" color="lightblue"></a-plane>
+
+      <a-sky src="https://media.istockphoto.com/id/1328689113/photo/summer-blue-sky-and-white-cloud-white-background-beautiful-clear-cloudy-in-sunlight-calm.jpg?b=1&s=170667a&w=0&k=20&c=zll8NetKpkVebLipZi-jmAAz56gMvPlRNtnHNVuip_k="></a-sky>
+      
+      <!-- HASARD -->
+      <script>
+        // TAILLE ET MUR
+        const mazeSize = 4;
+        const wallWidth = 0.5;
+        
+        // MUR HASARD
+        for (let i = -mazeSize/2; i < mazeSize/2; i+=wallWidth) {
+          for (let j = -mazeSize/2; j < mazeSize/2; j+=wallWidth) {
+            if (Math.random() > 0.5) {
+              const wall = document.createElement("a-box");
+              wall.setAttribute("position", `${i+wallWidth/2} ${wallWidth/2} ${j+wallWidth/2}`);
+              wall.setAttribute("width", "0.35");
+              wall.setAttribute("height", "2.5");
+              wall.setAttribute("depth", "0.35");
+              wall.setAttribute("color", "lightblue");
+
+              document.querySelector("a-scene").appendChild(wall);
+            }
+          }
+        }
+      </script>
+    </a-scene>
+  </body>
+</html>

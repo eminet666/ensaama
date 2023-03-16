@@ -15,6 +15,8 @@
 * [lou](./rendus/20230216/lou/lou.html)
 * [miranda](./rendus/20230216/miranda/miranda_maillard.html)
 * [eolyna](./rendus/20230216/eolyna/eolyna_labyrinthe.html)
+* [lorine](./rendus/20230216/lorine/demovr2.html)
+* [graig](./rendus/20230216/graig/graig_labyrinth.html)
 
 ## progression
 
