@@ -12,6 +12,7 @@
       <a-plane position="0 -0.5 2" rotation="0 0 -90" width="4" height="4" color="lightblue"></a-plane>
       <a-plane position="-2 0 0" rotation="0 -90 0" width="4" height="3" color="lightblue"></a-plane>
       <a-plane position="2 0 0" rotation="0 -90 0" width="4" height="3" color="lightblue"></a-plane>
+      <a-plane position="-1 0 -2" rotation="0 0 -90" width="3" height="3" color="lightblue"></a-plane>
 
       <a-sky src="https://media.istockphoto.com/id/1328689113/photo/summer-blue-sky-and-white-cloud-white-background-beautiful-clear-cloudy-in-sunlight-calm.jpg?b=1&s=170667a&w=0&k=20&c=zll8NetKpkVebLipZi-jmAAz56gMvPlRNtnHNVuip_k="></a-sky>
       
@@ -20,16 +21,21 @@
         // TAILLE ET MUR
         const mazeSize = 4;
         const wallWidth = 0.5;
+
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+        }
         
         // MUR HASARD
         for (let i = -mazeSize/2; i < mazeSize/2; i+=wallWidth) {
           for (let j = -mazeSize/2; j < mazeSize/2; j+=wallWidth) {
             if (Math.random() > 0.5) {
-              const wall = document.createElement("a-box");
+              const wall = document.createElement("a-plane");
+              const h = getRandomArbitrary(0.25,0.30)
               wall.setAttribute("position", `${i+wallWidth/2} ${wallWidth/2} ${j+wallWidth/2}`);
-              wall.setAttribute("width", "0.35");
+              wall.setAttribute("width", `${wallWidth}`)
               wall.setAttribute("height", "2.5");
-              wall.setAttribute("depth", "0.35");
+              wall.setAttribute("depth", `${wallWidth}*1.5`);
               wall.setAttribute("color", "lightblue");
 
               document.querySelector("a-scene").appendChild(wall);

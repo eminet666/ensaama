@@ -11,7 +11,7 @@
 ## progression
 
 ### cours 1
-* [cours1_0_demo](./cours1/cours1_0_demo.html) 
+* [cours1_0_demo](./cours1/cours1_0_demo.html)
     * langage : javascript / librairie / aframe.io / exemple / syntaxe / test (liveserver)
     * entity : primitive / paramètres / formes / position / taille / couleur
 * [cours1_1_planes](./cours1/cours1_1_planes.html)     
