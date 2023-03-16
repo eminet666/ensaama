@@ -6,7 +6,7 @@
 * [louise](./rendus/20230216/louise/labyrinthe.html)
 * [martin](./rendus/20230216/martin/daboville_martin_labyrinthe.html)
 * [raphael](./rendus/20230216/raphael/layrinthe.html)
-
+* [safia](./rendus/20230216/safia/labirynthe.html)
 
 ## progression
 
