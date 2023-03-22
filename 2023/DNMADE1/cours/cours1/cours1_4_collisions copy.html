@@ -1,0 +1,71 @@
+<!-- source : https://aframe.io/docs/1.4.0/introduction/ -->
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script>
+         /*
+            * prevent the camera from entering a 3d entity
+            * coded by Synn ( https://github.com/chabloz )
+            */
+            AFRAME.registerComponent('sphere-collider-constraint', {
+                schema: {
+                    selector: {
+                        default: '',
+                    },
+                    distance: {
+                        default: 0.5,
+                    },
+                },
+
+                init: function () {
+                    this.lastPosition = new THREE.Vector3()
+                    this.el.object3D.getWorldPosition(this.lastPosition)
+
+                    this.myPos = new THREE.Vector3()
+                    this.el.object3D.getWorldPosition(this.myPos)
+
+                    this.targetPos = new THREE.Vector3()
+                },
+
+                tick: function () {
+                    // if haven't moved since last tick, do nothing
+                    this.el.object3D.getWorldPosition(this.myPos)
+                    if (this.myPos.distanceTo(this.lastPosition) === 0) return
+
+                    let didHit = false
+
+                    for (const obj of document.querySelectorAll(this.data.selector)) {
+                        obj.object3D.getWorldPosition(this.targetPos)
+                        const distanceTo = this.myPos.distanceTo(this.targetPos)
+                        if (distanceTo <= obj.components.geometry.data.radius + this.data.distance) {
+                            didHit = true
+                            break
+                        }
+                    }
+                    if (didHit) {
+                        this.el.object3D.position.copy(this.lastPosition)
+                        this.el.object3D.parent.worldToLocal(this.el.object3D.position)
+                    } else {
+                        this.el.object3D.getWorldPosition(this.lastPosition)
+                    }
+                },
+            })
+    </script>
+</head>
+
+<body>
+    <a-scene>
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" collision static-body></a-box>
+        <a-sphere aabb-collider position="0 1.25 -5" radius="1.25" color="#EF2D5E"  collision static-body></a-sphere>
+        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" collision static-body></a-cylinder>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+
+        <a-camera position="0 1.6 0" collision
+        look-controls wasd-controls="acceleration:10" ></a-camera>
+       
+        <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+</body>
+
+</html>

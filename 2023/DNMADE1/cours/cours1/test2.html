@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>A-Frame Collision Example</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script>
+        AFRAME.registerComponent('collider', {
+            init: function () {
+                var el = this.el;
+                var prevPosition = el.sceneEl.querySelector('[camera]').getAttribute('position');
+                el.addEventListener('collide', function (event) {
+                    var cameraEl = el.sceneEl.querySelector('[camera]');
+                    cameraEl.setAttribute('position', prevPosition);
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <a-scene>
+        <a-box position="0 1.5 -5" color="#00F"  class="collider" collider></a-box>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+
+        <a-entity camera position="0 1.6 0" look-controls wasd-controls collider></a-entity>
+    </a-scene>
+</body>
+
+</html>
+
+
+<!-- 
+<body>
+    <a-scene>
+        <a-box position="0 1.5 -5" color="#00F" class="collider" collider></a-box>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+
+        <a-camera position="0 1.6 0" collision look-controls wasd-controls="acceleration:10"></a-camera>
+    </a-scene>
+</body>
+
+</html> -->

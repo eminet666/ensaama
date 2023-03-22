@@ -14,13 +14,14 @@
 
 		<a-scene background="color: skyblue">
 			<a-assets>
-				<a-asset-item id="obj" src="./assets/chair_891263/891263_organic_chair.obj" ></a-asset-item>
-				<a-asset-item id="mtl" src="./assets/chair_891263/891263_organic_chair.mtl"></a-asset-item>
+				<a-asset-item id="obj" src="./assets/pinguin/PenguinBaseMesh.obj" ></a-asset-item>
+				<a-asset-item id="mtl" src="./assets/pinguin/PenguinBaseMesh.mtl"></a-asset-item>
+				<img id="rose" src="./assets/pinguin/PenguinDiffuseColor.png" />
 			</a-assets>
 
-			<a-entity obj-model="obj: #obj; mtl: #mtl" rotation="0 90 0" 
-			position="0 0 -1.5" scale="0.01 0.01 0.01"></a-entity>
-			<!-- <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#787878"></a-plane> -->
+			<a-entity obj-model="obj: #obj; mtl: #mtl" rotation="0 90 0" color="blue"
+			position="0 0 -3.5" scale="0.01 0.01 0.01"></a-entity>
+			<a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#787878"></a-plane>
 
 		</a-scene>
 
