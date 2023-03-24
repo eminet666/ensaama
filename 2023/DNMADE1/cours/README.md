@@ -1,16 +1,9 @@
-## rendu
+#### 2023/DNMADE1/cours
 
-### 20230316
-* [cassandre](./rendus/20230216/cassandre/labyrinthe.html)
-* [ingrid](./rendus/20230216/ingrid/ingrid_labyrinte.html)
-* [louise](./rendus/20230216/louise/labyrinthe.html)
-* [martin](./rendus/20230216/martin/daboville_martin_labyrinthe.html)
-* [raphael](./rendus/20230216/raphael/layrinthe.html)
-* [safia](./rendus/20230216/safia/labirynthe.html)
+##### test
+* [base_physics](./work/physics.html)
 
-## progression
-
-### cours 1
+##### cours 1
 * [cours1_0_demo](./cours1/cours1_0_demo.html)
     * langage : javascript / librairie / aframe.io / exemple / syntaxe / test (liveserver)
     * entity : primitive / paramètres / formes / position / taille / couleur
@@ -28,7 +21,7 @@ debug : https://aframe.io/aframe/examples/primitives/boxes/
 
 * exercice : labyrinthe (entrer = trouver/ sortir) escape game
 
-### cours 2
+##### cours 2
 * download models
     * [free3d](https://free3d.com/)
     * [turbosquid](https://auth.turbosquid.com/?locale=fr)
@@ -38,11 +31,12 @@ debug : https://aframe.io/aframe/examples/primitives/boxes/
 <!-- how to pack blender files : https://www.youtube.com/watch?v=SqwEGDIPTY8 -->
 * [example penguin](https://free3d.com/3d-model/emperor-penguin-601811.html)
 * what a mess : traverser / labyrinthe2
-### cours 3
+
+##### cours 3
 scan3D sculpture
 lumières
 
-### cours 4 projet
+##### cours 4 projet
 
 <!-- textures -->
 * [aframe doc](https://aframe.io/docs/1.4.0/components/material.html)
