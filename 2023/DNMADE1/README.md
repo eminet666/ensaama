@@ -1,7 +1,11 @@
 ### 2023/DNMADE
 
 #### tests
+* [occulus_buttons](./tests/oculus_buttons.html)
+* [currentposition](./tests/currentposition.html)
 
+* [player_timer](./cours/work/player_timer.html)
+* [physics](./cours/work/physics.html)
 
 #### cours
 * [cours1_bases VR](./cours/cours1/README.md)
