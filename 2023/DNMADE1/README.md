@@ -34,6 +34,8 @@ debug : https://aframe.io/aframe/examples/primitives/boxes/
 <!-- how to pack blender files : https://www.youtube.com/watch?v=SqwEGDIPTY8 -->
 * [example penguin](https://free3d.com/3d-model/emperor-penguin-601811.html)
 * what a mess : traverser / labyrinthe2
+* [test_oculus](./tests/oculus_buttons.html)
+
 ### cours 3
 scan3D sculpture
 lumières
