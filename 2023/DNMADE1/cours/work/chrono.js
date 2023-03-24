@@ -60,6 +60,29 @@ AFRAME.registerComponent('currentposition', {
     }
 });
 
+// START GAME
+var gamein = false;
+
+AFRAME.registerComponent('startgame', {
+    schema: {
+        trace: { type: 'boolean', default: false },
+        xlimit: { type: 'number', default: 1 },
+        zlimit: { type: 'number', default: 1 },
+    },
+    init: function () {
+        var data = this.data;
+    },
+    tick: function () {
+        if(!gamein) {
+            var data = this.data;
+            if (Math.abs(player.pos.x) > data.xlimit) gamein = true;
+            if (Math.abs(player.pos.z) > data.zlimit) gamein = true;
+            //console.log("inside = "+inside);
+        }
+
+    }
+});
+
 // OUTOFLIMIT
 var inside = true;
 
@@ -87,10 +110,7 @@ var tempsTotal = 0;
 
 AFRAME.registerComponent('chrono', {
     schema: {
-        trace: {
-            type: 'boolean',
-            default: false
-        },
+        trace: { type: 'boolean', default: false },
     },
     init: function () {
         tempsDebut = Date.now();
