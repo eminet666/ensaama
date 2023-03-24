@@ -1,10 +1,7 @@
 # ensaama
 
-* [2022-2023](./2023/README.MD)
-
-
 ## 2022-2023
-* [DNMADE1](./2023/DNMADE1/README.md)
+[DNMADE1](./2023/README.md)
 
 ## 2021-2022
 [DSAA2](https://eminet666.github.io/ensaama/2022/dsaa2/)
@@ -13,9 +10,9 @@
 | [DNMADE1](https://eminet666.github.io/ensaama/2022/dnmade1/)
 
 ## 2020-2021
-* [DNMADE3](https://eminet666.github.io/ensaama/2021/dnmade3/)
-* [DNMADE2](https://eminet666.github.io/ensaama/2021/dnmade2/)
-* [DNMADE1](https://eminet666.github.io/ensaama/2021/dnmade1/)
+[DNMADE3](https://eminet666.github.io/ensaama/2021/dnmade3/)
+| [DNMADE2](https://eminet666.github.io/ensaama/2021/dnmade2/)
+| [DNMADE1](https://eminet666.github.io/ensaama/2021/dnmade1/)
 
 ## composants
 <!-- * [nft](https://eminet666.github.io/ensaama/AR_logo/) -->
