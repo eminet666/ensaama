@@ -14,6 +14,8 @@
                     trace: { type: 'boolean', default: false },
                 },
                 init: function () {
+                    var trace = document.querySelector('#txtlog');
+                    trace.setAttribute('value', "ready");
 
                     this.el.addEventListener("xbuttondown", function (event) {
 
@@ -23,7 +25,11 @@
                         }
                     });
 
-                }
+                },
+                tick: function () {
+                    var trace = document.querySelector('#txtlog');
+                    trace.setAttribute('value', "ready");
+                }                
             });
 
         </script>
@@ -34,7 +40,7 @@
 
     <a-scene background="color: skyblue" frequency="delay: 500;">
 
-        <a-plane position="0 0 0" rotation="-90 0 0" width="2" height="2" color="gray">
+        <a-plane position="0 0 0" rotation="-90 0 0" width="2" height="2" color="yellow">
         </a-plane>
 
         <a-entity id="cam" camera position="0 0.5 0" look-controls 
