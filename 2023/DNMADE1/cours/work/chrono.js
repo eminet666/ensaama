@@ -98,8 +98,11 @@ AFRAME.registerComponent('outoflimit', {
         var data = this.data;
         // if(Math.abs(player.pos.x) > data.xlimit) inside = false;
         // if(Math.abs(player.pos.z) > data.zlimit) inside = false;
-        if (Math.abs(player.pos.x) > data.xlimit || Math.abs(player.pos.z) > data.zlimit)
-        inside = false;
+        if (Math.abs(player.pos.x) > data.xlimit || Math.abs(player.pos.z) > data.zlimit) {
+            inside = false;
+            this.el.emit("inside" + inside);
+        }
+        
         //console.log("inside = "+inside);
 
         if (this.data.trace) {
@@ -122,6 +125,9 @@ AFRAME.registerComponent('chrono', {
     init: function () {
         //tempsDebut = Date.now();
         //var data = this.data;
+        document.addEventListener('insidefalse', evt => {
+            console.log("evt: insidefalse");
+        });
     },
     tick: function () {
         if (this.data.trace) {
