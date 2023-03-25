@@ -2,8 +2,8 @@
 
 #### projets
 ##### labyrinthe
-* [20230316_labyrinthe_1](./rendus/20230316/README.md)
-* [20230323_labyrinthe_2](./rendus/20230323/README.md)
+* [20230316_labyrinthe_1](./rendus/labyrinthe/20230316/README.md)
+* [20230323_labyrinthe_2](./rendus/labyrinthe/20230323/README.md)
 * [demo](./rendus/labyrinthe/demo/labyrinthe_full.html)
 
 #### cours
