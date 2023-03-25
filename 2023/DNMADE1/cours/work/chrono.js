@@ -147,20 +147,22 @@ AFRAME.registerComponent('xkey_reset', {
 
 AFRAME.registerComponent('xbutton_reset', {
     schema: {
-        trace: {
-            type: 'boolean',
-            default: false
-        },
+        trace: { type: 'boolean', default: false },
     },
     init: function () {
         var trace = document.querySelector('#txtlog');
         trace.setAttribute('value', "ready");
+        var console = this.data.trace;
 
         this.el.addEventListener("xbuttondown", function (event) {
-
-            if (this.data.trace) {
-            var trace = document.querySelector('#txtlog');
-            trace.setAttribute('value', "xbutton pressed");
+            var cam = document.getElementById('cam');
+            cam.setAttribute('position', '0 0.5 0');
+            tempsDebut = 0;
+            tempsFin = 0;
+            inside = false;
+            if (console) {
+                var trace = document.querySelector('#txtlog');
+                trace.setAttribute('value', "xbutton pressed");
             }
         });
 
