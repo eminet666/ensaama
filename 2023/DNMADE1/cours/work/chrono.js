@@ -150,9 +150,10 @@ AFRAME.registerComponent('xbutton_reset', {
         trace: { type: 'boolean', default: false },
     },
     init: function () {
-        var trace = document.querySelector('#txtlog');
-        trace.setAttribute('value', "ready");
         var console = this.data.trace;
+        var trace = document.querySelector('#txtlog');
+        trace.setAttribute('value', "ready"+console);
+
 
         this.el.addEventListener("xbuttondown", function (event) {
             var cam = document.getElementById('cam');
@@ -160,10 +161,10 @@ AFRAME.registerComponent('xbutton_reset', {
             tempsDebut = 0;
             tempsFin = 0;
             inside = false;
-            if (console) {
+            // if (console) {
                 var trace = document.querySelector('#txtlog');
                 trace.setAttribute('value', "xbutton pressed");
-            }
+            // }
         });
 
     }
