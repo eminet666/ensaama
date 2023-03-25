@@ -96,18 +96,15 @@ AFRAME.registerComponent('outoflimit', {
     },
     tick: function () {
         var data = this.data;
-        // if(Math.abs(player.pos.x) > data.xlimit) inside = false;
-        // if(Math.abs(player.pos.z) > data.zlimit) inside = false;
         if (Math.abs(player.pos.x) > data.xlimit || Math.abs(player.pos.z) > data.zlimit) {
             inside = false;
             this.el.emit("inside" + inside);
+            //console.log("inside = "+inside);            
         }
         
-        //console.log("inside = "+inside);
-
         if (this.data.trace) {
             var trace = document.querySelector('#txtlog');
-            var text = Math.abs(player.pos.z).toFixed(2)+"_"+data.zlimit+"_"+inside;
+            var text = "z="+Math.abs(player.pos.z).toFixed(2)+" _ "+"zlimit="+data.zlimit+" _ "+"inside="+inside;
             trace.setAttribute('value', text);
         }
     }
@@ -123,10 +120,8 @@ AFRAME.registerComponent('chrono', {
         trace: { type: 'boolean', default: false },
     },
     init: function () {
-        //tempsDebut = Date.now();
-        //var data = this.data;
-        document.addEventListener('insidefalse', evt => {
-            console.log("evt: insidefalse");
+        document.addEventListener('outoflimit', evt => {
+            console.log("evt: outoflimit");
         });
     },
     tick: function () {
