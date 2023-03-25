@@ -18,6 +18,7 @@
 debug : https://aframe.io/aframe/examples/primitives/boxes/
 
 #### exercice : labyrinthe (entrer = trouver/ sortir) escape game
+* [demo](./demo/labyrinthe_full.html)
 
 #### notes
 * vscode (raccourcis) : ctrl+K C = comment, ctrl+K U = uncomment
