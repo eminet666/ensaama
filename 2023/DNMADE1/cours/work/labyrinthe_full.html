@@ -18,11 +18,16 @@
     debug-keyboard="key: b; event: xbuttondown; target: #lefthand">
 
         <!-- DEBUT LABYRINTHE -->
-
+        <a-assets>
+            <img id="sky" src="./puresky.jpg">
+        </a-assets>
 
 
         <a-plane position="0 0 0" rotation="-90 0 0" width="2" height="2" color="grey"></a-plane>
         <!-- FIN LANYRINTHE -->
+
+        <!-- PHOTO360 -->
+        <a-sky id="image-360" radius="10" src="#sky"></a-sky>
 
         <!-- PLAYER -->
         <a-entity id="player" position="0 0 0">

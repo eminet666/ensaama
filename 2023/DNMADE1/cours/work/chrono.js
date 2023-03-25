@@ -65,7 +65,6 @@ AFRAME.registerComponent('chrono', {
 
         var lefthand = document.getElementById('lefthand');
         lefthand.addEventListener("xbuttondown", function (event) {   
-            console.log(lefthand);
             console.log("evt: xbuttondown");
             reset_game();
         });
