@@ -1,11 +1,11 @@
 ### 2023/DNMADE
 
 #### tests
+* [labyrinthe_full](./cours/work/labyrinthe_full.html)
 * [occulus_buttons](./tests/oculus_buttons.html)
 * [currentposition](./tests/currentposition.html)
 * [player_timer](./cours/work/player_timer.html)
-* [physics_donowork](./cours/work/physics.html)
-* [gravity](./cours/work/gravity.html)
+* [gravity_ok](./cours/work/gravity_ok.html)
 
 #### cours
 * [cours1_bases VR](./cours/cours1/README.md)
