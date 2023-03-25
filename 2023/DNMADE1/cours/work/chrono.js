@@ -1,91 +1,30 @@
-// version 20220303
-
-// FREQUENCY
-AFRAME.registerComponent('frequency', {
-    schema: {
-        log: {
-            type: 'boolean',
-            default: false
-        },
-        delay: {
-            type: 'number',
-            default: 1000
-        },
-    },
-    init: function () {
-        this.tick = AFRAME.utils.throttleTick(this.tick, this.data.delay, this);
-    },
-    tick: function (time, delta) {
-        if (this.data.log) {
-            console.log("interval = " + delta.toFixed(3));
-        }
-    }
-});
-
-// CURRENTPOSITION
-let player = {
-    pos: {
-        x: 0,
-        y: 0,
-        z: 0
-    }
-}
-
-function dist(mypos) {
-    return Math.sqrt((player.pos.x - mypos.x) ** 2 + (player.pos.z - mypos.z) ** 2)
-}
-
-AFRAME.registerComponent('currentposition', {
-    schema: {
-        trace: {
-            type: 'boolean',
-            default: false
-        },
-    },
-    tick: function () {
-        var pos = this.el.object3D.position;
-        var wposition = new THREE.Vector3();
-        var wpos = this.el.object3D.getWorldPosition(wposition);
-
-        player.pos.x = pos.x + wpos.x;
-        player.pos.y = pos.y + wpos.y;
-        player.pos.z = pos.z + wpos.z;
-        //console.log(player.pos);
-
-        if (this.data.trace) {
-            var trace = document.querySelector('#txtlog');
-            var newvalue = 'x = ' + player.pos.x.toFixed(2) + ", z = " + player.pos.z.toFixed(2);
-            trace.setAttribute('value', newvalue);
-        }
-    }
-});
+// version 20230325
 
 // START GAME
-AFRAME.registerComponent('startgame', {
+AFRAME.registerComponent('begingame', {
     schema: {
         trace: { type: 'boolean', default: false },
-        xlimit: { type: 'number', default: 1 },
-        zlimit: { type: 'number', default: 1 },
+        xlimit: { type: 'number', default: 0.2 },
+        zlimit: { type: 'number', default: 0.2 },
     },
     init: function () {
         var data = this.data;
     },
     tick: function () {
-        if(tempsFin == 0) {
+        if(tempsDebut == 0) {
             var data = this.data;
+            //console.log(Math.abs(player.pos.z).toFixed(2)+"_"+data.zlimit);
             if (Math.abs(player.pos.x) > data.xlimit || Math.abs(player.pos.z) > data.zlimit) 
             {
-                tempsDebut = Date.now();
-                inside = true;
+               this.el.emit("begingame");
+               //console.log("emit chrono_start");
             }
         }
     }
 });
 
 // OUTOFLIMIT
-var inside = true;
-
-AFRAME.registerComponent('outoflimit', {
+AFRAME.registerComponent('endgame', {
     schema: {
         trace: { type: 'boolean', default: false },
         xlimit: { type: 'number', default: 1 },
@@ -97,83 +36,74 @@ AFRAME.registerComponent('outoflimit', {
     tick: function () {
         var data = this.data;
         if (Math.abs(player.pos.x) > data.xlimit || Math.abs(player.pos.z) > data.zlimit) {
-            inside = false;
-            this.el.emit("inside" + inside);
-            //console.log("inside = "+inside);            
+            this.el.emit("endgame");           
         }
         
-        if (this.data.trace) {
-            var trace = document.querySelector('#txtlog');
-            var text = "z="+Math.abs(player.pos.z).toFixed(2)+" _ "+"zlimit="+data.zlimit+" _ "+"inside="+inside;
-            trace.setAttribute('value', text);
-        }
     }
 });
 
 // CHRONO
+var playing = false;
 var tempsDebut = 0;
-var tempsFin = 0;
-var tempsTotal = 0;
+var tempsCourant= 0;
+var tempsFinal = 0;
 
 AFRAME.registerComponent('chrono', {
     schema: {
         trace: { type: 'boolean', default: false },
     },
     init: function () {
-        document.addEventListener('outoflimit', evt => {
-            console.log("evt: outoflimit");
+        document.addEventListener('begingame', evt => {
+            console.log("evt: begingame");
+            tempsDebut = Date.now();
+            playing = true;
         });
+        document.addEventListener('endgame', evt => {
+            console.log("evt: endgame");
+            if(tempsFinal == 0) tempsFinal = Date.now()- tempsDebut;
+        });
+
+        this.el.addEventListener("xbuttondown", function (event) {           
+            console.log("evt: xbuttondown");
+            reset_game();
+        });
+
+        window.addEventListener('keydown', function (event) {
+            if (event.key === 'x') {
+                console.log("evt: xkeydown");
+                reset_game();
+            }
+        });
+
+        function reset_game() {
+            var cam = document.getElementById('cam');
+            cam.setAttribute('position', '0 0.5 0');
+            playing = false;
+        }
+
     },
     tick: function () {
         if (this.data.trace) {
-            var trace = document.querySelector('#txtlog');
+            var console = document.querySelector('#txtlog');
 
-            if (tempsDebut == 0) { tempsTotal = "please, \nmove to start"; }
-            else if(inside){
-                tempsFin = Date.now();
-                tempsTotal = (tempsFin - tempsDebut)+ " ms";
+            if(!playing){
+                tempsDebut = 0;
+                tempsCourant = 0;
+                tempsFinal = 0;
+                console.setAttribute('value', "please, move to start");
+            }
+            else if(tempsFinal == 0) {
+                tempsCourant = Date.now()-tempsDebut;
+                console.setAttribute('value', tempsCourant+ " ms");
+            }
+            else {
+                console.setAttribute('value', "game over : "+ tempsFinal + " ms");
             }
             
-            trace.setAttribute('value', tempsTotal);
         }
-    }
-});
-
-// NEWGAME
-AFRAME.registerComponent('xkey_reset', {
-    init: function () {
-        window.addEventListener('keydown', function (event) {
-            if (event.key === 'x') {
-                var cam = document.getElementById('cam');
-                cam.setAttribute('position', '0 0.5 0');
-                tempsDebut = 0;
-                tempsFin = 0;
-                inside = false;
-            }
-        });
-    }
-});
-
-AFRAME.registerComponent('xbutton_reset', {
-    schema: {
-        trace: { type: 'boolean', default: false },
     },
-    init: function () {
-        var console = this.data.trace;
-        var trace = document.querySelector('#txtlog');
 
-        this.el.addEventListener("xbuttondown", function (event) {
-            var cam = document.getElementById('cam');
-            cam.setAttribute('position', '0 0.5 0');
-            tempsDebut = 0;
-            tempsFin = 0;
-            inside = false;
-            // if (console) {
-                var trace = document.querySelector('#txtlog');
-                trace.setAttribute('value', "xbutton pressed");
-            // }
-        });
-
-    }
 });
+
+
 
