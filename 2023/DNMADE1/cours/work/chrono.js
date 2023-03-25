@@ -63,7 +63,9 @@ AFRAME.registerComponent('chrono', {
             if(tempsFinal == 0) tempsFinal = Date.now()- tempsDebut;
         });
 
-        this.el.addEventListener("xbuttondown", function (event) {           
+        var lefthand = document.getElementById('lefthand');
+        lefthand.addEventListener("xbuttondown", function (event) {   
+            console.log(lefthand);
             console.log("evt: xbuttondown");
             reset_game();
         });

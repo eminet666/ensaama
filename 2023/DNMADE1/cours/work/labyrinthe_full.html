@@ -15,11 +15,16 @@
 <body>
 
     <a-scene background="color: skyblue" frequency="delay: 500;" renderer="antialias: true"
-    debug-keyboard="key: b; event: xbuttondown; target: #cam">
+    debug-keyboard="key: b; event: xbuttondown; target: #lefthand">
 
-        <a-plane position="0 0 0" rotation="-90 0 0" width="2" height="2" color="yellow">
-        </a-plane>
+        <!-- DEBUT LABYRINTHE -->
 
+
+
+        <a-plane position="0 0 0" rotation="-90 0 0" width="2" height="2" color="grey"></a-plane>
+        <!-- FIN LANYRINTHE -->
+
+        <!-- PLAYER -->
         <a-entity id="player" position="0 0 0">
             <a-entity id="cam" camera position="0 0.5 0" look-controls wasd-controls="acceleration:10"
                 begingame="xlimit: 0.2; zlimit: 0.2;" endgame="xlimit: 2; zlimit: 2;" currentposition
