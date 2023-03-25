@@ -61,8 +61,6 @@ AFRAME.registerComponent('currentposition', {
 });
 
 // START GAME
-var gamein = false;
-
 AFRAME.registerComponent('startgame', {
     schema: {
         trace: { type: 'boolean', default: false },
@@ -73,13 +71,14 @@ AFRAME.registerComponent('startgame', {
         var data = this.data;
     },
     tick: function () {
-        if(!gamein) {
+        if(tempsFin == 0) {
             var data = this.data;
-            if (Math.abs(player.pos.x) > data.xlimit) gamein = true;
-            if (Math.abs(player.pos.z) > data.zlimit) gamein = true;
-            //console.log("inside = "+inside);
+            if (Math.abs(player.pos.x) > data.xlimit || Math.abs(player.pos.z) > data.zlimit) 
+            {
+                tempsDebut = Date.now();
+                inside = true;
+            }
         }
-
     }
 });
 
@@ -113,42 +112,34 @@ AFRAME.registerComponent('chrono', {
         trace: { type: 'boolean', default: false },
     },
     init: function () {
-        tempsDebut = Date.now();
+        //tempsDebut = Date.now();
+        //var data = this.data;
     },
     tick: function () {
-
-
         if (this.data.trace) {
             var trace = document.querySelector('#txtlog');
-            // if(newgame){
-            //     tempsDebut = Date.now();
-            //     newgame = false;
-            // }
-            if(newgame){
-                tempsDebut = Date.now();
-                inside = true;
-                newgame = false;
-            }
 
-            if(inside){
+            if (tempsDebut == 0) { tempsTotal = "please, \nmove to start"; }
+            else if(inside){
                 tempsFin = Date.now();
-                tempsTotal = tempsFin - tempsDebut;
+                tempsTotal = (tempsFin - tempsDebut)+ " ms";
             }
-            trace.setAttribute('value', tempsTotal + "ms");
+            
+            trace.setAttribute('value', tempsTotal);
         }
     }
 });
 
-// newgame
-var newgame = false;
+// NEWGAME
 AFRAME.registerComponent('xkey_reset', {
     init: function () {
         window.addEventListener('keydown', function (event) {
             if (event.key === 'x') {
-                //newgame = true;
                 var cam = document.getElementById('cam');
                 cam.setAttribute('position', '0 0.5 0');
-                newgame = true;
+                tempsDebut = 0;
+                tempsFin = 0;
+                inside = false;
             }
         });
     }

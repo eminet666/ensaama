@@ -8,6 +8,26 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
     <!-- <script src="https://eminet666.github.io/ensaama/components/detect/detect.js"></script> -->
     <script src="./chrono.js"></script>
+        <script>
+            AFRAME.registerComponent('gauche', {
+                schema: {
+                    trace: { type: 'boolean', default: false },
+                },
+                init: function () {
+
+                    this.el.addEventListener("xbuttondown", function (event) {
+
+                        if (this.data.trace) {
+                            var trace = document.querySelector('#txtlog');
+                            trace.setAttribute('value', "xbutton pressed");
+                        }
+                    });
+
+                }
+            });
+
+        </script>
+
 </head>
 
 <body>
@@ -19,16 +39,19 @@
 
         <a-entity id="cam" camera position="0 0.5 0" look-controls 
             wasd-controls="acceleration:10"
-            startgame="trace: true; xlimit: 0.3; zlimit: 0.3" outoflimit="xlimit: 2; zlimit: 2"
+            startgame="trace: true; xlimit: 0.2; zlimit: 0.2" outoflimit="xlimit: 2; zlimit: 2"
             currentposition="trace: false" chrono="trace: false";
             xkey_reset>
             <a-text id="txtlog" value="" align="center" color="#FF0000" 
                 position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
             </a-text>
         </a-entity>
+        <a-entity oculus-touch-controls="hand: left" gauche="trace: true"></a-entity>
 
     </a-scene>
 
 </body>
 
 </html>
+
+<!--  -->

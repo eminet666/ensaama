@@ -18,11 +18,13 @@
 * [20230316_labyrinthe_1](./rendus/20230316/README.md)
 * [20230323_labyrinthe_2](./rendus/20230323/README.md)
 
+#### exemples :
+* [aframe](https://aframe.io/aframe/examples/)
+* [stemkoski](https://stemkoski.github.io/A-Frame-Examples/)
+
 
 <!-- textures -->
 * [aframe doc](https://aframe.io/docs/1.4.0/components/material.html)
 * [side texture parameter](https://aframe.io/docs/0.3.0/components/material.html#properties)
 * [multiples textures](https://github.com/elbobo/aframe-multisrc-component)
 
-* examples :
-    * [stemkoski](https://stemkoski.github.io/A-Frame-Examples/)
