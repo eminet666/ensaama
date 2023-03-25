@@ -96,9 +96,17 @@ AFRAME.registerComponent('outoflimit', {
     },
     tick: function () {
         var data = this.data;
-        if(Math.abs(player.pos.x) > data.xlimit) inside = false;
-        if(Math.abs(player.pos.z) > data.zlimit) inside = false;
+        // if(Math.abs(player.pos.x) > data.xlimit) inside = false;
+        // if(Math.abs(player.pos.z) > data.zlimit) inside = false;
+        if (Math.abs(player.pos.x) > data.xlimit || Math.abs(player.pos.z) > data.zlimit)
+        inside = false;
         //console.log("inside = "+inside);
+
+        if (this.data.trace) {
+            var trace = document.querySelector('#txtlog');
+            var text = Math.abs(player.pos.z).toFixed(2)+"_"+data.zlimit+"_"+inside;
+            trace.setAttribute('value', text);
+        }
     }
 });
 
@@ -152,8 +160,6 @@ AFRAME.registerComponent('xbutton_reset', {
     init: function () {
         var console = this.data.trace;
         var trace = document.querySelector('#txtlog');
-        trace.setAttribute('value', "ready"+console);
-
 
         this.el.addEventListener("xbuttondown", function (event) {
             var cam = document.getElementById('cam');
