@@ -9,11 +9,3 @@
 * [eolyna](./eolyna/eolyna_labyrinthe.html)
 * [lorine](./lorine/demovr2.html)
 * [miranda](./miranda/laby.html)
-<!-- * [graig](./)
-* [raphael](./)
-* [pierre](./)
-* [sofiya](./)
-* [lou](./)
-* [miranda](./)
-* [allie](./)
-* [celia](./) -->
