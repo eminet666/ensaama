@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <ad></ad>
+  </head>
+  <body>
+    <a-scene>
+        <a-assets>
+
+               <img id="red" src="./red.jpg"/>
+               <img id="white" src="./white.jpg"/>
+               <img id="gray" src="./gray.jpg"/>
+               <img id="sol" src="./herbe.jpg"/>
+               <img id="mur" src="./ecorce grise.jpg"/>
+               <img id="mur2" src="./ecorces.jpg"/>
+               <img id="sky" src="./sky.jpg"/>
+    
+
+            <a-mixin id="extWall" material="src:#red; repeat:8 4" side="double" geometry="height:2; width:4"></a-mixin>
+            <a-mixin id="intWall" geometry="height:2"></a-mixin>
+            <a-mixin id="horizontal" material="src:#mur; side:double" rotation="0 0 0"></a-mixin>
+            <a-mixin id="vertical" material="src:#mur2; side:double" rotation="0 90 0"></a-mixin>
+
+          </a-assets>
+
+        <!--Sol,Camera et SkyBox-->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" material="src: #sol"></a-plane>
+
+      <a-camera position="0 1.6 0" wasd-controls = "acceleration:5"
+      look-controls></a-camera>
+
+
+      <a-sky id="sky" radius ="10" src="#sky"></a-sky>
+
+<!--Murs Extérieurs-->
+<a-plane mixin = "extWall vertical" position ="-2 1 0" ></a-plane>
+<a-plane mixin = "extWall vertical" position ="2 1 0"></a-plane>
+<a-plane mixin = "extWall horizontal" position ="0.75 1 2"width ="3"></a-plane>
+<a-plane mixin = "extWall horizontal" position ="-1.5 1 2"width ="1"></a-plane>
+<a-plane mixin = "extWall horizontal" position =" 0 1 -2" ></a-plane>
+
+
+<!--Murs Intérieurs Verticaux-->
+
+<a-plane mixin="vertical intWall" position ="0.5 1 0" width="1" ></a-plane>
+<a-plane mixin="vertical intWall" position ="-0.5 1 0" width="1"></a-plane>
+
+<a-plane mixin="vertical intWall" position ="-1 1 0.75" width="0.5"></a-plane>
+<a-plane mixin="vertical intWall" position ="1 1 0" width="2"></a-plane>
+<a-plane mixin="vertical intWall" position ="-1 1 -0.5" width="1"></a-plane>
+
+<a-plane mixin="vertical intWall" position ="-0.5 1 -1.25" width="0.5"></a-plane>
+<a-plane mixin="vertical intWall" position ="0 1 1.25" width="0.5"></a-plane>
+<a-plane mixin="vertical intWall" position ="1 1 -1.75" width="0.5"></a-plane>
+
+<a-plane mixin="vertical intWall" position ="1.5 1 1" width="1"></a-plane>
+<a-plane mixin="vertical intWall" position ="1.5 1 -1.25" width="1.5"></a-plane>
+<a-plane mixin="vertical intWall" position ="-1.5 1 0.25" width="2.5"></a-plane>
+
+<!--Murs Intérieurs Horizontaux-->
+<a-plane mixin="horizontal intWall" position ="0.25 1 0.5" width="0.5"></a-plane>
+<a-plane mixin="horizontal intWall" position ="-0.25 1 -0.5" width="0.5"></a-plane>
+
+<a-plane mixin="horizontal intWall" position ="-0.25 1 -1" width="1.5"></a-plane>
+<a-plane mixin="horizontal intWall" position ="0.5 1 1" width="1"></a-plane>
+<a-plane mixin="horizontal intWall" position ="-0.75 1 -1" width="0.5"></a-plane>
+
+<a-plane mixin="horizontal intWall" position ="0.25 1 -1.5" width="1.5"></a-plane>
+<a-plane mixin="horizontal intWall" position ="0. 1 1.5" width="3"></a-plane>
+
+<a-plane mixin="horizontal intWall" position ="-1.75 1 0" width="0.5"></a-plane>
+
+    </a-scene>
+  </body>
+</html>

@@ -4,6 +4,7 @@
 ##### labyrinthe
 * [20230316_labyrinthe_1](./rendus/labyrinthe/20230316/README.md)
 * [20230323_labyrinthe_2](./rendus/labyrinthe/20230323/README.md)
+* [20230330_labyrinthe_3](./rendus/labyrinthe/20230230/README.md)
 * [demo](./rendus/labyrinthe/demo/labyrinthe_full.html)
 
 #### cours
