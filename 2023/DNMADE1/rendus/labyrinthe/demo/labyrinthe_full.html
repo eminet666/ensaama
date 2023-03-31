@@ -24,15 +24,15 @@
 
 
         <a-plane position="0 0 0" rotation="-90 0 0" width="2" height="2" color="grey"></a-plane>
-        <!-- FIN LANYRINTHE -->
 
         <!-- PHOTO360 -->
         <a-sky id="image-360" radius="10" src="#sky"></a-sky>
+        <!-- FIN LANYRINTHE -->
 
         <!-- PLAYER -->
         <a-entity id="player" position="0 0 0">
             <a-entity id="cam" camera position="0 0.5 0" look-controls wasd-controls="acceleration:10"
-                begingame="xlimit: 0.2; zlimit: 0.2;" endgame="xlimit: 2; zlimit: 2;" currentposition
+                begingame="xlimit: 0.2; zlimit: 0.2;" endgame="xlimit: 2; zlimit: 2;" currentposition="trace:false"
                 chrono="trace: true">
                 <a-text id="txtlog" value="" align="center" color="#FF0000" 
                     position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
