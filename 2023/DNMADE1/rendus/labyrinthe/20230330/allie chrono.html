@@ -1,0 +1,113 @@
+<!-- https://www.w3docs.com/snippets/javascript/how-to-create-and-trigger-event-in-javascript.html -->
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="https://eminet666.github.io/ensaama/components/detect/detect.js"></script>
+    <script src="https://eminet666.github.io/ensaama/components/debug/debug.js"></script>
+    <!-- <script src="./chrono.js"></script> -->
+    <script src="https://eminet666.github.io/ensaama/2023/DNMADE1/rendus/labyrinthe/demo/chrono.js"></script>
+</head>
+
+<body>
+
+    <a-scene background="color: skyblue" frequency="delay: 500;" renderer="antialias: true"
+    debug-keyboard="key: b; event: xbuttondown; target: #lefthand">
+
+        <!-- DEBUT LABYRINTHE -->
+        <a-assets>
+            <img id="sky" src=".https://cdn.aframe.io/a-painter/images/sky.jpg">
+        </a-assets>
+        <a-scene>
+            <a-entity camera position ="0.25 1 0.25" wasd-controls="acceleration: 40" look-controls ></a-entity>
+    
+          <!-- ciel -->
+          <a-sky src="https://cdn.aframe.io/a-painter/images/sky.jpg"></a-sky>
+    
+          <!-- sol -->
+          <a-plane src="https://st2.depositphotos.com/1008404/8282/i/600/depositphotos_82823518-stock-photo-pool-texture-blue-water.jpg" position="0 0 0" rotation="-90 0 0" scale="4 4 4" ></a-plane>
+          
+          <!--plafond-->
+          <a-box position="0 2 0" height="0.01" depth="4" width="4" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA= "></a-box>
+    
+          <!-- murs max-->
+            <a-box position="2 1 0" width="0.01" height="2" depth="4" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-2 1 0" width="0.01" height="2" depth="4" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="0 1 2" rotation="0 90 0" width="0.01" height="2" depth="4" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="0 1 -2" rotation="0 90 0" width="0.01" height="2" depth="4" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+    
+            <!--murs intérieurs-->
+            <a-box position="0.5 1 0" width="0.01" height="2" depth="1" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-0.5 1 0" width="0.01" height="2" depth="1" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="0 1 0.5" rotation="0 90 0" width="0.01" height="2" depth="1" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-1 1 -1.75" width="0.01" height="2" depth="0.5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-1.5 1 -0.75" width="0.01" height="2" depth="1.5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-1.75 1 -1" rotation="0 90 0" width="0.01" height="2" depth="0.5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-1.25 1 -0.5" rotation="0 90 0" width="0.01" height="2" depth="0.5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-1.25 1 0" rotation="0 90 0" width="0.01" height="2" depth="0.5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="0.25 1 -1.5" rotation="0 90 0" width="0.01" height="2" depth="1.5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="1 1 -1" width="0.01" height="2" depth="1" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="1.5 1 -1.25" width="0.01" height="2" depth="1.5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="0.25 1 -1" rotation="0 90 0" width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="0.5 1 -1.25" width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="1.25 1 -0.5" rotation="0 90 0" width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="1.5 1 0.25"  width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="1 1 0.75"  width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="1.25 1 0.5" rotation="0 90 0" width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="0.75 1 0" rotation="0 90 0" width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="1.25 1 1.5" rotation="0 90 0" width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-1.75 1 1.5" rotation="0 90 0" width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-1.25 1 0.5" rotation="0 90 0" width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="1.5 1 1.25"  width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="1 1 1.75"  width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="0.5 1 1.25"  width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-0.5 1 1.75"  width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-1 1 0.75"  width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-1.5 1 1.25"  width="0.01" height="2" depth=".5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-0.25 1 1" rotation="0 90 0" width="0.01" height="2" depth="1.5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-0.25 1 1.5" rotation="0 90 0" width="0.01" height="2" depth="1.5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="-2 0.9 1.75"  width="0.1" height="1.8" depth=".5" material="src : https://pbs.twimg.com/media/FJgtf6bXEAArcft.jpg:large"></a-box> 
+    
+            
+            <!--portes-->
+            <a-box position="-0.4 1 -0.5" rotation="0 90 0" width="0.01" height="2" depth="0.2" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="0.4 1 -0.5" rotation="0 90 0" width="0.01" height="2" depth="0.2" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="0 1.9 -0.5" rotation="0 90 0" width="0.01" height="0.5" depth="1" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+    
+            <a-box position="-1.25 1.9 -1.5" rotation="0 90 0" width="0.01" height="0.5" depth="0.5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="1.75 1.9 -1" rotation="0 90 0" width="0.01" height="0.5" depth="0.5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+            <a-box position="1.5 1.9 -0.25" rotation="0 0 0" width="0.01" height="0.5" depth="0.5" material="src : https://media.istockphoto.com/id/1143127366/fr/photo/fond-blanc-de-texture-de-carreaux-de-c%C3%A9ramique-carr%C3%A9e-carreau-de-m%C3%A9tro-blanc-classique-image.jpg?b=1&s=612x612&w=0&k=20&c=zOigpuvQFVnBCGT3vayhXF8mLIssz4YUKGL5-Ah3BUA="></a-box> 
+    
+            
+            <!--sortie-->
+    
+    
+       
+
+        <a-plane position="0 0 0" rotation="-90 0 0" width="2" height="2" color="grey"></a-plane>
+        <!-- FIN LANYRINTHE -->
+
+        <!-- PHOTO360 -->
+        <a-sky id="image-360" radius="10" src="#sky"></a-sky>
+
+        <!-- PLAYER -->
+        <a-entity id="player" position="0 0 0">
+            <a-entity id="cam" camera position="0 0.5 0" look-controls wasd-controls="acceleration:10"
+                begingame="xlimit: 0.2; zlimit: 0.2;" endgame="xlimit: 2; zlimit: 2;" currentposition
+                chrono="trace: true">
+                <a-text id="txtlog" value="" align="center" color="#FF0000" 
+                    position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
+                </a-text>
+            </a-entity>
+            <a-entity id="lefthand" oculus-touch-controls="hand: left"></a-entity>
+             <!-- <a-entity id="righthand" oculus-touch-controls="hand: right" droite></a-entity> -->
+        </a-entity>
+
+    </a-scene>
+
+</body>
+
+</html>

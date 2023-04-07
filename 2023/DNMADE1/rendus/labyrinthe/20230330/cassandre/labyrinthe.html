@@ -1,0 +1,261 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <a-assets>
+            <img id="sol" src="./assets/sol.jpg">
+            <img id="mur" src="./assets/stone.jpg">
+            <img id="ciel" src="./assets/fond.jpg">
+            <img id="chat1" src="./assets/catdebut.jpg">
+            <img id="chat2" src="./assets/catsortie.jpg">
+            <img id="chat3" src="./assets/cattroll.jpg">
+            <img id="chat4" src="./assets/cattroll2.jpg">
+            <img id="chat5" src="./assets/cattroll3.jpg">
+        </a-assets>
+
+        <!--Sol-->
+         <a-plane position="0 0 0" 
+            rotation="-90 0 0" 
+            width="8" height="8" 
+            color="#876754"
+            material="src: #sol"
+            repeat="8 8"
+            side="double">
+        </a-plane>
+
+        <!--Murs Extérieurs-->
+        <a-plane position="-0.5 1 2" 
+        rotation="0 0 0" 
+        width="3" height="2" 
+        material="src: #mur"
+        repeat="8 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="1.75 1 2" 
+        rotation="0 0 0" 
+        width="0.5" height="2" 
+        material="src: #mur"
+        repeat="2 6"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="0 1 -2" 
+        rotation="0 0 0" 
+        width="4" height="2" 
+        material="src: #mur"
+        repeat="8 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="2 1 0" 
+        rotation="0 90 0" 
+        width="4" height="2" 
+        material="src: #mur"
+        repeat="8 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="-2 1 0" 
+        rotation="0 90 0" 
+        width="4" height="2" 
+        material="src: #mur"
+        repeat="8 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <!--Murs Horizontaux intérieurs-->
+        <a-plane position="-0.25 1 -1"
+        rotation="0 0 0" 
+        width="2.5" height="2" 
+        material="src: #mur"
+        repeat="8 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="0.5 1 0.5"
+        rotation="0 0 0" 
+        width="2" height="2" 
+        material="src: #mur"
+        repeat="8 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="-0.25 1 1.5"
+        rotation="0 0 0" 
+        width="2.5" height="2" 
+        material="src: #mur"
+        repeat="8 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="-0.25 1 1"
+        rotation="0 0 0" 
+        width="1.5" height="2" 
+        material="src: #mur"
+        repeat="8 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="-1.25 1 0"
+        rotation="0 0 0" 
+        width="0.5" height="2" 
+        material="src: #mur"
+        repeat="2 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="-1.25 1 0.5"
+        rotation="0 0 0" 
+        width="0.5" height="2" 
+        material="src: #mur"
+        repeat="2 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="0.75 1 -1.5" 
+        rotation="0 0 0" 
+        width="1.5" height="2" 
+        material="src: #mur"
+        repeat="8 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="-1 1 -1.5" 
+        rotation="0 0 0" 
+        width="1" height="2" 
+        material="src: #mur"
+        repeat="4 8"
+        side="double"
+        color="#8c8580">
+      </a-plane>
+        
+
+        <!--Murs Verticaux intérieurs-->
+        <a-plane position="-0.5 1 0" 
+        rotation="0 90 0" 
+        width="2" height="2" 
+        material="src: #mur"
+        repeat="8 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="1 1 -0.5"
+        rotation="0 90 0" 
+        width="1" height="2" 
+        material="src: #mur"
+        repeat="3 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="-1.5 1 -0.5"
+        rotation="0 90 0" 
+        width="1" height="2" 
+        material="src: #mur"
+        repeat="3 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="-1.5 1 1"
+        rotation="0 90 0" 
+        width="1" height="2" 
+        material="src: #mur"
+        repeat="3 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="1 1 1.5"
+        rotation="0 90 0" 
+        width="1" height="2" 
+        material="src: #mur"
+        repeat="3 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+        <a-plane position="1.5 1 0.25" 
+        rotation="0 90 0" 
+        width="3.5" height="2" 
+        material="src: #mur"
+        repeat="8 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+        
+        <a-plane position="-1 1 -1.75" 
+        rotation="0 90 0" 
+        width="0.5" height="2" 
+        material="src: #mur"
+        repeat="4 8"
+        side="double"
+        color="#8c8580">
+        </a-plane>
+
+
+        <!--Photo-->
+
+        <a-plane debut position="0.25 1.25 -0.99" 
+        rotation="0 0 0" 
+        width="0.5" height="0.5" 
+        material="src: #chat1"
+        side="double">
+        </a-plane>
+
+        <a-plane debut position="1.25 1.25 4" 
+        rotation="0 -180 0" 
+        width="1" height="1" 
+        material="src: #chat2"
+        side="double">
+        </a-plane>
+
+        <a-plane debut position="1.75 1.25 1.99" 
+        rotation="0 -180 0" 
+        width="0.5" height="0.5" 
+        material="src: #chat3"
+        side="double">
+        </a-plane>
+
+        <a-plane debut position="0.99 1.25 1.75" 
+        rotation="0 -90 0" 
+        width="0.5" height="0.5" 
+        material="src: #chat4"
+        side="double">
+        </a-plane>
+
+        <a-plane debut position="-1.49 1.25 -0.5" 
+        rotation="0 90 0" 
+        width="0.5" height="0.5" 
+        material="src: #chat5"
+        side="double">
+        </a-plane>
+
+       <!--Autre-->
+        <a-sky material="src: #ciel"
+        ></a-sky>
+
+        <a-entity camera wasd-controls="acceleration:5" 
+        look-controls position="0 1.5 0">
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

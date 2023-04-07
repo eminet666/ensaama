@@ -7,6 +7,13 @@
 * [20230330_labyrinthe_3](./rendus/labyrinthe/20230330/README.md)
 * [demo](./rendus/labyrinthe/demo/labyrinthe_full.html)
 
+#### model3D
+*[20230406_model3D](./rendus/model3D/20230406/README.md)
+
+
+
+
+
 #### cours
 * [cours1_bases VR](./cours/cours1/README.md)
 * [cours2_models 3D](./cours/cours2/README.md)
