@@ -27,7 +27,7 @@
                 // DESKTOP MODE
                 window.addEventListener('keydown', function (event) {
                     if (event.key === 'y') {
-                        console.log(id+" evt: ykeydown");
+                        console.log(id + " evt: ykeydown");
                         var el = document.querySelector('#player');
                         el.setAttribute('velocity', { x: 0, y: 1, z: 0 });
                     }
@@ -40,20 +40,22 @@
                         console.log("evt: okeydown");
                         var el = document.querySelector('#player');
                         el.setAttribute('velocity', { x: 0, y: 0, z: 0 });
-                    }                    
-                }); 
-
+                    }
+                });
+            },
+            tick: function () {
                 // VR MODE
                 var velocity = gauche.pos;
                 velocity.y -= 1;
                 var el = document.querySelector('#player');
-                el.setAttribute('velocity', { x: 0, y: 1, z: 0 });
+                el.setAttribute('velocity', { x: 0, y: 0.1, z: 0 });
                 if (this.data.trace) {
                     var trace = document.querySelector('#txtlog');
                     var newvalue = 'velocity = ' + velocity.y.toFixed(2);
                     trace.setAttribute('value', newvalue);
-                }                
-            }
+                }
+            }            
+        
         });
 
         AFRAME.registerComponent('handposition', {
@@ -103,7 +105,7 @@
             <a-entity id="cam" camera position="0 0.5 0" look-controls wasd-controls="acceleration:10"
                 begingame="xlimit: 0.2; zlimit: 0.2;" endgame="xlimit: 2; zlimit: 2;" 
                 currentposition="trace:false">
-                <a-text id="txtlog" value="" align="center" color="#FF0000" 
+                <a-text id="txtlog" value="" align="center" color="#0000FF" 
                     position="0 0 -0.25" rotation="0 0 0" scale="0.0625 0.0625 0.0625">
                 </a-text>
             </a-entity>
