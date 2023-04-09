@@ -51,7 +51,7 @@ AFRAME.registerComponent('currentposition', {
         // player.pos.y = pos.y + wpos.y;
         // player.pos.z = pos.z + wpos.z;
         player.pos = pos;
-        //console.log(player.pos);
+        console.log("pos="+pos.x);
 
         if (this.data.trace) {
             var trace = document.querySelector('#txtlog');
@@ -62,7 +62,7 @@ AFRAME.registerComponent('currentposition', {
 });
 
 // PROXIMITY
-    AFRAME.registerComponent('proximity', {
+AFRAME.registerComponent('proximity', {
     schema: {
         trace: {
             type: 'boolean',
