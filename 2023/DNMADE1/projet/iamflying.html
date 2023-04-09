@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
-    <script src="./assets/aframe-physics-system.min.js"></script>
+    <!-- <script src="./assets/aframe-physics-system.min.js"></script> -->
     <script src="https://eminet666.github.io/ensaama/components/detect/detect.js"></script>
     <script src="https://eminet666.github.io/ensaama/components/debug/debug.js"></script>
     <script>
@@ -24,7 +24,7 @@
                 trace: { type: 'boolean', default: false },
             },            
             init: function () {
-                var id = this.el.id;
+                // DESKTOP MODE
                 window.addEventListener('keydown', function (event) {
                     if (event.key === 'y') {
                         console.log(id+" evt: ykeydown");
@@ -43,6 +43,11 @@
                     }                    
                 }); 
 
+                // VR MODE
+                var velocity = gauche.pos;
+                velocity.y -= 1;
+                var el = document.querySelector('#player');
+                el.setAttribute('velocity', velocity);
             }
         });
 
@@ -93,7 +98,7 @@
             <a-entity dynamic-body  id="cam" camera position="0 0.5 0" look-controls wasd-controls="acceleration:10"
                 begingame="xlimit: 0.2; zlimit: 0.2;" endgame="xlimit: 2; zlimit: 2;" 
                 currentposition="trace:false">
-                <a-text id="txtlog" value="" align="center" color="#FF0000" 
+                <a-text id="txtlog" value="" align="center" color="#0000FF" 
                     position="0 0 -0.25" rotation="0 0 0" scale="0.0625 0.0625 0.0625">
                 </a-text>
             </a-entity>
