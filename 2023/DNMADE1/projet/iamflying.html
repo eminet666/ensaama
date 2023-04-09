@@ -17,8 +17,28 @@
         });
 
         AFRAME.registerComponent('fly', {
+            schema: {
+                trace: { type: 'boolean', default: false },
+            },            
             init: function () {
-                this.el.setAttribute('velocity', { x: 0, y: -9.8, z: 0 });
+                window.addEventListener('keydown', function (event) {
+                    if (event.key === 'y') {
+                        console.log("evt: ykeydown");
+                        var el = document.querySelector('#player');
+                        el.setAttribute('velocity', { x: 0, y: 1, z: 0 });
+                    }
+                    if (event.key === 'u') {
+                        console.log("evt: ukeydown");
+                        var el = document.querySelector('#player');
+                        el.setAttribute('velocity', { x: 0, y: -1, z: 0 });
+                    }
+                    if (event.key === 'o') {
+                        console.log("evt: okeydown");
+                        var el = document.querySelector('#player');
+                        el.setAttribute('velocity', { x: 0, y: 0, z: 0 });
+                    }                    
+                }); 
+                
             }
         });
 
@@ -35,7 +55,7 @@
 
                 if (this.data.trace) {
                     var trace = document.querySelector('#txtlog');
-                    var newvalue = 'hand x = ' + handpos.x.toFixed(2) + ", z = " + handpos.z.toFixed(2);
+                    var newvalue = 'hand y = ' + handpos.y.toFixed(2);
                     trace.setAttribute('value', newvalue);
                 }
             }
@@ -63,15 +83,15 @@
         <!-- FIN LANYRINTHE -->
 
         <!-- PLAYER -->
-        <a-entity id="player" position="0 0 0" gravity>
+        <a-entity id="player" position="0 0 0" fly="trace: true">
             <a-entity dynamic-body  id="cam" camera position="0 0.5 0" look-controls wasd-controls="acceleration:10"
                 begingame="xlimit: 0.2; zlimit: 0.2;" endgame="xlimit: 2; zlimit: 2;" 
                 currentposition="trace:false">
-                <a-text id="txtlog" value="" align="center" color="#FF0000" 
+                <a-text id="txtlog" value="" align="center" color="#00FF00" 
                     position="0 0 -0.25" rotation="0 0 0" scale="0.0625 0.0625 0.0625">
                 </a-text>
             </a-entity>
-            <a-entity id="lefthand" handposition="trace: true" oculus-touch-controls="hand: left"></a-entity>
+            <a-entity id="lefthand" handposition="trace: false" oculus-touch-controls="hand: left"></a-entity>
              <!-- <a-entity id="righthand" oculus-touch-controls="hand: right" droite></a-entity> -->
         </a-entity>
 
