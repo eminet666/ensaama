@@ -10,6 +10,9 @@
     <script src="https://eminet666.github.io/ensaama/components/detect/detect.js"></script>
     <script src="https://eminet666.github.io/ensaama/components/debug/debug.js"></script>
     <script>
+    let gauche = { pos: { x: 0, y: 0, z: 0 } }
+    let droite = { pos: { x: 0, y: 0, z: 0 } }    
+
         AFRAME.registerComponent('gravity', {
             init: function () {
                 this.el.setAttribute('velocity', { x: 0, y: -9.8, z: 0 });
@@ -21,7 +24,7 @@
                 trace: { type: 'boolean', default: false },
             },            
             init: function () {
-                var id = this.el.id
+                var id = this.el.id;
                 window.addEventListener('keydown', function (event) {
                     if (event.key === 'y') {
                         console.log(id+" evt: ykeydown");
@@ -52,11 +55,13 @@
             },
             tick: function () {
                 var handpos = this.el.object3D.position;
-                //console.log(player.pos);
+                var id = this.el.id;
+                if(id=="lefthand") gauche.pos = handpos;
+                if(id=="righthand") droite.pos = handpos;
 
                 if (this.data.trace) {
                     var trace = document.querySelector('#txtlog');
-                    var newvalue = 'hand y = ' + handpos.y.toFixed(2);
+                    var newvalue = 'hand '+id+' y = ' + gauche.pos.y.toFixed(2);
                     trace.setAttribute('value', newvalue);
                 }
             }
@@ -93,7 +98,7 @@
                 </a-text>
             </a-entity>
             <a-entity id="lefthand" handposition="trace: true" oculus-touch-controls="hand: left"></a-entity>
-             <!-- <a-entity id="righthand" oculus-touch-controls="hand: right" droite></a-entity> -->
+            <a-entity id="righthand" handposition="trace: false" oculus-touch-controls="hand: right" droite></a-entity> -->
         </a-entity>
 
     </a-scene>
