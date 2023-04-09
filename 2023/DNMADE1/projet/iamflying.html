@@ -21,9 +21,10 @@
                 trace: { type: 'boolean', default: false },
             },            
             init: function () {
+                var id = this.el.id
                 window.addEventListener('keydown', function (event) {
                     if (event.key === 'y') {
-                        console.log("evt: ykeydown");
+                        console.log(id+" evt: ykeydown");
                         var el = document.querySelector('#player');
                         el.setAttribute('velocity', { x: 0, y: 1, z: 0 });
                     }
@@ -38,7 +39,7 @@
                         el.setAttribute('velocity', { x: 0, y: 0, z: 0 });
                     }                    
                 }); 
-                
+
             }
         });
 
@@ -91,7 +92,7 @@
                     position="0 0 -0.25" rotation="0 0 0" scale="0.0625 0.0625 0.0625">
                 </a-text>
             </a-entity>
-            <a-entity id="lefthand" handposition="trace: false" oculus-touch-controls="hand: left"></a-entity>
+            <a-entity id="lefthand" handposition="trace: true" oculus-touch-controls="hand: left"></a-entity>
              <!-- <a-entity id="righthand" oculus-touch-controls="hand: right" droite></a-entity> -->
         </a-entity>
 
