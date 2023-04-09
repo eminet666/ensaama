@@ -47,7 +47,7 @@
                 // VR MODE
                 var velocity = gauche.pos;
                 velocity.y -= 1;
-                var el = document.querySelector('#player');
+                var el = document.querySelector('#cam');
                 el.setAttribute('velocity', { x: 0, y: 0.1, z: 0 });
                 if (this.data.trace) {
                     var trace = document.querySelector('#txtlog');
