@@ -37,7 +37,7 @@
         AFRAME.registerComponent('move', {
             schema: {
                 trace: { type: 'boolean', default: false },
-                scalaire: { type: 'vec3', default: { x: 1, y: 1, z: 1 } }                
+                scalaire: { type: 'vec3', default: { x: 1, y: 0.1, z: 1 } }                
             },              
             init: function () {
                 this.scalaire = new THREE.Vector3(this.data.scalaire.x, this.data.scalaire.y, this.data.scalaire.z);    
