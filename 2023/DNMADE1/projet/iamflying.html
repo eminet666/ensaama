@@ -27,7 +27,8 @@
                     var newvalue = 'hand '+id
                                 + '\n x = ' + gauche.pos.x.toFixed(2)
                                 + '\n y = ' + gauche.pos.y.toFixed(2)
-                                + '\n z = ' + gauche.pos.z.toFixed(2);
+                                + '\n z = ' + gauche.pos.z.toFixed(2)
+                                + '\n position.y = ' + position.y;
                     trace.setAttribute('value', newvalue);
                 }
             }
@@ -44,7 +45,7 @@
             tick: function () {
                 var position = this.el.getAttribute('position');
                 position.x += this.scalaire.x * gauche.pos.x;
-                position.y += this.scalaire.y * gauche.pos.y;
+                position.y += this.scalaire.y * (gauche.pos.y - 1);
                 position.z += this.scalaire.z * gauche.pos.z;
                 this.el.setAttribute('position', position);
 
@@ -84,7 +85,7 @@
                 look-controls wasd-controls="acceleration:10">
                 <a-entity id="lefthand" handposition="trace: true" oculus-touch-controls="hand: left"></a-entity>
                 <a-entity id="righthand" handposition="trace: false" oculus-touch-controls="hand: right" droite></a-entity> -->
-                <a-text id="txtlog" value="" align="center" color="#FF0000" 
+                <a-text id="txtlog" value="" align="center" color="#0000FF" 
                     position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
                 </a-text>
             </a-entity>
