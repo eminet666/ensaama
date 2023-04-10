@@ -27,8 +27,7 @@
                     var newvalue = 'hand '+id
                                 + '\n x = ' + gauche.pos.x.toFixed(2)
                                 + '\n y = ' + gauche.pos.y.toFixed(2)
-                                + '\n z = ' + gauche.pos.z.toFixed(2)
-                                + '\n position.y = ' + player.pos.y.toFixed(2);
+                                + '\n z = ' + gauche.pos.z.toFixed(2);
                     trace.setAttribute('value', newvalue);
                 }
             }
@@ -55,6 +54,9 @@
                         + '\n x = ' + gauche.pos.x.toFixed(2)
                         + '\n y = ' + gauche.pos.y.toFixed(2)
                         + '\n z = ' + gauche.pos.z.toFixed(2)
+                        + '\n scalaire.y = ' + this.scalaire.y
+                        + '\n y-1 = ' + this.scalaire.y                        
+                        + '\n new = ' + (this.scalaire.y * (gauche.pos.y - 1))                        
                         + '\n position.y = ' + position.y.toFixed(2)
                         + '\n player.pos.y = ' + player.pos.y.toFixed(2);                 
                     trace.setAttribute('value', newvalue);
