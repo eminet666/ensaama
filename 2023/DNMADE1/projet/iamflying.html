@@ -19,46 +19,46 @@
         //     }
         // });
 
-        AFRAME.registerComponent('fly2', {
-            schema: {
-                trace: { type: 'boolean', default: false },
-            },            
-            init: function () {
-                // DESKTOP MODE
-                window.addEventListener('keydown', function (event) {
-                    if (event.key === 'y') {
-                        console.log(id + " evt: ykeydown");
-                        var el = document.querySelector('#player');
-                        el.setAttribute('velocity', { x: 0, y: 1, z: 0 });
-                    }
-                    if (event.key === 'u') {
-                        console.log("evt: ukeydown");
-                        var el = document.querySelector('#player');
-                        el.setAttribute('velocity', { x: 0, y: -1, z: 0 });
-                    }
-                    if (event.key === 'o') {
-                        console.log("evt: okeydown");
-                        var el = document.querySelector('#player');
-                        el.setAttribute('velocity', { x: 0, y: 0, z: 0 });
-                    }
-                });
-            },
-            tick: function () {
-                // VR MODE
-                // var velocity = gauche.pos;
-                // velocity.y -= 1;
-                var velocity = new THREE.Vector3(0, 0.1, 0);
-                var camera = document.querySelector('#cam');
-                camera.object3D.position.addScaledVector(velocity, timeDelta / 1000);                
+        // AFRAME.registerComponent('fly2', {
+        //     schema: {
+        //         trace: { type: 'boolean', default: false },
+        //     },            
+        //     init: function () {
+        //         // DESKTOP MODE
+        //         window.addEventListener('keydown', function (event) {
+        //             if (event.key === 'y') {
+        //                 console.log(id + " evt: ykeydown");
+        //                 var el = document.querySelector('#player');
+        //                 el.setAttribute('velocity', { x: 0, y: 1, z: 0 });
+        //             }
+        //             if (event.key === 'u') {
+        //                 console.log("evt: ukeydown");
+        //                 var el = document.querySelector('#player');
+        //                 el.setAttribute('velocity', { x: 0, y: -1, z: 0 });
+        //             }
+        //             if (event.key === 'o') {
+        //                 console.log("evt: okeydown");
+        //                 var el = document.querySelector('#player');
+        //                 el.setAttribute('velocity', { x: 0, y: 0, z: 0 });
+        //             }
+        //         });
+        //     },
+        //     tick: function () {
+        //         // VR MODE
+        //         // var velocity = gauche.pos;
+        //         // velocity.y -= 1;
+        //         var velocity = new THREE.Vector3(0, 0.1, 0);
+        //         var camera = document.querySelector('#cam');
+        //         camera.object3D.position.addScaledVector(velocity, timeDelta / 1000);                
                 
-                if (this.data.trace) {
-                    var trace = document.querySelector('#txtlog');
-                    var newvalue = 'velocity = ' + velocity.y.toFixed(2);
-                    trace.setAttribute('value', newvalue);
-                }
-            }            
+        //         if (this.data.trace) {
+        //             var trace = document.querySelector('#txtlog');
+        //             var newvalue = 'velocity = ' + velocity.y.toFixed(2);
+        //             trace.setAttribute('value', newvalue);
+        //         }
+        //     }            
         
-        });
+        // });
 
         AFRAME.registerComponent('handposition', {
             schema: {
@@ -82,8 +82,11 @@
         });
 
         AFRAME.registerComponent('move', {
+            schema: {
+                trace: { type: 'boolean', default: false },
+            },              
             init: function () {
-                this.velocity = new THREE.Vector3(0, 0.1, 0);
+                this.velocity = new THREE.Vector3(0, 0.01, 0);
             },
             tick: function () {
                 var position = this.el.getAttribute('position');
@@ -91,11 +94,15 @@
                 position.y += this.velocity.y;
                 position.z += this.velocity.z;
                 this.el.setAttribute('position', position);
-                console.log(this.velocity+"_"+position);
+
+                if (this.data.trace) {
+                    var trace = document.querySelector('#txtlog');
+                    var newvalue = "velocity = " + this.velocity.y + " _ position = " + position.y.toFixed(2);
+                    trace.setAttribute('value', newvalue);
+                }
+                console.log("velocity = " + this.velocity.y + " _ position = " + position.y.toFixed(2));
             },
         });
-
-
 
     </script>
 
@@ -119,15 +126,15 @@
         <!-- FIN LANYRINTHE -->
 
         <!-- PLAYER -->
-        <a-entity id="player" position="0 0 0" move fly="trace: true">
+        <a-entity id="player" position="0 0 0" move="trace: false" fly="trace: true">
             <a-entity id="cam" camera position="0 0.5 0" currentposition="trace:false"
                 look-controls wasd-controls="acceleration:10">
+                <a-entity id="lefthand" handposition="trace: true" oculus-touch-controls="hand: left"></a-entity>
+                <a-entity id="righthand" handposition="trace: false" oculus-touch-controls="hand: right" droite></a-entity> -->
                 <a-text id="txtlog" value="" align="center" color="#0000FF" 
                     position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
                 </a-text>
             </a-entity>
-            <a-entity id="lefthand" handposition="trace: false" oculus-touch-controls="hand: left"></a-entity>
-            <a-entity id="righthand" handposition="trace: false" oculus-touch-controls="hand: right" droite></a-entity> -->
         </a-entity>
 
     </a-scene>
