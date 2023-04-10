@@ -36,7 +36,7 @@
         AFRAME.registerComponent('move', {
             schema: {
                 trace: { type: 'boolean', default: false },
-                scalaire: { type: 'vec3', default: { x: 1, y: 0.1, z: 1 } }                
+                scalaire: { type: 'vec3', default: { x: 1, y: 1, z: 1 } }                
             },              
             init: function () {
                 this.scalaire = new THREE.Vector3(this.data.scalaire.x, this.data.scalaire.y, this.data.scalaire.z);    
@@ -55,7 +55,7 @@
                         + '\n y = ' + gauche.pos.y.toFixed(2)
                         + '\n z = ' + gauche.pos.z.toFixed(2)
                         + '\n scalaire.y = ' + this.scalaire.y
-                        + '\n y-1 = ' + this.scalaire.y                        
+                        + '\n y-1 = ' + (gauche.pos.y - 1)                        
                         + '\n new = ' + (this.scalaire.y * (gauche.pos.y - 1))                        
                         + '\n position.y = ' + position.y.toFixed(2)
                         + '\n player.pos.y = ' + player.pos.y.toFixed(2);                 
@@ -87,9 +87,9 @@
         <!-- FIN LANYRINTHE -->
 
         <!-- PLAYER -->
-        <a-entity id="player" position="0 0 0" fly="trace: true">
+        <a-entity id="player" position="0 0 0" fly="trace: true" move="trace: true">
             <a-entity id="cam" camera position="0 0.5 0" 
-                currentposition="trace:false" move="trace: true"
+                currentposition="trace:false" 
                 look-controls wasd-controls="acceleration:10">
                 <a-entity id="lefthand" handposition="trace: false" oculus-touch-controls="hand: left"></a-entity>
                 <a-entity id="righthand" handposition="trace: false" oculus-touch-controls="hand: right" droite></a-entity> -->
