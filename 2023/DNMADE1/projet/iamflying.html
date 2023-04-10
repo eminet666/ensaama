@@ -9,7 +9,7 @@
     <script src="https://eminet666.github.io/ensaama/components/debug/debug.js"></script>
     
     <script>
-    let gauche = { pos: { x: 0, y: 0.1, z: 0 } }
+    let gauche = { pos: { x: 0, y: 0, z: 0 } }
     let droite = { pos: { x: 0, y: 0, z: 0 } }    
 
         AFRAME.registerComponent('handposition', {
@@ -24,7 +24,10 @@
 
                 if (this.data.trace) {
                     var trace = document.querySelector('#txtlog');
-                    var newvalue = 'hand '+id+' y = ' + gauche.pos.y.toFixed(2);
+                    var newvalue = 'hand '+id
+                                + '\n x = ' + gauche.pos.x.toFixed(2)
+                                + '\n y = ' + gauche.pos.y.toFixed(2)
+                                + '\n z = ' + gauche.pos.z.toFixed(2);
                     trace.setAttribute('value', newvalue);
                 }
             }
@@ -76,12 +79,12 @@
         <!-- FIN LANYRINTHE -->
 
         <!-- PLAYER -->
-        <a-entity id="player" position="0 0 0" move="trace: true" fly="trace: true">
+        <a-entity id="player" position="0 0 0" move="trace: false" fly="trace: true">
             <a-entity id="cam" camera position="0 0.5 0" currentposition="trace:false"
                 look-controls wasd-controls="acceleration:10">
-                <a-entity id="lefthand" handposition="trace: false" oculus-touch-controls="hand: left"></a-entity>
+                <a-entity id="lefthand" handposition="trace: true" oculus-touch-controls="hand: left"></a-entity>
                 <a-entity id="righthand" handposition="trace: false" oculus-touch-controls="hand: right" droite></a-entity> -->
-                <a-text id="txtlog" value="" align="center" color="#0000FF" 
+                <a-text id="txtlog" value="" align="center" color="#FF0000" 
                     position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
                 </a-text>
             </a-entity>
