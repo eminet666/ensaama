@@ -9,7 +9,7 @@
     <script src="https://eminet666.github.io/ensaama/components/debug/debug.js"></script>
     
     <script>
-    let gauche = { pos: { x: 0, y: 0.1, z: 0 } }
+    let gauche = { pos: { x: 0, y: 0, z: 0 } }
     let droite = { pos: { x: 0, y: 0, z: 0 } }    
 
         AFRAME.registerComponent('handposition', {
@@ -33,21 +33,20 @@
         AFRAME.registerComponent('move', {
             schema: {
                 trace: { type: 'boolean', default: false },
-                scalaire: { type: 'vec3', default: { x: 1, y: 1, z: 1 } }                
             },              
             init: function () {
-                this.scalaire = new THREE.Vector3(this.data.scalaire.x, this.data.scalaire.y, this.data.scalaire.z);    
+                this.velocity = new THREE.Vector3(0, 0.1, 0);
             },
             tick: function () {
                 var position = this.el.getAttribute('position');
-                position.x += this.scalaire.x * gauche.pos.x;
-                position.y += this.scalaire.y * gauche.pos.y;
-                position.z += this.scalaire.z * gauche.pos.z;
+                position.x += this.velocity.x;
+                position.y += this.velocity.y;
+                position.z += this.velocity.z;
                 this.el.setAttribute('position', position);
 
                 if (this.data.trace) {
                     var trace = document.querySelector('#txtlog');
-                    var newvalue = "velocity left = " + gauche.pos.y.toFixed(2) + " _ position = " + position.y.toFixed(2);
+                    var newvalue = "velocity left = " + gauche.pos.y + " _ position = " + position.y.toFixed(2);
                     trace.setAttribute('value', newvalue);
                 }
                 console.log("velocity left = " + gauche.pos.y + "\n position = " + position.y.toFixed(2));
