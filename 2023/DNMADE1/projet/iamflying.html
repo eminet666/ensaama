@@ -188,7 +188,7 @@
             width="1" height="1" color="grey"></a-plane>
 
         <!-- PHOTO360 -->
-        <a-sky id="image-360" change-sky radius="10" src="#sky0"></a-sky>
+        <a-sky id="image-360" radius="1000" change-sky radius="10" src="#sky0"></a-sky>
         <!-- FIN LANYRINTHE -->
 
         <!-- PLAYER -->
@@ -209,35 +209,3 @@
 </body>
 
 </html>
-
-        <!-- AFRAME.registerComponent('move', {
-        schema: {
-        trace: { type: 'boolean', default: false },
-        scalaire: { type: 'vec3', default: { x: 0.01, y: 0.01, z: 0.01 } }
-        },
-        init: function () {
-        this.scalaire = new THREE.Vector3(this.data.scalaire.x, this.data.scalaire.y, this.data.scalaire.z);
-        },
-        tick: function () {
-        var position = this.el.getAttribute('position');
-        position.x += this.scalaire.x * gauche.pos.x;
-        position.y += this.scalaire.y * (gauche.pos.y - 1);
-        position.z += this.scalaire.z * gauche.pos.z;
-        this.el.setAttribute('position', position);
-        
-        if (this.data.trace) {
-        var trace = document.querySelector('#txtlog');
-        var newvalue = 'entity = ' + this.el.id
-        + '\n x = ' + gauche.pos.x.toFixed(2)
-        + '\n y = ' + gauche.pos.y.toFixed(2)
-        + '\n z = ' + gauche.pos.z.toFixed(2)
-        + '\n scalaire.y = ' + this.scalaire.y
-        + '\n y-1 = ' + (gauche.pos.y - 1).toFixed(2)
-        + '\n new = ' + (this.scalaire.y * (gauche.pos.y - 1)).toFixed(2)
-        + '\n position.y = ' + position.y.toFixed(2)
-        + '\n player.pos.y = ' + player.pos.y.toFixed(2);
-        trace.setAttribute('value', newvalue);
-        }
-        console.log("velocity left = " + gauche.pos.y + "\n position = " + position.y.toFixed(2));
-        },
-        }); -->
