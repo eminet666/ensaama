@@ -43,9 +43,9 @@
             },
             tick: function () {
                 var position = this.el.getAttribute('position');
-                // position.x += this.scalaire.x * gauche.pos.x;
+                position.x += this.scalaire.x * gauche.pos.x;
                 position.y += this.scalaire.y * (gauche.pos.y - 1);
-                // position.z += this.scalaire.z * gauche.pos.z;
+                position.z += this.scalaire.z * gauche.pos.z;
                 this.el.setAttribute('position', position);
 
                 if (this.data.trace) {
@@ -55,8 +55,8 @@
                         + '\n y = ' + gauche.pos.y.toFixed(2)
                         + '\n z = ' + gauche.pos.z.toFixed(2)
                         + '\n scalaire.y = ' + this.scalaire.y
-                        + '\n y-1 = ' + (gauche.pos.y - 1)                        
-                        + '\n new = ' + (this.scalaire.y * (gauche.pos.y - 1))                        
+                        + '\n y-1 = ' + (gauche.pos.y - 1).toFixed(2)                        
+                        + '\n new = ' + (this.scalaire.y * (gauche.pos.y - 1)).toFixed(2)                        
                         + '\n position.y = ' + position.y.toFixed(2)
                         + '\n player.pos.y = ' + player.pos.y.toFixed(2);                 
                     trace.setAttribute('value', newvalue);
@@ -93,7 +93,7 @@
                 look-controls wasd-controls="acceleration:10">
                 <a-entity id="lefthand" handposition="trace: false" oculus-touch-controls="hand: left"></a-entity>
                 <a-entity id="righthand" handposition="trace: false" oculus-touch-controls="hand: right" droite></a-entity> -->
-                <a-text id="txtlog" value="" align="center" color="#00FF00" 
+                <a-text id="txtlog" value="" align="center" color="#FF0000" 
                     position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
                 </a-text>
             </a-entity>
