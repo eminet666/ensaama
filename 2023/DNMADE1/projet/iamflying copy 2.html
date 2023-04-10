@@ -10,8 +10,7 @@
     
     <script>
     let gauche = { pos: { x: 0, y: 0, z: 0 } }
-    let droite = { pos: { x: 0, y: 0, z: 0 } }
-    let info = true;    
+    let droite = { pos: { x: 0, y: 0, z: 0 } }    
 
         AFRAME.registerComponent('handposition', {
             schema: {
@@ -42,20 +41,25 @@
             },              
             init: function () {
                 this.scalaire = new THREE.Vector3(this.data.scalaire.x, this.data.scalaire.y, this.data.scalaire.z);    
-                // var trace = this.data.trace;
-                // var el = this.el;
-                //el.setAttribute('fly', 'trace', false);
                 
-                var lefthand = document.getElementById('lefthand');
-                lefthand.addEventListener("ybuttondown", function (event) {
-                    console.log("evt: ybuttondown");
-                    if(info){ info = false; } else { info = true; }  
-                });                
-                   
+                
+                
+                
+                
+                
+                
+                
                 var navigateur = navigator.userAgent;
                 if (navigateur.includes("Quest")) {
                     vrmode = true;
                     console.log("vrmode = OCULUS");
+
+
+
+
+
+
+
                 } 
                 else {
                     vrmode = false;
@@ -112,7 +116,6 @@
                             + '\n scalaire.y = ' + this.scalaire.y
                             + '\n position.y = ' + position.y.toFixed(2)
                             + '\n player.pos.y = ' + player.pos.y.toFixed(2);
-                        if (!info) newvalue = "";                            
                         trace.setAttribute('value', newvalue);
                     }
                 } else
@@ -124,7 +127,6 @@
                             + '\n useragent = ORDI'
                             + '\n position.y = ' + position.y.toFixed(2)
                             + '\n player.pos.y = ' + player.pos.y.toFixed(2);
-                        if(!info) newvalue ="";
                         trace.setAttribute('value', newvalue);
                     }  
                 } 
@@ -138,7 +140,7 @@
 <body>
 
     <a-scene frequency="delay: 500;" renderer="antialias: true"
-    debug-keyboard="key: b; event: ybuttondown; target: #lefthand">
+    debug-keyboard="key: b; event: xbuttondown; target: #lefthand">
 
         <!-- DEBUT LABYRINTHE -->
         <a-assets>
