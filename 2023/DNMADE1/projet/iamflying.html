@@ -42,14 +42,20 @@
             },              
             init: function () {
                 this.scalaire = new THREE.Vector3(this.data.scalaire.x, this.data.scalaire.y, this.data.scalaire.z);    
+                var player = this.el;
                 // var trace = this.data.trace;
-                // var el = this.el;
+
                 //el.setAttribute('fly', 'trace', false);
                 
                 var lefthand = document.getElementById('lefthand');
                 lefthand.addEventListener("ybuttondown", function (event) {
                     console.log("evt: ybuttondown");
                     if(info){ info = false; } else { info = true; }  
+                }); 
+                var lefthand = document.getElementById('lefthand');
+                lefthand.addEventListener("xbuttondown", function (event) {
+                    console.log("evt: xbuttondown");
+                    player.setAttribute('position', { x: 0, y: 0, z: 0 });
                 });                
                    
                 var navigateur = navigator.userAgent;
@@ -138,7 +144,7 @@
 <body>
 
     <a-scene frequency="delay: 500;" renderer="antialias: true"
-    debug-keyboard="key: b; event: ybuttondown; target: #lefthand">
+    debug-keyboard="key: b,n; event: ybuttondown,xbuttondown; target: #lefthand, #lefthand">
 
         <!-- DEBUT LABYRINTHE -->
         <a-assets>
@@ -159,7 +165,7 @@
                 look-controls wasd-controls="acceleration:10">
                 <a-entity id="lefthand" handposition="trace: false" oculus-touch-controls="hand: left"></a-entity>
                 <a-entity id="righthand" handposition="trace: false" oculus-touch-controls="hand: right" droite></a-entity> -->
-                <a-text id="txtlog" value="" align="center" color="#00FF00" 
+                <a-text id="txtlog" value="" align="center" color="#0000FF" 
                     position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
                 </a-text>
             </a-entity>
