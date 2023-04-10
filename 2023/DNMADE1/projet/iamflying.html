@@ -36,34 +36,67 @@
         AFRAME.registerComponent('fly', {
             schema: {
                 trace: { type: 'boolean', default: false },
+                vrmode: { type: 'boolean', default: false },
                 scalaire: { type: 'vec3', default: { x: 0.01, y: 0.01, z: 0.01 } }                
             },              
             init: function () {
                 this.scalaire = new THREE.Vector3(this.data.scalaire.x, this.data.scalaire.y, this.data.scalaire.z);    
+                if (navigator.userAgent.indexOf('Oculus') !== -1) {
+                    vrmode = true;
+                    console.log("vrmode OCULUS");
+                } 
+                else {
+                    vrmode = false;
+                    console.log("vrmode ORDI");
+                    var player = this.el;
+
+                    // DESKTOP MODE
+                    window.addEventListener('keydown', function (event) {
+                        if (event.key === 'y') {
+                            console.log(player.id + " evt: ykeydown");
+                            var position = player.getAttribute('position');
+                            position.y += 0.1;
+                            player.setAttribute('position', position);
+                        }
+                        if (event.key === 'u') {
+                            console.log(player.id + " evt: ukeydown");
+                            var position = player.getAttribute('position');
+                            position.y -= 0.1;
+                            player.setAttribute('position', position);
+                        }
+                    });
+
+
+                }
             },
             tick: function () {
-                var position = this.el.getAttribute('position');
-                var delta_x = this.scalaire.x * (gauche.pos.x + droite.pos.x) / 2;
-                var delta_y = this.scalaire.y * ((gauche.pos.y + droite.pos.y) / 2 - 1);
-                var delta_z = this.scalaire.z * (gauche.pos.z + droite.pos.z) / 2;
+                vrmode = true;
+                if(vrmode) {
+                    var position = this.el.getAttribute('position');
+                    var delta_x = this.scalaire.x * (gauche.pos.x + droite.pos.x) / 2;
+                    var delta_y = this.scalaire.y * ((gauche.pos.y + droite.pos.y) / 2 - 1);
+                    var delta_z = this.scalaire.z * (gauche.pos.z + droite.pos.z) / 2;
 
-                position.x += delta_x;
-                position.y += delta_y;
-                position.z += delta_z;
-                this.el.setAttribute('position', position);
+                    position.x += delta_x;
+                    position.y += delta_y;
+                    position.z += delta_z;
+                    this.el.setAttribute('position', position);
 
-                if (this.data.trace) {
-                    var trace = document.querySelector('#txtlog');
-                    var newvalue = 'entity = ' + this.el.id
-                        + '\n delta_x = ' + delta_x.toFixed(2)
-                        + '\n delta_y = ' + delta_y.toFixed(2)
-                        + '\n delta_z = ' + delta_z.toFixed(2)
-                        + '\n scalaire.y = ' + this.scalaire.y                       
-                        + '\n position.y = ' + position.y.toFixed(2)
-                        + '\n player.pos.y = ' + player.pos.y.toFixed(2);                 
-                    trace.setAttribute('value', newvalue);
+                    if (this.data.trace) {
+                        var trace = document.querySelector('#txtlog');
+                        var newvalue = 'entity = ' + this.el.id
+                            + '\n useragent = ' + navigator.userAgent                        
+                            + '\n gauche_x = ' + gauche.pos.x.toFixed(2)
+                            + '\n gauche_z = ' + gauche.pos.z.toFixed(2)
+                            + '\n delta_x = ' + delta_x.toFixed(2)
+                            + '\n delta_y = ' + delta_y.toFixed(2)
+                            + '\n delta_z = ' + delta_z.toFixed(2)
+                            + '\n scalaire.y = ' + this.scalaire.y
+                            + '\n position.y = ' + position.y.toFixed(2)
+                            + '\n player.pos.y = ' + player.pos.y.toFixed(2);
+                        trace.setAttribute('value', newvalue);
+                    }
                 }
-                console.log("velocity left = " + gauche.pos.y + "\n position = " + position.y.toFixed(2));
             },
         });
 
@@ -79,15 +112,13 @@
         <!-- DEBUT LABYRINTHE -->
         <a-assets>
             <img id="sky" src="./assets/puresky.jpg">
-            <img id="beach" src="./assets/secluded_beach_4k.jpg">
-            <img id="spiaggia" src="./assets/spiaggia_di_mondello_4k_2.jpg">
         </a-assets>
 
         <a-plane position="0 0 0" rotation="-90 0 0" 
             width="1" height="1" color="grey"></a-plane>
 
         <!-- PHOTO360 -->
-        <a-sky id="image-360" radius="10" src="#spiaggia"></a-sky>
+        <a-sky id="image-360" radius="10" src="#sky"></a-sky>
         <!-- FIN LANYRINTHE -->
 
         <!-- PLAYER -->
