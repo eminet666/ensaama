@@ -24,7 +24,10 @@
 
                 if (this.data.trace) {
                     var trace = document.querySelector('#txtlog');
-                    var newvalue = 'hand '+id+' y = ' + gauche.pos.y.toFixed(2);
+                    var newvalue = 'hand '+id
+                                + '\n x = ' + gauche.pos.x.toFixed(2)
+                                + '\n y = ' + gauche.pos.y.toFixed(2)
+                                + '\n z = ' + gauche.pos.z.toFixed(2);
                     trace.setAttribute('value', newvalue);
                 }
             }
@@ -33,20 +36,29 @@
         AFRAME.registerComponent('move', {
             schema: {
                 trace: { type: 'boolean', default: false },
+                scalaire: { type: 'vec3', default: { x: 0.01, y: 0.01, z: 0.01 } }                
             },              
             init: function () {
-                this.velocity = new THREE.Vector3(0, 0.1, 0);
+                this.scalaire = new THREE.Vector3(this.data.scalaire.x, this.data.scalaire.y, this.data.scalaire.z);    
             },
             tick: function () {
                 var position = this.el.getAttribute('position');
-                position.x += this.velocity.x;
-                position.y += this.velocity.y;
-                position.z += this.velocity.z;
+                position.x += this.scalaire.x * gauche.pos.x;
+                position.y += this.scalaire.y * (gauche.pos.y - 1);
+                position.z += this.scalaire.z * gauche.pos.z;
                 this.el.setAttribute('position', position);
 
                 if (this.data.trace) {
                     var trace = document.querySelector('#txtlog');
-                    var newvalue = "velocity left = " + gauche.pos.y + " _ position = " + position.y.toFixed(2);
+                    var newvalue = 'entity = ' + this.el.id
+                        + '\n x = ' + gauche.pos.x.toFixed(2)
+                        + '\n y = ' + gauche.pos.y.toFixed(2)
+                        + '\n z = ' + gauche.pos.z.toFixed(2)
+                        + '\n scalaire.y = ' + this.scalaire.y
+                        + '\n y-1 = ' + (gauche.pos.y - 1).toFixed(2)                        
+                        + '\n new = ' + (this.scalaire.y * (gauche.pos.y - 1)).toFixed(2)                        
+                        + '\n position.y = ' + position.y.toFixed(2)
+                        + '\n player.pos.y = ' + player.pos.y.toFixed(2);                 
                     trace.setAttribute('value', newvalue);
                 }
                 console.log("velocity left = " + gauche.pos.y + "\n position = " + position.y.toFixed(2));
@@ -65,22 +77,25 @@
         <!-- DEBUT LABYRINTHE -->
         <a-assets>
             <img id="sky" src="./assets/puresky.jpg">
+            <img id="beach" src="./assets/secluded_beach_4k.jpg">
+            <img id="spiaggia" src="./assets/spiaggia_di_mondello_4k_2.jpg">
         </a-assets>
 
         <a-plane position="0 0 0" rotation="-90 0 0" 
             width="1" height="1" color="grey"></a-plane>
 
         <!-- PHOTO360 -->
-        <a-sky id="image-360" radius="10" src="#sky"></a-sky>
+        <a-sky id="image-360" radius="10" src="#spiaggia"></a-sky>
         <!-- FIN LANYRINTHE -->
 
         <!-- PLAYER -->
-        <a-entity id="player" position="0 0 0" move="trace: true" fly="trace: true">
-            <a-entity id="cam" camera position="0 0.5 0" currentposition="trace:false"
+        <a-entity id="player" position="0 0 0" fly="trace: true" move="scalaire: 0.01 0.01 0.01; trace: true">
+            <a-entity id="cam" camera position="0 0.5 0" 
+                currentposition="trace:false" 
                 look-controls wasd-controls="acceleration:10">
                 <a-entity id="lefthand" handposition="trace: false" oculus-touch-controls="hand: left"></a-entity>
                 <a-entity id="righthand" handposition="trace: false" oculus-touch-controls="hand: right" droite></a-entity> -->
-                <a-text id="txtlog" value="" align="center" color="#0000FF" 
+                <a-text id="txtlog" value="" align="center" color="#FF0000" 
                     position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
                 </a-text>
             </a-entity>
