@@ -13,13 +13,13 @@
     let gauche = { pos: { x: 0, y: 0, z: 0 } }
     let droite = { pos: { x: 0, y: 0, z: 0 } }    
 
-        AFRAME.registerComponent('gravity', {
-            init: function () {
-                this.el.setAttribute('velocity', { x: 0, y: -9.8, z: 0 });
-            }
-        });
+        // AFRAME.registerComponent('gravity', {
+        //     init: function () {
+        //         this.el.setAttribute('velocity', { x: 0, y: -9.8, z: 0 });
+        //     }
+        // });
 
-        AFRAME.registerComponent('fly', {
+        AFRAME.registerComponent('fly2', {
             schema: {
                 trace: { type: 'boolean', default: false },
             },            
@@ -45,10 +45,12 @@
             },
             tick: function () {
                 // VR MODE
-                var velocity = gauche.pos;
-                velocity.y -= 1;
-                var el = document.querySelector('#cam');
-                el.setAttribute('velocity', { x: 0, y: 0.1, z: 0 });
+                // var velocity = gauche.pos;
+                // velocity.y -= 1;
+                var velocity = new THREE.Vector3(0, 0.1, 0);
+                var camera = document.querySelector('#cam');
+                camera.object3D.position.addScaledVector(velocity, timeDelta / 1000);                
+                
                 if (this.data.trace) {
                     var trace = document.querySelector('#txtlog');
                     var newvalue = 'velocity = ' + velocity.y.toFixed(2);
@@ -79,6 +81,22 @@
             }
         });
 
+        AFRAME.registerComponent('move', {
+            init: function () {
+                this.velocity = new THREE.Vector3(0, 0.1, 0);
+            },
+            tick: function () {
+                var position = this.el.getAttribute('position');
+                position.x += this.velocity.x;
+                position.y += this.velocity.y;
+                position.z += this.velocity.z;
+                this.el.setAttribute('position', position);
+                console.log(this.velocity+"_"+position);
+            },
+        });
+
+
+
     </script>
 
 </head>
@@ -101,12 +119,11 @@
         <!-- FIN LANYRINTHE -->
 
         <!-- PLAYER -->
-        <a-entity id="player" position="0 0 0" fly="trace: true">
-            <a-entity id="cam" camera position="0 0.5 0" look-controls wasd-controls="acceleration:10"
-                begingame="xlimit: 0.2; zlimit: 0.2;" endgame="xlimit: 2; zlimit: 2;" 
-                currentposition="trace:false">
+        <a-entity id="player" position="0 0 0" move fly="trace: true">
+            <a-entity id="cam" camera position="0 0.5 0" currentposition="trace:false"
+                look-controls wasd-controls="acceleration:10">
                 <a-text id="txtlog" value="" align="center" color="#0000FF" 
-                    position="0 0 -0.25" rotation="0 0 0" scale="0.0625 0.0625 0.0625">
+                    position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
                 </a-text>
             </a-entity>
             <a-entity id="lefthand" handposition="trace: false" oculus-touch-controls="hand: left"></a-entity>
