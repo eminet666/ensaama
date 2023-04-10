@@ -7,15 +7,16 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
     <script src="https://eminet666.github.io/ensaama/components/detect/detect.js"></script>
     <script src="https://eminet666.github.io/ensaama/components/debug/debug.js"></script>
-    <script src="./fly.js"></script>
+    <script src="https://eminet666.github.io/ensaama/2023/DNMADE1/projet/fly.js"></script>   
+    <!-- <script src="./fly.js"></script> -->
 </head>
 
 <body>
 
     <a-scene frequency="delay: 500;" renderer="antialias: true"
-    debug-keyboard="key: b,v,n; event: ybuttondown,xbuttondown, abuttondown; target: #lefthand, #lefthand, #righthand">
+    debug-keyboard="key: v,b,n; event: xbuttondown, ybuttondown, abuttondown; target: #lefthand, #lefthand, #righthand">
 
-        <!-- DEBUT LABYRINTHE -->
+        <!-- DEBUT -->
         <a-assets>
             <img id="sky0" src="./assets/puresky.jpg">
             <img id="sky1" src="./assets/evening_road_01_puresky_4k.jpg">
@@ -27,8 +28,8 @@
             width="1" height="1"  material="color: grey; side: double"></a-plane>
 
         <!-- PHOTO360 -->
-        <a-sky id="image-360" radius="1000" change-sky radius="10" src="#sky0"></a-sky>
-        <!-- FIN LANYRINTHE -->
+        <a-sky id="image-360" radius="500" change-sky radius="10" src="#sky0"></a-sky>
+        <!-- FIN -->
 
         <!-- PLAYER -->
         <a-entity id="player" position="0 0 0" fly="scalaire: 0.05 0.05 0.05; trace: true">
@@ -37,7 +38,7 @@
                 look-controls wasd-controls="acceleration:10">
                 <a-entity id="lefthand" handposition="trace: false" oculus-touch-controls="hand: left"></a-entity>
                 <a-entity id="righthand" handposition="trace: false" oculus-touch-controls="hand: right" droite></a-entity> -->
-                <a-text id="txtlog" value="" align="center" color="#FF0000" 
+                <a-text id="txtlog" value="" align="center" color="#0000FF" 
                     position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
                 </a-text>
             </a-entity>
