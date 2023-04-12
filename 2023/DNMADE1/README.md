@@ -13,8 +13,7 @@
 #### test
 * [test](./projet/iamflying.html)
 * [test_full](./projet/iamflying_full.html)
-
-
+* [test_default](./projet/iamflying_default.html)
 
 #### cours
 * [cours1_bases VR](./cours/cours1/README.md)
