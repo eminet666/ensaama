@@ -10,3 +10,5 @@
 * [sofya](./sofiya/sofiya_labyrinthe_full.html)
 * [allie](./allie%20chrono.html)
 * [celia](./celia/celia_labyrinthe_chrono.html)
+* [lou](./lou/lou2.html)
+* [miranda](./miranda/labyrinthe%20player.html)
