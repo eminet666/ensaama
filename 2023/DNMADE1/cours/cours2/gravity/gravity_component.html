@@ -53,13 +53,12 @@
         <a-plane static-body position="0 0 -4" rotation="-90 0 0" width="8" height="8" color="#7BC8A4"></a-plane>
         <a-sky color="#ECECEC"></a-sky>
 
-        <a-box id="box" dynamic-body masse display-mass position="0 3 -5" color="#f00" width="1" height="1" depth="1"></a-box>
+        <a-box id="box" dynamic-body masse position="0 3 -5" color="#0f0" width="1" height="1" depth="1"></a-box>
 
         <!-- PLAYER -->
         <a-entity id="player" position="0 0 0">
-            <a-entity id="cam" camera position="0 0.5 0" look-controls wasd-controls="acceleration:10"
-                begingame="xlimit: 0.2; zlimit: 0.2;" endgame="xlimit: 2; zlimit: 2;" currentposition="trace:false"
-                chrono="trace: true">
+            <a-entity id="cam" camera position="0 0.5 0" look-controls wasd-controls="acceleration:10" 
+            currentposition="trace:false">
                 <a-text id="txtlog" value="" align="center" color="#FF0000" position="0 0 -1" rotation="0 0 0"
                     scale="0.25 0.25 0.25">
                 </a-text>

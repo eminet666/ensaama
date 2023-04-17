@@ -14,6 +14,8 @@
         <a-assets>
             <a-asset-item id="obj" src="./assets/chair_891263/891263_organic_chair.obj"></a-asset-item>
             <a-asset-item id="mtl" src="./assets/chair_891263/891263_organic_chair.mtl"></a-asset-item>
+            <a-asset-item id="obj2" src="./assets/chair_891263/chait_change_origin_to_geometry.obj"></a-asset-item>
+            <a-asset-item id="mtl2" src="./assets/chair_891263/chait_change_origin_to_geometry.mtl"></a-asset-item>
         </a-assets>
         
         <!-- camera -->
@@ -23,8 +25,12 @@
         <a-plane static-body position="0 0 -4" rotation="-90 0 0" width="8" height="8" color="silver"></a-plane>
         
         <!-- Model3D -->
-        <a-entity dynamic-body obj-model="obj: #obj; mtl: #mtl" 
+        <a-entity dynamic-body="shape: cylinder; cylinderAxis: y;" obj-model="obj: #obj; mtl: #mtl" 
         rotation="0 90 15" position="0 5 -3" scale="0.01 0.01 0.01"></a-entity>
+
+        <a-entity dynamic-body="shape: cylinder; cylinderAxis: y;" obj-model="obj: #obj2; mtl: #mtl2" rotation="0 90 15"
+        position="-2 5 -3" scale="0.01 0.01 0.01"></a-entity>
+
 
         <!-- Dynamic objects -->
         <a-box dynamic-body position="-3 3 -3" rotation="10 20 30" color="#F00"></a-box>
