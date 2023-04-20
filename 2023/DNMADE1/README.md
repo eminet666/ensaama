@@ -9,6 +9,11 @@
 
 #### model3D
 * [20230406_model3D](./rendus/model3D/20230406/README.md)
+* [20230413_gravity](./rendus/model3D/20230413/README.md)
+
+#### lights
+* [20230420_lights](./rendus/lights/20230420/README.md)
+
 
 #### test
 * [test](./projet/iamflying.html)

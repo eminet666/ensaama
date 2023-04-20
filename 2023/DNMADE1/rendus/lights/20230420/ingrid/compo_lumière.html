@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+
+    <a-scene background="color: pink" shadow="type: pcfsoft">
+
+        <a-assets>
+
+            <a-asset-item id="carlos-obj" src="./assets/diwa.obj"></a-asset-item>
+            <a-asset-item id="carlos-mtl" src="./assets/diwa.mtl"></a-asset-item>
+
+        </a-assets>
+
+        <a-entity obj-model="obj: #carlos-obj; mtl: #carlos-mtl" position="0 0 -5" rotation="0 -35 0" scale="1.75 1.75 1.75" shadow="cast: true"></a-entity>
+
+        <a-entity light="type: directional; castShadow: true; color: #EEE; intensity: 0.5" position="-1.5 5 2"></a-entity>
+
+      <!--<a-entity light="type: hemisphere; color: purple; groundColor: white; intensity: 2"></a-entity>-->
+
+      <a-entity light="type: point; intensity: 1.65; distance: 100; decay: 2; color: red"
+          position="-15 40 0"></a-entity>
+          <a-entity light="type: point; intensity: 1.65; distance: 100; decay: 2; color: orange"
+          position="10 40 10"></a-entity>
+          <a-entity light="type: point; intensity: 1.45; distance: 100; decay: 2; color: pink"
+          position="0 40 -10"></a-entity>
+          <a-entity light="type: point; intensity: 1.45; distance: 100; decay: 2; color: purple"
+          position="-10 0 -8"></a-entity>
+
+          <a-entity camera position="0 1.6 6"
+          wasd-controls="acceleration:50"
+          look-controls >
+          
+
+    </a-scene>
+
+</body>
+
+</html>
