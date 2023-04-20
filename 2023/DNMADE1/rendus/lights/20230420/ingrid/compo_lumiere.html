@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+
+    <a-scene shadow="type: pcfsoft">
+
+        <a-assets>
+
+            <a-asset-item id="carlos-obj" src="./assets/diwa.obj"></a-asset-item>
+            <a-asset-item id="carlos-mtl" src="./assets/diwa.mtl"></a-asset-item>
+
+        </a-assets>
+
+        <a-entity obj-model="obj: #carlos-obj; mtl: #carlos-mtl" position="0 0 -5" rotation="0 -35 0" scale="1.75 1.75 1.75" shadow="cast: true"></a-entity>
+
+        <a-entity light="type: directional; castShadow: true; color: #EEE; intensity: 0.5" position="0 4 5"></a-entity>
+
+      <!--<a-entity light="type: hemisphere; color: purple; groundColor: white; intensity: 2"></a-entity>-->
+
+      <a-entity light="type: point; intensity: 1.65; distance: 100; decay: 2; color: #ffc75f"
+          position="-30 20 10"></a-entity>
+          <a-entity light="type: point; intensity: 1.65; distance: 100; decay: 2; color: #ff6f91"
+          position="-10 40 10"></a-entity>
+          <a-entity light="type: point; intensity: 1.65; distance: 100; decay: 2; color: #845ec2"
+          position="8 5 -4"></a-entity>
+
+          <a-entity camera position="0 1.6 6"
+          wasd-controls="acceleration:50"
+          look-controls >
+
+          <a-sky img src="assets/pastel.jpg"></a-sky>
+          
+
+    </a-scene>
+
+</body>
+
+</html>

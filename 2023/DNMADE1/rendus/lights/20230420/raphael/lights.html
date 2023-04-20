@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: #FFFFFF">
+
+        <a-assets>
+            <a-asset-item id="agathe-obj" src="./assets/agathe.obj"></a-asset-item>
+            <a-asset-item id="agathe-mtl" src="./assets/agathe.mtl"></a-asset-item>
+        </a-assets>
+
+        <a-entity obj-model="obj: #agathe-obj; mtl: #agathe-mtl" position="0 0 -4" scale="20 20 20"></a-entity>
+
+        <a-light id="pointlight" type="point"
+            position="0 5 -5"  color="white" intensity="1"
+            decay="1" distance="10">
+        </a-light>
+
+        <a-light type="directional"
+            position="-5 0 0"  color="red" intensity="1"
+            decay="1" distance="10"
+        > </a-light>
+
+        <a-light type="point"
+            position="30 2 12"  color="cyan" intensity="2"
+            decay="1" distance="10" 
+        > </a-light>
+
+        <a-light type="ambiant"
+            position="0 2 3"  color="yellow" intensity="3"
+            decay="0s" distance="10s" 
+        > </a-light>
+
+    </a-scene>
+</body>
+
+</html>
