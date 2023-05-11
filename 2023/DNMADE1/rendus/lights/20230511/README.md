@@ -10,4 +10,8 @@
 * [miranda](./miranda/lights%20anim.html)
 * [raphael](./raphael/animation.html)
 * [safia](./safia/lights_new.html)
-
+* [allie](./allie/light.html)
+* [celia](./celia/light.html)
+* [martin](./martin/testlight.html)
+* [pierre](./pierre/lights.html)
+* [sopfiya](./sofiya/castle/castle.html)

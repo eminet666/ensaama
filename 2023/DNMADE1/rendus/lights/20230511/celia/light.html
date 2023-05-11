@@ -1,0 +1,61 @@
+<html>
+
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+
+<body>
+    <a-scene background="color: black">
+
+
+        <a-assets>
+            <a-asset-item id="agathe-obj" src="./assets/agathe.obj"></a-asset-item>
+            <a-asset-item id="agathe-mtl" src="./assets/agathe.mtl"></a-asset-item>
+        </a-assets>
+
+
+        <a-entity obj-model="obj: #agathe-obj; mtl: #agathe-mtl" position="0 0 -4" scale="20 20 20"></a-entity>
+
+
+        <a-light id="pointlight" type="point"
+            position="0 5 -5"  color= #CC998D intensity="2"
+            decay="1" distance="10">
+        </a-light>
+
+
+        <a-light type="directional"
+            position="-5 0 0"  color=#16F4D0 intensity="3"
+            decay="1" distance="10"
+        > </a-light>
+
+
+        <a-entity light="type: point; intensity: 1; distance: 100; decay: 3; color: blue"
+        position="3 0 -10" animation="property: position; to: 1 8 10; dur: 2000; easing: linear; loop: true ; dir : alternate " ></a-entity>
+       
+        <a-entity light="color: #ffff00; 
+        intensity: 1.5; 
+        decay: 1.2; 
+        distance: 0.5" 
+position="0.5 2.5 0"
+animation="property: components.light.light.intensity;
+to: 0;
+dur: 5000;
+dir : alternate;
+easing: easeInOutElastic;
+loop: true;"
+animation="property: color;
+    from: #FFFF00;
+    to: #00FFFF;
+    dur: 1000;
+    dir: alternate;
+    loop: true"
+>
+</a-entity>
+    
+    </a-scene>
+</body>
+
+
+</html>
