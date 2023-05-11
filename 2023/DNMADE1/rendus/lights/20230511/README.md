@@ -1,5 +1,13 @@
 ### 20230511
 
 * [ingrid](./ingrid/compo_lumiere_anim.html)
+* [cassandre](./cassandre/lumiereanim.html)
+* [eolyna](./eolyna/lights.html)
+* [graig](./graig/Graig.html)
 * [lorine](./lorine/light.html)
+* [lou](./lou/lou2.html)
+* [louise](./louise/lights.html)
+* [miranda](./miranda/lights%20anim.html)
+* [raphael](./raphael/animation.html)
+* [safia](./safia/lights_new.html)
 
