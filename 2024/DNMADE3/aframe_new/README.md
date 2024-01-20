@@ -1,6 +1,5 @@
 # étapes
-* 0_test model inline :  [gltfviewer](https://gltf-viewer.donmccurdy.com/) | 
-[3Dviewer](https://3dviewer.net/)
+* 0_test model inline :  [gltfviewer](https://gltf-viewer.donmccurdy.com/) | [3Dviewer](https://3dviewer.net/)
 * 1_test model aframe : [loaded](./test_model.html) | [frequency/shadow](./1_test_model_frequency_shadow.html)
 * 2_test anim : [finished](./2_test_anim_finie.html) | [loop](./2_test_anim_loop.html)
 * 3_test chore (1anim) : [button](./3_test_chore_button.html) | [parameter](./3_test_chore_parameter.html) | [restart auto](./3_test_chore_restart_auto.html) | [duration](./3_test_chore_restart_duration.html)
