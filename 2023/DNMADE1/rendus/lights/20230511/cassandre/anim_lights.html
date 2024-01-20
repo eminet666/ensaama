@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"
+        animation="property: rotation;
+                   to : 180 180 180;
+                   dur: 5000;
+                   delay: 3000;
+                   easing: linear;
+                   loop : false;
+        "       
+        ></a-box>
+
+        <a-box position="-1 1.6 -5" color="tomato"
+        animation="property: position; 
+                   to: 1 8 -10; 
+                   dur: 2000; 
+                   easing: linear; 
+                   dir: alternate;
+                   loop: true">
+        </a-box>
+
+        <a-sphere position="0 1.25 -5" radius="1.25" 
+        animation="property: color;
+                from : #FF0000;
+                to : #00FF00;
+                dur: 2000;
+                loop: true;
+                dir: alternate;"
+        ></a-sphere>
+        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" 
+            animation="property: components.material.material.color;
+            type : color;
+            from : red;
+            to : green;
+            delay: 2000;
+            dur: 2000;
+            loop: true;
+            dir: alternate;">
+        </a-cylinder>
+
+        <a-entity light="color: #ffff00; 
+                    intensity: 1.5; 
+                    decay: 1.2; 
+                    distance: 0.5" 
+            position="0.5 2.5 0"
+            animation="property: components.light.light.intensity;
+            to: 0;
+            dur: 5000;
+            dir : alternate;
+            easing: easeInOutElastic;
+            loop: true;"
+            animation="property: color;
+                from: #FFFF00;
+                to: #00FFFF;
+                dur: 1000;
+                dir: alternate;
+                loop: true"
+            >
+        </a-entity>
+
+        <a-entity material="primitive: sphere;" rotation="0 0 -2" 
+            animation="property: rotation; 
+            to: 0 360 0; 
+            loop: true; 
+            dur: 10000">
+            <a-sphere position="2 0 0" radius="0.2" color="mediumseagreen"></a-sphere>
+        </a-entity>
+
+
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+        <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+</body>
+
+</html>
