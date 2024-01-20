@@ -39,13 +39,13 @@
             <a-asset-item id="anim_isabelle" src="./assets/models/isabelle.glb"></a-asset-item>
         </a-assets>
 
-        <a-entity id="mandala" position="-1 0 -2"
+        <a-entity id="mandala" position="-1 0 -3"
             gltf-model="#anim_mandala"
             animation-mixer="timeScale : 4"
             goanim="next: isabelle; timescale: 4;">
         </a-entity>
 
-        <a-entity id="isabelle" position="1 0 -2"
+        <a-entity id="isabelle" position="1 0 -3"
             gltf-model="#anim_isabelle" 
             animation-mixer="timeScale : 0;" 
             goanim="next: mandala; timescale: 4;">
