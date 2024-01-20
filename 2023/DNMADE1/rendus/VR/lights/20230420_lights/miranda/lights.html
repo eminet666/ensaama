@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: #d1eeff">
+
+        <a-assets>
+            <a-asset-item id="agathe-obj" src="./assets/drive-download-20230414T140927Z-001/agathe.obj"></a-asset-item>
+            <a-asset-item id="agathe-mtl" src="./assets/drive-download-20230414T140927Z-001/agathe.mtl"></a-asset-item>
+        </a-assets>
+
+        <a-entity obj-model="obj: #agathe-obj; mtl: #agathe-mtl" position="0 0 -4" scale="20 20 20"></a-entity>
+
+
+        <a-entity light="type: ambient; color: #e3a988"></a-entity>
+        <!--<a-entity light="type: hemisphere; color: #FF0000; groundColor: #7BC8A4; intensity: 1"></a-entity>
+        <a-entity light="type: directional; color: #FF0000; intensity: 0.5" position="-1 1 0"></a-entity>
+        <a-light type="directional" position="0 0 0" rotation="-90 0 0" target="#directionaltarget">
+            <a-entity id="directionaltarget" position="-1 0 -0,5"></a-entity>
+          </a-light>-->
+          <a-light id="spotlight" type="spot"
+          position="0.182 9.614 -3.5" rotation="-90 0 0"
+          color="white" intensity="1"
+          angle="40" penumbra="0.4">
+    </a-light>
+
+
+    </a-light>
+    </a-scene>
+</body>
+
+</html>

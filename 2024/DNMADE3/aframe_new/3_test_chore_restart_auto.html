@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/aframe-extras@7.2.0/dist/aframe-extras.min.js "></script>
+    <script>
+        var nb = 0;
+        var delai = 3000;
+        AFRAME.registerComponent('goanim', {
+            init: function () {
+                var el = this.el;
+                var id = el.id;
+                el.addEventListener('animation-loop', () => {
+                    console.log("loop : "+nb);
+                    nb++;
+                    el.setAttribute("animation-mixer", "timeScale: 0;");
+                    startAnim(id);
+                });
+                el.addEventListener('restart', () => {
+                    console.log("emit reçu");
+                    el.setAttribute("animation-mixer", "timeScale: 1;");
+                });                
+            }
+        }); 
+    </script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="votreModel" src="./assets/models/mandala.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity id="mandala" gltf-model="#votreModel"
+            animation-mixer="duration: 2;"
+            goanim></a-entity>
+
+        <a-entity camera look-controls position="0 1.6 2"></a-entity>
+    </a-scene>
+
+    <script>
+        function startAnim(anim) {
+            setTimeout( function(param)  {
+                document.getElementById(anim).emit('restart');
+                console.log("emit ok : "+anim);
+            }.bind(null, anim), delai);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <assets>
+            <a-assets-idem id="obj-vache" src="assets/vache alien.obj" ></a-assets-idem>
+            <a-assets-idem id="mtl-vache" src="assets/vache alien.mtl" ></a-assets-idem>
+    
+
+
+        </assets>
+
+      <a-entity obj-model="obj: #obj-vache; mtl: #mtl-vache" position="2 4 -3"></a-entity>
+      <a-entity obj-model="obj: #obj-vache; mtl: #mtl-vache" position="3 4 0"></a-entity>
+
+      <a-entity obj-model="obj: #obj-vache; mtl: #mtl-vache" position="-3 4 -3"></a-entity>
+
+      
+      <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="green"></a-plane>
+      <a-sky color="violet"></a-sky>
+
+      <a-entity camera position="0 1.6 0"
+      wasd-controls="acceleration:10"
+      look-controls >
+
+        </a-entity>
+
+    </a-scene>
+
+  </body>
+
+</html>

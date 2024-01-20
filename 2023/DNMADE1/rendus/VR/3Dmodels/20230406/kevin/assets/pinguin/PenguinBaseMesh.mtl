@@ -1,0 +1,13 @@
+# Blender MTL File: 'PenguinBaseMesh.blend'
+# Material Count: 1
+
+newmtl PenguinMat
+Ns 1
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.500000 0.500000 0.500000
+Ke 0 0 0
+Ni 1
+d 1
+illum 2
+map_Kd PenguinDiffuseColor.png

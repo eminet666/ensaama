@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>   
+        <a-asset>
+            <a-asset-item id="obj" src="./asset/Rock1/Rock1.obj"></a-asset-item>
+            <a-asset-item id="mtl" src="./asset/Rock1/Rock1.mtl"></a-asset-item>
+            <a-asset-item id="obj 2" src="./asset/Rock_3dModel/sculpt.obj"></a-asset-item>
+        </a-asset>
+      
+      <a-entity obj-model="obj: #obj; mtl: #mtl" position="0 0 0" color="#FF0000" scale="0.1 0.1 0.1"></a-entity> 
+      <a-entity obj-model="obj: #obj 2; mtl: #mtl" position="2 0 0" color="#FF0000" scale="0.001 0.001 0.001"></a-entity> 
+      <a-plane position="0 0 0" rotation="-90 0 0" width="8" height="8" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html>

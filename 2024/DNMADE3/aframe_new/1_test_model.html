@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/aframe-extras@7.2.0/dist/aframe-extras.min.js "></script>
+
+    <script>
+        AFRAME.registerComponent('loaded', {
+            init: function () {
+                var el = this.el;
+                el.addEventListener('model-loaded', () => {
+                    console.log(el.id + " chargé");
+                });
+                el.addEventListener('model-error', () => {
+                    // Grab the mesh / scene.
+                    console.log("erreur");
+                });
+            }
+        });
+
+    </script>
+</head>
+
+<body>
+    <a-scene background="color: skyblue">
+        <!-- assets -->
+        <a-assets>
+            <a-asset-item id="anim" src="./assets/models/isabelle.glb"></a-asset-item>
+        </a-assets>
+
+        <!-- model -->
+        <a-entity position="0 0 -2.5" rotation="0 180 0" 
+                  gltf-model="#anim" animation-mixer="clip: *;"
+                  loaded>
+        </a-entity>
+
+        <!-- plane -->
+        <a-plane position="0 0 0" color="grey" height="8" width="8" rotation="-90 0 0" shadow></a-plane>
+
+        <!-- environnement -->
+        <!-- <a-sky color="skyblue"></a-sky> -->
+    </a-scene>
+</body>
+
+</html>

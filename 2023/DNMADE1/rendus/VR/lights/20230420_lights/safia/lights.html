@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene >
+
+
+        <a-assets>
+            <img id="disco" src="./assets/disco.jpg">
+            <img id="moon" src="./assets/moon.jpg">
+        </a-assets>
+
+        <a-assets>
+            <a-asset-item id="popup_obj" src="./assets/agathe.obj"></a-asset-item>
+            <a-asset-item id="popup_mtl" src="./assets/agathe.mtl"></a-asset-item>
+        </a-assets>
+
+        <a-entity obj-model="obj: #popup_obj; mtl: #popup_mtl" position="0 0 -4" scale="25 25 25"></a-entity>
+
+        <!a-light type="spot" position="-2.5 3 2" rotation="-90 0 0" color=" #ff2eee" intensity="1"
+        angle="60" penumbra="0.3"></a-light>
+
+        <a-light
+        id="hemispherelight"
+        position="4.5 3 0"
+        type="hemisphere"
+        color=" #ff1f80"
+        ground-color=" #2efcff"
+        intensity="1.15"></a-light>
+
+        <!a-light id="pointlight"
+         position="0 5 -5"
+         type="point"
+         color="#334bc1"
+         intensity="1.5"
+         decay="0.3"
+         distance="10"></a-light>
+
+         <a-light id="directionalLight"
+        type="directional"
+        color="#cd2ce2"
+        intensity="0.25"
+        position="0 -2 0"></a-light>
+
+        <a-light id="directionalLight"
+        type="directional"
+        color="#cd2ce2"
+        intensity="0.35"
+        position="-1.15 3 2"></a-light>
+
+        <!a-sphere
+        id="moon"
+        position="2 1.6 -5"
+        radius="0.25" 
+        material="src: #moon"></a-sphere> 
+
+        <!a-light
+        id="spotlighttargeted"
+        position="2 4 2"
+        target="#moon"
+        type="spot"
+        color="yellow"
+        intensity="1"
+        angle="10"
+        penumbra="0.4"></a-light>
+
+        <a-sky material="src: #disco"></a-sky>
+
+
+
+    </a-scene>
+</body>
+
+</html>
