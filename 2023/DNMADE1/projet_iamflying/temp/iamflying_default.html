@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="https://eminet666.github.io/ensaama/components/detect/detect.js"></script>
+    <script src="https://eminet666.github.io/ensaama/components/debug/debug.js"></script>
+    
+    <script>
+    let gauche = { pos: { x: 0, y: 0, z: 0 } }
+    let droite = { pos: { x: 0, y: 0, z: 0 } }
+    let info = true;    
+
+    // POSITION MANETTE (relative par rapport à la caméra)
+    AFRAME.registerComponent('handposition', {
+        schema: {
+            trace: { type: 'boolean', default: false },
+        },
+        tick: function () {
+            var handpos = this.el.object3D.position;
+            var id = this.el.id;
+            if(id=="lefthand") gauche.pos = handpos;
+            if(id=="righthand") droite.pos = handpos;
+
+            if (this.data.trace) {
+                var trace = document.querySelector('#txtlog');
+                var newvalue = 'hand '+id
+                            + '\n x = ' + gauche.pos.x.toFixed(2)
+                            + '\n y = ' + gauche.pos.y.toFixed(2)
+                            + '\n z = ' + gauche.pos.z.toFixed(2);
+                trace.setAttribute('value', newvalue);
+            }
+        }
+    });
+
+    // MODULE FLY
+    AFRAME.registerComponent('fly', {
+        schema: {
+            trace: { type: 'boolean', default: false },
+            vrmode: { type: 'boolean', default: false },
+            scalaire: { type: 'vec3', default: { x: 0.01, y: 0.01, z: 0.01 } }                
+        },              
+        init: function () {
+            this.scalaire = new THREE.Vector3(this.data.scalaire.x, this.data.scalaire.y, this.data.scalaire.z);    
+            var player = this.el;
+            // var trace = this.data.trace;
+
+            //el.setAttribute('fly', 'trace', false);
+            
+            var lefthand = document.getElementById('lefthand');
+            lefthand.addEventListener("ybuttondown", function (event) {
+                console.log("evt: ybuttondown");
+                if(info){ info = false; } else { info = true; }  
+            }); 
+            var lefthand = document.getElementById('lefthand');
+            lefthand.addEventListener("xbuttondown", function (event) {
+                console.log("evt: xbuttondown");
+                player.setAttribute('position', { x: 0, y: 0, z: 0 });
+            });                
+                
+            var navigateur = navigator.userAgent;
+            if (navigateur.includes("Quest")) {
+                vrmode = true;
+                console.log("vrmode = OCULUS");
+            } 
+            else {
+                vrmode = false;
+                console.log("vrmode = ORDI");
+                var player = this.el;
+
+                // DESKTOP MODE
+                window.addEventListener('keydown', function (event) {
+                    if (event.key === 'y') {
+                        console.log(player.id + " evt: ykeydown");
+                        var position = player.getAttribute('position');
+                        position.y += 0.1;
+                        player.setAttribute('position', position);
+                    }
+                    if (event.key === 'u') {
+                        console.log(player.id + " evt: ukeydown");
+                        var position = player.getAttribute('position');
+                        position.y -= 0.1;
+                        player.setAttribute('position', position);
+                    }
+                    if (event.key === 'o') {
+                        console.log(player.id + " evt: ukeydown");
+                        var position = player.getAttribute('position');
+                        position.y = 0;
+                        player.setAttribute('position', position);
+                    }                        
+                });
+            }
+        },
+        tick: function () {
+
+            if(vrmode) {
+                var position = this.el.getAttribute('position');
+                var delta_x = this.scalaire.x * (gauche.pos.x + droite.pos.x) / 2;
+                var delta_y = this.scalaire.y * ((gauche.pos.y + droite.pos.y) / 2 - 1);
+                var delta_z = this.scalaire.z * (gauche.pos.z + droite.pos.z) / 2;
+
+                position.x += delta_x;
+                position.y += delta_y;
+                position.z += delta_z;
+                this.el.setAttribute('position', position);
+
+                if (this.data.trace) {
+                    var trace = document.querySelector('#txtlog');
+                    var newvalue = 'entity = ' + this.el.id
+                        + '\n useragent = QUEST'                        
+                        + '\n gauche x_y_z = ' + gauche.pos.x.toFixed(2) + '_' + gauche.pos.y.toFixed(2) + '_' + gauche.pos.z.toFixed(2)
+                        + '\n delta x_y_z = ' + delta_x.toFixed(4) + '_' + delta_y.toFixed(4) + '_' + delta_z.toFixed(4)
+                        + '\n scalaire.y = ' + this.scalaire.y
+                        + '\n position x_y_z = ' + position.y.toFixed(2) +'_' + position.y.toFixed(2) + '_' + position.y.toFixed(2)
+                        + '\n player.pos x_y_z = ' + player.pos.x.toFixed(2) + '_' + player.pos.y.toFixed(2) + '_' +player.pos.z.toFixed(2);
+                    if (!info) newvalue = "";                            
+                    trace.setAttribute('value', newvalue);
+                }
+            } else
+            {
+                if (this.data.trace) {
+                    var trace = document.querySelector('#txtlog');
+                    var position = this.el.getAttribute('position');
+                    var newvalue = 'entity = ' + this.el.id
+                        + '\n useragent = ORDI'
+                        + '\n position x_y_z = ' + position.x.toFixed(2) + '_' + position.y.toFixed(2) + '_' + position.z.toFixed(2)
+                        + '\n player.pos x_y_z = ' + player.pos.x.toFixed(2) + '_' + player.pos.y.toFixed(2) + '_' + player.pos.z.toFixed(2);
+                    if(!info) newvalue ="";
+                    trace.setAttribute('value', newvalue);
+                }  
+            } 
+        },
+    });
+
+    // CHANGE SKY
+    AFRAME.registerComponent('change-sky', {
+        init: function () {
+            var skyEl = document.querySelector('#image-360');
+            var assets = document.querySelectorAll('img[id^="sky"]');
+            var currentIndex = 0;
+
+            window.addEventListener('keydown', function (event) {
+                if (event.key === 'c') {
+                    currentIndex = (currentIndex + 1) % assets.length;
+                    var newAssetId = assets[currentIndex].getAttribute('id');
+                    skyEl.setAttribute('src', '#' + newAssetId);
+                    console.log("new sky = #" + newAssetId);                    
+                }
+            });
+
+            var righthand = document.getElementById('righthand');
+            righthand.addEventListener("abuttondown", function (event) {
+                console.log("evt: abuttondown");
+                currentIndex = (currentIndex + 1) % assets.length;
+                var newAssetId = assets[currentIndex].getAttribute('id');
+                skyEl.setAttribute('src', '#' + newAssetId);
+                console.log("new sky = #" + newAssetId);                 
+            }); 
+
+        }
+    });
+
+    </script>
+
+</head>
+
+<body>
+
+    <a-scene frequency="delay: 500;" renderer="antialias: true"
+    debug-keyboard="key: b,v,n; event: ybuttondown,xbuttondown, abuttondown; target: #lefthand, #lefthand, #righthand">
+
+        <!-- ASSETS -->
+        <a-assets>
+            <img id="sky0" src="./assets/puresky.jpg">
+            <img id="sky1" src="./assets/evening_road_01_puresky_4k.jpg">
+            <img id="sky2" src="./assets/sunflowers_puresky_4k.jpg">
+            <img id="sky3" src="./assets/table_mountain_2_puresky_4k.jpg">
+        </a-assets>
+
+        <!-- BASE -->
+        <a-plane position="0 0 0" rotation="-90 0 0" 
+            width="1" height="1" color="grey"></a-plane>
+
+        <!-- DEBUT _ ETUDIANT -->
+        <a-sky id="image-360" change-sky radius="10" src="#sky0"></a-sky>
+        <!-- FIN _ ETUDIAT -->
+
+        <!-- PLAYER -->
+        <a-entity id="player" position="0 0 0" fly="scalaire: 0.02 0.02 0.02; trace: true">
+            <a-entity id="cam" camera position="0 0.5 0" 
+                currentposition="trace:false" 
+                look-controls wasd-controls="acceleration:10">
+                <a-entity id="lefthand" handposition="trace: false" oculus-touch-controls="hand: left"></a-entity>
+                <a-entity id="righthand" handposition="trace: false" oculus-touch-controls="hand: right" droite></a-entity>
+                <a-text id="txtlog" value="" align="center" color="#FF0000" 
+                    position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
+                </a-text>
+            </a-entity>
+        </a-entity>
+
+    </a-scene>
+
+</body>
+
+</html>

@@ -1,3 +1,0 @@
-mêmes touches clavier entre debug et mode ordi
-commentaires
-separer les modules (question des variables globales)

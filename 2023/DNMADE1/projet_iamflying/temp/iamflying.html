@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="https://eminet666.github.io/ensaama/components/detect/detect.js"></script>
+    <script src="https://eminet666.github.io/ensaama/components/debug/debug.js"></script>
+    <!-- <script src="https://eminet666.github.io/ensaama/2023/DNMADE1/projet/fly.js"></script>    -->
+    <script src="./fly.js"></script>
+</head>
+
+<body>
+
+    <a-scene frequency="delay: 500;" renderer="antialias: true"
+    debug-keyboard="key: v,b,n; event: xbuttondown, ybuttondown, abuttondown; target: #lefthand, #lefthand, #righthand">
+
+        <!-- RESSOURCES -->
+        <a-assets>
+            <img id="sky0" src="./assets/puresky.jpg">
+            <img id="sky1" src="./assets/evening_road_01_puresky_4k.jpg">
+            <img id="sky2" src="./assets/sunflowers_puresky_4k.jpg">
+            <img id="sky3" src="./assets/table_mountain_2_puresky_4k.jpg">
+        </a-assets>
+
+        <!-- BASE -->
+        <a-plane position="0 0 0" rotation="-90 0 0" 
+            width="1" height="1"  material="color: grey; side: double"></a-plane>
+
+        <!-- DEBUT ETUDIANT -->
+        <a-sky id="image-360" radius="500" change-sky radius="10" src="#sky0"></a-sky>
+        <!-- FIN ETUDIANT -->
+
+        <!-- PLAYER -->
+        <a-entity id="player" position="0 0 0" fly="scalaire: 0.05 0.05 0.05; trace: true">
+            <a-entity id="cam" camera position="0 0.5 0" 
+                currentposition="trace:false" 
+                look-controls wasd-controls="acceleration:10">
+                <a-entity id="lefthand" position="0 0 0" handposition="trace: false" oculus-touch-controls="hand: left"></a-entity>
+                <a-entity id="righthand" position="0 0 0" handposition="trace: false" oculus-touch-controls="hand: right" droite></a-entity>
+                <a-text id="txtlog" value="" align="center" color="#0000FF" 
+                    position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
+                </a-text>
+            </a-entity>
+        </a-entity>
+
+    </a-scene>
+
+</body>
+
+</html>
