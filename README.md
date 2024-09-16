@@ -1,5 +1,8 @@
 # ensaama
 
+## 2024-2025
+[DNMADE2](./2025/DNMADE2/Builds/README.md)
+
 ## 2023-2024
 [DNMADE3](./2024/DNMADE3/aframe_new/README.md)
 
