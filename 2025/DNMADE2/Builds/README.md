@@ -1,4 +1,5 @@
 # builds unity
 
-* [PlayerWebGL](./player/index.html)
+* [PlayerClick](./player/index.html)
+* [PlayerTouch](./playertouch/index.html)
 
