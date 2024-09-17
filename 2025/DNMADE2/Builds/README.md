@@ -1,4 +1,4 @@
 # builds unity
 
-* [DemoPlayerWebGL](./player/index.html)
+* [PlayerWebGL](./player/index.html)
 
