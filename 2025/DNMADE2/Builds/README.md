@@ -2,5 +2,5 @@
 
 * [PlayerClick](./player/index.html)
 * [PlayerTouch](./playertouch/index.html)
-* [PlayerGyroscope_new](./playergyro/index.html)
+* [PlayerGyroscope](./playergyro/index.html)
 
