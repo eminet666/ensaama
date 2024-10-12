@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accéléromètre</title>
+</head>
+<body>
+    <h1>Accéléromètre sur Safari</h1>
+
+    <script>
+        if (window.DeviceMotionEvent) {
+            window.addEventListener('devicemotion', function(event) {
+                let accel = event.accelerationIncludingGravity;
+                console.log("Accéléromètre : X:" + accel.x.toFixed(3)
+                    +" Y: " + accel.y.toFixed(3)
+                    +"Z: " + accel.z.toFixed(3));
+            });
+        } else {
+            console.log("L'accéléromètre n'est pas pris en charge sur ce navigateur.");
+        }
+    </script>
+</body>
+</html>
