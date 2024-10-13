@@ -7,3 +7,4 @@
 * [Arcade Bowling](./bowling/index.html)
 * [Arcade Bowling Accelerometre](./playeraccelero/index.html)
 * [Test Accelero ok?](./testaccelero/index.html)
+* [Test Accelero New](./test/index.html)
