@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de l'accéléromètre avec autorisation</title>
+</head>
+
+<body>
+    <h1>Test de l'accéléromètre</h1>
+    <p>Cliquez sur le bouton pour autoriser l'accès aux capteurs de mouvement.</p>
+    <button id="requestPermissionButton">Autoriser l'accès aux capteurs</button>
+
+    <p id="accelerometerData">Aucune donnée encore disponible.</p>
+
+    <script>
+        const button = document.getElementById('requestPermissionButton');
+
+        button.addEventListener('click', function () {
+            // Vérifiez si la demande de permission est nécessaire (iOS 13+)
+            if (typeof DeviceMotionEvent.requestPermission === 'function') {
+                DeviceMotionEvent.requestPermission()
+                    .then(function (permissionState) {
+                        if (permissionState === 'granted') {
+                            startListeningToDeviceMotion();
+                        } else {
+                            document.getElementById('accelerometerData').innerText = "Permission refusée.";
+                        }
+                    })
+                    .catch(function (error) {
+                        document.getElementById('accelerometerData').innerText = "Erreur lors de la demande de permission.";
+                        console.error("Erreur : ", error);
+                    });
+            } else {
+                // Sur d'autres navigateurs, commencez à écouter immédiatement
+                startListeningToDeviceMotion();
+            }
+        });
+
+        function startListeningToDeviceMotion() {
+            // Ajoutez un écouteur d'événements pour capturer les mouvements de l'appareil
+            window.addEventListener('devicemotion', function (event) {
+                var acceleration = event.accelerationIncludingGravity;
+
+                // Affiche les données dans l'élément <p> avec l'id "accelerometerData"
+                document.getElementById('accelerometerData').innerText =
+                    "Accélération avec gravité : " +
+                    "X = " + acceleration.x.toFixed(2) + ", " +
+                    "Y = " + acceleration.y.toFixed(2) + ", " +
+                    "Z = " + acceleration.z.toFixed(2);
+            });
+
+            document.getElementById('accelerometerData').innerText = "Écoute des données de mouvement commencée.";
+        }
+    </script>
+</body>
+
+</html>

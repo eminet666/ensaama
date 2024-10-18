@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de l'accéléromètre</title>
+</head>
+
+<body>
+    <h1>Test de l'accéléromètre</h1>
+    <p>Déplacez votre appareil pour voir les données de l'accéléromètre.</p>
+    <p id="accelerometerData">Aucune donnée encore disponible.</p>
+
+    <script>
+        // Vérifiez si le navigateur prend en charge l'API DeviceMotionEvent
+        if (window.DeviceMotionEvent) {
+            // Ajoutez un écouteur d'événements pour capturer les mouvements de l'appareil
+            window.addEventListener('devicemotion', function (event) {
+                var acceleration = event.accelerationIncludingGravity;
+
+                // Affiche les données dans l'élément <p> avec l'id "accelerometerData"
+                document.getElementById('accelerometerData').innerText =
+                    "Accélération avec gravité : " +
+                    "X = " + acceleration.x.toFixed(2) + ", " +
+                    "Y = " + acceleration.y.toFixed(2) + ", " +
+                    "Z = " + acceleration.z.toFixed(2);
+            });
+        } else {
+            document.getElementById('accelerometerData').innerText =
+                "L'API DeviceMotionEvent n'est pas prise en charge par ce navigateur.";
+        }
+    </script>
+</body>
+
+</html>
