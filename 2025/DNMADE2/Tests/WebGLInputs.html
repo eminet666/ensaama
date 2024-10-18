@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | 2024-2025_test_VR</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <style>
+        #console {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            height: 200px;
+            overflow-y: scroll;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="unity-container" class="unity-desktop">
+        <canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
+        <div id="unity-loading-bar">
+            <div id="unity-logo"></div>
+            <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+            </div>
+        </div>
+        <div id="unity-warning"></div>
+        <div id="unity-footer">
+            <div id="unity-webgl-logo"></div>
+            <div id="unity-fullscreen-button"></div>
+            <div id="unity-build-title">2024-2025_test_VR</div>
+        </div>
+    </div>
+
+    <!-- Bouton pour demander l'autorisation d'accéder aux capteurs -->
+    <button id="requestPermissionButton">Autoriser l'accès aux capteurs</button>
+    <p id="accelerometerData">Aucune donnée d'accéléromètre disponible.</p>
+
+    <!-- Console pour afficher les messages -->
+    <div id="console"></div>
+
+    <script>
+        // Fonction pour afficher les messages dans le <p> #console
+        function logToConsole(message) {
+            const consoleElement = document.getElementById('console');
+            const newMessage = document.createElement('p');
+            newMessage.innerText = message;
+            consoleElement.appendChild(newMessage);
+            consoleElement.scrollTop = consoleElement.scrollHeight; // Scroll vers le bas
+        }
+
+        var container = document.querySelector("#unity-container");
+        var canvas = document.querySelector("#unity-canvas");
+        var loadingBar = document.querySelector("#unity-loading-bar");
+        var progressBarFull = document.querySelector("#unity-progress-bar-full");
+        var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+        var warningBanner = document.querySelector("#unity-warning");
+
+        function unityShowBanner(msg, type) {
+            function updateBannerVisibility() {
+                warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+            }
+            var div = document.createElement('div');
+            div.innerHTML = msg;
+            warningBanner.appendChild(div);
+            if (type == 'error') div.style = 'background: red; padding: 10px;';
+            else {
+                if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+                setTimeout(function () {
+                    warningBanner.removeChild(div);
+                    updateBannerVisibility();
+                }, 5000);
+            }
+            updateBannerVisibility();
+        }
+
+        var buildUrl = "Build";
+        var loaderUrl = buildUrl + "/testaccelero.loader.js";
+        var config = {
+            dataUrl: buildUrl + "/testaccelero.data",
+            frameworkUrl: buildUrl + "/testaccelero.framework.js",
+            codeUrl: buildUrl + "/testaccelero.wasm",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "DefaultCompany",
+            productName: "2024-2025_test_VR",
+            productVersion: "0.1.0",
+            showBanner: unityShowBanner,
+        };
+
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            var meta = document.createElement('meta');
+            meta.name = 'viewport';
+            meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+            document.getElementsByTagName('head')[0].appendChild(meta);
+            container.className = "unity-mobile";
+            canvas.className = "unity-mobile";
+        } else {
+            canvas.style.width = "960px";
+            canvas.style.height = "600px";
+        }
+
+        loadingBar.style.display = "block";
+
+        var script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = () => {
+            createUnityInstance(canvas, config, (progress) => {
+                progressBarFull.style.width = 100 * progress + "%";
+            }).then((unityInstance) => {
+                loadingBar.style.display = "none";
+                fullscreenButton.onclick = () => {
+                    unityInstance.SetFullscreen(1);
+                };
+            }).catch((message) => {
+                logToConsole("Erreur Unity : " + message);
+            });
+        };
+
+        document.body.appendChild(script);
+
+        // Bouton pour demander la permission d'accéder aux capteurs
+        const button = document.getElementById('requestPermissionButton');
+        button.addEventListener('click', function () {
+            if (typeof DeviceMotionEvent.requestPermission === 'function') {
+                DeviceMotionEvent.requestPermission()
+                    .then(function (permissionState) {
+                        if (permissionState === 'granted') {
+                            startListeningToDeviceMotion();
+                        } else {
+                            logToConsole("Permission refusée.");
+                        }
+                    })
+                    .catch(function (error) {
+                        logToConsole("Erreur lors de la demande de permission : " + error);
+                    });
+            } else {
+                startListeningToDeviceMotion();
+            }
+        });
+
+        // Fonction pour écouter les données de l'accéléromètre
+        function startListeningToDeviceMotion() {
+            window.addEventListener('devicemotion', function (event) {
+                var acceleration = event.accelerationIncludingGravity;
+                var data =
+                    "Accélération avec gravité : " +
+                    "X = " + acceleration.x.toFixed(2) + ", " +
+                    "Y = " + acceleration.y.toFixed(2) + ", " +
+                    "Z = " + acceleration.z.toFixed(2);
+
+                // Mettre à jour les données dans le <p> #accelerometerData
+                document.getElementById('accelerometerData').innerText = data;
+
+                // Afficher également dans la console personnalisée
+                logToConsole(data);
+            });
+
+            logToConsole("Écoute des données de mouvement commencée.");
+        }
+    </script>
+</body>
+
+</html>
