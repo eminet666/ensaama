@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accéléromètre JavaScript</title>
+</head>
+<body>
+    <p>Valeurs de l'accéléromètre :</p>
+    <p id="xValue">X: ?</p>
+    <p id="yValue">Y: ?</p>
+
+    <script>
+        window.addEventListener('devicemotion', (event) => {
+            const x = event.accelerationIncludingGravity.x.toFixed(2);
+            const y = event.accelerationIncludingGravity.y.toFixed(2);
+
+            document.getElementById('xValue').textContent = `X: ${x}`;
+            document.getElementById('yValue').textContent = `Y: ${y}`;
+        });
+    </script>
+</body>
+</html>
