@@ -11,3 +11,4 @@
 
 * [Test javascrip](../javascript/testaccelero.html)
 * [Test javascript2](../javascript/testaccelero2.html)
+* [Test javascript3](../javascript/testaccelero3.html)

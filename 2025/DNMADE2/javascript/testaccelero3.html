@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accéléromètre iPhone</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .data {
+            font-size: 2em;
+            color: #333;
+        }
+
+        .status {
+            margin-top: 20px;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>Valeurs de l'accéléromètre</h1>
+        <div class="data" id="accelerometerData">
+            X: 0, Y: 0
+        </div>
+        <div class="status" id="statusMessage">
+            En attente de permission...
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour demander la permission et lire les données de l'accéléromètre
+        function initAccelerometer() {
+            const statusMessage = document.getElementById('statusMessage');
+            const accelerometerData = document.getElementById('accelerometerData');
+
+            // Vérifie si l'événement DeviceMotionEvent et la méthode requestPermission existent
+            if (typeof DeviceMotionEvent !== 'undefined' && typeof DeviceMotionEvent.requestPermission === 'function') {
+                // Demande la permission pour iOS
+                DeviceMotionEvent.requestPermission()
+                    .then(response => {
+                        if (response === 'granted') {
+                            statusMessage.textContent = 'Permission accordée. Lecture des données...';
+                            startAccelerometer(accelerometerData);
+                        } else {
+                            statusMessage.textContent = 'Permission refusée pour les capteurs de mouvement.';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erreur lors de la demande de permission :', error);
+                        statusMessage.textContent = 'Erreur lors de la demande de permission.';
+                    });
+            } else {
+                // Pour les navigateurs qui ne nécessitent pas de permission
+                statusMessage.textContent = 'Lecture des données...';
+                startAccelerometer(accelerometerData);
+            }
+        }
+
+        // Fonction pour démarrer l'écoute des événements de mouvement
+        function startAccelerometer(accelerometerData) {
+            window.addEventListener('devicemotion', event => {
+                const x = event.accelerationIncludingGravity.x.toFixed(2);
+                const y = event.accelerationIncludingGravity.y.toFixed(2);
+                accelerometerData.textContent = `X: ${x}, Y: ${y}`;
+            });
+        }
+
+        // Appelle initAccelerometer() au chargement de la page
+        window.addEventListener('load', initAccelerometer);
+    </script>
+
+</body>
+
+</html>
