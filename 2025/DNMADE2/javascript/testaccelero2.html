@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lecture de l'accéléromètre</title>
+</head>
+
+<body>
+    <p>Valeurs de l'accéléromètre :</p>
+    <p id="xValue">X: ?</p>
+    <p id="yValue">Y: ?</p>
+    <p id="zValue">Z: ?</p>
+
+    <script>
+        // Fonction pour demander la permission d'accéder à l'accéléromètre
+        function requestPermission() {
+            if ('DeviceMotionEvent' in window) {
+                window.addEventListener('devicemotion', handleMotion, false);
+            } else {
+                console.error('DeviceMotionEvent is not supported');
+            }
+        }
+
+        // Fonction pour gérer les données de l'accéléromètre
+        function handleMotion(event) {
+            const x = event.accelerationIncludingGravity.x.toFixed(2);
+            const y = event.accelerationIncludingGravity.y.toFixed(2);
+            const z = event.accelerationIncludingGravity.z.toFixed(2);
+
+            document.getElementById('xValue').textContent = `X: ${x}`;
+            document.getElementById('yValue').textContent = `Y: ${y}`;
+            document.getElementById('zValue').textContent = `Z: ${z}`;
+        }
+
+        // Demander la permission à l'utilisateur au chargement de la page
+        window.onload = requestPermission;
+    </script>
+</body>
+
+</html>

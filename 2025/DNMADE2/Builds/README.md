@@ -8,4 +8,6 @@
 * [Arcade Bowling Accelerometre](./playeraccelero/index.html)
 * [Test Accelero Gemini](./testaccelero/index.html)
 * [Test Accelero New Last](./test/index.html)
+
 * [Test javascrip](../javascript/testaccelero.html)
+* [Test javascript2](../javascript/testaccelero2.html)
