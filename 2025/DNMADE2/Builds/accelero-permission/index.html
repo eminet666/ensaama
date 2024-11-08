@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
@@ -7,28 +7,44 @@
   <title>Unity WebGL Player | 2024-2025_Quest2</title>
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
+  <style>
+    /* Styles pour centrer le bouton et le rendre visible */
+    #startButtonContainer {
+      text-align: center;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #startButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
+  <div id="startButtonContainer">
+    <!-- Bouton pour activer l'autorisation de l'accéléromètre -->
+    <button id="startButton">Autoriser l'accès à l'accéléromètre</button>
+  </div>
+
   <div id="unity-container" class="unity-desktop">
-    <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+    <canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
     <div id="unity-loading-bar">
       <div id="unity-logo"></div>
       <div id="unity-progress-bar-empty">
         <div id="unity-progress-bar-full"></div>
       </div>
     </div>
-    <div id="unity-warning"> </div>
+    <div id="unity-warning"></div>
     <div id="unity-footer">
       <div id="unity-webgl-logo"></div>
       <div id="unity-fullscreen-button"></div>
       <div id="unity-build-title">2024-2025_Quest2</div>
     </div>
-  </div>
-
-  <!-- Bouton pour activer l'autorisation d'accéléromètre -->
-  <div style="text-align: center; margin-top: 20px;">
-    <button id="startButton" style="padding: 10px 20px; font-size: 16px;">Autoriser l'accès à l'accéléromètre</button>
   </div>
 
   <script>
@@ -80,7 +96,7 @@
       document.body.appendChild(script);
     }
 
-    // Bouton pour demander la permission d'accéder à l'accéléromètre
+    // Ajoute un écouteur de clic sur le bouton pour demander la permission
     document.getElementById('startButton').addEventListener('click', requestAccelerometerPermission);
 
     var buildUrl = "Build";
