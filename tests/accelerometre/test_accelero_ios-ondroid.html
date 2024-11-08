@@ -26,14 +26,14 @@
     <div class="values">
         <p>X : <span id="xValue">0</span></p>
         <p>Y : <span id="yValue">0</span></p>
-        <p>Z : <span id="zValue">0</span></p>
+        <!-- <p>Z : <span id="zValue">0</span></p> -->
     </div>
 
     <script>
         const startButton = document.getElementById('startButton');
         const xValue = document.getElementById('xValue');
         const yValue = document.getElementById('yValue');
-        const zValue = document.getElementById('zValue');
+        // const zValue = document.getElementById('zValue');
 
         startButton.addEventListener('click', () => {
             // Vérifie si l'API DeviceMotionEvent est disponible
@@ -62,12 +62,12 @@
             // Récupère les valeurs X, Y et Z
             const x = event.acceleration.x || 0;
             const y = event.acceleration.y || 0;
-            const z = event.acceleration.z || 0;
+            // const z = event.acceleration.z || 0;
 
             // Affiche les valeurs dans le HTML
             xValue.textContent = x.toFixed(2);
             yValue.textContent = y.toFixed(2);
-            zValue.textContent = z.toFixed(2);
+            // zValue.textContent = z.toFixed(2);
         }
     </script>
 </body>
