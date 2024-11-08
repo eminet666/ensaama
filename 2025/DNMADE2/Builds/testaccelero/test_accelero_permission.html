@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accéléromètre - Autorisation</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #startButton {
+            font-size: 1.2em;
+            font: bold;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button id="startButton">démarrer l'accéléromètre</button>
+    </div>
+
+    <script>
+        const startButton = document.getElementById('startButton');
+
+        startButton.addEventListener('click', () => {
+            // Vérifie si l'API DeviceMotionEvent est disponible
+            if (typeof DeviceMotionEvent !== 'undefined') {
+                if (typeof DeviceMotionEvent.requestPermission === 'function') {
+                    // Pour iOS, demande la permission
+                    DeviceMotionEvent.requestPermission()
+                        .then(permissionState => {
+                            if (permissionState === 'granted') {
+                                // Redirige vers start.html si la permission est accordée
+                                window.location.href = 'start.html';
+                            } else {
+                                alert('Permission refusée pour accéder à l\'accéléromètre.');
+                            }
+                        })
+                        .catch(console.error);
+                } else {
+                    // Sur Android et autres plateformes, aucune autorisation explicite n'est nécessaire
+                    window.location.href = './index_ref.html';
+                }
+            } else {
+                alert('Votre appareil ne prend pas en charge l\'accéléromètre.');
+            }
+        });
+    </script>
+</body>
+
+</html>
