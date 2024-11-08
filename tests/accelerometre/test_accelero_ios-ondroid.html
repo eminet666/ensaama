@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accéléromètre Smartphone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20%;
+        }
+
+        .values {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Accéléromètre Smartphone</h1>
+    <p>Cliquez sur le bouton ci-dessous pour activer l'accéléromètre.</p>
+    <button id="startButton">Démarrer l'Accéléromètre</button>
+    <div class="values">
+        <p>X : <span id="xValue">0</span></p>
+        <p>Y : <span id="yValue">0</span></p>
+        <p>Z : <span id="zValue">0</span></p>
+    </div>
+
+    <script>
+        const startButton = document.getElementById('startButton');
+        const xValue = document.getElementById('xValue');
+        const yValue = document.getElementById('yValue');
+        const zValue = document.getElementById('zValue');
+
+        startButton.addEventListener('click', () => {
+            // Vérifie si l'API DeviceMotionEvent est disponible
+            if (typeof DeviceMotionEvent !== 'undefined') {
+                if (typeof DeviceMotionEvent.requestPermission === 'function') {
+                    // Pour iOS, on demande la permission
+                    DeviceMotionEvent.requestPermission()
+                        .then(permissionState => {
+                            if (permissionState === 'granted') {
+                                window.addEventListener('devicemotion', handleMotionEvent);
+                            } else {
+                                alert('Permission refusée pour accéder à l\'accéléromètre.');
+                            }
+                        })
+                        .catch(console.error);
+                } else {
+                    // Sur Android et autres plateformes compatibles, aucune autorisation explicite n'est nécessaire
+                    window.addEventListener('devicemotion', handleMotionEvent);
+                }
+            } else {
+                alert('Votre appareil ne prend pas en charge l\'accéléromètre.');
+            }
+        });
+
+        function handleMotionEvent(event) {
+            // Récupère les valeurs X, Y et Z
+            const x = event.acceleration.x || 0;
+            const y = event.acceleration.y || 0;
+            const z = event.acceleration.z || 0;
+
+            // Affiche les valeurs dans le HTML
+            xValue.textContent = x.toFixed(2);
+            yValue.textContent = y.toFixed(2);
+            zValue.textContent = z.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>
