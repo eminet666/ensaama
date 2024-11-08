@@ -1,8 +1,11 @@
 # builds unity
 
 ### ok
-* [Test accelero with permission first](./testaccelero/test_accelero_permission.html)
-* [Test accelero with permission included](./testaccelero/index.html)
+* [Test accelero with permission first notok](./testaccelero/test_accelero_permission.html)
+* [Test accelero with permission included notok](./testaccelero/index.html)
+* [Accelero Permission](./accelero-permission/index.html)
+
+
 
 ### a trier
 * [PlayerClick](./player/index.html)
