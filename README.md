@@ -2,7 +2,7 @@
 
 ## test
 * [accelerometre ios](./tests/accelerometre/test_accelero_ios.html)
-* [accelero ios&android](./tests/accelerometre/test_accelero_ios-ondroid.html)
+* [accelero ios&android](./tests/accelerometre/test_accelero_ios-android.html)
 
 ## 2024-2025
 [DNMADE2 build](./2025/DNMADE2/Builds/README.md)

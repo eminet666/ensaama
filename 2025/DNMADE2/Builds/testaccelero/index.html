@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
+    <!-- autorisation accelero -->
+            <div>
+              <p>Cliquez sur le bouton ci-dessous pour activer l'accéléromètre.</p>
+              <button id="startButton">Démarrer l'Accéléromètre</button>
+            </div>
+
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
@@ -23,6 +29,36 @@
         <div id="unity-build-title">2024-2025_Quest2</div>
       </div>
     </div>
+
+    <script>
+        const startButton = document.getElementById('startButton');
+
+        startButton.addEventListener('click', () => {
+          
+          // Vérifie si l'API DeviceMotionEvent est disponible
+          if (typeof DeviceMotionEvent !== 'undefined') {
+              if (typeof DeviceMotionEvent.requestPermission === 'function') {
+          
+                // Pour iOS, on demande la permission
+          DeviceMotionEvent.requestPermission()
+            .then(permissionState => {
+              if (permissionState === 'granted') {
+                window.addEventListener('devicemotion', handleMotionEvent);
+              } else {
+                alert('Permission refusée pour accéder à l\'accéléromètre.');
+              }
+            })
+            .catch(console.error);
+                } else {
+                // Sur Android et autres plateformes compatibles, aucune autorisation explicite n'est nécessaire
+                // rien pour l'instant
+                }
+            } else {
+          alert('Votre appareil ne prend pas en charge l\'accéléromètre.');
+            }
+        });      
+    </script>
+
     <script>
 
       var container = document.querySelector("#unity-container");
