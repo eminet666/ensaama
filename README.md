@@ -1,5 +1,8 @@
 # ensaama
 
+## test
+* [accelerometre](./tests/accelerometre/test_accelero.html)
+
 ## 2024-2025
 [DNMADE2 build](./2025/DNMADE2/Builds/README.md)
 | [DNMADE2 test](./2025/DNMADE2/Tests/README.md)
