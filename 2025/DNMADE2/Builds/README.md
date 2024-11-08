@@ -3,7 +3,7 @@
 ### ok
 * [Test accelero with permission first notok](./testaccelero/test_accelero_permission.html)
 * [Test accelero with permission included notok](./testaccelero/index.html)
-* [Accelero Permission maj](./accelero-permission/index.html)
+* [Accelero Permission 2 files](./accelero-permission/index.html)
 
 
 
