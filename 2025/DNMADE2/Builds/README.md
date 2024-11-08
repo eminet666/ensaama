@@ -1,7 +1,7 @@
 # builds unity
 
 ### ok
-* [Test Accelero with permission first](./testaccelero/test_accelero_permission.html)
+* [Test accelero with permission first](./testaccelero/test_accelero_permission.html)
 * [Test accelero with permission included](./testaccelero/index.html)
 
 ### a trier
