@@ -1,8 +1,6 @@
 # builds unity
 
 ### ok
-* [Test accelero with permission first notok](./testaccelero/test_accelero_permission.html)
-* [Test accelero with permission included notok](./testaccelero/index.html)
 * [Accelero Permission 2 files](./accelero-permission/)
 
 
@@ -15,4 +13,6 @@
 * [Arcade Bowling](./bowling/index.html)
 * [Arcade Bowling Accelerometre](./playeraccelero/index.html)
 * [Test Accelero New Last](./test/index.html)
+* [Test accelero with permission first notok](./testaccelero/test_accelero_permission.html)
+* [Test accelero with permission included notok](./testaccelero/index.html)
 
