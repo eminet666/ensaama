@@ -3,7 +3,9 @@
 ### ok
 * [Accelero Permission yyy](./accelero-permission/index.html)
 
-
+#### lien
+* [forum](https://discussions.unity.com/t/can-webgl-access-mobile-sensors/584463/14)
+* [asset store](https://assetstore.unity.com/packages/tools/utilities/gyroscope-and-accelerometer-for-webgl-270653)
 
 ### a trier
 * [PlayerClick](./player/index.html)
