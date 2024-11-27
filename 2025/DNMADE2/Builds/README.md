@@ -1,7 +1,7 @@
 # builds unity
 
 ### ok
-* [Accelero Permission uuu](./accelero-permission/index.html)
+* [DemoAcceleroFull](./DemoAcceleroFull/index.html)
 
 #### lien
 * [forum](https://discussions.unity.com/t/can-webgl-access-mobile-sensors/584463/14)

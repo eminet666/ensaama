@@ -24,6 +24,10 @@
 | [DNMADE2](https://eminet666.github.io/ensaama/2021/dnmade2/)
 | [DNMADE1](https://eminet666.github.io/ensaama/2021/dnmade1/)
 
+## liens 
+* [exemples de jeu unity](https://github.com/proyecto26/awesome-unity)
+* [ios permissions](https://dev.to/li/how-to-requestpermission-for-devicemotion-and-deviceorientation-events-in-ios-13-46g2)
+
 ## AR logo
 [AR](./AR_logo/README.md)
 
