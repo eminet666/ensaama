@@ -2,7 +2,7 @@
 
 ## 2024-2025
 
-### SKYBOX xxx
+### SKYBOX yyy
 * [4k_img1](./2025/DNMADE2/skybox/assets/img2x1_4k/img360_night1.jpg)
 * [4k_img2](./2025/DNMADE2/skybox/assets/img2x1_4k/img360_night2_maj.jpg)
 * [8k_img1](./2025/DNMADE2/skybox/assets/img2x1_8k/img360_night1_upscaled.jpg)
