@@ -9,6 +9,8 @@
 * [test1 wr 4000x2000](./2025/DNMADE2/skybox/demo_1_wr_4000x2000.html)
 * [test2](./2025/DNMADE2/skybox/demo_2.html)
 
+* [test4k 1](./2025/DNMADE2/skybox/test4k_1.html)
+* [test4k 2](./2025/DNMADE2/skybox/test4k_2.html)
 
 * [4k_img1](./2025/DNMADE2/skybox/assets/img2x1_4k/img360_night1.jpg)
 * [4k_img2](./2025/DNMADE2/skybox/assets/img2x1_4k/img360_night2_maj.jpg)
