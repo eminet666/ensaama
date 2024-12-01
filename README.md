@@ -1,6 +1,17 @@
 # ensaama
 
 ## 2024-2025
+
+### SKYBOX
+* [4k_img1](./skybox/assets/img2x1_4k/img360_night1.jpg)
+* [4k_img2](./skybox/assets/img2x1_4k/img360_night2_maj.jpg)
+* [8k_img1](./skybox/assets/img2x1_8k/img360_night1_upscaled.png)
+* [8k_img2](./skybox/assets/img2x1_8k/img360_night2_upscaled.png)
+* [8k_img1_small](./skybox/assets/img2x1_8k/img360_night1_upscaled_small.png)
+* [8k_img2_small](./skybox/assets/img2x1_8k/img360_night2_upscaled_small.png)
+
+
+### ARCADE
 * [DNMADE2 build](./2025/DNMADE2/Builds/README.md)
 * [DNMADE2 test](./2025/DNMADE2/Tests/README.md)
 ### test accéléromètre javascript
