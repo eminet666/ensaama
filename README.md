@@ -4,6 +4,10 @@
 
 ### SKYBOX zzz
 * [test1](./2025/DNMADE2/skybox/assets/image360_1.jpg)
+* [test1 watermak removed](./2025/DNMADE2/skybox/demo_1_watermak-removed.html)
+* [test1 wr 3000x1500](./2025/DNMADE2/skybox/demo_1_wr_3000x1500.html)
+* [test1 wr 4000x2000](./2025/DNMADE2/skybox/demo_1_wr_4000x2000.html)
+
 * [test2](./2025/DNMADE2/skybox/assets/image360_2.jpg)
 * [4k_img1](./2025/DNMADE2/skybox/assets/img2x1_4k/img360_night1.jpg)
 * [4k_img2](./2025/DNMADE2/skybox/assets/img2x1_4k/img360_night2_maj.jpg)
