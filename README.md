@@ -2,7 +2,7 @@
 
 ## 2024-2025
 
-### SKYBOX zzz
+### SKYBOX ttt
 * [test1](./2025/DNMADE2/skybox/assets/image360_1.jpg)
 * [test1 watermak removed](./2025/DNMADE2/skybox/demo_1_watermak-removed.html)
 * [test1 wr 3000x1500](./2025/DNMADE2/skybox/demo_1_wr_3000x1500.html)
