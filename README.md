@@ -2,13 +2,11 @@
 
 ## 2024-2025
 
-### SKYBOX new
+### SKYBOX
 * [4k_img1](./2025/DNMADE2/skybox/assets/img2x1_4k/img360_night1.jpg)
 * [4k_img2](./2025/DNMADE2/skybox/assets/img2x1_4k/img360_night2_maj.jpg)
-* [8k_img1](./2025/DNMADE2/skybox/assets/img2x1_8k/img360_night1_upscaled.png)
-* [8k_img2](./2025/DNMADE2/skybox/assets/img2x1_8k/img360_night2_upscaled.png)
-* [8k_img1_small](./2025/DNMADE2/skybox/assets/img2x1_8k/img360_night1_upscaled_small.png)
-* [8k_img2_small](./2025/DNMADE2/skybox/assets/img2x1_8k/img360_night2_upscaled_small.png)
+* [8k_img1](./2025/DNMADE2/skybox/assets/img2x1_8k/img360_night1_upscaled.jpg)
+* [8k_img2](./2025/DNMADE2/skybox/assets/img2x1_8k/img360_night2_upscaled.jpg)
 
 ### ARCADE
 * [DNMADE2 build](./2025/DNMADE2/Builds/README.md)
