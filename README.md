@@ -3,22 +3,7 @@
 ## 2024-2025
 
 ### SKYBOX aaa
-* [test1](./2025/DNMADE2/skybox/demo_1.html)
-* [test1 watermak removed](./2025/DNMADE2/skybox/demo_1_watermak-removed.html)
-* [test1 wr 3000x1500](./2025/DNMADE2/skybox/demo_1_wr_3000x1500.html)
-* [test1 wr 4000x2000](./2025/DNMADE2/skybox/demo_1_wr_4000x2000.html)
-* [test2](./2025/DNMADE2/skybox/demo_2.html)
-
-* [test4k 1](./2025/DNMADE2/skybox/test4k_1.html)
-* [test4k 2](./2025/DNMADE2/skybox/test4k_2.html)
-* [test 4000x3000 upscaled](./2025/DNMADE2/skybox/test4k_1_up_4000x2000.html)
-* [test 3636x1818 upscaled](./2025/DNMADE2/skybox/test4k_1_up_3636x1818.html)
-* [test 4000x2000 up maj](./2025/DNMADE2/skybox/test4k_1_up_maj_4000x2000.html)
-
-* [4k_img1](./2025/DNMADE2/skybox/assets/img2x1_4k/img360_night1.jpg)
-* [4k_img2](./2025/DNMADE2/skybox/assets/img2x1_4k/img360_night2_maj.jpg)
-* [8k_img1](./2025/DNMADE2/skybox/assets/img2x1_8k/img360_night1_upscaled.jpg)
-* [8k_img2](./2025/DNMADE2/skybox/assets/img2x1_8k/img360_night2_upscaled.jpg)
+[skybox](./2025/DNMADE2/skybox/README.md)
 
 ### ARCADE
 * [DNMADE2 build](./2025/DNMADE2/Builds/README.md)
