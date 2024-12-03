@@ -1,6 +1,6 @@
 # builds unity
 
-### ok
+### accelerometre unity ios ok
 * [DemoAcceleroFinal](./DemoFinal/index.html)
 * [DemoAcceleroFull](./DemoAcceleroFull/index.html)
 
