@@ -1,6 +1,7 @@
 # builds unity
 
 ### ok
+* [DemoAcceleroFinal](./DemoFinal/index.html)
 * [DemoAcceleroFull](./DemoAcceleroFull/index.html)
 
 #### lien
