@@ -1,8 +1,11 @@
 # builds unity
 
-### accelerometre unity ios ok
+### demo bowling acceleromètre
+* [Demo Vue Zénitale](./DemoBowlingAcceleroZenithal/index.html)
+
+<!-- ### accelerometre unity ios ok
 * [DemoAcceleroFinal](./DemoFinal/index.html)
-* [DemoAcceleroFull](./DemoAcceleroFull/index.html)
+* [DemoAcceleroFull](./DemoAcceleroFull/index.html) -->
 
 #### lien
 * [forum](https://discussions.unity.com/t/can-webgl-access-mobile-sensors/584463/14)
