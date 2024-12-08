@@ -1,6 +1,6 @@
 # builds unity
 
-### demo bowling acceleromètre
+### demos bowling acceleromètre
 * [Demo Vue Zénitale](./DemoBowlingAcceleroZenithal/index.html)
 * [Demo Vue POV](./DemoBowlingAcceleroPOV/index.html)
 
