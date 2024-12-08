@@ -2,6 +2,7 @@
 
 ### demo bowling acceleromètre
 * [Demo Vue Zénitale](./DemoBowlingAcceleroZenithal/index.html)
+* [Demo Vue POV](./DemoBowlingAcceleroPOV/index.html)
 
 <!-- ### accelerometre unity ios ok
 * [DemoAcceleroFinal](./DemoFinal/index.html)
