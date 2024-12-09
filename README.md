@@ -2,8 +2,6 @@
 
 ## 2024-2025
 
-* [test fr](./2025/DNMADE2/test_text_fr.html)
-
 ### SKYBOX aaa
 * [skybox](./2025/DNMADE2/skybox/README.md)
 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détection du bouton X avec A-Frame</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script>
+        // Créer un composant A-Frame pour détecter la pression du bouton X
+        AFRAME.registerComponent('button-x-detector', {
+            init: function () {
+                // Référence à l'entité (le contrôleur gauche)
+                const controller = this.el;
+
+                // Ajouter un écouteur d'événements pour la pression du bouton X
+                controller.addEventListener('xbuttondown', () => {
+                    // Lorsque le bouton X est pressé
+                    const textEl = document.querySelector('#message-text');
+                    textEl.setAttribute('value', 'Bouton X pressé');
+                });
+
+                // Ajouter un écouteur d'événements pour la relâche du bouton X
+                controller.addEventListener('xbuttonup', () => {
+                    // Lorsque le bouton X est relâché
+                    const textEl = document.querySelector('#message-text');
+                    textEl.setAttribute('value', 'Bouton X relâché');
+                });
+            }
+        });
+    </script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Scène A-Frame -->
+    <a-scene>
+        <!-- Caméra -->
+        <a-camera>
+            <!-- Texte affiché devant la caméra -->
+            <a-entity id="message-text" position="0 1 -3">
+                <a-text value="Appuyez sur le bouton X" color="yellow" align="center" font-size="2" width="4"></a-text>
+            </a-entity>
+        </a-camera>
+
+        <!-- Contrôleur Oculus Touch gauche avec le composant 'button-x-detector' -->
+        <a-entity id="left-controller" oculus-touch-controls="hand: left" button-x-detector visible="false">
+        </a-entity>
+    </a-scene>
+</body>
+
+</html>
