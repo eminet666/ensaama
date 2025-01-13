@@ -14,7 +14,7 @@
     <a-scene>
 
         <!-- Préchargement des ressources -->
-        <a-assets>
+        <a-assets timeout="5000" loading-indicator>
             <a-asset-item id="objModel" src="./assets/demo.obj"></a-asset-item>
             <a-asset-item id="mtlModel" src="./assets/demo.mtl"></a-asset-item>
         </a-assets>
@@ -22,7 +22,7 @@
 
             <!-- Utilisation du modèle 3D préchargé -->
             <a-obj-model src="#objModel" mtl="#mtlModel" 
-            position="0 0 0" scale="0.2 0.2 0.2" rotation="90 -90 0">
+            position="0 0 -1" scale="0.1 0.1 0.1" rotation="0 -75 0">
             </a-obj-model>
 
         <!-- Caméra AR -->
