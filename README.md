@@ -2,6 +2,9 @@
 
 ## 2024-2025
 
+### AR ARCADE
+* [AR ARCADE](./2025/DNMADE2/AR_ARCADE/README.md)
+
 ### SKYBOX aaa
 * [skybox](./2025/DNMADE2/skybox/README.md)
 
