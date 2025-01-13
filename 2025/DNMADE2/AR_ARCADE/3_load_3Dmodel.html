@@ -20,13 +20,20 @@
         </a-assets>
 
 
-            <!-- Utilisation du modèle 3D préchargé -->
-            <a-obj-model src="#objModel" mtl="#mtlModel" 
-            position="0 0 -1" scale="0.1 0.1 0.1" rotation="0 -75 0">
-            </a-obj-model>
+        <!-- Utilisation du modèle 3D préchargé -->
+        <a-obj-model src="#objModel" mtl="#mtlModel" 
+        position="0 0 -1" scale="0.1 0.1 0.1" rotation="0 -75 0">
+        </a-obj-model>
+
+        <!-- Texte "Cliquer pour jouer" -->
+        <a-text value="pour jouer\n mettez le cercle\n sur le chat" position="0 -0.1 -1" align="center" color="darkcyan"
+            scale="0.25 0.25 0.25">
+        </a-text>
 
         <!-- Caméra AR -->
-        <a-entity camera></a-entity>
+        <a-entity camera raycaster="objects: .clickable; near: 0.1; far: 3">
+            <a-cursor rayOrigin="mouse" color="darkcyan"></a-cursor>
+        </a-entity>
     </a-scene>
 </body>
 
