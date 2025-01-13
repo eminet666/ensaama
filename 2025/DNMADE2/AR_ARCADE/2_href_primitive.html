@@ -1,34 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détection de marqueur AR.js</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar-nft.min.js"></script>
+    <script>
+        AFRAME.registerComponent('clickable', {
+            init: function () {
+                this.el.addEventListener('click', () => {
+                    window.location.href = 'https://ensaama.net/site/home/formations/dnmade/numerique-expriences-narratives-et-interactives';
+                });
+            }
+        });
+    </script>
 </head>
 
-<body style='margin : 0px; overflow: hidden;'>
+<body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs='trackingMethod: best;debugUIEnabled: false; patternRatio: 0.75'>
 
         <a-marker type="pattern" url="./assets/demo.patt">
-            <!-- Ajout d'un événement sur l'objet -->
-            <a-box position="0 1 0" material="color: red;"
-                event-set__click="_event: click; _target: window; _value: https://www.google.com;"></a-box>
+            <a-box position='0 0 0' rotation="45 45 45" material='color: red;' depth="0.5" height="0.5" width="0.5"
+                class="clickable" clickable>
+            </a-box>
         </a-marker>
 
-        <a-entity camera></a-entity>
+        <a-entity camera raycaster="objects: .clickable; near: 0.1; far: 3">
+            <a-cursor rayOrigin="mouse"></a-cursor>
+        </a-entity>
+
     </a-scene>
-
-    <script>
-        // Script pour rediriger l'utilisateur vers un site web lorsqu'il clique sur l'objet
-        document.querySelector('a-box').addEventListener('click', function () {
-            window.location.href = 'https://ensaama.net/site/home/formations/dnmade/numerique-expriences-narratives-et-interactives';
-        });
-    </script>
-
 </body>
 
 </html>
