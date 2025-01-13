@@ -8,7 +8,7 @@
 * [2_href_primitive](./2_href_primitive.html)
 * [3_href_primitive](./3_href_3Dmodel.html)
 
-#### demo
+#### cours
 * [component](./marker_6_link_onclick_component.html)
 * [script](./marker_6_link_onclick_script.html)
 
