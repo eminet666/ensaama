@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Chargement d'A-Frame et AR.js -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+
+        <!-- Préchargement des ressources -->
+        <a-assets>
+            <a-asset-item id="objModel" src="./assets/demo.obj"></a-asset-item>
+            <a-asset-item id="mtlModel" src="./assets/demo.mtl"></a-asset-item>
+        </a-assets>
+
+
+            <!-- Utilisation du modèle 3D préchargé -->
+            <a-obj-model src="#objModel" mtl="#mtlModel" 
+            position="0 0 -1" scale="0.1 0.1 0.1" rotation="0 -75 0">
+            </a-obj-model>
+
+        <!-- Caméra AR -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>
