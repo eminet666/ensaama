@@ -2,6 +2,9 @@
 
 ## 2024-2025
 
+### TEST new Input System
+- [ColorChanger](./2025/TESTS/newinputsystem/index.html)
+
 ### AR ARCADE
 * [AR ARCADE](./2025/DNMADE2/AR_ARCADE/README.md)
 
