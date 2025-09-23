@@ -1,7 +1,7 @@
 # DNMADE2
 
 ## WEBVR
-* [eminet](./WEBVR/README.md)
+* [eminet](./WEBVR/)
 * [pénélope](https://penny0507.github.io/WEBVR/)
 * [jeanne-lys](https://github.com/thiingyx/vr)
 * [Manon V](https://manon-vb.github.io/vr/)
