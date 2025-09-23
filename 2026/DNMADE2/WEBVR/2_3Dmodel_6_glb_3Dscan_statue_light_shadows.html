@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>    
+</head>
+
+<body>
+
+    <a-scene background="color: skyblue">
+
+        <a-assets>
+            <a-asset-item id="glb_scan" src="./assets/3Dmodels/exp5_glb_3Dscan_barraco_statue/3Dscan_baracco.glb"></a-asset-item>
+        </a-assets>
+        
+        <a-entity id="statue" 
+            position="0 0 -3"  rotation="0 90 0"
+            gltf-model="#glb_scan" shadow="cast: true">
+        </a-entity>
+
+        <a-plane position="0 0 -4"
+            rotation="-90 0 0" width="4" height="4" color="silver" 
+            shadow="receive: true;"></a-plane>
+            
+        <a-entity light="type: ambient; color: #BBB; intensity: 0.8"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: 4; castShadow: true;" position="-1 1 1"></a-entity>        
+      
+    </a-scene>
+
+</body>
+
+</html>

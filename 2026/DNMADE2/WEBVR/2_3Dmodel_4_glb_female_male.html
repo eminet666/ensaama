@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+</head>
+
+<body>
+
+    <a-scene background="color: skyblue">
+
+        <a-assets>
+            <a-asset-item id="glb_female" src="./assets/3Dmodels/exp4_glb_female_male/female.glb"></a-asset-item>
+            <a-asset-item id="glb_male" src="./assets/3Dmodels/exp4_glb_female_male/male.glb"></a-asset-item>
+        </a-assets>
+        
+        <a-entity id="female" 
+            position="-1 1 -2" scale="0.01 0.01 0.01" rotation="0 270 0" 
+            gltf-model="#glb_female">
+        </a-entity>
+
+        <a-entity id="male" 
+            position="1 1 -2" scale="0.01 0.01 0.01" rotation="0 270 0" 
+            gltf-model="#glb_male">
+        </a-entity>
+
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="silver"></a-plane>    
+        <!-- modifier l'intensité de la light directionnelle pour meilleur rendu des couleurs -->
+    </a-scene>
+
+</body>
+
+</html>
