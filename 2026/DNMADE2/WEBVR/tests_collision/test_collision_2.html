@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VR/Clavier : Collisions avec Son et Clignotement</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-physics-system@4.1.0/dist/aframe-physics-system.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #instructions {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="instructions">
+        Déplacement : <strong>WASD</strong> ou <strong>flèches directionnelles</strong>.<br>
+        Regarder : <strong>souris</strong> (clic pour capturer).
+    </div>
+    <a-scene physics="debug: false" background="color: #FAFAFA">
+        <!-- Assets (sons) -->
+        <a-assets>
+            <audio id="collisionSound" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3"
+                preload="auto"></audio>
+        </a-assets>
+
+        <!-- Joueur avec collider cylindre -->
+        <a-entity id="player" movement-controls="fly: false; speed: 0.3; acceleration: 20"
+            kinematic-body="shape: cylinder; radius: 0.3; height: 2" collision-listener>
+            <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
+            <!-- Cylindre visible -->
+            <a-cylinder radius="0.3" height="2" color="blue" opacity="0.5"></a-cylinder>
+            <!-- Composant son -->
+            <a-sound src="#collisionSound" poolSize="2"></a-sound>
+        </a-entity>
+
+        <!-- Sol visible -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#EEEEEE" static-body></a-plane>
+
+        <!-- Mur 1 -->
+        <a-entity class="wall">
+            <a-plane position="-2 1.5 0" rotation="0 90 0" width="4" height="3" color="#CCCCCC"></a-plane>
+            <a-box position="-2 1.5 0" width="4" height="3" depth="0.2" static-body="shape: box"
+                material="visible: false"></a-box>
+        </a-entity>
+
+        <!-- Mur 2 -->
+        <a-entity class="wall">
+            <a-plane position="2 1.5 -3" rotation="0 0 0" width="4" height="3" color="#CCCCCC"></a-plane>
+            <a-box position="2 1.5 -3" width="4" height="3" depth="0.2" static-body="shape: box"
+                material="visible: false"></a-box>
+        </a-entity>
+    </a-scene>
+
+    <script>
+        AFRAME.registerComponent('collision-listener', {
+            init: function () {
+                this.sound = this.el.components.sound;
+                this.activeCollisions = new Set(); // Pour gérer les collisions en cours
+
+                this.el.addEventListener('collide', (e) => {
+                    const hitbox = e.detail.body.el;
+                    const wallEntity = hitbox.parentEl;
+                    const wall = wallEntity.querySelector('a-plane');
+
+                    if (wall && !this.activeCollisions.has(wall)) {
+                        this.activeCollisions.add(wall);
+                        this.sound.playSound(); // Joue le son
+
+                        // Clignotement du mur
+                        let blinkCount = 0;
+                        const blinkInterval = setInterval(() => {
+                            wall.setAttribute('color', wall.getAttribute('color') === 'red' ? '#CCCCCC' : 'red');
+                            blinkCount++;
+
+                            if (blinkCount >= 5) { // 5 clignotements
+                                clearInterval(blinkInterval);
+                                wall.setAttribute('color', '#CCCCCC');
+                                this.activeCollisions.delete(wall);
+                            }
+                        }, 200); // Toutes les 200ms
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

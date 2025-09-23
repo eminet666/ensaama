@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VR/Clavier : Collisions avec Cylindre</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #instructions {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="instructions">
+        Déplacement : <strong>WASD</strong> ou <strong>flèches directionnelles</strong>.<br>
+        Regarder : <strong>souris</strong> (clic gauche pour capturer le pointeur).
+    </div>
+
+<a-scene>
+    <a-entity id="player" movement-controls="speed: 0.3">
+        <a-camera>
+            <a-cursor></a-cursor>
+        </a-camera>
+        <a-cylinder radius="0.3" height="2" color="blue" opacity="0.5"></a-cylinder>
+    </a-entity>
+
+    <!-- Mur avec composant custom pour bloquer -->
+    <a-plane class="wall" position="-2 1.5 0" rotation="0 90 0" width="4" height="3" color="#gray"
+        wall-collider></a-plane>
+
+    <a-plane class="wall" position="0 1.5 -3" rotation="0 0 0" width="4" height="3" color="#gray"
+        wall-collider></a-plane>
+
+    <script>
+        AFRAME.registerComponent('wall-collider', {
+            tick: function () {
+                const player = document.querySelector('#player');
+                const distance = this.el.object3D.position.distanceTo(player.object3D.position);
+                if (distance < 1.5) { // Seuil de collision
+                    this.el.setAttribute('color', 'red');
+                    // Bloque le joueur en recalculant sa position
+                    const direction = player.object3D.position.clone().sub(this.el.object3D.position).normalize();
+                    player.object3D.position.add(direction.multiplyScalar(0.1)); // Éloigne le joueur
+                } else {
+                    this.el.setAttribute('color', '#CCCCCC');
+                }
+            }
+        });
+    </script>
+</a-scene>
+
+</body>
+
+</html>
+
+
+

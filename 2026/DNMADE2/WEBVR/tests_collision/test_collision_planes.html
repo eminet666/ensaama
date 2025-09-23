@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>VR Player avec Collider Cylindre - Version Stable</title>
+  <!-- Version spécifique d'A-Frame (1.3.0) pour éviter les conflits -->
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<!-- Remplace cette ligne : -->
+<!-- <script src="https://unpkg.com/aframe-physics-system@4.1.0/dist/aframe-physics-system.min.js"></script> -->
+<!-- Par celle-ci : -->
+<script src="https://cdn.jsdelivr.net/npm/aframe-physics-system@3.3.0/dist/aframe-physics-system.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <a-scene physics="debug: true; gravity: 0 -9.8 0">
+    <!-- Joueur VR avec collider cylindre (2m de haut, 0.6m de diamètre) -->
+    <a-entity id="player" movement-controls="fly: false; speed: 0.2"
+      kinematic-body="shape: cylinder; radius: 0.3; height: 2" collision-listener>
+      <a-camera></a-camera>
+      <!-- Cylindre visible pour le debug (optionnel) -->
+      <a-cylinder radius="0.3" height="2" color="blue" opacity="0.3" visible="false"></a-cylinder>
+    </a-entity>
+
+    <!-- Sol visible (gris clair) -->
+    <a-plane class="ground" position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#EEEEEE"
+      static-body></a-plane>
+
+    <!-- Mur 1 (classe "wall") -->
+    <a-entity class="wall">
+      <a-plane position="-2 1.5 0" rotation="0 90 0" width="4" height="3" color="#CCCCCC"></a-plane>
+      <!-- Hitbox invisible (boîte) -->
+      <a-box position="-2 1.5 0" width="4" height="3" depth="0.1" static-body material="visible: false"></a-box>
+    </a-entity>
+
+    <!-- Mur 2 (classe "wall") -->
+    <a-entity class="wall">
+      <a-plane position="2 1.5 -3" rotation="0 0 0" width="4" height="3" color="#CCCCCC"></a-plane>
+      <a-box position="2 1.5 -3" width="4" height="3" depth="0.1" static-body material="visible: false"></a-box>
+    </a-entity>
+  </a-scene>
+
+  <script>
+    AFRAME.registerComponent('collision-listener', {
+      init: function () {
+        this.el.addEventListener('collide', (e) => {
+          // Trouve le mur parent depuis la hitbox
+          const hitbox = e.detail.body.el;
+          const wallEntity = hitbox.parentEl.querySelector('a-plane');
+          if (wallEntity) {
+            wallEntity.setAttribute('color', 'red');
+            console.log("Collision avec un mur !");
+          }
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
