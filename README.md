@@ -1,6 +1,9 @@
 # ensaama
 
-## 2024-2025
+## 2025-2026 
+* [DNMADE2](./2026/DNMADE2/README.md)
+
+<!-- ## 2024-2025
 
 ### TEST new Input System
 - [smartphone](./2025/TESTS/newinputsystem/index.html)
@@ -41,12 +44,12 @@
 * [ios permissions](https://dev.to/li/how-to-requestpermission-for-devicemotion-and-deviceorientation-events-in-ios-13-46g2)
 
 ## AR logo
-[AR](./AR_logo/README.md)
+[AR](./AR_logo/README.md) -->
 
 ## composants
 <!-- * [nft](https://eminet666.github.io/ensaama/AR_logo/) -->
 * [debug](./components/debug/)
 * [utiles](./components/utiles/)
 
-## old
-* [old](./old/)
+<!-- ## old
+* [old](./old/) -->
