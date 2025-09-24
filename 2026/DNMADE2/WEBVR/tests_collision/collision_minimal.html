@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Collisions avec Debug Corrigé</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-physics-system@3.0.0/dist/aframe-physics-system.min.js"></script>
+    <script>
+        // Composant pour synchroniser et afficher les positions
+        AFRAME.registerComponent('sync-and-debug', {
+            init: function () {
+                this.playerPos = new THREE.Vector3();
+                this.physicsPos = new THREE.Vector3();
+            },
+            tick: function () {
+                // Récupère la position de l'entité qui a movement-controls (le conteneur)
+                this.el.object3D.getWorldPosition(this.playerPos);
+
+                // Récupère la position du corps physique
+                const physicsBody = this.el.querySelector('[dynamic-body]');
+                if (physicsBody) {
+                    physicsBody.object3D.getWorldPosition(this.physicsPos);
+
+                    // Affiche les positions dans la console
+                    console.log(
+                        `Joueur: (${this.playerPos.x.toFixed(2)}, ${this.playerPos.y.toFixed(2)}, ${this.playerPos.z.toFixed(2)}) | ` +
+                        `Physique: (${this.physicsPos.x.toFixed(2)}, ${this.physicsPos.y.toFixed(2)}, ${this.physicsPos.z.toFixed(2)})`
+                    );
+                }
+            }
+        });
+
+        // Composant pour gérer les collisions
+        AFRAME.registerComponent('collision-listener', {
+            init: function () {
+                this.el.addEventListener('collide', (e) => {
+                    const bodyEntity = e.detail.body.el;
+                    const collidableEntity = bodyEntity.parentEl;
+
+                    if (collidableEntity && collidableEntity.classList.contains('collidable')) {
+                        const box = collidableEntity.querySelector('a-box');
+                        if (box) {
+                            const originalColor = box.getAttribute('color');
+                            box.setAttribute('color', 'red');
+                            console.log('COLLISION avec cube à:',
+                                box.object3D.position.x.toFixed(2) + ',',
+                                box.object3D.position.y.toFixed(2) + ',',
+                                box.object3D.position.z.toFixed(2));
+
+                            setTimeout(() => {
+                                box.setAttribute('color', originalColor);
+                            }, 1000);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <a-scene physics="debug: true">
+        <!-- Joueur avec corps physique visible -->
+        <a-entity id="player" movement-controls="speed: 0.2" sync-and-debug collision-listener>
+            <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
+            <!-- Corps physique VISIBLE (vert transparent) -->
+            <a-entity dynamic-body="shape: box; width: 1; height: 1; depth: 1; mass: 0">
+                <a-box width="1" height="1" depth="1" color="green" opacity="0.3"></a-box>
+            </a-entity>
+            <!-- Représentation visuelle du joueur (bleu) -->
+            <a-box width="1" height="1" depth="1" color="#4D96FF" opacity="0.8"></a-box>
+        </a-entity>
+
+        <!-- Cube gris 1 -->
+        <a-entity class="collidable">
+            <a-box position="3 1 -3" width="2" height="2" depth="0.5" color="#787878" static-body></a-box>
+        </a-entity>
+
+        <!-- Cube gris 2 -->
+        <a-entity class="collidable">
+            <a-box position="-3 1 -3" width="2" height="2" depth="0.5" color="#787878" static-body></a-box>
+        </a-entity>
+
+        <!-- Sol visible -->
+        <a-box position="0 -0.5 0" width="10" height="0.1" depth="10" color="#E0E0E0" static-body></a-box>
+    </a-scene>
+</body>
+
+</html>

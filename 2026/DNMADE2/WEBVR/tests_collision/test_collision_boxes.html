@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VR Player avec Box Colliders</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-physics-system@3.3.0/dist/aframe-physics-system.min.js"></script>
+    <script>
+        AFRAME.registerComponent('collision-listener', {
+            init: function () {
+                this.el.addEventListener('collide', (e) => {
+                    const wall = e.detail.body.el;
+                    if (wall.classList.contains('wall')) {
+                        // Changement de couleur temporaire
+                        const originalColor = wall.getAttribute('color');
+                        wall.setAttribute('color', 'red');
+
+                        // Retour à la couleur originale après 1 seconde
+                        setTimeout(() => {
+                            wall.setAttribute('color', originalColor);
+                        }, 1000);
+
+                        console.log("Collision avec une box !");
+                    }
+                });
+            }
+        });
+    </script>    
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <a-scene physics="debug: true">
+        <!-- Joueur VR avec collider cylindre -->
+        <a-entity id="player" movement-controls="fly: false; speed: 0.3"
+            kinematic-body="shape: cylinder; radius: 0.3; height: 2" collision-listener>
+            <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
+            <!-- Cylindre visible pour le debug -->
+            <a-cylinder radius="0.3" height="2" color="blue" opacity="0.5"></a-cylinder>
+        </a-entity>
+
+        <!-- Sol visible -->
+        <a-box position="0 -0.1 0" rotation="0 0 0" width="20" height="0.2" depth="20" color="#EEEEEE"
+            static-body></a-box>
+
+        <!-- Box 1-->
+        <a-box class="wall" position="-2 1.5 0" width="4" height="3" depth="0.2" color="#787878" static-body></a-box>
+
+        <!-- Box 2 -->
+        <a-box class="wall" position="2 1.5 -3" width="4" height="3" depth="0.2" color="#787878" static-body></a-box>
+    </a-scene>
+
+</body>
+
+</html>
