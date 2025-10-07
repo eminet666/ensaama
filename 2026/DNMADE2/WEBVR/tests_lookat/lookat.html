@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aframe-look-at-component@1.0.0/index.min.js"></script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/aframe-look-at-component@1.0.0/index.min.js"></script>
+    </head>
 
-<body>
-    <a-scene>
-        <a-assets>
-            <a-asset-item id="mosquito-glb" src="./mosquito.glb"></a-asset-item>
-            <a-asset-item id="mosquito-obj" src="./mosquito/plo.obj"></a-asset-item>
-            <a-asset-item id="mosquito-mtl" src="./mosquito/plo.mtl"></a-asset-item>
-        </a-assets>
+    <body>
+        <a-scene>
+            <a-assets>
+                <a-asset-item id="mosquito-glb" src="./mosquito.glb"></a-asset-item>
+                <a-asset-item id="mosquito-obj" src="./mosquito/plo.obj"></a-asset-item>
+                <a-asset-item id="mosquito-mtl" src="./mosquito/plo.mtl"></a-asset-item>
+            </a-assets>
 
-        <a-entity position="0 1.6 -0.5" look-at="#player">
-            <a-entity id="mosquito1" position="0 0 0" scale="1 1 1" rotation="0 0 0" gltf-model="#mosquito-glb">
+            <a-entity position="0 1.6 -0.5" look-at="#player">
+                <a-entity id="mosquito1" position="0 0 0" scale="1 1 1" rotation="0 0 0" gltf-model="#mosquito-glb">
+                </a-entity>
             </a-entity>
-        </a-entity>
 
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="silver"></a-plane>
-        <!-- modifier l'intensité de la light directionnelle pour meilleur rendu des couleurs -->
+            <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="silver"></a-plane>
+            <!-- modifier l'intensité de la light directionnelle pour meilleur rendu des couleurs -->
 
-        <a-entity id="player" camera look-controls wasd-controls="acceleration:10" position="0 1.6 0"></a-entity>
-   
-    </a-scene>
-</body>
+            <a-entity id="player" camera look-controls wasd-controls="acceleration:10" position="0 1.6 0"></a-entity>
+    
+        </a-scene>
+    </body>
 
 </html>
