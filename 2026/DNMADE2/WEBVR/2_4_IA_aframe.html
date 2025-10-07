@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Moustiques en VR</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script>
+      // Composant A-Frame pour générer les moustiques
+      AFRAME.registerComponent('moustiques-generator', {
+        schema: {
+          count: { type: 'number', default: 100 },
+          model: { type: 'string', default: '#moustique-model' },
+          scale: { type: 'string', default: '0.1 0.1 0.1' },
+          volume: { type: 'number', default: 3 }
+        },
+
+        init: function() {
+          this.generateMoustiques();
+        },
+
+        generateMoustiques: function() {
+          const data = this.data;
+          const volumeHalf = data.volume / 2;
+
+          for (let i = 0; i < data.count; i++) {
+            const x = (Math.random() * data.volume) - volumeHalf;
+            const y = (Math.random() * data.volume) - volumeHalf;
+            const z = (Math.random() * data.volume) - volumeHalf;
+
+            const moustique = document.createElement('a-entity');
+            moustique.setAttribute('gltf-model', data.model);
+            moustique.setAttribute('position', `${x} ${y} ${z}`);
+            moustique.setAttribute('scale', data.scale);
+            this.el.appendChild(moustique);
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Caméra VR -->
+      <a-entity position="0 1.6 0">
+        <a-camera></a-camera>
+      </a-entity>
+
+      <!-- Lumière ambiante -->
+      <a-light type="ambient" color="#445451"></a-light>
+      <a-light type="directional" intensity="0.5" position="-1 1 0"></a-light>
+
+      <!-- Sol pour repère visuel -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+
+      <!-- Générateur de moustiques -->
+      <a-entity moustiques-generator="count: 100; model: #moustique-model; scale: 0.1 0.1 0.1; volume: 3"></a-entity>
+
+      <!-- Modèle GLB du moustique -->
+      <a-assets>
+        <a-asset-item id="moustique-model" src="moustique.glb"></a-asset-item>
+      </a-assets>
+    </a-scene>
+  </body>
+</html>

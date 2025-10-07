@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/js/loaders/GLTFLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/webxr/VRButton.js"></script>
+        <script>
+        // Initialisation de la scène, caméra et rendu
+            const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x88ccee); // Fond bleu clair
+
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(0, 1.6, 0); // Position initiale de la caméra (hauteur humaine)
+
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.xr.enabled = true; // Activer le rendu XR (VR)
+            document.body.appendChild(renderer.domElement);
+
+            // Ajouter le bouton VR
+            document.body.appendChild(THREE.VRButton.createButton(renderer));
+
+            // Lumière ambiante et directionnelle
+            const ambientLight = new THREE.AmbientLight(0x445451, 0.8);
+            scene.add(ambientLight);
+
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+            directionalLight.position.set(-1, 1, 0);
+            scene.add(directionalLight);
+
+            // Sol pour repère visuel
+            const floorGeometry = new THREE.PlaneGeometry(4, 4);
+            const floorMaterial = new THREE.MeshStandardMaterial({ color: 0x7BC8A4, side: THREE.DoubleSide });
+            const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+            floor.rotation.x = -Math.PI / 2;
+            scene.add(floor);
+
+            // Chargeur de modèles GLTF
+            const loader = new THREE.GLTFLoader();
+
+            // Fonction pour générer une position aléatoire dans un volume 3x3x3
+            function getRandomPosition() {
+                return {
+                    x: (Math.random() * 3) - 1.5,
+                    y: (Math.random() * 3) - 1.5,
+                    z: (Math.random() * 3) - 1.5
+                };
+            }
+
+            // Tableau pour stocker les moustiques
+            let moustiques = [];
+
+            // Charger le modèle et générer 100 moustiques
+            loader.load(
+                'moustique.glb', // Remplacez par le chemin vers votre modèle GLB
+                function (gltf) {
+                    const model = gltf.scene;
+
+                    // Générer 100 moustiques
+                    for (let i = 0; i < 100; i++) {
+                        const pos = getRandomPosition();
+                        const moustique = model.clone();
+                        moustique.position.set(pos.x, pos.y, pos.z);
+                        moustique.scale.set(0.1, 0.1, 0.1); // Ajustez l'échelle selon votre modèle
+                        scene.add(moustique);
+                        moustiques.push(moustique);
+                    }
+                },
+                undefined, // Fonction de progression (optionnelle)
+                function (error) {
+                    console.error('Erreur lors du chargement du modèle :', error);
+                }
+            );
+
+            // Gestion du redimensionnement de la fenêtre
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+
+            // Animation (optionnel : rotation des moustiques)
+            function animate() {
+                renderer.setAnimationLoop(function () {
+                    renderer.render(scene, camera);
+                    // Exemple : faire tourner les moustiques
+                    moustiques.forEach(m => {
+                        m.rotation.y += 0.01;
+                    });
+                });
+            }
+
+            // Démarrer l'animation
+            animate();
+
+        </script>
+    </body>
+</html>
+
+
+
+
