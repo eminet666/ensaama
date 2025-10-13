@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Plan vertical lumineux à 45°</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: #111111">
+        <!-- Plan gris au sol -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="10" height="10" color="#555555"
+            material="side: double"></a-plane>
+
+        <!-- Plan vertical incliné à 45° qui émet de la lumière -->
+        <a-entity position="0 0.5 -3" rotation="0 45 0">
+            <a-plane width="1" height="1" color="#0066FF" 
+                     material="shader: standard; emissive: #0066FF; emissiveIntensity: 1; roughness: 0.5"></a-plane>
+            <!-- Lumière ponctuelle pour éclairer le plan au sol -->
+            <a-light type="point" position="0 0 0" intensity="2" distance="10" color="#0066FF"></a-light>
+        </a-entity>
+
+        <!-- Lumière ambiante légère -->
+        <a-light type="ambient" color="#333333" intensity="0.2"></a-light>
+    </a-scene>
+</body>
+
+</html>

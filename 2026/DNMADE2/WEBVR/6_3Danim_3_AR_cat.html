@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>   
+</head>
+
+<body>
+
+    <a-scene arjs>
+        <a-assets>
+            <a-asset-item id="glb_cat" src="./assets/3Danims/cat/an_animated_cat.glb"></a-asset-item>
+            <a-asset-item id="gltf_cat" src="./assets/3Danims/cat/cat_gltf/cat_ref.gltf"></a-asset-item>
+            <a-asset-item id="gltf_cat_jpg" src="./assets/3Danims/cat/cat_gltf/cat.gltf"></a-asset-item>
+        </a-assets>
+    
+        <a-entity id="cat" scale="0.1 0.1 0.1" position="0 1.6 -5" rotation="0 -90 0" animation-mixer
+            gltf-model="#glb_cat">
+        </a-entity>
+        <a-entity id="cat2" scale="0.1 0.1 0.1" position="2 1.6 -5" rotation="0 -90 0" animation-mixer
+            gltf-model="#gltf_cat">
+        </a-entity>
+        <a-entity id="cat3" scale="0.1 0.1 0.1" position="-2 1.6 -5" rotation="0 -90 0" animation-mixer 
+        gltf-model="#gltf_cat_jpg">
+        </a-entity>
+    
+    </a-scene>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!-- https://github.com/jgbarah/aframe-playground/tree/master/moving-01 -->
+<!-- Fox : https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/Fox -->
+<!-- animations : dans le gltf "name":  Walk / Survey / Run-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.5.4/dist/aframe-extras.min.js"></script>
+  </head>
+
+  <body>
+
+      <a-scene>
+        <a-assets>
+          <a-asset-item id="flamingo-glb" src="./assets/3Danims/birds/Flamingo.glb"></a-asset-item>
+          <a-asset-item id="parrot-glb" src="./assets/3Danims/birds/Parrot.glb"></a-asset-item>
+          <a-asset-item id="stork-glb" src="./assets/3Danims/birds/Stork.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity id="flamingo" position="-6 1 -6" rotation="0 90 0" 
+            animation-mixer gltf-model="#flamingo-glb"></a-entity>
+        <a-entity id="parrot" position="0 1 -6" rotation="0 90 0" 
+            animation-mixer gltf-model="#parrot-glb"></a-entity>
+        <a-entity id="stork" position="5 1 -6" rotation="0 90 0" 
+            animation-mixer gltf-model="#stork-glb"></a-entity>
+        
+        <a-sky color="skyblue"></a-sky>
+      </a-scene>
+
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!-- https://github.com/jgbarah/aframe-playground/tree/master/moving-01 -->
+<!-- Fox : https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/Fox -->
+<!-- animations : dans le gltf "name":  Walk / Survey / Run-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.5.4/dist/aframe-extras.min.js"></script>
+  </head>
+
+  <body>
+
+      <a-scene>
+        <a-assets>
+          <a-asset-item id="fox" src="./assets/3Danims/fox/fox.glb"></a-asset-item>
+        </a-assets>
+
+        <!-- loop : default repeat 
+               once, repeat, or pingpong (=reverse). 
+               repeat/pingpong : the clip plays once + specified number of repetitions. 
+        repetitions : defauly Infinity 
+               number of times to play the clip, in addition to the first play.      -->
+
+        <a-entity position="-6 -2 -9"
+                  rotation="0 60 0"
+                  scale="0.03 0.03 0.03"
+                  gltf-model="#fox"
+                  animation-mixer="clip: Run; loop: once">
+        </a-entity>
+
+        <a-entity position="0 -2 -9" 
+                  rotation="0 60 0" 
+                  scale="0.03 0.03 0.03" 
+                  gltf-model="#fox" 
+                  animation-mixer="clip: Run; loop: repeat; repetitions: 2">
+        </a-entity>
+
+        <a-entity position="6 -2 -9" 
+                  rotation="0 60 0" 
+                  scale="0.03 0.03 0.03" 
+                  gltf-model="#fox" 
+                  animation-mixer="clip: Run; loop: pingpong; repetitions: 5">
+        </a-entity>
+
+        <a-sky color="grey"></a-sky>
+      </a-scene>
+
+  </body>
+</html>

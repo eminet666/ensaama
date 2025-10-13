@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/aframe-extras@7.2.0/dist/aframe-extras.min.js "></script>
+    <!-- <script src="./utils.js"></script> -->
+    <script src="https://eminet666.github.io/abaroma/lib/utils.js"></script>
+
+</head>
+
+<body>
+    <a-scene background="color: skyblue" frequency="delay: 500">
+
+        <a-assets>
+            <a-asset-item id="fox" src="./assets/3Danims/fox/fox.glb"></a-asset-item>
+        </a-assets>
+        
+        <a-entity position="-0 0 -3" rotation="0 60 0" 
+            scale="0.01 0.01 0.01" 
+            gltf-model="#fox" 
+            animation-mixer="clip: Run" 
+            shadow>
+        </a-entity>
+        
+        <!-- <a-entity light="type:directional; castShadow:true;" position="1 1 1"></a-entity> -->
+        <a-plane position="0 0 -4" color="grey" height="8" width="8" rotation="-90 0 0" shadow></a-plane>
+
+    </a-scene>
+</body>
+
+</html>

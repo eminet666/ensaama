@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Cube bleu lumineux avec effet glow</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <!-- Utilisation d'une version plus récente et compatible d'aframe-effects -->
+    <script src="https://unpkg.com/aframe-effects@1.0.0/dist/aframe-effects.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: #111111">
+        <!-- Plan gris -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="10" height="10" color="#555555"
+            material="side: double"></a-plane>
+
+        <!-- Cube bleu avec effet glow -->
+        <a-box position="0 0.5 -3" scale="0.5 0.5 0.5" color="#0066FF" effect="glow"
+            glow="color: #0066FF; factor: 0.5; width: 1.5"></a-box>
+
+        <!-- Lumière ponctuelle pour éclairer le plan -->
+        <a-light type="point" position="0 0.5 -3" intensity="2" distance="5" color="#0066FF"></a-light>
+
+        <!-- Lumière ambiante légère -->
+        <a-light type="ambient" color="#333333" intensity="0.2"></a-light>
+    </a-scene>
+</body>
+
+</html>

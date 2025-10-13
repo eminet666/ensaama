@@ -2,13 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-    </head>
-    <body>
         <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/js/loaders/GLTFLoader.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/webxr/VRButton.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/js/loaders/GLTFLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/webxr/VRButton.js"></script> -->
         <script>
-        // Initialisation de la scène, caméra et rendu
+            // Initialisation de la scène, caméra et rendu
             const scene = new THREE.Scene();
             scene.background = new THREE.Color(0x88ccee); // Fond bleu clair
 
@@ -55,7 +53,7 @@
 
             // Charger le modèle et générer 100 moustiques
             loader.load(
-                'moustique.glb', // Remplacez par le chemin vers votre modèle GLB
+                './assets/mosquito.glb', // Remplacez par le chemin vers votre modèle GLB
                 function (gltf) {
                     const model = gltf.scene;
 
@@ -96,7 +94,10 @@
             // Démarrer l'animation
             animate();
 
-        </script>
+        </script>        
+    </head>
+    <body>
+
     </body>
 </html>
 
