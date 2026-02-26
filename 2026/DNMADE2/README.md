@@ -3,7 +3,8 @@
 ## WEBVR Touch
 * [Position](./WEBGL/Position/index.html)
 * [ChangeColor](./WEBGL/ChangeColor/index.html)
-<!-- * [Pénélope]()
+<!-- 
+* [Pénélope]()
 * [Jeanne-lys]()
 * [Manon V]()
 * [Zoe]()
@@ -18,7 +19,8 @@
 * [Nirosiga]()
 * [Manon C]()
 * [Nathan]()
-* [Nolwenn]()		 -->
+* [Nolwenn]()		 
+-->
 
 ## WEBGL
 * [eminet](./WEBVR/)
