@@ -1,9 +1,8 @@
 # DNMADE2
 
 ## WEBVR Touch
-* [0_Position](./WEBGL/0_Position/index.html)
-* [1_Touch_Zenithal](./WEBGL/1_Touch_Zenithal/index.html)
-* [2_Touch_Pers](./WEBGL/2_Touch_Pers/index.html)
+* [Démo](./WEBGL/Demo/index.html)
+
 <!-- 
 * [Pénélope]()
 * [Jeanne-lys]()
